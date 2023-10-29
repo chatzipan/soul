@@ -7,8 +7,6 @@
   Soul Café Website
 </h1>
 
-## 🚀 Quick start (Netlify)
+### Netlify Status
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/263f593a-6adb-4395-a685-073fc3d6cf1c/deploy-status)](https://app.netlify.com/sites/comforting-kringle-dfc4ec/deploys)
