@@ -6,7 +6,6 @@
 <h1 align="center">
   Soul Café Website
 </h1>
-)
 
 ## 🚀 Quick start (Netlify)
 
