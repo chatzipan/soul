@@ -1,0 +1,18 @@
+html {
+  background-color: #285c4d;
+  font-family: "Adrianna Extended Thin", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Adrianna Extended Thin";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url(/fonts/AdriannaExtended-Thin.woff2) format("woff2");
+}
