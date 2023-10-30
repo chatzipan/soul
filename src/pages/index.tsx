@@ -4,9 +4,10 @@ import Icon from "../assets/logo.svg";
 import styled from "styled-components";
 import latteArt from "../images/latte_art.png"; // Tell webpack this JS file uses this image
 import babka from "../images/babka.png"; // Tell webpack this JS file uses this image
+import { size } from "../config/mediaQueries";
 
 const Logo = styled(Icon)`
-  width: 100%;
+  width: 80vw;
   max-width: 700px;
   margin: 0 auto;
   display: block;
@@ -24,7 +25,12 @@ const Main = styled.main`
 `;
 
 const LatteArtWrapper = styled.div`
-  --size: 300px;
+  --size: 100px;
+
+  @media (min-width: ${size.tablet}) {
+    --size: 300px;
+  }
+
   width: var(--size);
   height: auto;
   position: absolute;
@@ -51,7 +57,12 @@ const LatteArtWrapper = styled.div`
 `;
 
 const BabkaWrapper = styled.div`
-  --size: 300px;
+  --size: 100px;
+
+  @media (min-width: ${size.tablet}) {
+    --size: 300px;
+  }
+
   width: var(--size);
   height: auto;
   position: absolute;
@@ -78,7 +89,12 @@ const BabkaWrapper = styled.div`
 `;
 
 const LatteArt = styled.img`
-  --size: 300px;
+  --size: 100px;
+
+  @media (min-width: ${size.tablet}) {
+    --size: 300px;
+  }
+
   width: var(--size);
   height: auto;
   animation: y 17s linear infinite alternate;
@@ -91,7 +107,12 @@ const LatteArt = styled.img`
 `;
 
 const Babka = styled.img`
-  --size: 300px;
+  --size: 100px;
+
+  @media (min-width: ${size.tablet}) {
+    --size: 300px;
+  }
+
   width: var(--size);
   height: auto;
   animation: y 17s linear infinite alternate;
