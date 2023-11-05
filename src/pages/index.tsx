@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as S from "./index.styled";
+import * as S from "../styles/index.styled";
 
 import type { HeadFC, PageProps } from "gatsby";
 
