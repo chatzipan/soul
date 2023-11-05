@@ -15,7 +15,7 @@ export const Marker = styled.img.withConfig({
 })<{ lat: number; lng: number }>`
   transform: translate(-50%, -50%);
   // transform: translate(-50px, -66px);
-  width: 50px;
+  width: 40px;
   height: auto;
 `;
 
