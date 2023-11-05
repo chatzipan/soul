@@ -6,7 +6,12 @@ import type { HeadFC, PageProps } from "gatsby";
 import GoogleMapReact from "google-map-react";
 import babka from "../images/babka.png"; // Tell webpack this JS file uses this image
 import latteArt from "../images/latte_art.png"; // Tell webpack this JS file uses this image
-import marker from "../images/map_pin_small.png";
+import marker from "../images/map_pin.png";
+
+const SHOP_COORDINATES = {
+  lat: 47.37415,
+  lng: 8.5431555,
+};
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -19,19 +24,20 @@ const IndexPage: React.FC<PageProps> = () => {
       </S.BabkaWrapper>
       <S.Logo />
       <S.ComingSoon>coming soon...</S.ComingSoon>
-      {/* <div style={{ height: "100vh", width: "100%" }}>
+      <S.MapWrapper>
         <GoogleMapReact
           bootstrapURLKeys={{
+            key: process.env.GATSBY_GOOGLE_MAPS_API_KEY as string,
           }}
           options={{
             mapId: "e9872451316829c9",
           }}
-          defaultCenter={{ lat: 47.3741264, lng: 8.5431555 }}
-          defaultZoom={15}
+          defaultCenter={SHOP_COORDINATES}
+          defaultZoom={18}
         >
-          <S.Marker lat={47.3741264} lng={8.5431555} src={marker} />
+          <S.Marker {...SHOP_COORDINATES} src={marker} />
         </GoogleMapReact>
-      </div> */}
+      </S.MapWrapper>
     </S.Main>
   );
 };

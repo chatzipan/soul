@@ -10,7 +10,19 @@ export const Logo = styled(Icon)`
   color: white;
 `;
 
-export const Marker = styled.img<{ lat: number; lng: number }>``;
+export const Marker = styled.img.withConfig({
+  shouldForwardProp: (prop) => !["lat", "lng"].includes(prop),
+})<{ lat: number; lng: number }>`
+  transform: translate(-50%, -50%);
+  // transform: translate(-50px, -66px);
+  width: 50px;
+  height: auto;
+`;
+
+export const MapWrapper = styled.div`
+  height: 30vh;
+  width: 100%;
+`;
 
 export const Main = styled.main`
   width: 100%;
