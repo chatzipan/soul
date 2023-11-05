@@ -33,7 +33,7 @@ const IndexPage: React.FC<PageProps> = () => {
             mapId: "e9872451316829c9",
           }}
           defaultCenter={SHOP_COORDINATES}
-          defaultZoom={18}
+          defaultZoom={15}
         >
           <S.Marker {...SHOP_COORDINATES} src={marker} />
         </GoogleMapReact>
