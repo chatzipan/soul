@@ -10,6 +10,8 @@ export const Logo = styled(Icon)`
   color: white;
 `;
 
+export const Marker = styled.img<{ lat: number; lng: number }>``;
+
 export const Main = styled.main`
   width: 100%;
   display: flex;
