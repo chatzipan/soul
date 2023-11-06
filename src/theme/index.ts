@@ -1,6 +1,7 @@
 const Theme = {
   colors: {
     primary: "#285c4d",
+    primaryLight: "#285c4d60",
   },
   sizes: {
     mobileS: "320px",

@@ -16,7 +16,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mdx-js/react": "^3.0.0",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/material": "^5.14.17",
     "@types/google-map-react": "^2.1.9",
     "@types/styled-components": "^5.1.29",
     "babel-plugin-styled-components": "^2.1.4",
