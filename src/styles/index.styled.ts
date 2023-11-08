@@ -11,6 +11,12 @@ export const ImageWrapper = styled.section`
   flex-wrap: wrap;
   padding: 4rem;
   gap: 2rem;
+  background-size: 40px 40px;
+  background-image: radial-gradient(
+    circle,
+    ${({ theme }) => theme.colors.primary} 1px,
+    rgba(0, 0, 0, 0) 1px
+  );
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     padding: 2rem;
