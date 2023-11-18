@@ -44,8 +44,8 @@ const IndexPage: React.FC<PageProps> = () => {
               <S.Title>Coffee</S.Title>
               <S.SubTitle>
                 Our own artisanal roasting process uncovers the deep, rich tales
-                that each bean has to tell. From the remote hills of Ethiopia to
-                the lush mountains of Colombia, taste the world in every sip.
+                that each bean has to tell. From the hills of Ethiopia to the
+                mountains of Colombia, taste the world in every sip.
               </S.SubTitle>
             </S.Text>
             <S.Image src={coffee} />
@@ -76,11 +76,9 @@ const IndexPage: React.FC<PageProps> = () => {
             <S.Text>
               <S.Title>Wine Pairing</S.Title>
               <S.SubTitle>
-                Soul’s wine events are more than just tastings; they’re
-                gatherings where connoisseurs and novices alike can mingle over
-                a shared love for the grape. Spaces are limited, so be sure to
-                reserve your glass in advance and join the Soul family for a
-                night of wine, conversation, and community.
+                Join us for monthly wine events: taste, learn, and connect over
+                expertly paired vintages and gourmet bites in a welcoming,
+                communal setting.
               </S.SubTitle>
             </S.Text>
             <S.Image src={wine} />

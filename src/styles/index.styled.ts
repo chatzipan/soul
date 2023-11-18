@@ -9,17 +9,25 @@ export const Page = styled.div`
 export const ImageWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
-  padding: 4rem;
-  gap: 2rem;
-  background-size: 40px 40px;
-  background-image: radial-gradient(
-    circle,
-    ${({ theme }) => theme.colors.primary} 1px,
-    rgba(0, 0, 0, 0) 1px
-  );
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 800%;
+    top: -150%;
+    left: 50%;
+    z-index: -1;
+
+    background: url("logo.svg") 0 0 repeat;
+    background-size: 200px;
+
+    transform: rotate(-30deg);
+  }
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
-    padding: 2rem;
+    padding: 3rem 0;
   }
 `;
 
@@ -29,8 +37,10 @@ export const MapWrapper = styled.section`
 
 export const Image = styled.img`
   width: 50%;
-  border-radius: 5rem;
   object-fit: cover;
+  z-index: 1;
+
+  flex-shrink: 0;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     width: 100%;
@@ -39,7 +49,6 @@ export const Image = styled.img`
 
 export const Row = styled.div<{ reverse?: boolean }>`
   display: flex;
-  gap: 2rem;
   height: 600px;
   flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
 
@@ -52,17 +61,30 @@ export const Row = styled.div<{ reverse?: boolean }>`
 export const Text = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 3rem 2rem;
+
+  @media (min-width: ${({ theme }) => theme.sizes.tablet}) {
+    width: 50%;
+  }
 `;
 
 export const Title = styled.h1`
   font-size: 3.5rem;
   font-family: "Nantes", sans-serif;
+  color: ${({ theme }) => theme.colors.secondary};
+  backdrop-filter: blur(3px) saturate(70%);
+  margin: 0;
 `;
 
-export const SubTitle = styled.h1`
-  font-size: 1.5rem;
+export const SubTitle = styled.p`
+  font-family: "Nantes", sans-serif;
+  font-size: 2rem;
   line-height: 1.5;
   font-weight: 800;
+  text-rendering: optimizelegibility !important;
+  letter-spacing: 0.03em;
+  color: ${({ theme }) => theme.colors.secondary};
+  backdrop-filter: blur(3px) saturate(70%);
 `;
 
 export const Marker = styled.img.withConfig({
@@ -76,6 +98,7 @@ export const Marker = styled.img.withConfig({
 
 export const Main = styled.div`
   width: calc((2 / 3) * 100%);
+  overflow-x: hidden;
   margin-left: auto;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {

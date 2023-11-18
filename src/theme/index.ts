@@ -1,7 +1,9 @@
 const Theme = {
   colors: {
     primary: "#285c4d",
-    primaryLight: "#285c4d60",
+    primaryLight: "#9BC1BC",
+    secondary: "#ED6A5A",
+    tertiary: "F4F1BB",
   },
   sizes: {
     mobileS: "320px",

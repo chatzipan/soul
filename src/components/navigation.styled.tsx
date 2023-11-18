@@ -12,6 +12,7 @@ export const Nav = styled.main<{ isOpen: boolean }>`
   position: fixed;
   background-color: ${({ theme }) => theme.colors.primary};
   transition: transform 0.3s ease-in-out;
+  z-index: 2;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {
     transform: ${({ isOpen }) =>
@@ -46,6 +47,8 @@ export const MenuButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
+  z-index: 2;
+  color: ${({ theme }) => theme.colors.secondary};
 
   @media (min-width: ${({ theme }) => theme.sizes.laptopL}) {
     display: none;
@@ -58,6 +61,7 @@ export const Logo = styled(Icon)`
   margin: 0 auto;
   display: block;
   color: white;
+  fill: white;
   margin-bottom: 4rem;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
@@ -92,7 +96,7 @@ export const Circle = styled.li`
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: ${({ theme }) => theme.colors.primaryLight};
   animation: animate 25s linear infinite;
   bottom: -150px;
 

@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   html {
-    background-color: ${(props) => props.theme.colors.primaryLight};
     font-family: "Adrianna Extended Thin", sans-serif;
   }
 
