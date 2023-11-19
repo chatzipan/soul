@@ -24,10 +24,14 @@ const Navigation = () => {
           ))}
         </S.Circles>
         <S.Logo />
-        <S.NavItem>ABOUT</S.NavItem>
-        <S.NavItem>TEAM</S.NavItem>
-        <S.NavItem>MENU</S.NavItem>
-        <S.NavItem>CONTACT</S.NavItem>
+        <S.NavList>
+          <S.NavItem>ABOUT</S.NavItem>
+          <S.NavItem>TEAM</S.NavItem>
+          <S.NavItem>MENU</S.NavItem>
+          <S.NavItem>
+            <S.Link to='/contact'>CONTACT</S.Link>
+          </S.NavItem>
+        </S.NavList>
       </S.Nav>
     </>
   );

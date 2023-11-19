@@ -1,7 +1,10 @@
+import { Link as GatsbyLink } from "gatsby";
 import Icon from "../assets/logo.svg";
 import styled from "styled-components";
 
-export const Nav = styled.main<{ isOpen: boolean }>`
+export const Nav = styled.nav.withConfig({
+  shouldForwardProp: (prop) => prop !== "isOpen",
+})<{ isOpen: boolean }>`
   width: calc((1 / 3) * 100%);
   display: flex;
   flex-direction: column;
@@ -73,10 +76,25 @@ export const Logo = styled(Icon)`
   }
 `;
 
-export const NavItem = styled.p`
+export const NavList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+export const NavItem = styled.li`
   font-size: 2rem;
   font-weight: bold;
-  margin-top: 2rem;
+  margin: 2rem 0;
+`;
+
+export const Link = styled(GatsbyLink)`
+  color: currentColor;
+  text-decoration: none;
 `;
 
 export const Circles = styled.ul`
@@ -88,6 +106,7 @@ export const Circles = styled.ul`
   overflow: hidden;
   margin: 0;
   padding: 0;
+  z-index: -1;
 `;
 
 export const Circle = styled.li`
