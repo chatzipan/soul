@@ -13,7 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "scrap": "node ./scripts/scrap-menu.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -36,6 +37,7 @@
     "gatsby-source-filesystem": "^5.12.1",
     "gatsby-transformer-sharp": "^5.12.3",
     "google-map-react": "^2.2.1",
+    "playwright": "^1.40.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.0"
