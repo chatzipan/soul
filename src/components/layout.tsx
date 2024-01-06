@@ -1,6 +1,5 @@
 import * as S from "./layout.styled";
 
-import Navigation from "./navigation";
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 
@@ -42,7 +41,6 @@ export default function Layout({ children }: LayoutProps) {
     <React.Fragment>
       <GlobalStyle />
       <S.Page>
-        <Navigation />
         <S.Main id='main'>{children}</S.Main>
       </S.Page>
     </React.Fragment>

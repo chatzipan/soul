@@ -1,11 +1,7 @@
-const cheerio = require("cheerio");
-const axios = require("axios");
-const puppeteer = require("puppeteer");
 const fs = require("fs");
 const { chromium } = require("playwright");
 
 const MENU_URL = "https://mylightspeed.app/HLMBBCCK/C-ordering/menu";
-const menu = {};
 
 async function scrap() {
   const browser = await chromium.launch();
@@ -19,10 +15,10 @@ async function scrap() {
     ); // This is a regex to match the url
 
     var response = await promise; // here we wait for the promise to be fullfiled.
-    let resp = await response.json();
+    const menu = await response.json();
 
     // Write countries array in countries.json file
-    fs.writeFile("static/menu.json", JSON.stringify(resp, null, 2), (err) => {
+    fs.writeFile("static/menu.json", JSON.stringify(menu, null, 2), (err) => {
       if (err) {
         console.error(err);
         return;

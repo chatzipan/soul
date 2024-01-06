@@ -16,6 +16,18 @@ exports.wrapRootElement = ({ element }) => {
 
 exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
+    <link key='1' rel='preconnect' href='https://fonts.googleapis.com' />,
+    <link
+      key='2'
+      rel='preconnect'
+      href='https://fonts.gstatic.com'
+      crossOriginn='true'
+    />,
+    <link
+      key='3'
+      href='https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&display=swap'
+      rel='stylesheet'
+    />,
     <link
       rel='preload'
       href='/fonts/AdriannaExtended-Thin.woff2'

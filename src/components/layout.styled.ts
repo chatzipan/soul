@@ -7,11 +7,11 @@ export const Page = styled.div`
 `;
 
 export const Main = styled.main`
-  width: calc((2 / 3) * 100%);
   overflow-x: hidden;
   margin-left: auto;
+  background-color: ${({ theme }) => theme.colors.secondary};
 
-  &::before {
+  /* &::before {
     content: "";
     position: fixed;
     width: 200%;
@@ -24,7 +24,7 @@ export const Main = styled.main`
     background-size: 200px;
 
     transform: rotate(-30deg);
-  }
+  } */
 
   @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {
     width: 100%;
