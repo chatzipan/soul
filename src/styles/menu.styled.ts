@@ -23,6 +23,10 @@ export const Wrapper = styled.div`
     background: url(/svg/logo.svg) 0 0 repeat;
     background-size: 200px;
     transform: rotate(-30deg);
+
+    @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+      top: -250%;
+    }
   }
 `;
 
