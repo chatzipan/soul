@@ -24,6 +24,28 @@ const Contact = () => {
         >
           zurich_soul
         </S.TelLink>
+        <br />
+        <S.Text>Opening Hours</S.Text>
+        <S.Hours>
+          <span>Tuesday - Wednesday:</span>
+          <span> 8:00 - 19:00</span>
+        </S.Hours>
+        <S.Hours>
+          <span>Thursday - Friday:</span>
+          <span> 8:00 - 22:00</span>
+        </S.Hours>
+        <S.Hours>
+          <span>Saturday:</span>
+          <span> 9:00 - 22:00</span>
+        </S.Hours>
+        <S.Hours>
+          <span>Sunday:</span>
+          <span> 9:00 - 19:00</span>
+        </S.Hours>
+        <S.Hours>
+          <span>Monday:</span>
+          <span> Closed</span>
+        </S.Hours>
       </S.InnerWrapper>
       <S.Image src={inside} />
     </S.Wrapper>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as S from "../home/Contact.styled";
+import * as S from "./Contact.styled";
 
 import type { HeadFC, PageProps } from "gatsby";
 

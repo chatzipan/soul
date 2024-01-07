@@ -25,6 +25,30 @@ export const Text = styled.p`
   }
 `;
 
+export const SubTitle = styled.p`
+  font-size: 2rem;
+  line-height: 1.5;
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {
+    font-size: 1.5rem;
+  }
+`;
+
+export const Hours = styled.p`
+  font-size: 1.35rem;
+  line-height: 1.5;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  font-variant-numeric: tabular-nums;
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    font-size: 1rem;
+  }
+`;
+
 export const InnerWrapper = styled.nav`
   width: 50%;
   display: flex;
@@ -73,11 +97,12 @@ export const Image = styled.img`
 export const TelLink = styled.a`
   color: inherit;
   text-decoration-thickness: from-font;
-  font-size: 2rem;
+  font-size: 1.35rem;
   line-height: 1.5;
-  margin: 1rem 0;
+  text-decoration: none;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     margin: 0.5rem 0;
+    font-size: 1rem;
   }
 `;

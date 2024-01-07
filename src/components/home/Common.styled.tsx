@@ -6,12 +6,13 @@ const commonWrapper = css`
   flex-direction: column;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
-    padding: 3rem;
+    padding: 2rem;
   }
 `;
 
 export const Wrapper = styled.div`
   ${commonWrapper}
+  background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const WineWrapper = styled.div`
@@ -65,6 +66,7 @@ export const Description = styled.p.withConfig({
   font-size: 2rem;
   line-height: 1.5;
   width: ${({ full }) => (full ? "100%" : "60%")};
+  word-break: break-word;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     width: 100%;

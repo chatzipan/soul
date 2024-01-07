@@ -70,6 +70,7 @@ async function scrap() {
       await browser.close();
       return;
     }
+
     console.log("Menu Diffs: ", menuDiffs.join("\n"));
 
     // Write countries array in countries.json file

@@ -9,7 +9,7 @@ const Hero = () => {
       <S.InnerWrapper>
         <S.Text>Welcome to</S.Text>
         <S.Logo />
-        <S.Text>SPECIALTY | CULTURE | CREATIVE | FLAVOURS</S.Text>
+        <S.SubTitle>SPECIALTY | CULTURE | CREATIVE | FLAVOURS</S.SubTitle>
       </S.InnerWrapper>
       <S.Image src={outside} />
     </S.Wrapper>
