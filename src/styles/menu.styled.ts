@@ -1,0 +1,131 @@
+import styled from "styled-components";
+
+export const Wrapper = styled.div`
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+    max-width: 80vw;
+    flex-direction: column;
+  }
+
+  &::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 800%;
+    top: -150%;
+    left: 50%;
+    z-index: -1;
+    background: url(/svg/logo.svg) 0 0 repeat;
+    background-size: 200px;
+    transform: rotate(-30deg);
+  }
+`;
+
+export const Sidebar = styled.aside`
+  position: sticky;
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 40%;
+  backdrop-filter: blur(13px) saturate(70%);
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+    position: static;
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 4.5rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0 1rem;
+    background-color: white;
+
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+  }
+`;
+
+export const Category = styled.h2.withConfig({
+  shouldForwardProp: (prop) => !["active"].includes(prop),
+})<{ active: boolean }>`
+  font-size: 3rem;
+  font-family: "Cabin", sans-serif;
+  line-height: 1.5;
+  color: ${({ theme, active }) => (active ? theme.colors.primary : "#edd3c5")};
+  margin: 0;
+  cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+    display: inline-block;
+    font-size: 2rem;
+  }
+`;
+
+export const Main = styled.div`
+  width: 60%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 4rem 2rem;
+  margin-left: auto;
+  backdrop-filter: blur(13px) saturate(70%);
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+    width: 100%;
+    padding: 4rem 0 0;
+  }
+`;
+
+export const Section = styled.section`
+  padding: 2rem 0;
+  border-bottom: 4px solid ${({ theme }) => theme.colors.primary};
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+export const Item = styled.p`
+  margin: 0;
+  font-size: 1.8rem;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+export const ItemName = styled.span`
+  font-family: "Cabin", sans-serif;
+  color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const Price = styled.span`
+  margin-top: 9px;
+`;

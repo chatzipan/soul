@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as S from "./Hero.styled";
 
+import Button from "../Button";
 import outside from "../../images/outside.jpeg";
 
 const Hero = () => {
@@ -10,6 +11,8 @@ const Hero = () => {
         <S.Text>Welcome to</S.Text>
         <S.Logo />
         <S.SubTitle>SPECIALTY | CULTURE | CREATIVE | FLAVOURS</S.SubTitle>
+        <br />
+        <Button to='/menu'>Menu</Button>
       </S.InnerWrapper>
       <S.Image src={outside} />
     </S.Wrapper>

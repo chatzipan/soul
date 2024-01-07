@@ -8,9 +8,5 @@ export const Page = styled.div`
 
 export const Main = styled.main`
   overflow-x: hidden;
-  margin-left: auto;
-
-  @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {
-    width: 100%;
-  }
+  width: 100%;
 `;
