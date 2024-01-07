@@ -1,3 +1,4 @@
+import Button from "../components/Button";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -30,15 +31,24 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const HomeLink = styled(Button)`
+  margin-top: auto;
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+    margin-top: 0;
+  }
+`;
+
 export const Sidebar = styled.aside`
   position: sticky;
   top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 6rem);
   width: 40%;
   backdrop-filter: blur(13px) saturate(70%);
+  padding-bottom: 2rem;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
     position: static;
@@ -57,6 +67,7 @@ export const Sidebar = styled.aside`
     gap: 1rem;
     margin: 0 1rem;
     background-color: white;
+    padding: 0;
 
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */

@@ -3,15 +3,20 @@ import * as S from "./Button.styled";
 
 interface ButtonProps {
   children: React.ReactNode;
+  className?: string;
   to?: string;
 }
 
-const Button = ({ children, to }: ButtonProps) => {
+const Button = ({ children, className, to }: ButtonProps) => {
   if (to) {
-    return <S.Link to={to}>{children}</S.Link>;
+    return (
+      <S.Link className={className} to={to}>
+        {children}
+      </S.Link>
+    );
   }
 
-  return <S.Button>{children}</S.Button>;
+  return <S.Button className={className}>{children}</S.Button>;
 };
 
 export default Button;

@@ -78,6 +78,7 @@ const MenuPage: React.FC<PageProps> = () => {
             {category}
           </S.Category>
         ))}
+        <S.HomeLink to='/'>Home</S.HomeLink>
       </S.Sidebar>
       <S.Main>
         {menu.groups.map((group, i) => (

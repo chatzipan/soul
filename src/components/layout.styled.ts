@@ -7,6 +7,5 @@ export const Page = styled.div`
 `;
 
 export const Main = styled.main`
-  overflow-x: hidden;
   width: 100%;
 `;
