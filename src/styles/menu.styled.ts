@@ -39,6 +39,16 @@ export const HomeLink = styled(Button)`
   }
 `;
 
+export const ScrollToTop = styled(Button)`
+  margin: 3rem auto;
+  display: block;
+  padding: 0.5rem 1rem;
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+    margin-top: 0;
+  }
+`;
+
 export const Sidebar = styled.aside`
   position: sticky;
   top: 4rem;
@@ -90,7 +100,8 @@ export const Category = styled.h2.withConfig({
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
   }
 `;
 
@@ -118,6 +129,10 @@ export const Section = styled.section`
   }
 
   &:last-child {
+    border-bottom: none;
+  }
+
+  &:last-of-type {
     border-bottom: none;
   }
 `;

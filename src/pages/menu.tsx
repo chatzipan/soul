@@ -92,6 +92,13 @@ const MenuPage: React.FC<PageProps> = () => {
             ))}
           </S.Section>
         ))}
+        <S.ScrollToTop
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          &#8593;
+        </S.ScrollToTop>
       </S.Main>
     </S.Wrapper>
   );
