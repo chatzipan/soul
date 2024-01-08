@@ -104,6 +104,16 @@ export const Category = styled.h2.withConfig({
     font-size: 1.5rem;
     text-transform: uppercase;
   }
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    &:not(:last-child)::after {
+      content: " - ";
+      display: inline-block;
+      color: #edd3c5;
+      font-weight: 100;
+      margin-left: 1rem;
+    }
+  }
 `;
 
 export const Main = styled.div`
