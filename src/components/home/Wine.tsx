@@ -16,9 +16,21 @@ const Wine = () => {
         <S.WineTitle>Wine</S.WineTitle>
       </S.Heading>
       <S.ImageWrapper>
-        <S.Image loading='lazy' src={wines} />
-        <S.Image loading='lazy' src={wine_2} />
-        <S.Image loading='lazy' src={wine_list} />
+        <S.Image
+          loading='lazy'
+          src={wines}
+          alt='A picture of the wine collection in the restaurant'
+        />
+        <S.Image
+          loading='lazy'
+          src={wine_2}
+          alt='A picture of a glass of wine'
+        />
+        <S.Image
+          loading='lazy'
+          src={wine_list}
+          alt='A picture of the wine list'
+        />
       </S.ImageWrapper>
     </S.WineWrapper>
   );

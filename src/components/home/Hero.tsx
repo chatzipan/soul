@@ -14,7 +14,7 @@ const Hero = () => {
         <br />
         <Button to='/menu'>Menu</Button>
       </S.InnerWrapper>
-      <S.Image src={outside} />
+      <S.Image src={outside} alt='A picture of the outside of the restaurant' />
     </S.Wrapper>
   );
 };

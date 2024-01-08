@@ -19,8 +19,16 @@ const Events = () => {
         <S.Title>Events</S.Title>
       </S.Heading>
       <S.ImageWrapper>
-        <S.FoodImage loading='lazy' src={events} />
-        <S.FoodImage loading='lazy' src={events_2} />
+        <S.FoodImage
+          loading='lazy'
+          src={events}
+          alt='A picture of our chef preparing food in the kitchen'
+        />
+        <S.FoodImage
+          loading='lazy'
+          src={events_2}
+          alt='A picture of our chef preparing food for an event'
+        />
       </S.ImageWrapper>
     </S.EventWrapper>
   );

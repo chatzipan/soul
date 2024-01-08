@@ -47,7 +47,11 @@ const Contact = () => {
           <span> Closed</span>
         </S.Hours>
       </S.InnerWrapper>
-      <S.Image src={inside} />
+      <S.Image
+        src={inside}
+        loading='lazy'
+        alt='A picture of the inside of the restaurant'
+      />
     </S.Wrapper>
   );
 };
