@@ -101,6 +101,7 @@ export const Main = styled.div`
   padding: 4rem 2rem;
   margin-left: auto;
   backdrop-filter: blur(13px) saturate(70%);
+  -webkit-backdrop-filter: blur(13px) saturate(70%);
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
     width: 100%;
