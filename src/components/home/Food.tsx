@@ -7,8 +7,6 @@ import granola from "../../images/granola.jpeg";
 import paris_brest from "../../images/paris_brest.jpg";
 import sando_salad from "../../images/sando_salad.jpg";
 import spinach_roll from "../../images/spinat_roll.jpg";
-import tapas from "../../images/tapas_2.jpg";
-import tapas2 from "../../images/tapas_3.jpg";
 import tataki from "../../images/tataki.jpg";
 
 const Food = () => {
