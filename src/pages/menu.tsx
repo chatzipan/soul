@@ -32,6 +32,7 @@ export async function getServerData() {
   );
 
   const menu = (await res.json()) as Menu[];
+  console.log("menu", menu);
 
   return {
     props: {
