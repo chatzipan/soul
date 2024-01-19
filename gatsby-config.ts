@@ -15,6 +15,7 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-netlify",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
