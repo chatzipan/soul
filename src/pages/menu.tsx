@@ -21,6 +21,7 @@ type Menu = {
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 export const getServerData = async () => {
+  console.log("! getServerData");
   const res = await fetch(
     "https://storage.googleapis.com/soulzuerich.ch/menu.json",
     {
@@ -32,6 +33,8 @@ export const getServerData = async () => {
   );
 
   const menu = (await res.json()) as Menu[];
+
+  console.log("menu", menu);
 
   return {
     props: {
