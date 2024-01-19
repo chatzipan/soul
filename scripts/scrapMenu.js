@@ -1,27 +1,33 @@
+const dotenv = require("dotenv");
+dotenv.config({ path: __dirname + "/./../.env" });
+
 const fs = require("fs");
 const { chromium } = require("playwright");
 const jsonDiff = require("json-diff");
+const { uploadFile } = require("./uploadFile");
 
-const MENU_URL = "https://mylightspeed.app/HLMBBCCK/C-ordering/menu";
+const MENU_URL = "https://mylightspeed.app/UYRRDNWF/C-ordering/menu";
+const MENU_API_ENDPOINT = "https://mylightspeed.app/api/oa/pos/v1/menu";
 const localFileName = "static/menu.json";
 
 const getMenuDiffs = (oldMenu, newMenu) => {
   const diff = [];
 
+  console.log(Object.entries(jsonDiff.diff(oldMenu, newMenu, { full: true })));
+
   Object.entries(jsonDiff.diff(oldMenu, newMenu, { full: true })).forEach(
     ([, val]) => {
-      if (typeof val !== "object") {
+      if (!Array.isArray(val)) {
         return;
       }
 
       val
         .filter((item) => ["+", "-", "~"].includes(item[0]))
         .forEach((item) => {
-          console.log(item);
           diff.push("Difference for Category: " + item[1].name);
 
           item[1].entries
-            .filter((entry) => entry[0] !== " ")
+            .filter((entry) => ["+", "-", "~"].includes(entry[0]))
             .forEach((entry) => {
               const diffType =
                 typeof entry[1].name === "string"
@@ -46,6 +52,24 @@ const getMenuDiffs = (oldMenu, newMenu) => {
   return diff;
 };
 
+const formatMenu = (groups) => {
+  return groups.map((group) => {
+    return {
+      name: group.name,
+      description: group.description,
+      entries: group.entries.map((entry) => {
+        return {
+          name: entry.name,
+          description: entry.description,
+          price: entry.unitPriceCents / 100,
+          imageThumbnail: entry.squareImageUrl,
+          image: entry.rawImageUrl,
+        };
+      }),
+    };
+  });
+};
+
 async function scrap() {
   const browser = await chromium.launch();
   const context = await browser.newContext();
@@ -53,11 +77,9 @@ async function scrap() {
 
   try {
     await page.goto(MENU_URL);
-    const promise = page.waitForResponse(
-      "https://mylightspeed.app/api/oa/pos/v1/menu"
-    ); // This is a regex to match the url
+    const promise = page.waitForResponse(MENU_API_ENDPOINT);
 
-    var response = await promise; // here we wait for the promise to be fullfiled.
+    var response = await promise; // here we wait for the promise to be fulfilled.
     const menu = await response.json();
 
     const menuDiffs = getMenuDiffs(
@@ -73,15 +95,10 @@ async function scrap() {
 
     console.log("Menu Diffs: ", menuDiffs.join("\n"));
 
-    // Write countries array in countries.json file
-    fs.writeFile("static/menu.json", JSON.stringify(menu, null, 2), (err) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      console.log("Successfully written Menu to file");
-    });
+    const formattedMenu = formatMenu(menu.groups);
 
+    // Upload menu.json to GCS
+    await uploadFile(formattedMenu);
     await browser.close();
     return;
   } catch (error) {

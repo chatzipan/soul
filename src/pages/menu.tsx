@@ -3,23 +3,51 @@ import * as S from "../styles/menu.styled";
 import type { HeadFC, PageProps } from "gatsby";
 import React, { createRef, useEffect, useRef, useState } from "react";
 
-import menu from "../../static/menu.json";
 import { useTheme } from "styled-components";
 import { useWindowSize } from "react-use";
 
-const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-const categories = menu.groups
-  .map((group) =>
-    group.name.replace("Homemade", "").replace("Soulfood", "food").trim()
-  )
-  .map(capitalize);
+type MenuEntry = {
+  image: null | string;
+  imageThumbnail: null | string;
+  name: string;
+  price: number;
+};
 
-const MenuPage: React.FC<PageProps> = () => {
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
-  const sectionRefs = useRef(categories.map(() => createRef()));
-  const navItemRefs = useRef(categories.map(() => createRef()));
+type Menu = {
+  name: string;
+  entries: MenuEntry[];
+};
+
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+export async function getServerData() {
+  const res = await fetch(
+    "https://storage.googleapis.com/soulzuerich.ch/menu.json",
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    }
+  );
+
+  const menu = (await res.json()) as Menu[];
+
+  return {
+    props: {
+      menu,
+    },
+  };
+}
+
+const MenuPage: React.FC<PageProps> = ({ serverData }) => {
+  const { menu } = serverData as { menu: Menu[] };
+  const [activeCategory, setActiveCategory] = useState(menu[0].name);
+  const sectionRefs = useRef(menu.map(() => createRef()));
+  const navItemRefs = useRef(menu.map(() => createRef()));
   const { width } = useWindowSize();
   const theme = useTheme();
+  const categories = menu.map((group) => group?.name.trim()).map(capitalize);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -81,13 +109,13 @@ const MenuPage: React.FC<PageProps> = () => {
         <S.HomeLink to='/'>Home</S.HomeLink>
       </S.Sidebar>
       <S.Main>
-        {menu.groups.map((group, i) => (
+        {menu.map((group, i) => (
           // @ts-ignore
           <S.Section ref={sectionRefs.current[i]} key={group.name}>
             {group.entries.map((entry) => (
               <S.Item key={entry.name}>
                 <S.ItemName>{entry.name}</S.ItemName>
-                <S.Price>{(entry.unitPriceCents / 100).toString()}</S.Price>
+                <S.Price>{entry.price.toString()}</S.Price>
               </S.Item>
             ))}
           </S.Section>

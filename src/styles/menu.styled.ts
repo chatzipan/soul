@@ -5,11 +5,11 @@ export const Wrapper = styled.div`
   min-height: 100vh;
   width: 100%;
   display: flex;
-  max-width: 1024px;
+  max-width: 1248px;
   margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    max-width: 80vw;
+    max-width: 90vw;
     flex-direction: column;
   }
 
@@ -92,7 +92,7 @@ export const Sidebar = styled.aside`
 export const Category = styled.h2.withConfig({
   shouldForwardProp: (prop) => !["active"].includes(prop),
 })<{ active: boolean }>`
-  font-size: 3rem;
+  font-size: 1.75rem;
   font-family: "Cabin", sans-serif;
   line-height: 1.5;
   color: ${({ theme, active }) => (active ? theme.colors.primary : "#edd3c5")};

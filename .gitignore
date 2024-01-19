@@ -2,7 +2,7 @@ node_modules/
 .cache/
 public
 src/gatsby-types.d.ts
-
+google_cloud_keys.json
 
 # dotenv environment variables file
 .env
