@@ -40,9 +40,10 @@ export async function getServerData() {
   };
 }
 
-const MenuPage: React.FC<PageProps> = ({ serverData }) => {
-  const { menu } = serverData as { menu: Menu[] };
-  const [activeCategory, setActiveCategory] = useState(menu[0].name);
+const MenuPage: React.FC<PageProps> = ({ serverData = {} }) => {
+  console.log("serverData", serverData);
+  const { menu = [] } = serverData as { menu: Menu[] };
+  const [activeCategory, setActiveCategory] = useState(menu[0]?.name);
   const sectionRefs = useRef(menu.map(() => createRef()));
   const navItemRefs = useRef(menu.map(() => createRef()));
   const { width } = useWindowSize();
