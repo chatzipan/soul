@@ -92,7 +92,7 @@ export const Sidebar = styled.aside`
 export const Category = styled.h2.withConfig({
   shouldForwardProp: (prop) => !["active"].includes(prop),
 })<{ active: boolean }>`
-  font-size: 3rem;
+  font-size: 1.75rem;
   font-family: "Cabin", sans-serif;
   line-height: 1.5;
   color: ${({ theme, active }) => (active ? theme.colors.primary : "#edd3c5")};

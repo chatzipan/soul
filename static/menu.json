@@ -1,1033 +1,443 @@
-{
-  "identifier": "981511696286294",
-  "name": "Food Menu (QR-Code)",
-  "groups": [
-    {
-      "type": "menuGroup",
-      "name": "Homemade Soulfood",
-      "entries": [
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Greek yogurt with homemade granola, honey & fruits",
-          "unitPriceCents": 1800,
-          "sku": "81",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Daily Soup",
-          "unitPriceCents": 1500,
-          "sku": "80",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Potato salad with a poached egg and local sausage",
-          "unitPriceCents": 2100,
-          "sku": "75",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Egg Benedict",
-          "unitPriceCents": 2500,
-          "sku": "79",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Tabbouleh-Salad with Falafel & Humus",
-          "unitPriceCents": 2400,
-          "sku": "66",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Tabbouleh-Salad with Chicken & Fetacrème",
-          "unitPriceCents": 2600,
-          "sku": "65",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Pastrami-Sando with a green salad",
-          "unitPriceCents": 2600,
-          "sku": "24",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Pulled beef burger with a small potato salad",
-          "unitPriceCents": 2600,
-          "sku": "74",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        }
-      ]
-    },
-    {
-      "type": "menuGroup",
-      "name": "Homemade sweet Pastries",
-      "entries": [
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Cardamom Bun",
-          "unitPriceCents": 700,
-          "sku": "52",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Choco Babka",
-          "unitPriceCents": 700,
-          "sku": "53",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Cinnamon Roll",
-          "unitPriceCents": 700,
-          "sku": "51",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Almond Bun",
-          "unitPriceCents": 700,
-          "sku": "58",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Carrotcake",
-          "unitPriceCents": 800,
-          "sku": "54",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Matcha Choco Roll",
-          "unitPriceCents": 800,
-          "sku": "71",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Paris Brest",
-          "unitPriceCents": 1000,
-          "sku": "59",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Tiramisu",
-          "unitPriceCents": 1000,
-          "sku": "61",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        }
-      ]
-    },
-    {
-      "type": "menuGroup",
-      "name": "Homemade savory Pastries",
-      "entries": [
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Mushroom Pie",
-          "unitPriceCents": 1400,
-          "sku": "70",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Chicken Pie",
-          "unitPriceCents": 1500,
-          "sku": "69",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Spinach Pie (vegan)",
-          "unitPriceCents": 1300,
-          "sku": "63",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Spinach Pie (Feta Cream)",
-          "unitPriceCents": 1400,
-          "sku": "64",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Focaccia Pesto Roll (vegetarian)",
-          "unitPriceCents": 1300,
-          "sku": "62",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        }
-      ]
-    },
-    {
-      "type": "menuGroup",
-      "name": "Sparkling Wine",
-      "entries": [
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Anne Claire Schott, Pét-Nat Rosé 2021 - Glass (1dl)",
-          "unitPriceCents": 1800,
-          "sku": "37",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Anne Claire Schott, Pét-Nat Rosé 2021 - Bottle (7,5dl)",
-          "unitPriceCents": 12000,
-          "sku": "38",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Alexis Totem - Glass (1dl)",
-          "unitPriceCents": 2000,
-          "sku": "39",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Alexis, Totem - Bottle (7,5dl)",
-          "unitPriceCents": 13000,
-          "sku": "40",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        }
-      ]
-    },
-    {
-      "type": "menuGroup",
-      "name": "White wine",
-      "entries": [
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Wittmann, Riesling vom Kalkstein 2021 - Glass (1dl)",
-          "unitPriceCents": 1100,
-          "sku": "43",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Wittmann, Riesling vom Kalkstein 2021 - Bottle (7,5dl)",
-          "unitPriceCents": 7000,
-          "sku": "44",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Riffault, Sancerre Auksinis Maceration Longue 2018 - Glass (1dl)",
-          "unitPriceCents": 1500,
-          "sku": "34",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Riffault, Sancerre Auksinis Maceration Longue 2018 - Bottle (7,5dl)",
-          "unitPriceCents": 10000,
-          "sku": "36",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Hirtzberger, Gründer Veltiner Federspiel Rotes Tor 2021 - Glass (1dl)",
-          "unitPriceCents": 1800,
-          "sku": "41",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Hirtzberger, Gründer Veltiner Federspiel Rotes Tor 2021 - Bottle (7,5dl)",
-          "unitPriceCents": 12000,
-          "sku": "42",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        }
-      ]
-    },
-    {
-      "type": "menuGroup",
-      "name": "Red Wine",
-      "entries": [
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Moric, Blaufränkisch Reserve 2018 - Glass (1dl)",
-          "unitPriceCents": 1200,
-          "sku": "33",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Moric, Blaufränkisch Reserve 2018 - Bottle (7,5dl)",
-          "unitPriceCents": 8000,
-          "sku": "35",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Ridge, East Bench Zinfandel 2019 - Glass (1dl)",
-          "unitPriceCents": 1500,
-          "sku": "47",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Ridge, East Bench Zinfandel 2019 - Bottle (7,5dl)",
-          "unitPriceCents": 10000,
-          "sku": "48",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Paitin, Barbaresco Serraboella 2020 - Glass (1dl)",
-          "unitPriceCents": 2000,
-          "sku": "45",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Paitin, Barbaresco Serraboella 2020 - Bottle (7,5dl)",
-          "unitPriceCents": 13000,
-          "sku": "46",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        }
-      ]
-    },
-    {
-      "type": "menuGroup",
-      "name": "Coffee",
-      "entries": [
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Espresso",
-          "unitPriceCents": 550,
-          "sku": "10",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Coffee type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Brazil",
-                  "identifier": "981511696286233",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Ethiopia",
-                  "identifier": "981511696286235",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Espresso Machiato",
-          "unitPriceCents": 650,
-          "sku": "14",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Coffee type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Brazil",
-                  "identifier": "981511696286233",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Ethiopia",
-                  "identifier": "981511696286235",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            },
-            {
-              "id": null,
-              "name": "Milk Type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 3,
-                  "modifierGroupId": null,
-                  "name": "Regular Milk",
-                  "identifier": "981511696286318",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 4,
-                  "modifierGroupId": null,
-                  "name": "Vegan Milk",
-                  "identifier": "981511696286320",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Double Espresso",
-          "unitPriceCents": 700,
-          "sku": "11",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Coffee type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Brazil",
-                  "identifier": "981511696286233",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Ethiopia",
-                  "identifier": "981511696286235",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Double Espresso Machiato",
-          "unitPriceCents": 750,
-          "sku": "29",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Coffee type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Brazil",
-                  "identifier": "981511696286233",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Ethiopia",
-                  "identifier": "981511696286235",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            },
-            {
-              "id": null,
-              "name": "Milk Type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 3,
-                  "modifierGroupId": null,
-                  "name": "Regular Milk",
-                  "identifier": "981511696286318",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 4,
-                  "modifierGroupId": null,
-                  "name": "Vegan Milk",
-                  "identifier": "981511696286320",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Americano",
-          "unitPriceCents": 700,
-          "sku": "15",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Coffee type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Brazil",
-                  "identifier": "981511696286233",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Ethiopia",
-                  "identifier": "981511696286235",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Cappuccino",
-          "unitPriceCents": 700,
-          "sku": "16",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Coffee type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Brazil",
-                  "identifier": "981511696286233",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Ethiopia",
-                  "identifier": "981511696286235",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            },
-            {
-              "id": null,
-              "name": "Milk Type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 3,
-                  "modifierGroupId": null,
-                  "name": "Regular Milk",
-                  "identifier": "981511696286318",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 4,
-                  "modifierGroupId": null,
-                  "name": "Vegan Milk",
-                  "identifier": "981511696286320",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Flat White",
-          "unitPriceCents": 750,
-          "sku": "17",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Coffee type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Brazil",
-                  "identifier": "981511696286233",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Ethiopia",
-                  "identifier": "981511696286235",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            },
-            {
-              "id": null,
-              "name": "Milk Type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 3,
-                  "modifierGroupId": null,
-                  "name": "Regular Milk",
-                  "identifier": "981511696286318",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 4,
-                  "modifierGroupId": null,
-                  "name": "Vegan Milk",
-                  "identifier": "981511696286320",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Latte",
-          "unitPriceCents": 800,
-          "sku": "82",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Coffee type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Brazil",
-                  "identifier": "981511696286233",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Ethiopia",
-                  "identifier": "981511696286235",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            },
-            {
-              "id": null,
-              "name": "Milk Type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 3,
-                  "modifierGroupId": null,
-                  "name": "Regular Milk",
-                  "identifier": "981511696286318",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 4,
-                  "modifierGroupId": null,
-                  "name": "Vegan Milk",
-                  "identifier": "981511696286320",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Filter Coffee - Kenya, washed",
-          "unitPriceCents": 800,
-          "sku": "67",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Special filter coffee",
-          "unitPriceCents": 1500,
-          "sku": "22",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Matcha Latte",
-          "unitPriceCents": 900,
-          "sku": "31",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Milk Type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Regular Milk",
-                  "identifier": "981511696286318",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Vegan Milk",
-                  "identifier": "981511696286320",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Hot Chocolate",
-          "unitPriceCents": 800,
-          "sku": "68",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": [
-            {
-              "id": null,
-              "name": "Milk Type",
-              "multiSelectionPermitted": true,
-              "instructions": [
-                {
-                  "sid": 1,
-                  "modifierGroupId": null,
-                  "name": "Regular Milk",
-                  "identifier": "981511696286318",
-                  "unitPriceCents": 0
-                },
-                {
-                  "sid": 2,
-                  "modifierGroupId": null,
-                  "name": "Vegan Milk",
-                  "identifier": "981511696286320",
-                  "unitPriceCents": 0
-                }
-              ],
-              "maxSelectedAmount": null,
-              "minSelectedAmount": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "menuGroup",
-      "name": "Tea",
-      "entries": [
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Bio Long Cui Lu",
-          "unitPriceCents": 850,
-          "sku": "20",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Honey Oolong",
-          "unitPriceCents": 850,
-          "sku": "18",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        },
-        {
-          "type": "menuItem",
-          "sid": 0,
-          "name": "Milky Oolong",
-          "unitPriceCents": 850,
-          "sku": "19",
-          "squareImageUrl": null,
-          "rawImageUrl": null,
-          "texts": [],
-          "allergenCodes": [],
-          "productionInstructions": []
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "name": "Brunch Menu (09:00 - 15:00)",
+    "entries": [
+      {
+        "name": "French Toast Crème Brûlée",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Greek yogurt with homemade granola, honey & fruits",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Sweet potato with pico de gallo & romesco",
+        "price": 22,
+        "imageThumbnail": null,
+        "image": null
+      },
+      { "name": "Saksuka", "price": 22, "imageThumbnail": null, "image": null },
+      {
+        "name": "Egg Benedict",
+        "price": 25,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Egg Royale",
+        "price": 26,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pastrami-Sando with a green salad",
+        "price": 26,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Potato salad with a poached egg and local sausage",
+        "price": 21,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Tabbouleh-Salad with falafel & humus",
+        "price": 24,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Tabbouleh-Salad with chicken & fetacrème",
+        "price": 26,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Evening Menu (18:00 - 21:00)",
+    "entries": [
+      {
+        "name": "Potato salad with a poached egg and local sausage",
+        "price": 21,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Bread with diverse dips",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Beef Tataki with celery scallops and a potato, lime, leek mousse",
+        "price": 23,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Beef Carpaccio with rucola and truffle oil",
+        "price": 24,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Tabbouleh-Salad with falafel & humus",
+        "price": 24,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Tabbouleh-Salad with chicken & fetacrème",
+        "price": 26,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pastrami-Sando with a green salad",
+        "price": 26,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pulled beef burger with a small potato salad",
+        "price": 26,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Bruschetta - Chef's choice",
+        "price": 15,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Coffee",
+    "entries": [
+      {
+        "name": "Espresso",
+        "price": 5.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Espresso Machiato",
+        "price": 6.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Double Espresso",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Double Espresso Machiato",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Americano",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cappuccino",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Flat White",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      { "name": "Latte", "price": 8, "imageThumbnail": null, "image": null },
+      {
+        "name": "Filter Coffee",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Special filter coffee",
+        "price": 15,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Matcha Latte",
+    "entries": [
+      {
+        "name": "Matcha Latte",
+        "price": 9,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Hot Chocolate",
+    "entries": [
+      {
+        "name": "Hot Chocolate",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Tea",
+    "entries": [
+      {
+        "name": "Bio Long Cui Lu",
+        "price": 8.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Honey Oolong",
+        "price": 8.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Milky Oolong",
+        "price": 8.5,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Cold beverage",
+    "entries": [
+      {
+        "name": "Still water 5dl",
+        "price": 5.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Still water 1l",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Sparkling water 5dl",
+        "price": 5.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Sparkling water 1l",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Hibiscus/Fruit limo",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Ginger/Lemon limo",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Beer",
+    "entries": [
+      {
+        "name": "Una más 5% - 44cl",
+        "price": 9,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Rainbow IPA 6% - 44cl",
+        "price": 10,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Zeer nonalcoholic IPA 0.3% - 33cl",
+        "price": 10,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Sparkling Wine",
+    "entries": [
+      {
+        "name": "Anne Claire Schott, Pét-Nat Rosé 2021 - Glass (1dl)",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Anne Claire Schott, Pét-Nat Rosé 2021 - Bottle (7,5dl)",
+        "price": 120,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Alexis Totem - Glass (1dl)",
+        "price": 20,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Alexis, Totem - Bottle (7,5dl)",
+        "price": 130,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "White wine",
+    "entries": [
+      {
+        "name": "Wittmann, Riesling vom Kalkstein 2021 - Glass (1dl)",
+        "price": 11,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Wittmann, Riesling vom Kalkstein 2021 - Bottle (7,5dl)",
+        "price": 70,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Riffault, Sancerre Auksinis Maceration Longue 2018 - Glass (1dl)",
+        "price": 15,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Riffault, Sancerre Auksinis Maceration Longue 2018 - Bottle (7,5dl)",
+        "price": 100,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Hirtzberger, Gründer Veltiner Federspiel Rotes Tor 2021 - Glass (1dl)",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Hirtzberger, Gründer Veltiner Federspiel Rotes Tor 2021 - Bottle (7,5dl)",
+        "price": 120,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Red wine",
+    "entries": [
+      {
+        "name": "Moric, Blaufränkisch Reserve 2018 - Glass (1dl)",
+        "price": 12,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Moric, Blaufränkisch Reserve 2018 - Bottle (7,5dl)",
+        "price": 80,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Ridge, East Bench Zinfandel 2019 - Glass (1dl)",
+        "price": 15,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Ridge, East Bench Zinfandel 2019 - Bottle (7,5dl)",
+        "price": 100,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Paitin, Barbaresco Serraboella 2020 - Glass (1dl)",
+        "price": 20,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Paitin, Barbaresco Serraboella 2020 - Bottle (7,5dl)",
+        "price": 130,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Homemade Pastries",
+    "entries": [
+      {
+        "name": "Choco Babka",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cardamom Bun",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cinnamon Roll",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Carrotcake",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cheesecake",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Paris Brest",
+        "price": 10,
+        "imageThumbnail": null,
+        "image": null
+      },
+      { "name": "Tiramisu", "price": 10, "imageThumbnail": null, "image": null }
+    ]
+  }
+]

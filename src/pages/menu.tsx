@@ -8,7 +8,7 @@ import { useTheme } from "styled-components";
 import { useWindowSize } from "react-use";
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-const categories = menu.groups
+const categories = menu
   .map((group) =>
     group.name.replace("Homemade", "").replace("Soulfood", "food").trim()
   )
@@ -81,13 +81,13 @@ const MenuPage: React.FC<PageProps> = () => {
         <S.HomeLink to='/'>Home</S.HomeLink>
       </S.Sidebar>
       <S.Main>
-        {menu.groups.map((group, i) => (
+        {menu.map((group, i) => (
           // @ts-ignore
           <S.Section ref={sectionRefs.current[i]} key={group.name}>
             {group.entries.map((entry) => (
               <S.Item key={entry.name}>
                 <S.ItemName>{entry.name}</S.ItemName>
-                <S.Price>{(entry.unitPriceCents / 100).toString()}</S.Price>
+                <S.Price>{entry.price.toString()}</S.Price>
               </S.Item>
             ))}
           </S.Section>
