@@ -8,11 +8,7 @@ import { useTheme } from "styled-components";
 import { useWindowSize } from "react-use";
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-const categories = menu
-  .map((group) =>
-    group.name.replace("Homemade", "").replace("Soulfood", "food").trim()
-  )
-  .map(capitalize);
+const categories = menu.map((group) => group.name).map(capitalize);
 
 const MenuPage: React.FC<PageProps> = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
