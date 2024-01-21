@@ -119,6 +119,77 @@
     ]
   },
   {
+    "name": "Homemade Pastries (All Day)",
+    "entries": [
+      {
+        "name": "Choco Babka",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cardamom Bun",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cinnamon Roll",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cheesecake",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Carrotcake",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Paris Brest",
+        "price": 10,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Tiramisu",
+        "price": 10,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Focaccia Pesto Roll",
+        "price": 13,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Mushroom Pie",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Spinach Pie",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Chicken Pie",
+        "price": 15,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
     "name": "Coffee",
     "entries": [
       {
@@ -179,30 +250,20 @@
     ]
   },
   {
-    "name": "Matcha Latte",
+    "name": "Hot beverage",
     "entries": [
       {
         "name": "Matcha Latte",
         "price": 9,
         "imageThumbnail": null,
         "image": null
-      }
-    ]
-  },
-  {
-    "name": "Hot Chocolate",
-    "entries": [
+      },
       {
         "name": "Hot Chocolate",
         "price": 8,
         "imageThumbnail": null,
         "image": null
-      }
-    ]
-  },
-  {
-    "name": "Tea",
-    "entries": [
+      },
       {
         "name": "Bio Long Cui Lu",
         "price": 8.5,
@@ -227,25 +288,25 @@
     "name": "Cold beverage",
     "entries": [
       {
-        "name": "Still water 5dl",
+        "name": "Still Water 5dl",
         "price": 5.5,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Still water 1l",
+        "name": "Still Water 1l",
         "price": 7,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Sparkling water 5dl",
+        "name": "Sparkling Water 5dl",
         "price": 5.5,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Sparkling water 1l",
+        "name": "Sparkling Water 1l",
         "price": 7,
         "imageThumbnail": null,
         "image": null
@@ -396,48 +457,6 @@
         "imageThumbnail": null,
         "image": null
       }
-    ]
-  },
-  {
-    "name": "Homemade Pastries",
-    "entries": [
-      {
-        "name": "Choco Babka",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Cardamom Bun",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Cinnamon Roll",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Carrotcake",
-        "price": 8,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Cheesecake",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Paris Brest",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      { "name": "Tiramisu", "price": 10, "imageThumbnail": null, "image": null }
     ]
   }
 ]

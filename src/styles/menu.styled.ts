@@ -156,7 +156,7 @@ export const Item = styled.p`
   gap: 1rem;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
 
   &:last-child {
     border-bottom: none;
