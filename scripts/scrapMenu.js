@@ -13,8 +13,6 @@ const localFileName = "static/menu.json";
 const getMenuDiffs = (oldMenu, newMenu) => {
   const diff = [];
 
-  console.log(Object.entries(jsonDiff.diff(oldMenu, newMenu, { full: true })));
-
   Object.entries(jsonDiff.diff(oldMenu, newMenu, { full: true })).forEach(
     ([, val]) => {
       if (!Array.isArray(val)) {
@@ -24,6 +22,10 @@ const getMenuDiffs = (oldMenu, newMenu) => {
       val
         .filter((item) => ["+", "-", "~"].includes(item[0]))
         .forEach((item) => {
+          if (!item[1]) {
+            return;
+          }
+
           diff.push("Difference for Category: " + item[1].name);
 
           item[1].entries
@@ -83,7 +85,7 @@ async function scrap() {
     const menu = await response.json();
 
     const menuDiffs = getMenuDiffs(
-      menu,
+      menu.groups,
       JSON.parse(fs.readFileSync(localFileName, "utf8"))
     );
 
