@@ -11,7 +11,7 @@ const Wine = () => {
           Soul’s wine cellar is a carefully curated collection of wines,
           selected from around the world
         </S.Description>
-        <S.WineTitle>Wine</S.WineTitle>
+        <S.Title>Wine</S.Title>
       </S.Heading>
       <S.ImageOuterWrapper>
         <S.ImageWrapper>

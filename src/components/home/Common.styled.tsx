@@ -50,15 +50,6 @@ export const Title = styled.p`
   margin: 0;
 `;
 
-export const WineTitle = styled.p`
-  font-size: 3rem;
-  font-family: "Cabin", sans-serif;
-  line-height: 1.5;
-  color: ${({ theme }) => theme.colors.secondary};
-  flex-shrink: 0;
-  margin: 0;
-`;
-
 export const Description = styled.p.withConfig({
   shouldForwardProp: (prop) => !["full"].includes(prop),
 })<{ full?: boolean }>`
