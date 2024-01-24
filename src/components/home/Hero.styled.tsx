@@ -82,12 +82,12 @@ export const Link = styled(GatsbyLink)`
   text-decoration: none;
 `;
 
-export const Image = styled.img`
+export const ImageWrapper = styled.div`
   width: 50%;
-  object-fit: cover;
   z-index: 1;
   flex-shrink: 0;
   border-radius: 0.5rem;
+  overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     width: 100%;

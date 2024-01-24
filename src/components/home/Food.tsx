@@ -1,13 +1,7 @@
 import * as React from "react";
 import * as S from "./Common.styled";
 
-import egg from "../../images/egg.jpeg";
-import granola from "../../images/granola.jpeg";
-import paris_brest from "../../images/paris_brest.jpg";
-import sando_salad from "../../images/sando_salad.jpg";
-import spinach_roll from "../../images/spinat_roll.jpg";
-import tapas from "../../images/tapas_2.jpg";
-import tapas2 from "../../images/tapas_3.jpg";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Food = () => {
   return (
@@ -16,14 +10,22 @@ const Food = () => {
         <S.Title>Food</S.Title>
         <S.Description>From fresh backed pastries and sweets...</S.Description>
       </S.Heading>
-      <S.ImageWrapper>
-        <S.FoodImage
-          loading='lazy'
-          src={spinach_roll}
-          alt='Spinach roll with a feta cheese cream'
-        />
-        <S.FoodImage loading='lazy' src={paris_brest} alt='Paris Brest' />
-      </S.ImageWrapper>
+      <S.ImageOuterWrapper>
+        <S.FoodImageWrapper>
+          <StaticImage
+            src='../../images/spinat_roll.jpg'
+            alt='Spinach roll with a feta cheese cream'
+            transformOptions={{ fit: "fill" }}
+          />
+        </S.FoodImageWrapper>
+        <S.FoodImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/paris_brest.jpg'
+            alt='Paris Brest'
+          />
+        </S.FoodImageWrapper>
+      </S.ImageOuterWrapper>
       <br />
       <br />
       <br />
@@ -33,23 +35,29 @@ const Food = () => {
           ... to savory sandwiches, and brunch options ...
         </S.Description>
       </S.Heading>
-      <S.ImageWrapper>
-        <S.Image
-          loading='lazy'
-          src={egg}
-          alt='A picture of a plate with a fried egg, a slice of bread, and a salad'
-        />
-        <S.Image
-          loading='lazy'
-          src={granola}
-          alt='A picture of a bowl of granola with a spoon'
-        />
-        <S.Image
-          loading='lazy'
-          src={sando_salad}
-          alt='A picture of a pastrami sandwich with a salad'
-        />
-      </S.ImageWrapper>
+      <S.ImageOuterWrapper>
+        <S.ImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/egg.jpeg'
+            alt='A picture of a plate with a fried egg, a slice of bread, and a salad'
+          />
+        </S.ImageWrapper>
+        <S.ImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/granola.jpeg'
+            alt='A picture of a bowl of granola with a spoon'
+          />
+        </S.ImageWrapper>
+        <S.ImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/sando_salad.jpg'
+            alt='A picture of a pastrami sandwich with a salad'
+          />
+        </S.ImageWrapper>
+      </S.ImageOuterWrapper>
       <br />
       <br />
       <br />
@@ -60,18 +68,22 @@ const Food = () => {
           ... to small plates to accompany your wine
         </S.Description>
       </S.Heading>
-      <S.ImageWrapper>
-        <S.FoodImage
-          loading='lazy'
-          src={tapas}
-          alt='A picture of a plate with a variety of tapas'
-        />
-        <S.FoodImage
-          loading='lazy'
-          src={tapas2}
-          alt='A picture of a plate with a variety of tapas'
-        />
-      </S.ImageWrapper>
+      <S.ImageOuterWrapper>
+        <S.FoodImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/dinner_options.jpeg'
+            alt='A picture of a plate with a variety of tapas'
+          />
+        </S.FoodImageWrapper>
+        <S.FoodImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/tataki.jpeg'
+            alt='A picture of a plate with a variety of tapas'
+          />
+        </S.FoodImageWrapper>
+      </S.ImageOuterWrapper>
     </S.FoodWrapper>
   );
 };

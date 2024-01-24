@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as S from "./Hero.styled";
 
-import inside from "../../images/inside_2.jpg";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Contact = () => {
   return (
@@ -47,11 +47,13 @@ const Contact = () => {
           <span> Closed</span>
         </S.Hours>
       </S.InnerWrapper>
-      <S.Image
-        src={inside}
-        loading='lazy'
-        alt='A picture of the inside of the restaurant'
-      />
+      <S.ImageWrapper>
+        <StaticImage
+          src='../../images/inside_2.jpg'
+          alt='A picture of the inside of the restaurant'
+          style={{ height: "100%" }}
+        />
+      </S.ImageWrapper>
     </S.Wrapper>
   );
 };

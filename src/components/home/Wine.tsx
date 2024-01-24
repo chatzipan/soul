@@ -1,9 +1,7 @@
 import * as React from "react";
 import * as S from "./Common.styled";
 
-import wine_2 from "../../images/wine_2.jpg";
-import wine_list from "../../images/wine_list.jpg";
-import wines from "../../images/wines.jpeg";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Wine = () => {
   return (
@@ -15,23 +13,30 @@ const Wine = () => {
         </S.Description>
         <S.WineTitle>Wine</S.WineTitle>
       </S.Heading>
-      <S.ImageWrapper>
-        <S.Image
-          loading='lazy'
-          src={wines}
-          alt='A picture of the wine collection in the restaurant'
-        />
-        <S.Image
-          loading='lazy'
-          src={wine_2}
-          alt='A picture of a glass of wine'
-        />
-        <S.Image
-          loading='lazy'
-          src={wine_list}
-          alt='A picture of the wine list'
-        />
-      </S.ImageWrapper>
+      <S.ImageOuterWrapper>
+        <S.ImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/wines.jpeg'
+            alt='A picture of the wine collection in the restaurant'
+            transformOptions={{ fit: "fill" }}
+          />
+        </S.ImageWrapper>
+        <S.ImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/wine_2.jpg'
+            alt='A picture of a glass of wine'
+          />
+        </S.ImageWrapper>
+        <S.ImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/wine_list.jpg'
+            alt='A picture of the wine list'
+          />
+        </S.ImageWrapper>
+      </S.ImageOuterWrapper>
     </S.WineWrapper>
   );
 };
