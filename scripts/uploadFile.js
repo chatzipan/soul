@@ -16,7 +16,10 @@ async function uploadFile(data) {
   const contents = JSON.stringify(data);
   console.log("Uploading menu.json to GCS...");
 
-  await file.save(contents);
+  await file.save(contents, {
+    metadata: { contentType: "application/json", cacheControl: "no-cache" },
+  });
+
   await bucket.file(destFileName).makePublic();
   return;
 }
