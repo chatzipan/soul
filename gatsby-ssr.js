@@ -37,5 +37,10 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       crossoriginn='anonymous'
       key='adriannaFont'
     />,
+    <meta
+      name='description'
+      key='4'
+      content='Experience the essence of Zurich at Soul Café – a cozy retreat for coffee aficionados and food lovers. Indulge in our aromatic specialty coffees, homemade pastries, and an exquisite selection of local wines. Nestled in the heart of the city, Soul is your destination for memorable flavors and vibrant community gatherings. Join us for a taste of local charm.'
+    />,
   ]);
 };
