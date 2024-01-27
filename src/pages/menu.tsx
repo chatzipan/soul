@@ -47,7 +47,6 @@ export const getServerData = async () => {
 };
 
 const MenuPage: React.FC<PageProps> = ({ serverData = {} }) => {
-  console.log("serverData", serverData);
   const { menu = [] } = serverData as { menu: Menu[] };
   const [activeCategory, setActiveCategory] = useState(menu[0]?.name);
   const sectionRefs = useRef(menu.map(() => createRef()));
@@ -55,7 +54,6 @@ const MenuPage: React.FC<PageProps> = ({ serverData = {} }) => {
   const { width } = useWindowSize();
   const theme = useTheme();
   const categories = menu.map((group) => group?.name.trim()).map(capitalize);
-  console.log("menu", menu);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -120,12 +118,15 @@ const MenuPage: React.FC<PageProps> = ({ serverData = {} }) => {
         {menu.map((group, i) => (
           // @ts-ignore
           <S.Section ref={sectionRefs.current[i]} key={group.name}>
-            {group.entries.map((entry) => (
-              <S.Item key={entry.name}>
-                <S.ItemName>{entry.name}</S.ItemName>
-                <S.Price>{entry.price.toString()}</S.Price>
-              </S.Item>
-            ))}
+            <S.SectionTitle>{group.name}</S.SectionTitle>
+            {group.entries
+              .sort((a, b) => (a.price > b.price ? 1 : -1))
+              .map((entry) => (
+                <S.Item key={entry.name}>
+                  <S.ItemName>{entry.name}</S.ItemName>
+                  <S.Price>{entry.price.toString()}</S.Price>
+                </S.Item>
+              ))}
           </S.Section>
         ))}
         <S.ScrollToTop

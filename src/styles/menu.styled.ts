@@ -28,6 +28,7 @@ export const Wrapper = styled.div`
 
     @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
       top: -250%;
+      display: none;
     }
   }
 `;
@@ -89,7 +90,7 @@ export const Sidebar = styled.aside`
   }
 `;
 
-export const Category = styled.h2.withConfig({
+export const Category = styled.h3.withConfig({
   shouldForwardProp: (prop) => !["active"].includes(prop),
 })<{ active: boolean }>`
   font-size: 1.75rem;
@@ -102,7 +103,6 @@ export const Category = styled.h2.withConfig({
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
     display: inline-block;
     font-size: 1.5rem;
-    text-transform: uppercase;
   }
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
@@ -113,6 +113,22 @@ export const Category = styled.h2.withConfig({
       font-weight: 100;
       margin-left: 1rem;
     }
+  }
+`;
+
+export const SectionTitle = styled.h4`
+  font-size: 2rem;
+  font-family: "Cabin", sans-serif;
+  line-height: 1.5;
+  color: ${({ theme }) => theme.colors.primary};
+  margin: 0;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+    display: block;
   }
 `;
 
@@ -132,8 +148,7 @@ export const Main = styled.div`
 `;
 
 export const Section = styled.section`
-  padding: 2rem 0;
-  border-bottom: 4px solid ${({ theme }) => theme.colors.primary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
 
   &:first-child {
     padding-top: 0;
@@ -146,17 +161,23 @@ export const Section = styled.section`
   &:last-of-type {
     border-bottom: none;
   }
+
+  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
+    border-bottom: none;
+    margin-bottom: 2rem;
+  }
 `;
 
 export const Item = styled.p`
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   display: flex;
   gap: 1rem;
   justify-content: space-between;
   align-items: flex-start;
   padding: 2rem 1.5rem;
+  text-transform: uppercase;
 
   &:last-child {
     border-bottom: none;
@@ -169,5 +190,5 @@ export const ItemName = styled.span`
 `;
 
 export const Price = styled.span`
-  margin-top: 9px;
+  margin-top: 5px;
 `;
