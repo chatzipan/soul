@@ -34,11 +34,9 @@ export const getServerData = async () => {
       }
     );
 
-    const menu = (await res.json()) as Menu[];
-
     return {
       props: {
-        menu,
+        menu: await res.json(),
       },
     };
   } catch (error) {
