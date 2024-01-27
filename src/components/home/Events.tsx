@@ -1,8 +1,7 @@
 import * as React from "react";
 import * as S from "./Common.styled";
 
-import events from "../../images/events.jpg";
-import events_2 from "../../images/events_2.jpg";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Events = () => {
   return (
@@ -18,18 +17,23 @@ const Events = () => {
         </S.Description>
         <S.Title>Events</S.Title>
       </S.Heading>
-      <S.ImageWrapper>
-        <S.FoodImage
-          loading='lazy'
-          src={events}
-          alt='A picture of our chef preparing food in the kitchen'
-        />
-        <S.FoodImage
-          loading='lazy'
-          src={events_2}
-          alt='A picture of our chef preparing food for an event'
-        />
-      </S.ImageWrapper>
+      <S.ImageOuterWrapper>
+        <S.FoodImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/events.jpg'
+            alt='A picture of our chef preparing food in the kitchen'
+            transformOptions={{ fit: "fill" }}
+          />
+        </S.FoodImageWrapper>
+        <S.FoodImageWrapper>
+          <StaticImage
+            aspectRatio={1 / 1}
+            src='../../images/events_2.jpg'
+            alt='A picture of our chef preparing food for an event'
+          />
+        </S.FoodImageWrapper>
+      </S.ImageOuterWrapper>
     </S.EventWrapper>
   );
 };

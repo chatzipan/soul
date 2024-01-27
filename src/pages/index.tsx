@@ -6,15 +6,15 @@ import type { HeadFC, PageProps } from "gatsby";
 import Contact from "../components/home/Contact";
 import Events from "../components/home/Events";
 import Food from "../components/home/Food";
-import FoodSection from "../components/home/Location";
 import Hero from "../components/home/Hero";
+import Location from "../components/home/Location";
 import Wine from "../components/home/Wine";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <S.Wrapper>
       <Hero />
-      <FoodSection />
+      <Location />
       <Wine />
       <Food />
       <Events />

@@ -50,15 +50,6 @@ export const Title = styled.p`
   margin: 0;
 `;
 
-export const WineTitle = styled.p`
-  font-size: 3rem;
-  font-family: "Cabin", sans-serif;
-  line-height: 1.5;
-  color: ${({ theme }) => theme.colors.secondary};
-  flex-shrink: 0;
-  margin: 0;
-`;
-
 export const Description = styled.p.withConfig({
   shouldForwardProp: (prop) => !["full"].includes(prop),
 })<{ full?: boolean }>`
@@ -74,7 +65,7 @@ export const Description = styled.p.withConfig({
   }
 `;
 
-export const ImageWrapper = styled.section`
+export const ImageOuterWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -85,11 +76,11 @@ export const ImageWrapper = styled.section`
   }
 `;
 
-export const Image = styled.img`
-  object-fit: cover;
+export const ImageWrapper = styled.div`
   width: calc(100% / 3 - 2rem);
   aspect-ratio: 1/1;
   border-radius: 0.5rem;
+  overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {
     width: calc(100% / 2 - 2rem);
@@ -100,11 +91,11 @@ export const Image = styled.img`
   }
 `;
 
-export const FoodImage = styled.img`
-  object-fit: cover;
+export const FoodImageWrapper = styled.div`
   width: calc(40%);
   aspect-ratio: 1/1;
   border-radius: 0.5rem;
+  overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {
     width: calc(100% / 2 - 2rem);

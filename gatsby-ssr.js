@@ -16,6 +16,7 @@ exports.wrapRootElement = ({ element }) => {
 
 exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
+    <html key='0' lang='en' />,
     <link key='1' rel='preconnect' href='https://fonts.googleapis.com' />,
     <link
       key='2'
@@ -27,6 +28,8 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       key='3'
       href='https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&display=swap'
       rel='stylesheet'
+      async
+      defer
     />,
     <link
       rel='preload'
@@ -35,6 +38,11 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       type='font/woff2'
       crossoriginn='anonymous'
       key='adriannaFont'
+    />,
+    <meta
+      name='description'
+      key='4'
+      content='Experience the essence of Zurich at Soul Café – a cozy retreat for coffee aficionados and food lovers. Indulge in our aromatic specialty coffees, homemade pastries, and an exquisite selection of local wines. Nestled in the heart of the city, Soul is your destination for memorable flavors and vibrant community gatherings. Join us for a taste of local charm.'
     />,
   ]);
 };
