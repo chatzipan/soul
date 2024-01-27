@@ -28,6 +28,8 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       key='3'
       href='https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&display=swap'
       rel='stylesheet'
+      async
+      defer
     />,
     <link
       rel='preload'
