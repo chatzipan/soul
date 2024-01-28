@@ -171,7 +171,7 @@ export const Section = styled.section`
 export const Item = styled.p`
   margin: 0;
   font-size: 1.2rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
   display: flex;
   gap: 1rem;
   justify-content: space-between;

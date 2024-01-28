@@ -20,32 +20,53 @@ type Menu = {
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-export const getServerData = async () => {
-  console.log("! getServerData");
+// export const getServerData = async () => {
+//   try {
+//     const res = await fetch(
+//       "https://storage.googleapis.com/soulzuerich.ch/menu.json",
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//           Accept: "application/json",
+//         },
+//       }
+//     );
 
-  try {
-    const res = await fetch(
-      "https://storage.googleapis.com/soulzuerich.ch/menu.json",
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      }
-    );
+//     return {
+//       props: {
+//         menu: await res.json(),
+//       },
+//     };
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
-    return {
-      props: {
-        menu: await res.json(),
-      },
-    };
-  } catch (error) {
-    console.error(error);
-  }
+const MenuPage: React.FC<PageProps> = ({}) => {
+  const [menu, setMenu] = useState<Menu[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(
+        "https://storage.googleapis.com/soulzuerich.ch/menu.json",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
+
+      setMenu(await res.json());
+    })();
+  }, []);
+
+  if (!menu.length) return null;
+
+  return <MenuPageComponent menu={menu} />;
 };
 
-const MenuPage: React.FC<PageProps> = ({ serverData = {} }) => {
-  const { menu = [] } = serverData as { menu: Menu[] };
+const MenuPageComponent: React.FC<{ menu: Menu[] }> = ({ menu }) => {
   const [activeCategory, setActiveCategory] = useState(menu[0]?.name);
   const sectionRefs = useRef(menu.map(() => createRef()));
   const navItemRefs = useRef(menu.map(() => createRef()));
