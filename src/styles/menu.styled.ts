@@ -148,23 +148,11 @@ export const Main = styled.div`
 `;
 
 export const Section = styled.section`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 
   &:first-child {
     padding-top: 0;
-  }
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  &:last-of-type {
-    border-bottom: none;
-  }
-
-  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    border-bottom: none;
-    margin-bottom: 2rem;
   }
 `;
 
