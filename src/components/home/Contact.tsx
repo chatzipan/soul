@@ -14,7 +14,7 @@ const Contact = () => {
         >
           Limmatquai 94, 8001, Zürich
         </S.TelLink>
-        <S.TelLink href='tel:+41445991366'>+41 44 599 13 66</S.TelLink>
+        <S.TelLink href='tel:+41786753877'>+41 78 675 38 77</S.TelLink>
         <S.TelLink href='mailto:hallo@soulcoffee.info' target='_blank'>
           hallo@soulcoffee.info
         </S.TelLink>
