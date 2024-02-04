@@ -122,13 +122,19 @@ export const SectionTitle = styled.h4`
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.primary};
   margin: 0;
-  margin-bottom: 2rem;
   text-transform: uppercase;
   text-align: center;
-  display: none;
+  display: block;
+  backdrop-filter: blur(13px) saturate(70%);
+  -webkit-backdrop-filter: blur(13px) saturate(70%);
+  background-color: white;
+  margin-top: -25px;
+  display: inline-flex;
+  padding: 0 5rem;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    display: block;
+    font-size: 1.5rem;
+    margin-top: -20px;
   }
 `;
 
@@ -143,17 +149,17 @@ export const Main = styled.div`
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
     width: 100%;
-    padding: 4rem 0 0;
+    padding: 6rem 0 0;
   }
 `;
 
 export const Section = styled.section`
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-
-  &:first-child {
-    padding-top: 0;
-  }
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 3px dashed ${({ theme }) => theme.colors.primaryLight};
+  position: relative;
+  text-align: center;
+  padding-top: 0;
 `;
 
 export const Item = styled.p`

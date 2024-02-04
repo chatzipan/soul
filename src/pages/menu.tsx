@@ -20,28 +20,6 @@ type Menu = {
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-// export const getServerData = async () => {
-//   try {
-//     const res = await fetch(
-//       "https://storage.googleapis.com/soulzuerich.ch/menu.json",
-//       {
-//         headers: {
-//           "Content-Type": "application/json",
-//           Accept: "application/json",
-//         },
-//       }
-//     );
-
-//     return {
-//       props: {
-//         menu: await res.json(),
-//       },
-//     };
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
-
 const MenuPage: React.FC<PageProps> = ({}) => {
   const [menu, setMenu] = useState<Menu[]>([]);
 
@@ -128,7 +106,8 @@ const MenuPageComponent: React.FC<{ menu: Menu[] }> = ({ menu }) => {
             ref={navItemRefs.current[i]}
             key={category}
           >
-            {category}
+            {/* Remove anything in parentheses */}
+            {category.replace(/\s*\([^)]*\)/, "")}{" "}
           </S.Category>
         ))}
         <S.HomeLink to='/'>Home</S.HomeLink>
