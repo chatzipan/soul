@@ -154,7 +154,7 @@ export const Main = styled.div`
 `;
 
 export const Section = styled.section`
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
   padding: 1rem;
   border: 3px dashed ${({ theme }) => theme.colors.primaryLight};
   position: relative;
