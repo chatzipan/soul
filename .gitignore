@@ -3,6 +3,7 @@ node_modules/
 public
 src/gatsby-types.d.ts
 google_cloud_keys.json
+elite.json
 
 # dotenv environment variables file
 .env
