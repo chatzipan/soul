@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as S from "./Hero.styled";
 
-import Button from "../Button";
+import Button from "../shared/Button";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Hero = () => {

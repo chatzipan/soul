@@ -1,4 +1,4 @@
-import * as S from "./layout.styled";
+import * as S from "./Layout.styled";
 
 import React from "react";
 import { createGlobalStyle } from "styled-components";

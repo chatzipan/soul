@@ -3,6 +3,14 @@ import * as S from "./Hero.styled";
 
 import { StaticImage } from "gatsby-plugin-image";
 
+const entries = [
+  ["Tuesday - Wednesday:", "8:00 - 19:00"],
+  ["Thursday - Friday:", "8:00 - 22:00"],
+  ["Saturday:", "9:00 - 22:00"],
+  ["Sunday:", "9:00 - 19:00"],
+  ["Monday:", "Closed"],
+];
+
 const Contact = () => {
   return (
     <S.Wrapper>
@@ -26,26 +34,12 @@ const Contact = () => {
         </S.TelLink>
         <br />
         <S.Text>Opening Hours</S.Text>
-        <S.Hours>
-          <span>Tuesday - Wednesday:</span>
-          <span> 8:00 - 19:00</span>
-        </S.Hours>
-        <S.Hours>
-          <span>Thursday - Friday:</span>
-          <span> 8:00 - 22:00</span>
-        </S.Hours>
-        <S.Hours>
-          <span>Saturday:</span>
-          <span> 9:00 - 22:00</span>
-        </S.Hours>
-        <S.Hours>
-          <span>Sunday:</span>
-          <span> 9:00 - 19:00</span>
-        </S.Hours>
-        <S.Hours>
-          <span>Monday:</span>
-          <span> Closed</span>
-        </S.Hours>
+        {entries.map((entry, index) => (
+          <S.Hours key={index}>
+            <span>{entry[0]}</span>
+            <span>{entry[1]}</span>
+          </S.Hours>
+        ))}
       </S.InnerWrapper>
       <S.ImageWrapper>
         <StaticImage

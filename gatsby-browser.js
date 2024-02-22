@@ -1,6 +1,6 @@
 const React = require("react");
 const { ThemeProvider } = require("styled-components");
-const Layout = require("./src/components/layout").default;
+const Layout = require("./src/components/shared/Layout").default;
 const Theme = require("./src/theme").default;
 
 exports.wrapPageElement = ({ element, props }) => {
