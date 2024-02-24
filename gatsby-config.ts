@@ -5,6 +5,17 @@ require("dotenv").config({
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  headers: [
+    {
+      source: "/admin/*",
+      headers: [
+        {
+          key: `Basic-Auth`,
+          value: `${process.env.BASIC_AUTH_USERNAME}:${process.env.BASIC_AUTH_PASSWORD}`,
+        },
+      ],
+    },
+  ],
   siteMetadata: {
     title: `soul`,
     siteUrl: `https://www.soulcoffee.info`,
@@ -67,16 +78,6 @@ const config: GatsbyConfig = {
         path: "./src/images/",
       },
       __key: "images",
-    },
-    {
-      resolve: "gatsby-plugin-netlify",
-      options: {
-        headers: {
-          "/admin/*": [
-            `Basic-Auth: ${process.env.BASIC_AUTH_USERNAME}:${process.env.BASIC_AUTH_PASSWORD}`,
-          ],
-        },
-      },
     },
   ],
 };
