@@ -69,7 +69,7 @@ const config: GatsbyConfig = {
       __key: "images",
     },
     {
-      resolve: `gatsby-plugin-netlify`,
+      resolve: "gatsby-plugin-netlify-headers",
       options: {
         headers: {
           "/admin/*": [
