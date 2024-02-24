@@ -46,11 +46,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const auth = getAuth();
+
     onAuthStateChanged(auth, (_user) => {
       if (_user) {
-        console.log("logged in");
         setUser(_user);
-        navigate("/admin/profile");
+        // navigate("/admin");
       } else {
         setUser(null);
       }

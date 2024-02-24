@@ -12,7 +12,9 @@ const firebaseConfig = {
   measurementId: process.env.GATSBY_FIREBASE_MEASUREMENT_ID,
 };
 
-_firebase.initializeApp(firebaseConfig);
+if (typeof window !== "undefined") {
+  _firebase.initializeApp(firebaseConfig);
+}
 
 // Configure FirebaseUI.
 export const uiConfig = {
