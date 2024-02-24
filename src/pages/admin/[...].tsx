@@ -9,17 +9,20 @@ import Layout from "../../components/shared/Layout";
 import PrivateRoute from "../../components/shared/PrivateRoute";
 import { AuthProvider } from "../../providers/AuthProvider";
 
-const Admin = () => (
-  <AuthProvider>
-    <Layout>
-      <Router basepath='/admin'>
-        <PrivateRoute path='/profile' component={Profile} />
-        <PrivateRoute path='/' component={Dashboard} />
-        <Login path='/login' />
-        <Redirect from='*' to='/' />
-      </Router>
-    </Layout>
-  </AuthProvider>
-);
+const Admin = () => {
+  console.log("Admin", process.env);
+  return (
+    <AuthProvider>
+      <Layout>
+        <Router basepath='/admin'>
+          <PrivateRoute path='/profile' component={Profile} />
+          <PrivateRoute path='/' component={Dashboard} />
+          <Login path='/login' />
+          <Redirect from='*' to='/' />
+        </Router>
+      </Layout>
+    </AuthProvider>
+  );
+};
 
 export default Admin;

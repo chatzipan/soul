@@ -22,7 +22,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       key='2'
       rel='preconnect'
       href='https://fonts.gstatic.com'
-      crossoriginn='true'
+      crossOrigin='true'
     />,
     <link
       key='3'
@@ -36,7 +36,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       href='/fonts/AdriannaExtended-Thin.woff2'
       as='font'
       type='font/woff2'
-      crossoriginn='anonymous'
+      crossOrigin='anonymous'
       key='adriannaFont'
     />,
     <meta
