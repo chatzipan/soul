@@ -68,6 +68,16 @@ const config: GatsbyConfig = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/admin/*": [
+            `Basic-Auth: ${process.env.BASIC_AUTH_USERNAME}:${process.env.BASIC_AUTH_PASSWORD}`,
+          ],
+        },
+      },
+    },
   ],
 };
 
