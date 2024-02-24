@@ -10,7 +10,6 @@ import PrivateRoute from "../../components/shared/PrivateRoute";
 import { AuthProvider } from "../../providers/AuthProvider";
 
 const Admin = () => {
-  console.log("NODE_ENV", process.env.NODE_ENV);
   return (
     <AuthProvider>
       <Layout>
