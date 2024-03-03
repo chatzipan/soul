@@ -3,7 +3,6 @@ import "firebase/compat/auth";
 import { User } from "firebase/auth";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import _firebase from "firebase/compat/app";
-import { navigate } from "gatsby";
 import React, {
   createContext,
   useCallback,
@@ -17,21 +16,24 @@ import { uiConfig as _uiConfig, firebase } from "../services/firebase";
 export type AuthContextType = {
   firebaseUiConfig: firebaseui.auth.Config;
   firebase: typeof _firebase;
-  isLoggedIn: () => boolean;
+  isLoggedIn: boolean;
   logout: () => void;
+  token: string | null;
   user: User | null;
 };
 
 export const AuthContext = createContext<AuthContextType>({
   firebaseUiConfig: _uiConfig,
   firebase: firebase,
-  isLoggedIn: () => false,
+  isLoggedIn: false,
   logout: () => {},
+  token: null,
   user: null,
 });
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<null | User>(null);
+  const [token, setToken] = useState<string | null>(null);
   const [hasLoaded, setHasLoaded] = useState(false);
 
   const firebaseUiConfig = {
@@ -47,27 +49,30 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const auth = getAuth();
 
-    onAuthStateChanged(auth, (_user) => {
+    onAuthStateChanged(auth, async (_user) => {
       if (_user) {
         setUser(_user);
-        // navigate("/admin");
+        const idToken = await _user.getIdToken();
+        setToken(idToken);
       } else {
         setUser(null);
+        setToken(null);
       }
       setHasLoaded(true);
     });
   }, []);
 
-  const isLoggedIn = useCallback(() => Boolean(user), [user]);
+  const isLoggedIn = Boolean(user);
 
   const logout = useCallback(() => {
     firebase.auth().signOut();
     setUser(null);
+    setToken(null);
   }, []);
 
   const value = useMemo(
-    () => ({ firebase, firebaseUiConfig, isLoggedIn, logout, user }),
-    [isLoggedIn, logout, firebase, firebaseUiConfig, user]
+    () => ({ firebase, firebaseUiConfig, isLoggedIn, logout, token, user }),
+    [firebase, firebaseUiConfig, isLoggedIn, logout, token, user]
   );
 
   if (!hasLoaded) {

@@ -1,7 +1,7 @@
-import * as S from "./Layout.styled";
-
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+
+import * as S from "./Layout.styled";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -32,6 +32,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const inputGlobalStyles = <GlobalStyle />;
+
 interface LayoutProps {
   children: React.ReactNode;
 }
@@ -39,7 +41,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <React.Fragment>
-      <GlobalStyle />
+      {inputGlobalStyles}
       <S.Page>
         <S.Main id='main'>{children}</S.Main>
       </S.Page>

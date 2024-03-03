@@ -3,6 +3,7 @@ import "firebase/compat/auth";
 import { navigate } from "gatsby";
 import React from "react";
 
+import { Typography } from "@mui/material";
 import { RouteComponentProps } from "@reach/router";
 
 import { useAuth } from "../../hooks/useAuth";
@@ -15,15 +16,14 @@ const Login = (_: RouteComponentProps) => {
   const { firebase, firebaseUiConfig, isLoggedIn } = useAuth();
   const isSSR = typeof window === "undefined";
 
-  if (isBrowser() && isLoggedIn()) {
+  if (isBrowser() && isLoggedIn) {
     navigate("/admin");
     return null;
   }
 
   return (
     <S.Wrapper>
-      <h1>Login</h1>
-
+      <Typography variant='body1'>Login</Typography>
       {!isSSR && (
         <React.Suspense fallback={<div />}>
           <StyledFirebaseAuth

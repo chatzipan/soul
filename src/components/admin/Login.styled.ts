@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  min-height: 100vh;
   width: 100%;
+  height: calc(100vh - 64px);
   justify-content: center;
   align-items: center;
   flex-direction: column;

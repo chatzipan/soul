@@ -2,16 +2,19 @@ import "firebase/compat/auth";
 
 import React from "react";
 
+import { Box } from "@mui/material";
 import { RouteComponentProps } from "@reach/router";
 
 import { useAuth } from "../../hooks/useAuth";
-import * as S from "./Login.styled";
 
 const Dashboard = (_: RouteComponentProps) => {
+  const { user } = useAuth();
+
   return (
-    <S.Wrapper>
+    <Box sx={{ pt: 4 }}>
+      {user && <h1>Hallo {user.displayName}</h1>}
       <h1>Admin Dashboard</h1>
-    </S.Wrapper>
+    </Box>
   );
 };
 

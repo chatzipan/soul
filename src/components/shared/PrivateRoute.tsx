@@ -14,7 +14,7 @@ const PrivateRoute = ({
 }) => {
   const { isLoggedIn } = useAuth();
 
-  if (!isLoggedIn() && location?.pathname !== "/login") {
+  if (!isLoggedIn && location?.pathname !== "/login") {
     navigate("/admin/login");
     return null;
   }

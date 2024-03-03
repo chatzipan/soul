@@ -4,8 +4,8 @@ import { Redirect, Router } from "@reach/router";
 
 import Dashboard from "../../components/admin/Dashboard";
 import Login from "../../components/admin/Login";
-import Profile from "../../components/admin/Profile";
-import Layout from "../../components/shared/Layout";
+import Reservations from "../../components/admin/Reservations";
+import Layout from "../../components/admin/layout/Layout";
 import PrivateRoute from "../../components/shared/PrivateRoute";
 import { AuthProvider } from "../../providers/AuthProvider";
 
@@ -14,7 +14,7 @@ const Admin = () => {
     <AuthProvider>
       <Layout>
         <Router basepath='/admin'>
-          <PrivateRoute path='/profile' component={Profile} />
+          <PrivateRoute path='/reservations' component={Reservations} />
           <PrivateRoute path='/' component={Dashboard} />
           <Login path='/login' />
           <Redirect from='*' to='/' />
