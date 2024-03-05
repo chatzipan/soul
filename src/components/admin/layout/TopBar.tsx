@@ -2,9 +2,9 @@ import { Link } from "gatsby";
 import React, { useState } from "react";
 
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import BookOnlineRounded from "@mui/icons-material/BookOnlineRounded";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import InsertInvitationSharpIcon from "@mui/icons-material/InsertInvitationSharp";
 import Logout from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
@@ -165,7 +165,7 @@ const TopBar = (_: RouteComponentProps) => {
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
-              <BookOnlineRounded />
+              <InsertInvitationSharpIcon />
             </ListItemIcon>
             <Link
               to='/admin/reservations'

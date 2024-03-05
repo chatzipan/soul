@@ -11,7 +11,7 @@ const Dashboard = (_: RouteComponentProps) => {
   const { user } = useAuth();
 
   return (
-    <Box sx={{ pt: 4 }}>
+    <Box>
       {user && <h1>Hallo {user.displayName}</h1>}
       <h1>Admin Dashboard</h1>
     </Box>

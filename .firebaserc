@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "elite-bird-404121",
+    "dev": "elite-bird-404121",
+    "prod": "soul-web-prod"
+  },
+  "targets": {},
+  "etags": {}
+}

@@ -54,9 +54,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setUser(_user);
         const idToken = await _user.getIdToken();
         setToken(idToken);
+        localStorage.setItem("token", idToken);
       } else {
         setUser(null);
         setToken(null);
+        localStorage.removeItem("token");
       }
       setHasLoaded(true);
     });
