@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       {isLoggedIn && <TopBar />}
-      <S.Wrapper>{children}</S.Wrapper>;
+      <S.Wrapper>{children}</S.Wrapper>
     </>
   );
 }

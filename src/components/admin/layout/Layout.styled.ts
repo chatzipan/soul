@@ -6,4 +6,8 @@ export const Wrapper = styled.div`
   overflow: hidden;
   flex-direction: column;
   padding: 3rem;
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    padding: 1.5rem;
+  }
 `;

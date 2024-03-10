@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { getAllReservations } from "../services/reservations";
+import { useQueryWrapper } from "./useQuery";
 
 export const useReservations = (config = {} as { enable: boolean }) =>
-  useQuery({
+  useQueryWrapper({
     queryKey: getKey(),
     queryFn,
     ...config,

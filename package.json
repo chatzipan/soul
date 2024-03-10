@@ -28,6 +28,7 @@
     "@types/google-map-react": "^2.1.9",
     "@types/styled-components": "^5.1.29",
     "babel-plugin-styled-components": "^2.1.4",
+    "date-fns": "^3.3.1",
     "dotenv": "^16.3.1",
     "firebaseui": "^6.1.0",
     "gatsby": "^5.13.3",
@@ -44,10 +45,11 @@
     "google-map-react": "^2.2.1",
     "googleapis": "^131.0.0",
     "json-diff": "^1.0.6",
+    "lodash": "^4.17.21",
     "playwright": "^1.40.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-use": "^17.4.2",
+    "react-use": "^17.5.0",
     "styled-components": "^6.1.0"
   },
   "devDependencies": {

@@ -10,8 +10,8 @@ import {
 
 import Dashboard from "../../components/admin/Dashboard";
 import Login from "../../components/admin/Login";
-import Reservations from "../../components/admin/Reservations";
 import Layout from "../../components/admin/layout/Layout";
+import Reservations from "../../components/admin/reservations/Reservations";
 import PrivateRoute from "../../components/shared/PrivateRoute";
 import { useAuth } from "../../hooks/useAuth";
 import { AuthProvider } from "../../providers/AuthProvider";

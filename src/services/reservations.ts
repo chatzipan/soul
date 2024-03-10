@@ -52,3 +52,21 @@ export const getAllReservations = async () => {
     console.error(error);
   }
 };
+
+export const updateReservation = async (reservation: Reservation) => {
+  try {
+    const res = await fetch(
+      `${process.env.GATSBY_API_URL}/reservations/v1/${reservation.id}`,
+      {
+        method: "PUT",
+        headers: getHeaders(),
+        body: JSON.stringify(reservation),
+      }
+    );
+
+    const response = await res.json();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
