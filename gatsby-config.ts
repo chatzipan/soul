@@ -2,6 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+// eslint-disable-next-line import/first
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
