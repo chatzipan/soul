@@ -56,10 +56,6 @@ export const ListItem = styled.li`
   &:hover {
     background-color: #f5f5f5;
   }
-
-  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
-    flex-direction: column;
-  }
 `;
 
 export const ReservationList = styled.div`
@@ -74,8 +70,9 @@ export const ReservationList = styled.div`
   }
 `;
 
-export const ReservationListInner = styled.div`
+export const ReservationListInner = styled.span`
   padding-left: 20px;
+  display: block;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     padding-left: 0;
@@ -84,13 +81,54 @@ export const ReservationListInner = styled.div`
 
 export const ReservationText = styled(Typography)`
   display: flex;
-  align-items: center;
+  width: 100%;
+  align-items: flex-start;
   position: relative;
   gap: 10px;
+  padding-right: 20px;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    padding-right: 10px;
     justify-content: space-between;
   }
+`;
+
+export const ReservationTextInner = styled.span`
+  width: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+export const ReservationTextBasic = styled.span.withConfig({
+  shouldForwardProp: (prop) => !["canceled"].includes(prop),
+})<{ canceled?: boolean }>`
+  display: flex;
+  text-decoration: ${({ canceled }) => (canceled ? "line-through" : "none")};
+`;
+
+export const ReservationContact = styled.span`
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+`;
+
+export const ReservationLink = styled.a`
+  display: flex;
+  color: ${({ theme }) => theme.colors.primary};
+  text-decoration: none;
+`;
+
+export const ReservationTime = styled.span`
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+`;
+
+export const ReservationPersons = styled.span.withConfig({
+  shouldForwardProp: (prop) => !["isMobile"].includes(prop),
+})<{ isMobile?: boolean }>`
+  font-variant-numeric: tabular-nums;
+  align-items: center;
+  display: ${({ isMobile }) => (isMobile ? "flex" : "inline")};
 `;
 
 export const TabBar = styled(Tabs)`

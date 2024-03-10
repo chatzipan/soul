@@ -30,19 +30,22 @@ export const getReservationsPerTabView = (
   reservations: Reservation[],
   view: TabsView
 ): Reservation[] => {
-  const today = new Date();
+  // today at 00:00
+  const today = new Date().setHours(0, 0, 0, 0);
 
   switch (view) {
     case TabsView.Today:
-      return reservations.filter((reservation) => isToday(reservation.date));
+      return reservations.filter((reservation) =>
+        isToday(new Date(reservation.date))
+      );
     case TabsView.Upcoming:
       return reservations.filter((reservation) => {
-        const date = new Date(reservation.date);
-        return date >= today;
+        const date = new Date(reservation.date).setHours(0, 0, 0, 0);
+        return date > today;
       });
     case TabsView.Previous:
       return reservations.filter((reservation) => {
-        const date = new Date(reservation.date);
+        const date = new Date(reservation.date).setHours(0, 0, 0, 0);
         return date < today;
       });
   }
@@ -67,7 +70,7 @@ export const groupByDateAndTime = (
   const groupedByMonth = Object.entries(groupedByYear).reduce(
     (acc, [year, reservations]) => {
       acc[year] = groupBy(reservations, (reservation) =>
-        format(reservation.date, "LLLL")
+        format(new Date(reservation.date), "LLLL")
       );
       return acc;
     },
@@ -79,7 +82,7 @@ export const groupByDateAndTime = (
       acc[year] = Object.entries(months).reduce(
         (acc, [month, reservations]) => {
           acc[month] = groupBy(reservations, (reservation) =>
-            format(reservation.date, "d")
+            format(new Date(reservation.date), "d")
           );
           return acc;
         },
@@ -91,4 +94,14 @@ export const groupByDateAndTime = (
   );
 
   return groupedByDay;
+};
+
+export const isValidEmail = (email: string) => {
+  const test = String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+
+  return test ? false : true;
 };

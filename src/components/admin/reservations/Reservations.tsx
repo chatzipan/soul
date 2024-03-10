@@ -1,43 +1,45 @@
+import { isToday } from "date-fns";
+import { is } from "date-fns/locale";
 import React, { useMemo, useRef, useState } from "react";
 import { useToggle } from "react-use";
 
 import AddIcon from "@mui/icons-material/Add";
+import CallIcon from "@mui/icons-material/Call";
+import CancelIcon from "@mui/icons-material/Cancel";
 import DomainVerificationSharpIcon from "@mui/icons-material/DomainVerificationSharp";
-import { Box, Typography } from "@mui/material";
+import EmailIcon from "@mui/icons-material/Email";
+import GroupsIcon from "@mui/icons-material/Groups";
+import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
 import Tab from "@mui/material/Tab";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { RouteComponentProps } from "@reach/router";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { useReservations } from "../../../hooks/useReservations";
-import { createReservation } from "../../../services/reservations";
 import { Reservation } from "../../../types";
+import { AddReservationModal } from "./AddReservationModal";
 import { CancelModal } from "./CancelModal";
 import * as S from "./Reservations.styled";
 import { TabsView, a11yProps, displayDate, groupByDateAndTime } from "./utils";
 
-const renderReservation = (reservation: Reservation, isMobile: boolean) => `
-  ${reservation.time} - ${reservation.persons} ${
-  isMobile ? "PAX" : "Persons"
-} - ${reservation.name}`;
-
 const Reservations = (_: RouteComponentProps) => {
   const response = useReservations();
-  const reservations = response?.data;
-  const queryClient = useQueryClient();
+  const reservations = response?.data as Reservation[];
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const listRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState(TabsView.Today);
   const isTodayView = view === TabsView.Today;
+  const [isCancelModalOpen, toggleCancelModal] = useToggle(false);
   const [selectedReservation, setSelectedReservation] =
     useState<Reservation | null>(null);
-  const [isCancelModalOpen, toggleCancelModal] = useToggle(false);
+  const [isAddReservationModalOpen, toggleAddReservationModal] =
+    useToggle(false);
 
-  const handleViewChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleViewChange = (_: React.SyntheticEvent, newValue: number) => {
     setView(newValue);
     // scroll to top
     listRef.current?.scrollTo({ top: 0, behavior: "smooth" });
@@ -47,25 +49,9 @@ const Reservations = (_: RouteComponentProps) => {
     setSelectedReservation(reservation);
     toggleCancelModal();
   };
-
-  const mutation = useMutation({
-    mutationFn: () =>
-      createReservation({
-        canceled: false,
-        name: Math.random().toString(36).substring(7),
-        date: new Date(
-          new Date().getFullYear(),
-          new Date().getMonth(),
-          Math.floor(Math.random() * 31)
-        ).toISOString(),
-        // random time from 9:00 to 21:00
-        time: `${Math.floor(Math.random() * 12) + 9}:00`,
-        persons: Math.floor(Math.random() * 6),
-      }),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: useReservations.getKey() });
-    },
-  });
+  const hasTodayReservations = (reservations || []).some((reservation) =>
+    isToday(new Date(reservation.date))
+  );
 
   const formatted = useMemo(
     () => groupByDateAndTime((reservations || []) as Reservation[], view),
@@ -81,15 +67,17 @@ const Reservations = (_: RouteComponentProps) => {
           color='primary'
           aria-label='add'
           variant='extended'
-          sx={{ ml: { sm: 0, md: "auto" } }}
-          onClick={() => mutation.mutate()}
+          sx={{ ml: { xs: 0, md: "auto" } }}
+          onClick={toggleAddReservationModal}
         >
           <AddIcon sx={{ mr: 1 }} />
           Add reservation
         </S.AddButton>
       </S.Header>
       <S.TabBar value={view} onChange={handleViewChange}>
-        <Tab label='Today' {...a11yProps(TabsView.Today)} />
+        {hasTodayReservations && (
+          <Tab label='Today' {...a11yProps(TabsView.Today)} />
+        )}
         <Tab label='Upcoming' {...a11yProps(TabsView.Upcoming)} />
         <Tab label='Previous' {...a11yProps(TabsView.Previous)} />
       </S.TabBar>
@@ -110,45 +98,86 @@ const Reservations = (_: RouteComponentProps) => {
                     </Typography>
                   )}
                   <S.List padded={!isTodayView}>
-                    {entries.map((reservation) => (
-                      <S.ListItem key={reservation.id}>
-                        <S.ReservationText
-                          sx={{
-                            fontSize: 20,
-                          }}
-                        >
-                          <Box
-                            component='span'
-                            sx={{
-                              textDecoration: reservation.canceled
-                                ? "line-through"
-                                : "",
-                            }}
-                          >
-                            {renderReservation(reservation, isMobile)}
-                          </Box>
-                          {reservation.canceled && (
-                            <Chip
-                              label='Canceled'
+                    {entries.map((r) => {
+                      const { email, firstName, lastName, time, telephone } = r;
+                      const _lastName =
+                        lastName && !isSmallMobile ? ` ${lastName}` : "";
+                      const fullName = `${firstName}${_lastName}`;
+                      const hasContact = email || telephone;
+
+                      return (
+                        <S.ListItem key={r.id}>
+                          <S.ReservationText sx={{ fontSize: 20 }}>
+                            <S.ReservationTextInner>
+                              <S.ReservationTextBasic canceled={r.canceled}>
+                                <S.ReservationTime>{time}</S.ReservationTime>
+                                &nbsp;&#183;&nbsp;
+                                <S.ReservationPersons isMobile={isMobile}>
+                                  <>
+                                    <GroupsIcon
+                                      sx={{
+                                        mr: 1,
+                                        display:
+                                          isMobile && !isSmallMobile
+                                            ? "block"
+                                            : "none",
+                                      }}
+                                    />
+                                    {r.persons}
+                                    {!isMobile && " persons"}
+                                    {isSmallMobile && "P"}
+                                  </>
+                                </S.ReservationPersons>
+                                &nbsp;&#183;&nbsp;
+                                {fullName}
+                              </S.ReservationTextBasic>
+                              {r.canceled && (
+                                <Chip
+                                  label='Canceled'
+                                  color='error'
+                                  variant='outlined'
+                                  size='small'
+                                  component='span'
+                                  sx={{ ml: 1 }}
+                                />
+                              )}
+                              {hasContact && (
+                                <S.ReservationContact>
+                                  {telephone && (
+                                    <S.ReservationLink
+                                      href={`tel:${telephone}`}
+                                    >
+                                      {isMobile ? <CallIcon /> : telephone}
+                                    </S.ReservationLink>
+                                  )}
+                                  {email && (
+                                    <S.ReservationLink href={`mailto:${email}`}>
+                                      {isMobile ? <EmailIcon /> : email}
+                                    </S.ReservationLink>
+                                  )}
+                                </S.ReservationContact>
+                              )}
+                            </S.ReservationTextInner>
+                          </S.ReservationText>
+                          <S.Actions>
+                            {/* <Button disabled={reservation.canceled}>Edit</Button> */}
+                            <Button
                               color='error'
-                              variant='outlined'
-                              size='small'
-                              component='span'
-                            />
-                          )}
-                        </S.ReservationText>
-                        <S.Actions>
-                          <Button disabled={reservation.canceled}>Edit</Button>
-                          <Button
-                            color='error'
-                            onClick={() => openCancelModal(reservation)}
-                            disabled={reservation.canceled}
-                          >
-                            Cancel
-                          </Button>
-                        </S.Actions>
-                      </S.ListItem>
-                    ))}
+                              sx={{
+                                p: 0,
+                                minWidth: isSmallMobile ? "auto" : "unset",
+                                display:
+                                  isMobile && r.canceled ? "none" : "flex",
+                              }}
+                              onClick={() => openCancelModal(r)}
+                              disabled={r.canceled}
+                            >
+                              {isSmallMobile ? <CancelIcon /> : "Cancel"}
+                            </Button>
+                          </S.Actions>
+                        </S.ListItem>
+                      );
+                    })}
                   </S.List>
                 </S.ReservationListInner>
               ))}
@@ -160,6 +189,10 @@ const Reservations = (_: RouteComponentProps) => {
         isOpen={isCancelModalOpen}
         onClose={toggleCancelModal}
         reservation={selectedReservation as Reservation}
+      />
+      <AddReservationModal
+        isOpen={isAddReservationModalOpen}
+        onClose={toggleAddReservationModal}
       />
     </S.Wrapper>
   );

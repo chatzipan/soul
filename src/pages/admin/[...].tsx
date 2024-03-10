@@ -1,6 +1,10 @@
+// with date-fns v2.x
+import de from "date-fns/locale/de";
 import React, { useMemo } from "react";
 
 import { ThemeProvider, createTheme } from "@mui/material";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { Redirect, Router } from "@reach/router";
 import {
   QueryCache,
@@ -48,21 +52,23 @@ const Inner = () => {
           },
         }),
       }),
-    []
+    [logout]
   );
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={customTheme}>
-        <Layout>
-          <Router basepath='/admin'>
-            <PrivateRoute path='/reservations' component={Reservations} />
-            <PrivateRoute path='/' component={Dashboard} />
-            <Login path='/login' />
-            <Redirect from='*' to='/' />
-          </Router>
-        </Layout>
-      </ThemeProvider>
+      <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={de}>
+        <ThemeProvider theme={customTheme}>
+          <Layout>
+            <Router basepath='/admin'>
+              <PrivateRoute path='/reservations' component={Reservations} />
+              <PrivateRoute path='/' component={Dashboard} />
+              <Login path='/login' />
+              <Redirect from='*' to='/' />
+            </Router>
+          </Layout>
+        </ThemeProvider>
+      </LocalizationProvider>
     </QueryClientProvider>
   );
 };

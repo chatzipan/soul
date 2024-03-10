@@ -58,21 +58,6 @@ export const CancelModal = ({
 
   return (
     <>
-      <Snackbar
-        open={showSnackbar}
-        autoHideDuration={6000}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        onClose={handleCloseSnackbar}
-      >
-        <Alert
-          onClose={handleCloseSnackbar}
-          severity='success'
-          variant='filled'
-          sx={{ width: "100%" }}
-        >
-          Successfully canceled reservation!
-        </Alert>
-      </Snackbar>
       <Dialog
         fullScreen={fullScreen}
         open={isOpen}
@@ -96,6 +81,21 @@ export const CancelModal = ({
           </Button>
         </DialogActions>
       </Dialog>
+      <Snackbar
+        open={showSnackbar}
+        autoHideDuration={6000}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity='success'
+          variant='filled'
+          sx={{ width: "100%" }}
+        >
+          Successfully canceled reservation!
+        </Alert>
+      </Snackbar>
     </>
   );
 };
