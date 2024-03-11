@@ -33,7 +33,7 @@ initRouter(app);
 
 const suppportedOrigins = [
   "http://localhost:8000",
-  "feat-admin--comforting-kringle-dfc4ec.netlify.app/",
+  "feat-admin--comforting-kringle-dfc4ec.netlify.app",
   "develop--comforting-kringle-dfc4ec.netlify.app",
   "soulzuerich.ch",
 ];
