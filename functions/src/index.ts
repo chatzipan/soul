@@ -4,8 +4,6 @@ import express = require("express");
 
 import { initRouter } from "./routes";
 
-//  const PROJECT_ID = JSON.parse(process.env.FIREBASE_CONFIG).projectId
-
 admin.initializeApp();
 
 const app = express();
@@ -34,6 +32,7 @@ initRouter(app);
 const suppportedOrigins = [
   "http://localhost:8000",
   "feat-admin--comforting-kringle-dfc4ec.netlify.app",
+  "https://feat-admin--comforting-kringle-dfc4ec.netlify.app",
   "develop--comforting-kringle-dfc4ec.netlify.app",
   "soulzuerich.ch",
 ];
