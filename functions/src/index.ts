@@ -31,5 +31,12 @@ app.use(requireAuth);
 // Handle API endpoint routes
 initRouter(app);
 
+const suppportedOrigins = [
+  "http://localhost:8000",
+  "feat-admin--comforting-kringle-dfc4ec.netlify.app/",
+  "develop--comforting-kringle-dfc4ec.netlify.app",
+  "soulzuerich.ch",
+];
+
 // Expose Express API as a single Cloud Function:
-exports.api = https.onRequest(app);
+exports.api = https.onRequest({ cors: suppportedOrigins }, app);
