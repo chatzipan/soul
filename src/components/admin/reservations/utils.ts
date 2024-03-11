@@ -4,15 +4,16 @@ import { groupBy } from "lodash";
 import { Reservation } from "../../../types";
 
 export enum TabsView {
-  Today = 0,
-  Upcoming = 1,
-  Previous = 2,
+  Today = "Today",
+  Upcoming = "Upcoming",
+  Previous = "Previous",
 }
 
-export const a11yProps = (index: number) => {
+export const a11yProps = (index: string) => {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
+    value: index,
   };
 };
 

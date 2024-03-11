@@ -1,6 +1,5 @@
 import { isToday } from "date-fns";
-import { is } from "date-fns/locale";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useToggle } from "react-use";
 
 import AddIcon from "@mui/icons-material/Add";
@@ -31,7 +30,7 @@ const Reservations = (_: RouteComponentProps) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const listRef = useRef<HTMLDivElement>(null);
-  const [view, setView] = useState(TabsView.Today);
+  const [view, setView] = useState(TabsView.Upcoming);
   const isTodayView = view === TabsView.Today;
   const [isCancelModalOpen, toggleCancelModal] = useToggle(false);
   const [selectedReservation, setSelectedReservation] =
@@ -39,7 +38,7 @@ const Reservations = (_: RouteComponentProps) => {
   const [isAddReservationModalOpen, toggleAddReservationModal] =
     useToggle(false);
 
-  const handleViewChange = (_: React.SyntheticEvent, newValue: number) => {
+  const handleViewChange = (_: React.SyntheticEvent, newValue: TabsView) => {
     setView(newValue);
     // scroll to top
     listRef.current?.scrollTo({ top: 0, behavior: "smooth" });
@@ -56,6 +55,16 @@ const Reservations = (_: RouteComponentProps) => {
   const formatted = useMemo(
     () => groupByDateAndTime((reservations || []) as Reservation[], view),
     [reservations, view]
+  );
+
+  useEffect(
+    () => {
+      if (hasTodayReservations) {
+        setView(TabsView.Today);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [hasTodayReservations]
   );
 
   return (
@@ -76,7 +85,11 @@ const Reservations = (_: RouteComponentProps) => {
       </S.Header>
       <S.TabBar value={view} onChange={handleViewChange}>
         {hasTodayReservations && (
-          <Tab label='Today' {...a11yProps(TabsView.Today)} />
+          <Tab
+            label='Today'
+            {...a11yProps(TabsView.Today)}
+            disabled={!hasTodayReservations}
+          />
         )}
         <Tab label='Upcoming' {...a11yProps(TabsView.Upcoming)} />
         <Tab label='Previous' {...a11yProps(TabsView.Previous)} />

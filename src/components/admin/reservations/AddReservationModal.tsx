@@ -57,7 +57,7 @@ export const AddReservationModal = ({
   const queryClient = useQueryClient();
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [data, setData] = useState<Omit<Reservation, "id" | "canceled">>({
-    date: new Date().toISOString(),
+    date: "",
     persons: 0,
     time: "",
     firstName: "",
@@ -152,7 +152,6 @@ export const AddReservationModal = ({
                     disablePast
                     maxDate={new Date("2024-12-31")}
                     onChange={(newDate) => {
-                      console.log("newDate", newDate, newDate.toISOString());
                       setData({
                         ...data,
                         date: newDate.toISOString(),
