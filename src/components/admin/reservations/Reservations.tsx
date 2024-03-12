@@ -119,15 +119,10 @@ const Reservations = (_: RouteComponentProps) => {
                 </Typography>
               )}
               {Object.entries(days).map(([day, entries]) => {
-                const monthIndex = monthNames
-                  .indexOf(month)
+                const monthIndex = (monthNames.indexOf(month) + 1)
                   .toString()
                   .padStart(2, "0");
 
-                console.log(`${year}-${monthIndex}-${day}T00:00:00.000Z`);
-                console.log(
-                  new Date(`${year}-${monthIndex}-${day}T00:00:00.000Z`)
-                );
                 return (
                   <S.ReservationListInner key={`${year}-${month}-${day}`}>
                     {!isTodayView && (
