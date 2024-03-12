@@ -11,6 +11,7 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
+import CircularProgress from "@mui/material/CircularProgress";
 import Tab from "@mui/material/Tab";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -41,6 +42,7 @@ const monthNames = [
 const Reservations = (_: RouteComponentProps) => {
   const response = useReservations();
   const reservations = response?.data as Reservation[];
+  const loading = response?.isLoading;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -109,6 +111,7 @@ const Reservations = (_: RouteComponentProps) => {
         <Tab label='Upcoming' {...a11yProps(TabsView.Upcoming)} />
         <Tab label='Previous' {...a11yProps(TabsView.Previous)} />
       </S.TabBar>
+      {loading && <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />}
       {Object.entries(formatted).map(([year, months]) => (
         <S.ReservationList key={year} ref={listRef}>
           {Object.entries(months).map(([month, days]) => (
