@@ -23,6 +23,21 @@ import { CancelModal } from "./CancelModal";
 import * as S from "./Reservations.styled";
 import { TabsView, a11yProps, displayDate, groupByDateAndTime } from "./utils";
 
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 const Reservations = (_: RouteComponentProps) => {
   const response = useReservations();
   const reservations = response?.data as Reservation[];
@@ -103,97 +118,103 @@ const Reservations = (_: RouteComponentProps) => {
                   {month} {year}
                 </Typography>
               )}
-              {Object.entries(days).map(([day, entries]) => (
-                <S.ReservationListInner key={`${year}-${month}-${day}`}>
-                  {!isTodayView && (
-                    <Typography sx={{ mb: 1 }} variant='h6' color='GrayText'>
-                      {displayDate(new Date(`${year}-${month}-${day}`))}
-                    </Typography>
-                  )}
-                  <S.List padded={!isTodayView}>
-                    {entries.map((r) => {
-                      const { email, firstName, lastName, time, telephone } = r;
-                      const _lastName =
-                        lastName && !isSmallMobile ? ` ${lastName}` : "";
-                      const fullName = `${firstName}${_lastName}`;
-                      const hasContact = email || telephone;
+              {Object.entries(days).map(([day, entries]) => {
+                const monthIndex = monthNames.indexOf(month);
+                return (
+                  <S.ReservationListInner key={`${year}-${month}-${day}`}>
+                    {!isTodayView && (
+                      <Typography sx={{ mb: 1 }} variant='h6' color='GrayText'>
+                        {displayDate(new Date(`${year}-${monthIndex}-${day}`))}
+                      </Typography>
+                    )}
+                    <S.List padded={!isTodayView}>
+                      {entries.map((r) => {
+                        const { email, firstName, lastName, time, telephone } =
+                          r;
+                        const _lastName =
+                          lastName && !isSmallMobile ? ` ${lastName}` : "";
+                        const fullName = `${firstName}${_lastName}`;
+                        const hasContact = email || telephone;
 
-                      return (
-                        <S.ListItem key={r.id}>
-                          <S.ReservationText sx={{ fontSize: 20 }}>
-                            <S.ReservationTextInner>
-                              <S.ReservationTextBasic canceled={r.canceled}>
-                                <S.ReservationTime>{time}</S.ReservationTime>
-                                &nbsp;&#183;&nbsp;
-                                <S.ReservationPersons isMobile={isMobile}>
-                                  <>
-                                    <GroupsIcon
-                                      sx={{
-                                        mr: 1,
-                                        display:
-                                          isMobile && !isSmallMobile
-                                            ? "block"
-                                            : "none",
-                                      }}
-                                    />
-                                    {r.persons}
-                                    {!isMobile && " persons"}
-                                    {isSmallMobile && "P"}
-                                  </>
-                                </S.ReservationPersons>
-                                &nbsp;&#183;&nbsp;
-                                {fullName}
-                              </S.ReservationTextBasic>
-                              {r.canceled && (
-                                <Chip
-                                  label='Canceled'
-                                  color='error'
-                                  variant='outlined'
-                                  size='small'
-                                  component='span'
-                                  sx={{ ml: 1 }}
-                                />
-                              )}
-                              {hasContact && (
-                                <S.ReservationContact>
-                                  {telephone && (
-                                    <S.ReservationLink
-                                      href={`tel:${telephone}`}
-                                    >
-                                      {isMobile ? <CallIcon /> : telephone}
-                                    </S.ReservationLink>
-                                  )}
-                                  {email && (
-                                    <S.ReservationLink href={`mailto:${email}`}>
-                                      {isMobile ? <EmailIcon /> : email}
-                                    </S.ReservationLink>
-                                  )}
-                                </S.ReservationContact>
-                              )}
-                            </S.ReservationTextInner>
-                          </S.ReservationText>
-                          <S.Actions>
-                            {/* <Button disabled={reservation.canceled}>Edit</Button> */}
-                            <Button
-                              color='error'
-                              sx={{
-                                p: 0,
-                                minWidth: isSmallMobile ? "auto" : "unset",
-                                display:
-                                  isMobile && r.canceled ? "none" : "flex",
-                              }}
-                              onClick={() => openCancelModal(r)}
-                              disabled={r.canceled}
-                            >
-                              {isSmallMobile ? <CancelIcon /> : "Cancel"}
-                            </Button>
-                          </S.Actions>
-                        </S.ListItem>
-                      );
-                    })}
-                  </S.List>
-                </S.ReservationListInner>
-              ))}
+                        return (
+                          <S.ListItem key={r.id}>
+                            <S.ReservationText sx={{ fontSize: 20 }}>
+                              <S.ReservationTextInner>
+                                <S.ReservationTextBasic canceled={r.canceled}>
+                                  <S.ReservationTime>{time}</S.ReservationTime>
+                                  &nbsp;&#183;&nbsp;
+                                  <S.ReservationPersons isMobile={isMobile}>
+                                    <>
+                                      <GroupsIcon
+                                        sx={{
+                                          mr: 1,
+                                          display:
+                                            isMobile && !isSmallMobile
+                                              ? "block"
+                                              : "none",
+                                        }}
+                                      />
+                                      {r.persons}
+                                      {!isMobile && " persons"}
+                                      {isSmallMobile && "P"}
+                                    </>
+                                  </S.ReservationPersons>
+                                  &nbsp;&#183;&nbsp;
+                                  {fullName}
+                                </S.ReservationTextBasic>
+                                {r.canceled && (
+                                  <Chip
+                                    label='Canceled'
+                                    color='error'
+                                    variant='outlined'
+                                    size='small'
+                                    component='span'
+                                    sx={{ ml: 1 }}
+                                  />
+                                )}
+                                {hasContact && (
+                                  <S.ReservationContact>
+                                    {telephone && (
+                                      <S.ReservationLink
+                                        href={`tel:${telephone}`}
+                                      >
+                                        {isMobile ? <CallIcon /> : telephone}
+                                      </S.ReservationLink>
+                                    )}
+                                    {email && (
+                                      <S.ReservationLink
+                                        href={`mailto:${email}`}
+                                      >
+                                        {isMobile ? <EmailIcon /> : email}
+                                      </S.ReservationLink>
+                                    )}
+                                  </S.ReservationContact>
+                                )}
+                              </S.ReservationTextInner>
+                            </S.ReservationText>
+                            <S.Actions>
+                              {/* <Button disabled={reservation.canceled}>Edit</Button> */}
+                              <Button
+                                color='error'
+                                sx={{
+                                  p: 0,
+                                  minWidth: isSmallMobile ? "auto" : "unset",
+                                  display:
+                                    isMobile && r.canceled ? "none" : "flex",
+                                }}
+                                onClick={() => openCancelModal(r)}
+                                disabled={r.canceled}
+                              >
+                                {isSmallMobile ? <CancelIcon /> : "Cancel"}
+                              </Button>
+                            </S.Actions>
+                          </S.ListItem>
+                        );
+                      })}
+                    </S.List>
+                  </S.ReservationListInner>
+                );
+              })}
             </div>
           ))}
         </S.ReservationList>
