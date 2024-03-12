@@ -1,3 +1,7 @@
+import {
+  ReCaptchaEnterpriseProvider,
+  initializeAppCheck,
+} from "firebase/app-check";
 import _firebase from "firebase/compat/app";
 
 // Your web app's Firebase configuration
@@ -13,7 +17,16 @@ const firebaseConfig = {
 };
 
 if (typeof window !== "undefined") {
-  _firebase.initializeApp(firebaseConfig);
+  const app = _firebase.initializeApp(firebaseConfig);
+
+  // Create a ReCaptchaEnterpriseProvider instance using your reCAPTCHA Enterprise
+  // site key and pass it to activate().
+  initializeAppCheck(app, {
+    provider: new ReCaptchaEnterpriseProvider(
+      process.env.GATSBY_RECAPTCHA_SITE_KEY as string
+    ),
+    isTokenAutoRefreshEnabled: true, // Set to true to allow auto-refresh.
+  });
 }
 
 // Configure FirebaseUI.
