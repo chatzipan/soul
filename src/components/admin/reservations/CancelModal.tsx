@@ -76,7 +76,12 @@ export const CancelModal = ({
           <Button autoFocus onClick={onClose}>
             Nope, keep it
           </Button>
-          <Button onClick={() => mutation.mutate()} autoFocus color='error'>
+          <Button
+            disabled={mutation.isPending}
+            onClick={() => mutation.mutate()}
+            autoFocus
+            color='error'
+          >
             Yes, cancel it
           </Button>
         </DialogActions>

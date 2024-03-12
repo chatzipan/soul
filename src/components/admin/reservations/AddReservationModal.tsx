@@ -298,7 +298,7 @@ export const AddReservationModal = ({
           variant='filled'
           sx={{ width: "100%" }}
         >
-          Successfully canceled reservation!
+          Successfully Saved!
         </Alert>
       </Snackbar>
     </>
