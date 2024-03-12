@@ -20,7 +20,7 @@ if (typeof window !== "undefined") {
   const app = _firebase.initializeApp(firebaseConfig);
 
   // Create a ReCaptchaEnterpriseProvider instance using your reCAPTCHA Enterprise
-  // site key and pass it to activate().
+  // site key and pass it to activate()
   initializeAppCheck(app, {
     provider: new ReCaptchaEnterpriseProvider(
       process.env.GATSBY_RECAPTCHA_SITE_KEY as string
