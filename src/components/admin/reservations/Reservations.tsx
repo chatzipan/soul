@@ -185,6 +185,7 @@ const Reservations = (_: RouteComponentProps) => {
                                     {telephone && (
                                       <S.ReservationLink
                                         href={`tel:${telephone}`}
+                                        target='_blank'
                                       >
                                         {isMobile ? <CallIcon /> : telephone}
                                       </S.ReservationLink>
@@ -192,6 +193,7 @@ const Reservations = (_: RouteComponentProps) => {
                                     {email && (
                                       <S.ReservationLink
                                         href={`mailto:${email}`}
+                                        target='_blank'
                                       >
                                         {isMobile ? <EmailIcon /> : email}
                                       </S.ReservationLink>
