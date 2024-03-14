@@ -5,6 +5,7 @@ export type Reservation = {
   email: string;
   id: string;
   lastName: string;
+  notes: string;
   persons: number;
   telephone: string;
   time: string;

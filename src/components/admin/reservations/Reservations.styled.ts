@@ -1,9 +1,23 @@
 import styled from "styled-components";
 
-import { Fab, Tabs, Typography } from "@mui/material";
+import { Button, Fab, Tabs, Typography } from "@mui/material";
 
 export const Actions = styled.div`
   display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const ActionButton = styled(Button).withConfig({
+  shouldForwardProp: (prop) =>
+    !["isSmallMobile", "isMobile", "canceled"].includes(prop),
+})<{ canceled?: boolean; isSmallMobile?: boolean; isMobile?: boolean }>`
+  display: ${({ isMobile, canceled }) =>
+    isMobile && canceled ? "none" : "flex"};
+  min-width: ${({ isSmallMobile }) =>
+    isSmallMobile ? "auto !important;" : "unset"};
+  align-items: center;
+  padding: 0 !important;
   gap: 10px;
 `;
 
@@ -104,6 +118,7 @@ export const ReservationTextBasic = styled.span.withConfig({
 })<{ canceled?: boolean }>`
   display: flex;
   text-decoration: ${({ canceled }) => (canceled ? "line-through" : "none")};
+  align-items: center;
 `;
 
 export const ReservationContact = styled.span`

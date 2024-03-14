@@ -1,6 +1,6 @@
 import { isMonday, parseISO } from "date-fns";
 import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useToggle } from "react-use";
 
 import {
@@ -26,13 +26,17 @@ import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { useReservations } from "../../../hooks/useReservations";
-import { createReservation } from "../../../services/reservations";
+import {
+  createReservation,
+  updateReservation,
+} from "../../../services/reservations";
 import { Reservation } from "../../../types";
 import { isValidEmail } from "./utils";
 
 type ResponsiveDialogProps = {
   isOpen: boolean;
   onClose: () => void;
+  reservation?: Reservation;
 };
 
 const createTimeOptions = () => {
@@ -48,23 +52,40 @@ const createTimeOptions = () => {
   return options;
 };
 
+const inputStyle = {
+  minWidth: {
+    xs: "100%",
+    md: 320,
+  },
+  mb: 3,
+};
+
+const defaultData = {
+  date: "",
+  persons: 0,
+  time: "",
+  firstName: "",
+  lastName: "",
+  notes: "",
+  email: "",
+  telephone: "",
+};
+
 export const AddReservationModal = ({
   isOpen,
   onClose,
+  reservation,
 }: ResponsiveDialogProps) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const queryClient = useQueryClient();
   const [showSnackbar, setShowSnackbar] = useState(false);
-  const [data, setData] = useState<Omit<Reservation, "id" | "canceled">>({
-    date: "",
-    persons: 0,
-    time: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    telephone: "",
-  });
+  const isEditMode = Boolean(reservation);
+  const title = isEditMode ? "Edit Reservation" : "Add Reservation";
+  const submitText = isEditMode ? "Save Edit" : "Save";
+  const [data, setData] = useState<Omit<Reservation, "id" | "canceled">>(
+    reservation || defaultData
+  );
 
   const [isLastStep, toggleIsLastStep] = useToggle(false);
   const isNextDisabled = !data.date || !data.persons || !data.time;
@@ -103,30 +124,35 @@ export const AddReservationModal = ({
       }
 
       setData({
-        ...data,
-        date: "",
-        persons: 0,
-        time: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        telephone: "",
+        ...defaultData,
       });
     }, 500);
   };
 
   const mutation = useMutation({
     mutationFn: () =>
-      createReservation({
-        ...data,
-        canceled: false,
-      }),
+      isEditMode
+        ? updateReservation(data as Reservation)
+        : createReservation({
+            ...data,
+            canceled: false,
+          }),
     onSuccess: () => {
       setShowSnackbar(true);
       queryClient.invalidateQueries({ queryKey: useReservations.getKey() });
       closeModal();
     },
   });
+
+  useEffect(() => {
+    if (reservation) {
+      setData(reservation);
+    } else {
+      setData({
+        ...defaultData,
+      });
+    }
+  }, [reservation]);
 
   return (
     <>
@@ -137,7 +163,7 @@ export const AddReservationModal = ({
         onClose={closeModal}
         aria-labelledby='responsive-dialog-title'
       >
-        <DialogTitle id='responsive-dialog-title'>Add Reservation</DialogTitle>
+        <DialogTitle id='responsive-dialog-title'>{title}</DialogTitle>
         <DialogContent>
           <Box
             sx={{ display: isLastStep || isMobile ? "block" : "flex", gap: 3 }}
@@ -221,7 +247,7 @@ export const AddReservationModal = ({
                         setData({ ...data, firstName: e.target.value })
                       }
                       variant='outlined'
-                      sx={{ minWidth: 320, mb: 3 }}
+                      sx={inputStyle}
                     />
                     <TextField
                       id='outlined-basic'
@@ -231,7 +257,7 @@ export const AddReservationModal = ({
                         setData({ ...data, lastName: e.target.value })
                       }
                       variant='outlined'
-                      sx={{ minWidth: 320, mb: 3 }}
+                      sx={inputStyle}
                     />
                   </Box>
                 </Box>
@@ -242,7 +268,7 @@ export const AddReservationModal = ({
                       label='Email'
                       type='email'
                       value={data.email}
-                      sx={{ mb: 3, minWidth: 320 }}
+                      sx={inputStyle}
                       onChange={(e) =>
                         setData({ ...data, email: e.target.value })
                       }
@@ -253,11 +279,26 @@ export const AddReservationModal = ({
                       value={data.telephone}
                       onChange={(telephone) => setData({ ...data, telephone })}
                       label='Telephone'
-                      sx={{ mb: 3, minWidth: 320 }}
+                      sx={inputStyle}
                       variant='outlined'
                       defaultCountry='CH'
                     />
                   </Box>
+                </Box>
+                <Box>
+                  <TextField
+                    id='outlined-multiline-static'
+                    placeholder='Notes'
+                    multiline
+                    sx={{
+                      width: "100%",
+                    }}
+                    rows={2}
+                    value={data.notes}
+                    onChange={(e) =>
+                      setData({ ...data, notes: e.target.value })
+                    }
+                  />
                 </Box>
               </>
             )}
@@ -283,7 +324,7 @@ export const AddReservationModal = ({
             }
             variant='contained'
           >
-            {isLastStep ? "Save" : "Next"}
+            {isLastStep ? submitText : "Next"}
           </Button>
         </DialogActions>
       </Dialog>

@@ -4,14 +4,16 @@ import { useToggle } from "react-use";
 
 import AddIcon from "@mui/icons-material/Add";
 import CallIcon from "@mui/icons-material/Call";
-import CancelIcon from "@mui/icons-material/Cancel";
 import DomainVerificationSharpIcon from "@mui/icons-material/DomainVerificationSharp";
+import EditCalendarIcon from "@mui/icons-material/EditCalendar";
 import EmailIcon from "@mui/icons-material/Email";
+import EventBusyIcon from "@mui/icons-material/EventBusy";
 import GroupsIcon from "@mui/icons-material/Groups";
-import { Typography } from "@mui/material";
-import Button from "@mui/material/Button";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { Button, Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import CircularProgress from "@mui/material/CircularProgress";
+import Popover from "@mui/material/Popover";
 import Tab from "@mui/material/Tab";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -49,6 +51,7 @@ const Reservations = (_: RouteComponentProps) => {
   const listRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState(TabsView.Upcoming);
   const isTodayView = view === TabsView.Today;
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [isCancelModalOpen, toggleCancelModal] = useToggle(false);
   const [selectedReservation, setSelectedReservation] =
     useState<Reservation | null>(null);
@@ -61,10 +64,29 @@ const Reservations = (_: RouteComponentProps) => {
     listRef.current?.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const closeReservationModal = () => {
+    setSelectedReservation(null);
+    toggleAddReservationModal();
+  };
+
+  const handleTooltipClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleTooltipClose = () => {
+    setAnchorEl(null);
+  };
+
   const openCancelModal = (reservation: Reservation) => {
     setSelectedReservation(reservation);
     toggleCancelModal();
   };
+
+  const openEditModal = (reservation: Reservation) => {
+    setSelectedReservation(reservation);
+    toggleAddReservationModal();
+  };
+
   const hasTodayReservations = (reservations || []).some((reservation) =>
     isToday(new Date(reservation.date))
   );
@@ -143,6 +165,11 @@ const Reservations = (_: RouteComponentProps) => {
                           lastName && !isSmallMobile ? ` ${lastName}` : "";
                         const fullName = `${firstName}${_lastName}`;
                         const hasContact = email || telephone;
+                        const hasEmail = email ? 1 : 0;
+                        const hasTelephone = telephone ? 1 : 0;
+                        const hasNotes = r.notes ? 1 : 0;
+                        const actionNumbers =
+                          hasEmail + hasTelephone + hasNotes;
 
                         return (
                           <S.ListItem key={r.id}>
@@ -162,13 +189,55 @@ const Reservations = (_: RouteComponentProps) => {
                                               : "none",
                                         }}
                                       />
-                                      {r.persons}
-                                      {!isMobile && " persons"}
+                                      {r.persons}&nbsp;{!isMobile && "persons"}
                                       {isSmallMobile && "P"}
                                     </>
                                   </S.ReservationPersons>
                                   &nbsp;&#183;&nbsp;
-                                  {fullName}
+                                  <Typography
+                                    noWrap
+                                    // ellipsis
+                                    style={{
+                                      display: "block",
+                                      width: "100%",
+                                      fontSize: "inherit",
+                                      whiteSpace: "nowrap",
+                                      overflow: "hidden",
+                                      textOverflow: "ellipsis",
+                                      maxWidth: `calc(20vw - ${actionNumbers} * 2vw)`,
+                                    }}
+                                    title={fullName}
+                                  >
+                                    {fullName}
+                                  </Typography>
+                                  {r.notes && (
+                                    <Button
+                                      onClick={handleTooltipClick}
+                                      sx={{
+                                        p: 0,
+                                        ml: 1,
+                                        mr: 1,
+                                        minWidth: 0,
+                                      }}
+                                    >
+                                      <InfoOutlinedIcon
+                                        sx={{ cursor: "pointer" }}
+                                      />
+                                    </Button>
+                                  )}
+                                  <Popover
+                                    open={Boolean(anchorEl)}
+                                    anchorEl={anchorEl}
+                                    onClose={handleTooltipClose}
+                                    anchorOrigin={{
+                                      vertical: "bottom",
+                                      horizontal: "left",
+                                    }}
+                                  >
+                                    <Typography sx={{ p: 2 }}>
+                                      {r.notes}
+                                    </Typography>
+                                  </Popover>
                                 </S.ReservationTextBasic>
                                 {r.canceled && (
                                   <Chip
@@ -204,19 +273,26 @@ const Reservations = (_: RouteComponentProps) => {
                             </S.ReservationText>
                             <S.Actions>
                               {/* <Button disabled={reservation.canceled}>Edit</Button> */}
-                              <Button
-                                color='error'
-                                sx={{
-                                  p: 0,
-                                  minWidth: isSmallMobile ? "auto" : "unset",
-                                  display:
-                                    isMobile && r.canceled ? "none" : "flex",
-                                }}
-                                onClick={() => openCancelModal(r)}
+                              <S.ActionButton
+                                isSmallMobile={isSmallMobile}
+                                isMobile={isMobile}
+                                canceled={r.canceled}
+                                onClick={() => openEditModal(r)}
                                 disabled={r.canceled}
                               >
-                                {isSmallMobile ? <CancelIcon /> : "Cancel"}
-                              </Button>
+                                {isSmallMobile ? <EditCalendarIcon /> : "Edit"}
+                              </S.ActionButton>
+                              <S.ActionButton
+                                color='error'
+                                isSmallMobile={isSmallMobile}
+                                isMobile={isMobile}
+                                canceled={r.canceled}
+                                onClick={() => openCancelModal(r)}
+                                disabled={r.canceled}
+                                sx={{ mt: { xs: 0.25, sm: 0 } }}
+                              >
+                                {isSmallMobile ? <EventBusyIcon /> : "Cancel"}
+                              </S.ActionButton>
                             </S.Actions>
                           </S.ListItem>
                         );
@@ -236,7 +312,8 @@ const Reservations = (_: RouteComponentProps) => {
       />
       <AddReservationModal
         isOpen={isAddReservationModalOpen}
-        onClose={toggleAddReservationModal}
+        onClose={closeReservationModal}
+        reservation={selectedReservation as Reservation}
       />
     </S.Wrapper>
   );
