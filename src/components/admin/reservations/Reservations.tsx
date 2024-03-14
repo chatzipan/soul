@@ -44,7 +44,7 @@ const monthNames = [
 const Reservations = (_: RouteComponentProps) => {
   const response = useReservations();
   const reservations = response?.data as Reservation[];
-  const loading = response?.isLoading;
+  const loading = response?.isFetching;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"));
