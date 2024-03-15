@@ -43,6 +43,7 @@ const monthNames = [
 
 const Reservations = (_: RouteComponentProps) => {
   const response = useReservations();
+  console.log("response", response);
   const reservations = response?.data as Reservation[];
   const loading = response?.isFetching;
   const theme = useTheme();
