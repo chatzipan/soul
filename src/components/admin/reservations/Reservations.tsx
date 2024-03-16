@@ -1,4 +1,4 @@
-import { isToday } from "date-fns";
+import { isBefore, isToday } from "date-fns";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useToggle } from "react-use";
 
@@ -43,9 +43,8 @@ const monthNames = [
 
 const Reservations = (_: RouteComponentProps) => {
   const response = useReservations();
-  console.log("response", response);
   const reservations = response?.data as Reservation[];
-  const loading = response?.isFetching;
+  const loading = response?.isFetching || response?.isLoading || !response;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -171,6 +170,10 @@ const Reservations = (_: RouteComponentProps) => {
                         const hasNotes = r.notes ? 1 : 0;
                         const actionNumbers =
                           hasEmail + hasTelephone + hasNotes;
+                        const isBeforeToday = isBefore(
+                          new Date(r.date).setHours(0, 0, 0, 0),
+                          new Date().setHours(0, 0, 0, 0)
+                        );
 
                         return (
                           <S.ListItem key={r.id}>
@@ -279,7 +282,7 @@ const Reservations = (_: RouteComponentProps) => {
                                 isMobile={isMobile}
                                 canceled={r.canceled}
                                 onClick={() => openEditModal(r)}
-                                disabled={r.canceled}
+                                disabled={r.canceled || isBeforeToday}
                               >
                                 {isSmallMobile ? <EditCalendarIcon /> : "Edit"}
                               </S.ActionButton>
@@ -289,7 +292,7 @@ const Reservations = (_: RouteComponentProps) => {
                                 isMobile={isMobile}
                                 canceled={r.canceled}
                                 onClick={() => openCancelModal(r)}
-                                disabled={r.canceled}
+                                disabled={r.canceled || isBeforeToday}
                                 sx={{ mt: { xs: 0.25, sm: 0 } }}
                               >
                                 {isSmallMobile ? <EventBusyIcon /> : "Cancel"}

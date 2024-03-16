@@ -36,23 +36,28 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [hasLoaded, setHasLoaded] = useState(false);
 
-  const firebaseUiConfig = {
-    ..._uiConfig,
-    callbacks: {
-      signInSuccessWithAuthResult: (authResult) => {
-        setUser(authResult.user);
-        return true;
-      },
-    },
-  } as firebaseui.auth.Config;
+  const firebaseUiConfig = useMemo(
+    () =>
+      ({
+        ..._uiConfig,
+        callbacks: {
+          signInSuccessWithAuthResult: (authResult) => {
+            setUser(authResult.user);
+            return true;
+          },
+        },
+      } as firebaseui.auth.Config),
+    [setUser]
+  );
 
   useEffect(() => {
     const auth = getAuth();
 
     onAuthStateChanged(auth, async (_user) => {
+      console.log("onAuthStateChanged", _user);
       if (_user) {
         setUser(_user);
-        const idToken = await _user.getIdToken();
+        const idToken = await _user.getIdToken(true);
         setToken(idToken);
         localStorage.setItem("token", idToken);
       } else {
@@ -74,7 +79,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const value = useMemo(
     () => ({ firebase, firebaseUiConfig, isLoggedIn, logout, token, user }),
-    [firebase, firebaseUiConfig, isLoggedIn, logout, token, user]
+    [firebaseUiConfig, isLoggedIn, logout, token, user]
   );
 
   if (!hasLoaded) {
