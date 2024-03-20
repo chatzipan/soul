@@ -204,7 +204,7 @@ export const AddReservationModal = ({
                       label='Persons'
                       onChange={handlePersonsChange}
                     >
-                      {[1, 2, 3, 4, 5, 6].map((p) => (
+                      {[1, 2, 3, 4, 5, 6, 7, 8].map((p) => (
                         <MenuItem key={p} value={p}>
                           {p}
                         </MenuItem>

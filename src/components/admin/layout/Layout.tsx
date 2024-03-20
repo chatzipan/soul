@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 import { useAuth } from "../../../hooks/useAuth";
 import * as S from "./Layout.styled";
@@ -14,6 +15,9 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       {isLoggedIn && <TopBar />}
+      <Helmet>
+        <meta name={"robots"} content={"noindex, nofollow"} />
+      </Helmet>
       <S.Wrapper>{children}</S.Wrapper>
     </>
   );
