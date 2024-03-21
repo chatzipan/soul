@@ -52,6 +52,7 @@ const Reservations = (_: RouteComponentProps) => {
   const [view, setView] = useState(TabsView.Upcoming);
   const isTodayView = view === TabsView.Today;
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [tooltipId, setTooltipId] = useState<string | null>(null);
   const [isCancelModalOpen, toggleCancelModal] = useToggle(false);
   const [selectedReservation, setSelectedReservation] =
     useState<Reservation | null>(null);
@@ -69,12 +70,17 @@ const Reservations = (_: RouteComponentProps) => {
     toggleAddReservationModal();
   };
 
-  const handleTooltipClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleTooltipClick = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    id: string
+  ) => {
     setAnchorEl(event.currentTarget);
+    setTooltipId(id);
   };
 
   const handleTooltipClose = () => {
     setAnchorEl(null);
+    setTooltipId(null);
   };
 
   const openCancelModal = (reservation: Reservation) => {
@@ -216,7 +222,9 @@ const Reservations = (_: RouteComponentProps) => {
                                   </Typography>
                                   {r.notes && (
                                     <Button
-                                      onClick={handleTooltipClick}
+                                      onClick={(e) =>
+                                        handleTooltipClick(e, r.id)
+                                      }
                                       sx={{
                                         p: 0,
                                         ml: 1,
@@ -230,7 +238,7 @@ const Reservations = (_: RouteComponentProps) => {
                                     </Button>
                                   )}
                                   <Popover
-                                    open={Boolean(anchorEl)}
+                                    open={tooltipId === r.id}
                                     anchorEl={anchorEl}
                                     onClose={handleTooltipClose}
                                     anchorOrigin={{
