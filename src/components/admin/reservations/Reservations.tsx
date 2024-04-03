@@ -149,10 +149,11 @@ const Reservations = (_: RouteComponentProps) => {
                   {month} {year}
                 </Typography>
               )}
-              {Object.entries(days).map(([day, entries]) => {
+              {Object.entries(days).map(([_day, entries]) => {
                 const monthIndex = (monthNames.indexOf(month) + 1)
                   .toString()
                   .padStart(2, "0");
+                const day = _day.padStart(2, "0");
 
                 return (
                   <S.ReservationListInner key={`${year}-${month}-${day}`}>

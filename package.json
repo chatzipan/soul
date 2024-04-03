@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop & firebase emulators:start",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
