@@ -52,7 +52,7 @@ const Contact = () => {
             email us.
           </S.TelLinkUnderlined>
           <br />
-          <br />- Special Occasions: Birthdays or a Team Events?{" "}
+          <br />- Special Occasions: Birthdays or a Team Event?&nbsp;
           <S.TelLinkUnderlined
             href='mailto:hallo@soulcoffee.info'
             target='_blank'
