@@ -33,6 +33,36 @@ const Contact = () => {
           zurich_soul
         </S.TelLink>
         <br />
+        <br />
+        <S.Text>Reservations:</S.Text>
+        <br />
+        <S.TextSmall>
+          - BRUNCH on WEEKENDS: no reservation needed, just come on in and we
+          will find you a table as soon as possible.
+          <br />
+          <br />- ALL other days and hours:&nbsp;
+          <S.TelLinkUnderlined href='tel:+41445991366'>
+            Call
+          </S.TelLinkUnderlined>
+          &nbsp;or&nbsp;
+          <S.TelLinkUnderlined
+            href='mailto:hallo@soulcoffee.info'
+            target='_blank'
+          >
+            email us.
+          </S.TelLinkUnderlined>
+          <br />
+          <br />- Special Occasions: Birthdays or a Team Events?{" "}
+          <S.TelLinkUnderlined
+            href='mailto:hallo@soulcoffee.info'
+            target='_blank'
+          >
+            email us.
+          </S.TelLinkUnderlined>
+          , and we'll tailor an offer that fits perfectly with your needs.
+        </S.TextSmall>
+        <br />
+        <br />
         <S.Text>Opening Hours</S.Text>
         {entries.map((entry, index) => (
           <S.Hours key={index}>

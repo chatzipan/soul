@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
 export const Text = styled.p`
   font-size: 2rem;
   line-height: 1.5;
+  margin: 0;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {
     font-size: 1.75rem;
@@ -103,6 +104,28 @@ export const TelLink = styled.a`
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+`;
+
+export const TelLinkUnderlined = styled.a`
+  color: inherit;
+  text-decoration-thickness: from-font;
+  font-size: 1.35rem;
+  line-height: 1.5;
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+`;
+
+export const TextSmall = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     font-size: 1rem;
   }
 `;
