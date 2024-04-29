@@ -4,11 +4,11 @@ import * as S from "./Hero.styled";
 import { StaticImage } from "gatsby-plugin-image";
 
 const entries = [
-  ["Tuesday - Wednesday:", "8:00 - 19:00"],
-  ["Thursday - Friday:", "8:00 - 22:00"],
-  ["Saturday:", "9:00 - 22:00"],
-  ["Sunday:", "9:00 - 19:00"],
-  ["Monday:", "Closed"],
+  ["Monday:", "8:00 - 18:00"],
+  ["Tuesday - Wednesday:", "8:00 - 20:00"],
+  ["Thursday - Friday:", "8:00 - 23:00"],
+  ["Saturday:", "9:00 - 23:00"],
+  ["Sunday:", "9:00 - 20:00"],
 ];
 
 const Contact = () => {
