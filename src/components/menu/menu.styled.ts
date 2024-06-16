@@ -1,18 +1,16 @@
-import Button from "../components/shared/Button";
+import Button from "../../components/shared/Button";
 import styled from "styled-components";
+import { Link } from "@reach/router";
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
   width: 100%;
   display: flex;
   max-width: 1248px;
   margin: 0 auto;
-
-  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    max-width: 90vw;
-    flex-direction: column;
-  }
-
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   &::before {
     content: "";
     position: fixed;
@@ -28,91 +26,30 @@ export const Wrapper = styled.div`
 
     @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
       top: -250%;
-      display: none;
     }
   }
 `;
 
 export const HomeLink = styled(Button)`
-  margin-top: auto;
-
-  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    margin-top: 0;
-  }
-`;
-
-export const ScrollToTop = styled(Button)`
-  margin: 3rem auto;
+  margin-top: 2rem;
   display: block;
-  padding: 0.5rem 1rem;
-
-  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    margin-top: 0;
-  }
 `;
 
-export const Sidebar = styled.aside`
-  position: sticky;
-  top: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: calc(100vh - 6rem);
-  width: 40%;
-  backdrop-filter: blur(13px) saturate(70%);
-  padding-bottom: 2rem;
-
-  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    position: static;
-    width: auto;
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    height: 4.5rem;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    flex-direction: row;
-    gap: 1rem;
-    margin: 0 1rem;
-    background-color: white;
-    padding: 0;
-
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
-
-    &::-webkit-scrollbar {
-      display: none; /* Safari and Chrome */
-    }
-  }
-`;
-
-export const Category = styled.h3.withConfig({
-  shouldForwardProp: (prop) => !["active"].includes(prop),
-})<{ active: boolean }>`
-  font-size: 1.75rem;
+export const Category = styled(Link)`
+  font-size: 2.75rem;
   font-family: "Cabin", sans-serif;
   line-height: 1.5;
-  color: ${({ theme, active }) => (active ? theme.colors.primary : "#edd3c5")};
+  color: #e8a886;
   margin: 0;
   cursor: pointer;
-
-  @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    display: inline-block;
-    font-size: 1.5rem;
-  }
+  backdrop-filter: blur(13px) saturate(70%);
+  -webkit-backdrop-filter: blur(13px) saturate(70%);
+  padding: 0 5rem;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
-    &:not(:last-child)::after {
-      content: " - ";
-      display: inline-block;
-      color: #edd3c5;
-      font-weight: 100;
-      margin-left: 1rem;
-    }
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 2rem;
   }
 `;
 
@@ -127,14 +64,11 @@ export const SectionTitle = styled.h4`
   display: block;
   backdrop-filter: blur(13px) saturate(70%);
   -webkit-backdrop-filter: blur(13px) saturate(70%);
-  background-color: white;
-  margin-top: -25px;
   display: inline-flex;
-  padding: 0 5rem;
+  padding: 1rem;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
     font-size: 1.5rem;
-    margin-top: -20px;
   }
 `;
 
@@ -143,19 +77,25 @@ export const Main = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
   padding: 4rem 2rem;
-  margin-left: auto;
+  margin: 0 auto;
   backdrop-filter: blur(13px) saturate(70%);
   -webkit-backdrop-filter: blur(13px) saturate(70%);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    width: 100%;
-    padding: 6rem 0 0;
+    width: 90%;
+    padding: 4rem 0;
   }
 `;
 
 export const Section = styled.section`
   margin-bottom: 8rem;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem;
   border: 3px dashed ${({ theme }) => theme.colors.primaryLight};
   position: relative;
   text-align: center;
@@ -181,6 +121,7 @@ export const Item = styled.p`
 export const ItemName = styled.span`
   font-family: "Cabin", sans-serif;
   color: ${({ theme }) => theme.colors.primary};
+  text-align: left;
 `;
 
 export const Price = styled.span`
