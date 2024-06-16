@@ -27,10 +27,10 @@ const Contact = () => {
           hallo@soulcoffee.info
         </S.TelLink>
         <S.TelLink
-          href='https://www.instagram.com/zurich_soul/'
+          href='https://www.instagram.com/soul_zurich/'
           target='_blank'
         >
-          zurich_soul
+          soul_zurich
         </S.TelLink>
         <br />
         <br />
