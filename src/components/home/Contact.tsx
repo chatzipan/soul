@@ -6,8 +6,8 @@ import { StaticImage } from "gatsby-plugin-image";
 const entries = [
   ["Monday:", "8:00 - 18:00"],
   ["Tuesday - Wednesday:", "8:00 - 20:00"],
-  ["Thursday - Friday:", "8:00 - 23:00"],
-  ["Saturday:", "9:00 - 23:00"],
+  ["Thursday - Friday:", "8:00 - 21:00"],
+  ["Saturday:", "9:00 - 21:00"],
   ["Sunday:", "9:00 - 18:00"],
 ];
 
