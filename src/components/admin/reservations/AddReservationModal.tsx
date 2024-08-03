@@ -42,14 +42,14 @@ type ResponsiveDialogProps = {
 const createTimeOptions = () => {
   // create options every 15 minutes
   const options = [];
-  for (let i = 9; i < 21; i++) {
+  for (let i = 8; i < 22; i++) {
     for (let j = 0; j < 60; j += 15) {
       const hours = `${i}`.padStart(2, "0");
       const minutes = `${j}`.padEnd(2, "0");
       options.push(`${hours}:${minutes}`);
     }
   }
-  return options;
+  return options.concat("22:00");
 };
 
 const inputStyle = {
