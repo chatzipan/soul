@@ -98,8 +98,12 @@ async function scrap() {
     console.log("Menu Diffs: ", menuDiffs.join("\n"));
 
     const formattedMenu = formatMenu(menu.groups);
+    const menuExcludingEvening = formattedMenu.filter(
+      (menu) => !menu.name.includes("Evening")
+    );
+
     // Upload menu.json to GCS
-    await uploadFile(formattedMenu);
+    await uploadFile(menuExcludingEvening);
     await browser.close();
     return;
   } catch (error) {
