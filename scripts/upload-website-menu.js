@@ -92,13 +92,12 @@ async function scrap() {
     if (menuDiffs.length === 0) {
       console.log("No menu changes. Exiting...");
       await browser.close();
-      return;
+      // return;
     }
 
     console.log("Menu Diffs: ", menuDiffs.join("\n"));
 
     const formattedMenu = formatMenu(menu.groups);
-
     // Upload menu.json to GCS
     await uploadFile(formattedMenu);
     await browser.close();

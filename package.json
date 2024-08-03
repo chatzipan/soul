@@ -14,8 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "create-google-menu": "node ./scripts/create-google-menu.js",
-    "scrap-lightspeed-menu": "export GOOGLE_APPLICATION_CREDENTIALS=\"./google_cloud_keys.json\" && node ./scripts/scrap-lightspeed.js"
+    "upload-google-menu": "node ./scripts/upload-google-menu.js",
+    "upload-website-menu": "export GOOGLE_APPLICATION_CREDENTIALS=\"./google_cloud_keys.json\" && node ./scripts/upload-website-menu.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
