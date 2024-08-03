@@ -75,7 +75,7 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
                 <S.Price>{entry.price.toString()}</S.Price>
               </S.Item>
             ))}
-          <S.HomeLink to='/menu'>Back To Categories</S.HomeLink>
+          <S.HomeLink to='/menu'>Back To Menu</S.HomeLink>
         </S.Section>
       </S.Main>
     </S.Wrapper>
