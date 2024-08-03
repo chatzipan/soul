@@ -11,6 +11,12 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 0;
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    padding: 0;
+  }
+
   &::before {
     content: "";
     position: fixed;
@@ -36,7 +42,7 @@ export const HomeLink = styled(Button)`
 `;
 
 export const Category = styled(Link)`
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-family: "Cabin", sans-serif;
   line-height: 1.5;
   color: #e8a886;
