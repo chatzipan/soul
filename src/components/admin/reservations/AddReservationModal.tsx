@@ -1,4 +1,4 @@
-import { isMonday, parseISO } from "date-fns";
+import { parseISO } from "date-fns";
 import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 import React, { useEffect, useState } from "react";
 import { useToggle } from "react-use";
@@ -184,7 +184,6 @@ export const AddReservationModal = ({
                       });
                     }}
                     timezone='Europe/Zurich'
-                    shouldDisableDate={(date) => isMonday(date)}
                     value={data.date ? parseISO(data.date) : null}
                   />
                 </div>
