@@ -50,13 +50,13 @@ const MenuPageComponent: React.FC<{ menu: Menu[] }> = ({ menu }) => {
     .map((group) => group?.name.trim())
     .map(capitalize)
     .map((category) => category.replace(/\s*\([^)]*\)/, ""))
+    .map((category) => category.replace("é", "e"))
     .map((category) => category.replace("/", " &"));
 
   return (
     <S.Wrapper>
-      {categories.map((category, i) => (
+      {categories.map((category) => (
         <S.Category to={createLink(category)} key={category}>
-          {/* Remove anything in parentheses */}
           {category}
         </S.Category>
       ))}

@@ -48,10 +48,10 @@ const MenuCategory: React.FC<RouteComponentProps> = ({}) => {
     .map(capitalize)
     .map((category) => category.replace(/\s*\([^)]*\)/, ""))
     .map((category) => category.replace("/", " &"))
+    .map((category) => category.replace("é", "e"))
     .map((category) => createLink(category));
 
   if (!allCategories.includes(category)) {
-    // Redirect to menu page
     return <Redirect to='/menu' noThrow />;
   }
 
