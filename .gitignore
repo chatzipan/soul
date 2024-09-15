@@ -8,3 +8,5 @@ elite.json
 # dotenv environment variables file
 .env
 .env.*
+
+*debug.log

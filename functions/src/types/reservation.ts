@@ -1,6 +1,12 @@
 export type Reservation = {
+  canceled: boolean;
+  date: number;
+  firstName: string;
+  email: string;
   id: string;
-  created: string;
-  currentSessionId: string;
-  meetingId: string;
+  lastName: string;
+  notes: string;
+  persons: number;
+  telephone: string;
+  time: string;
 };

@@ -8,7 +8,8 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby develop & firebase emulators:start",
+    "dev": "gatsby develop",
+    "emulators": "firebase emulators:start --import=./emulator-data --export-on-exit=./emulator-data",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",

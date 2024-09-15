@@ -18,3 +18,5 @@ ui-debug.log
 .env.prod
 .env.**
 funcions/.env.*
+
+*debug.log

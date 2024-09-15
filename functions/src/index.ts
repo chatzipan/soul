@@ -4,6 +4,9 @@ import express = require("express");
 
 import { initRouter } from "./routes";
 
+export { sendDailyReservationsSummary } from "./scheduledFunctions";
+export { testSendReservationSummary } from "./testFunctions";
+
 admin.initializeApp();
 
 const app = express();
