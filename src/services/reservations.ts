@@ -5,11 +5,13 @@ const getHeaders = () => ({
   Authorization: `Bearer ${localStorage.getItem("token")}`,
 });
 
+const API_URL = process.env.GATSBY_API_URL;
+
 export const createReservation = async (
-  reservation: Omit<Reservation, "id">
+  reservation: Omit<Reservation, "id" | "time">
 ) => {
   try {
-    const res = await fetch(`${process.env.GATSBY_API_URL}/reservations/v1`, {
+    const res = await fetch(`${API_URL}/reservations/v1`, {
       method: "POST",
       headers: getHeaders(),
       body: JSON.stringify(reservation),
@@ -24,13 +26,10 @@ export const createReservation = async (
 
 export const deleteReservation = async (reservationId: string) => {
   try {
-    const res = await fetch(
-      `${process.env.GATSBY_API_URL}/reservations/v1/${reservationId}`,
-      {
-        method: "DELETE",
-        headers: getHeaders(),
-      }
-    );
+    const res = await fetch(`${API_URL}/reservations/v1/${reservationId}`, {
+      method: "DELETE",
+      headers: getHeaders(),
+    });
 
     const response = await res.json();
     return response;
@@ -39,30 +38,48 @@ export const deleteReservation = async (reservationId: string) => {
   }
 };
 
+const getTimeFromDate = (date: Date) => {
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+
+  return `${hours}:${minutes === 0 ? "00" : minutes}`;
+};
+
 export const getAllReservations = async () => {
   try {
-    const res = await fetch(`${process.env.GATSBY_API_URL}/reservations/v1`, {
+    const res = await fetch(`${API_URL}/reservations/v1`, {
       method: "GET",
       headers: getHeaders(),
     });
 
     const response = (await res.json()) as Reservation[];
-    return response;
+
+    const reservationsWithTime = response.map((reservation) => {
+      const { date, ...rest } = reservation;
+      return {
+        ...rest,
+        date,
+        time: reservation.time
+          ? reservation.time
+          : getTimeFromDate(new Date(date)),
+      };
+    });
+
+    return reservationsWithTime;
   } catch (error) {
     console.error(error);
   }
 };
 
-export const updateReservation = async (reservation: Reservation) => {
+export const updateReservation = async (
+  reservation: Omit<Reservation, "time">
+) => {
   try {
-    const res = await fetch(
-      `${process.env.GATSBY_API_URL}/reservations/v1/${reservation.id}`,
-      {
-        method: "PUT",
-        headers: getHeaders(),
-        body: JSON.stringify(reservation),
-      }
-    );
+    const res = await fetch(`${API_URL}/reservations/v1/${reservation.id}`, {
+      method: "PUT",
+      headers: getHeaders(),
+      body: JSON.stringify(reservation),
+    });
 
     const response = await res.json();
     return response;

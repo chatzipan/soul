@@ -61,7 +61,7 @@ const inputStyle = {
 };
 
 const defaultData = {
-  date: "",
+  date: new Date().getTime(),
   persons: 0,
   time: "",
   firstName: "",
@@ -130,13 +130,26 @@ export const AddReservationModal = ({
   };
 
   const mutation = useMutation({
-    mutationFn: () =>
-      isEditMode
-        ? updateReservation(data as Reservation)
+    mutationFn: () => {
+      const { date: _date, time, ...rest } = data;
+      const date = new Date(_date);
+      const timeArray = data.time.split(":");
+      date.setHours(parseInt(timeArray[0]));
+      date.setMinutes(parseInt(timeArray[1]));
+
+      const _data = {
+        ...rest,
+        date: date.getTime(),
+      };
+
+      return isEditMode
+        ? updateReservation(_data as Omit<Reservation, "time">)
         : createReservation({
-            ...data,
+            ..._data,
             canceled: false,
-          }),
+          });
+    },
+
     onSuccess: () => {
       setShowSnackbar(true);
       queryClient.invalidateQueries({ queryKey: useReservations.getKey() });
@@ -176,15 +189,15 @@ export const AddReservationModal = ({
                   </Typography>
                   <DateCalendar
                     disablePast
-                    maxDate={new Date("2024-12-31")}
+                    maxDate={new Date("2024-12-31").getTime()}
                     onChange={(newDate) => {
                       setData({
                         ...data,
-                        date: newDate.toISOString(),
+                        date: new Date(newDate).getTime(),
                       });
                     }}
                     timezone='Europe/Zurich'
-                    value={data.date ? parseISO(data.date) : null}
+                    value={data.date ? data.date : null}
                   />
                 </div>
                 <div>

@@ -1,6 +1,6 @@
 export type Reservation = {
   canceled: boolean;
-  date: string;
+  date: number;
   firstName: string;
   email: string;
   id: string;

@@ -52,14 +52,38 @@ export const getReservationsPerTabView = (
   }
 };
 
+const getSortPerTabView = (view: TabsView, a: Reservation, b: Reservation) => {
+  if (view === TabsView.Upcoming) {
+    return a.date > b.date ? 1 : -1;
+  } else {
+    return a.date < b.date ? 1 : -1;
+  }
+};
+
+const getSortPerTabViewLegacy = (
+  view: TabsView,
+  a: Reservation,
+  b: Reservation
+) => {
+  if (view === TabsView.Upcoming) {
+    return a.date.localeCompare(b.date) || a.time.localeCompare(b.time);
+  } else {
+    return b.date.localeCompare(a.date) || b.time.localeCompare(a.time);
+  }
+};
+
 export const groupByDateAndTime = (
   reservations: Reservation[],
   view: TabsView
 ) => {
   const perTabView = getReservationsPerTabView(reservations, view);
+
   const sortedByDate = [...perTabView].sort(
     // sort by date and time
-    (a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time)
+    (a, b) =>
+      typeof a.date === "number"
+        ? getSortPerTabView(view, a, b)
+        : getSortPerTabViewLegacy(view, a, b)
   );
 
   // Create 3 levels deep of grouping: year, month, and day
@@ -82,9 +106,9 @@ export const groupByDateAndTime = (
     (acc, [year, months]) => {
       acc[year] = Object.entries(months).reduce(
         (acc, [month, reservations]) => {
-          acc[month] = groupBy(reservations, (reservation) =>
-            format(new Date(reservation.date), "d")
-          );
+          acc[month] = groupBy(reservations, (reservation) => {
+            return format(new Date(reservation.date), "d");
+          });
           return acc;
         },
         {} as Record<string, Record<string, Reservation[]>>
