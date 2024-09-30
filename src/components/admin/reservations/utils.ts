@@ -68,7 +68,9 @@ const getSortPerTabViewLegacy = (
   if (view === TabsView.Upcoming) {
     return a.date.localeCompare(b.date) || a.time.localeCompare(b.time);
   } else {
-    return b.date.localeCompare(a.date) || b.time.localeCompare(a.time);
+    const bDate =
+      typeof b.date === "number" ? new Date(b.date).toISOString() : b.date;
+    return bDate.localeCompare(a.date) || b.time.localeCompare(a.time);
   }
 };
 
@@ -78,7 +80,7 @@ export const groupByDateAndTime = (
 ) => {
   const perTabView = getReservationsPerTabView(reservations, view);
 
-  const sortedByDate = [...perTabView].sort(
+  const sortedByDate = perTabView.sort(
     // sort by date and time
     (a, b) =>
       typeof a.date === "number"
