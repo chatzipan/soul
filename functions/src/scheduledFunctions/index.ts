@@ -7,9 +7,8 @@ export const sendDailyReservationsSummary = onSchedule(
     timeZone: "Europe/Zurich", // Adjust to your timezone
     retryCount: 3, // Optional: number of retry attempts if the function fails
   },
-  async (context) => {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    await sendReservationSummary(tomorrow);
+  async () => {
+    const today = new Date();
+    await sendReservationSummary(today);
   }
 );
