@@ -46,7 +46,7 @@ export const sendReservationSummary = async (date: Date) => {
 
     await transporter.sendMail({
       from: "Soul Bookings <hallo@soulcoffee.info>",
-      to: "vchatzipan@gmail.com",
+      to: ["Soul Team <hallo@soulcoffee.info>", "vchatzipan@gmail.com"],
       subject: `Reservations for ${moment(date)
         .tz("Europe/Zurich")
         .startOf("day")

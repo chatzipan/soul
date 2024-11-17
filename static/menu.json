@@ -1,459 +1,799 @@
 [
   {
-    "name": "Brunch Menu (09:00 - 15:00)",
+    "type": "menuGroup",
+    "name": "Dinner",
     "entries": [
       {
-        "name": "French Toast Crème Brûlée",
-        "price": 14,
+        "name": "Tuna Tataki",
+        "subTitle": "Tuna Tataki",
+        "description": "<p>Tuna served with leek chips, chilli &amp; ponzu sauce</p>",
+        "price": 23.5,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Greek yogurt with homemade granola, honey & fruits",
-        "price": 18,
+        "name": "Beef Tartare",
+        "subTitle": "",
+        "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
+        "price": 24.5,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Sweet potato with pico de gallo & romesco",
-        "price": 22,
-        "imageThumbnail": null,
-        "image": null
-      },
-      { "name": "Saksuka", "price": 22, "imageThumbnail": null, "image": null },
-      {
-        "name": "Egg Benedict",
-        "price": 25,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Egg Royale",
-        "price": 26,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Pastrami-Sando with a green salad",
-        "price": 26,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Potato salad with a poached egg and local sausage",
-        "price": 21,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Tabbouleh-Salad with falafel & humus",
-        "price": 24,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Tabbouleh-Salad with chicken & fetacrème",
-        "price": 26,
-        "imageThumbnail": null,
-        "image": null
-      }
-    ]
-  },
-  {
-    "name": "Evening Menu (18:00 - 21:00)",
-    "entries": [
-      {
-        "name": "Potato salad with a poached egg and local sausage",
-        "price": 21,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Bread with diverse dips",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Beef Tataki with celery scallops and a potato, lime, leek mousse",
+        "name": "Bao",
+        "subTitle": "Bao Buns",
+        "description": "<p>Bao buns filled with pulled beef, pickles and chili marmalade</p>",
         "price": 23,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Beef Carpaccio with rucola and truffle oil",
-        "price": 24,
+        "name": "Sweet potato with pico de gallo & romesco",
+        "subTitle": "Sweet Potato",
+        "description": "<p>Sweet potato with Romesco sauce, Pico de gallo &amp; feta</p>",
+        "price": 23,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Tabbouleh-Salad with falafel & humus",
-        "price": 24,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Tabbouleh-Salad with chicken & fetacrème",
-        "price": 26,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Pastrami-Sando with a green salad",
-        "price": 26,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Pulled beef burger with a small potato salad",
-        "price": 26,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Bruschetta - Chef's choice",
-        "price": 15,
+        "name": "Burrata",
+        "subTitle": "",
+        "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
+        "price": 19,
         "imageThumbnail": null,
         "image": null
       }
-    ]
+    ],
+    "description": "Dinner Menu [THU - SAT] - 18:00 - 21:00 "
   },
   {
-    "name": "Homemade Pastries (All Day)",
+    "name": "Wine",
+    "description": "Wine and beer",
     "entries": [
       {
-        "name": "Choco Babka",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Cardamom Bun",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Cinnamon Roll",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Cheesecake",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Carrotcake",
-        "price": 8,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Paris Brest",
+        "category": "Sparkling Wine",
+        "name": "Prosecco",
+        "subTitle": "Nani Rizzi, Prosecco Valdobbiadene Brut DOCG - Glass (0.1l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Glera</em></li><li><strong>Origin: </strong><em>Conegliano-Valdobbiadene, Veneto Italy</em></li><li><strong>Profile:</strong> <em>Lots of flower and blossom, tart green apple &amp; white peaches</em></li><li><strong>Style: </strong><em>Dry</em></li></ul>",
         "price": 10,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Tiramisu",
-        "price": 10,
+        "category": "Sparkling Wine",
+        "name": "Prosecco Bottle Nani Rizzi",
+        "subTitle": "Nani Rizzi, Prosecco Valdobbiadene Brut DOCG - Bottle (0.75l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Glera</em></li><li><strong>Origin: </strong><em>Conegliano-Valdobbiadene, Veneto Italy</em></li><li><strong>Profile:</strong> <em>Lots of flower and blossom, tart green apple &amp; white peaches</em></li><li><strong>Style: </strong><em>Dry</em></li></ul>",
+        "price": 60,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Focaccia Pesto Roll",
-        "price": 13,
+        "category": "Sparkling Wine",
+        "name": "Laurent Perrier Champagne 1dl",
+        "subTitle": "Laurent Perrier, Millesime 2015 - Glass (0.1l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>50% Pinot Noir, 50% Chardonnay</em></li><li><strong>Origin: </strong><em>Cote de Blancs, Champagne France</em></li><li><strong>Profile:</strong> <em>Concentrated citrus fruit, candied lemon &amp; orange, honeysucle, bee wax alongside with herbal notes</em></li><li><strong>Style: </strong><em>Brut - 7 years of aging on the lees</em></li></ul>",
+        "price": 23,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Mushroom Pie",
-        "price": 14,
+        "category": "Sparkling Wine",
+        "name": "Laurent Perrier Champagne Bottle",
+        "subTitle": "Laurent Perrier, Millesime 2015 - Bottle (0.75l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>50% Pinot Noir, 50% Chardonnay</em></li><li><strong>Origin: </strong><em>Cote de Blancs, Champagne France</em></li><li><strong>Profile:</strong> <em>Concentrated citrus fruit, candied lemon &amp; orange, honeysucle, bee wax alongside with herbal notes</em></li><li><strong>Style: </strong><em>Brut - 7 years of aging on the lees</em></li></ul>",
+        "price": 140,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Spinach Pie",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Chicken Pie",
-        "price": 15,
-        "imageThumbnail": null,
-        "image": null
-      }
-    ]
-  },
-  {
-    "name": "Coffee",
-    "entries": [
-      {
-        "name": "Espresso",
-        "price": 5.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Espresso Machiato",
-        "price": 6.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Double Espresso",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Double Espresso Machiato",
-        "price": 7.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Americano",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Cappuccino",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Flat White",
-        "price": 7.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      { "name": "Latte", "price": 8, "imageThumbnail": null, "image": null },
-      {
-        "name": "Filter Coffee",
-        "price": 8,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Special filter coffee",
-        "price": 15,
-        "imageThumbnail": null,
-        "image": null
-      }
-    ]
-  },
-  {
-    "name": "Hot beverage",
-    "entries": [
-      {
-        "name": "Matcha Latte",
-        "price": 9,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Hot Chocolate",
-        "price": 8,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Bio Long Cui Lu",
-        "price": 8.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Honey Oolong",
-        "price": 8.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Milky Oolong",
-        "price": 8.5,
-        "imageThumbnail": null,
-        "image": null
-      }
-    ]
-  },
-  {
-    "name": "Cold beverage",
-    "entries": [
-      {
-        "name": "Still Water 5dl",
-        "price": 5.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Still Water 1l",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Sparkling Water 5dl",
-        "price": 5.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Sparkling Water 1l",
-        "price": 7,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Hibiscus/Fruit limo",
-        "price": 7.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Ginger/Lemon limo",
-        "price": 7.5,
-        "imageThumbnail": null,
-        "image": null
-      }
-    ]
-  },
-  {
-    "name": "Beer",
-    "entries": [
-      {
-        "name": "Una más 5% - 44cl",
-        "price": 9,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Rainbow IPA 6% - 44cl",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Zeer nonalcoholic IPA 0.3% - 33cl",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      }
-    ]
-  },
-  {
-    "name": "Sparkling Wine",
-    "entries": [
-      {
+        "category": "Sparkling Wine",
         "name": "Anne Claire Schott, Pét-Nat Rosé 2021 - Glass (1dl)",
+        "subTitle": "Anne Claire Schott, Pét-Nat - Glass (0.1l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>85% Chasselas, 15% Muscat</em></li><li><strong>Origin: </strong><em>Neuchâtel, Switzerland</em></li><li><strong>Profile:</strong> <em>Ripe citrus fruit, yellow apples, Honey &amp; Beewax</em></li><li><strong>Style: </strong><em>Natural - dry &amp; fizzy</em></li></ul><p><br></p><p>This creation of art, as Anne-Claire refers to her wines, was produced in Neuchâtel.</p><p><br></p><p>Given the heat and the cold winter in this area, the three lakes play an important role in moderating the climate.</p><p><br></p><p>All her vineyard work and winemaking techniques are based on biodynamic approaches, which is always resulting in very character driven wines.</p><p><br></p><p>This natural fizzy wine impresses with ripe citrus fruit accompanied by dried wildflowers and honey.</p><p><br></p><p>This creative craft - is always surprising!</p>",
         "price": 18,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f5eb0af1-aeb6-4f68-9abc-1e76fcff6bab.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f5eb0af1-aeb6-4f68-9abc-1e76fcff6bab_raw.png"
       },
       {
+        "category": "Sparkling Wine",
         "name": "Anne Claire Schott, Pét-Nat Rosé 2021 - Bottle (7,5dl)",
+        "subTitle": "Anne Claire Schott, Pét-Nat - Bottle (0.75l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>85% Chasselas, 15% Muscat</em></li><li><strong>Origin: </strong><em>Neuchâtel, Switzerland</em></li><li><strong>Profile:</strong> <em>Ripe citrus fruit, yellow apples, Honey &amp; Beewax</em></li><li><strong>Style: </strong><em>Natural - dry &amp; fizzy</em></li></ul><p><br></p><p>This creation of art, as Anne-Claire refers to her wines, was produced in Neuchâtel.</p><p><br></p><p>Given the heat and the cold winter in this area, the three lakes play an important role in moderating the climate.</p><p><br></p><p>All her vineyard work and winemaking techniques are based on biodynamic approaches, which is always resulting in very character driven wines.</p><p><br></p><p>This natural fizzy wine impresses with ripe citrus fruit accompanied by dried wildflowers and honey.</p><p><br></p><p>This creative craft - is always surprising!</p>",
         "price": 120,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7c707675-c178-4c88-a654-3fe0f47bc2ff.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7c707675-c178-4c88-a654-3fe0f47bc2ff_raw.png"
+      },
+      {
+        "category": "White wine",
+        "name": "Riesling",
+        "subTitle": "Wagner-Stempel, Riesling BIO 2023 - Glass (0.1l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Riesling</em></li><li><strong>Origin: </strong><em>Rheinhessen, Germany</em></li><li><strong>Profile:</strong> <em>Fruit intense, expressive, youthful with lots of fresh lemon skin, tart apricots and some guava</em></li><li><strong>Style: </strong><em>Dry, fruity and well balanced</em></li></ul>",
+        "price": 10,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Alexis Totem - Glass (1dl)",
-        "price": 20,
+        "category": "White wine",
+        "name": "Riesling Flasche",
+        "subTitle": "Wagner-Stempel, Riesling BIO 2023 - Bottle (0.75l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Riesling</em></li><li><strong>Origin: </strong><em>Rheinhessen, Germany</em></li><li><strong>Profile:</strong> <em>Fruit intense, expressive, youthful with lots of fresh lemon skin, tart apricots and some guava</em></li><li><strong>Style: </strong><em>Dry, fruity and well balanced</em></li></ul>",
+        "price": 60,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Alexis, Totem - Bottle (7,5dl)",
-        "price": 130,
-        "imageThumbnail": null,
-        "image": null
-      }
-    ]
-  },
-  {
-    "name": "White wine",
-    "entries": [
-      {
-        "name": "Wittmann, Riesling vom Kalkstein 2021 - Glass (1dl)",
-        "price": 11,
+        "category": "White wine",
+        "name": "Assyrtiko",
+        "subTitle": "Estate Argyros, Santorini Assyrtiko 2022 - Glass (0.1l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Assyrtiko</em></li><li><strong>Origin: </strong><em>Santorini, Greece</em></li><li><strong>Profile:</strong> Lots of freshly squeezed lemon balm and hints of white flower petals</li><li><strong>Style: </strong><em>Dry, crispy &amp; juicy </em></li></ul>",
+        "price": 14,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Wittmann, Riesling vom Kalkstein 2021 - Bottle (7,5dl)",
-        "price": 70,
+        "category": "White wine",
+        "name": "Assyrtiko Flasche",
+        "subTitle": "Estate Argyros, Santorini Assyrtiko 2022 - Bottle (0.75l)",
+        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Assyrtiko</em></li><li><strong>Origin: </strong><em>Santorini, Greece</em></li><li><strong>Profile:</strong> Lots of freshly squeezed lemon balm and hints of white flower petals</li><li><strong>Style: </strong><em>Dry, crispy &amp; juicy </em></li></ul>",
+        "price": 85,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Riffault, Sancerre Auksinis Maceration Longue 2018 - Glass (1dl)",
+        "category": "White wine",
+        "name": "Chardonnay",
+        "subTitle": "Chardonnay 2022, Winery Hansruedi Adank - Glass (0.1l)",
+        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Chardonnay</em></li><li><strong>Origin: </strong><em>Bündner Herrschaft, Switzerland</em></li><li><strong>Profile: </strong><em>Dense and fresh lemon juice, ripe yellow apples, floral touches with some apple blossom</em></li><li><strong>Style:</strong> <em>Dry with some oak usage</em></li></ul>",
         "price": 15,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Riffault, Sancerre Auksinis Maceration Longue 2018 - Bottle (7,5dl)",
+        "category": "White wine",
+        "name": "Chardonnay - Bottle",
+        "subTitle": "Chardonnay 2022, Winery Hansruedi Adank - Bottle (0.75l)",
+        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Chardonnay</em></li><li><strong>Origin: </strong><em>Bündner Herrschaft, Switzerland</em></li><li><strong>Profile: </strong><em>Dense and fresh lemon juice, ripe yellow apples, floral touches with some apple blossom</em></li><li><strong>Style:</strong> <em>Dry with some oak usage</em></li></ul>",
         "price": 100,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Hirtzberger, Gründer Veltiner Federspiel Rotes Tor 2021 - Glass (1dl)",
-        "price": 18,
+        "category": "Rosé",
+        "name": "Mas del Pérlé, A Table - Glas (0.1l)",
+        "subTitle": "Mas del Péré, A Table! - Glass (0.1l)",
+        "description": "<ul><li><strong>Grape variety:</strong> Malbec/ Tannat</li><li><strong>Origin: </strong><em>South-West, France</em></li><li><strong>Profile:</strong> Very ripe red fruit, red cherries, mulberry, grenadine, raspberry &amp; rose hip</li><li><strong>Style: </strong><em>Dry, Rosé with intense color, slightly cloudy</em></li></ul><p><br></p>",
+        "price": 10,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Hirtzberger, Gründer Veltiner Federspiel Rotes Tor 2021 - Bottle (7,5dl)",
-        "price": 120,
+        "category": "Rosé",
+        "name": "Mas del Pérlé, A Table - Bottle (0.75l)",
+        "subTitle": "Mas del Périé, A table Rosé 2022",
+        "description": "<ul><li><strong>Grape variety:</strong> Malbec/ Tannat</li><li><strong>Origin: </strong><em>South-West, France</em></li><li><strong>Profile:</strong> Very ripe red fruit, red cherries, mulberry, grenadine, raspberry &amp; rose hip</li><li><strong>Style: </strong><em>Dry, Rosé with intense color, slightly cloudy</em></li></ul><p><br></p>",
+        "price": 60,
         "imageThumbnail": null,
         "image": null
-      }
-    ]
-  },
-  {
-    "name": "Red wine",
-    "entries": [
+      },
       {
-        "name": "Moric, Blaufränkisch Reserve 2018 - Glass (1dl)",
+        "category": "Rosé",
+        "name": "Oeil-de-Perdrix - Glass (0.1l)",
+        "subTitle": "Ruedin by Jacques Tatasciore - Bottle",
+        "description": "<ul><li><strong>Grape variety:</strong><em> Pinot Noir</em></li><li><strong>Origin: </strong><em>Neuchâtel, Switzerland</em></li><li><strong>Profile: </strong><em>Red berries / wild strawberries / fresh apricot accompanied by spicy notes such as cardamom and pink pepper</em></li><li><strong>Style:</strong> <em>Dry / Rosé</em></li></ul><p><br></p>",
         "price": 12,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Moric, Blaufränkisch Reserve 2018 - Bottle (7,5dl)",
-        "price": 80,
+        "category": "Rosé",
+        "name": "Oeil-de-Perdrix - Bottle (0.75l)",
+        "subTitle": "Ruedin by Jacques Tatasciore - Bottle (0.75l)",
+        "description": "<ul><li><strong>Grape variety:</strong><em> Pinot Noir</em></li><li><strong>Origin: </strong><em>Neuchâtel, Switzerland</em></li><li><strong>Profile: </strong><em>Red berries / wild strawberries / fresh apricot accompanied by spicy notes such as cardamom and pink pepper</em></li><li><strong>Style:</strong> <em>Dry / Rosé</em></li></ul>",
+        "price": 70,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Ridge, East Bench Zinfandel 2019 - Glass (1dl)",
-        "price": 15,
+        "category": "Red wine",
+        "name": "Pinot Noir",
+        "subTitle": "Pinot Noir Terroir 2022, winery Schwarzenbach - Glass (0.1l)",
+        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
+        "price": 10,
         "imageThumbnail": null,
         "image": null
       },
       {
+        "category": "Red wine",
+        "name": "Pinot Noir - Bottle",
+        "subTitle": "Pinot Noir Terroir 2022, winery Schwarzenbach - Bottle (0.75l)",
+        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
+        "price": 60,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Red wine",
         "name": "Ridge, East Bench Zinfandel 2019 - Bottle (7,5dl)",
         "price": 100,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Paitin, Barbaresco Serraboella 2020 - Glass (1dl)",
-        "price": 20,
+        "category": "Red wine",
+        "name": "Paitin, Barbaresco Serraboella 2020 - Bottle (7,5dl)",
+        "price": 130,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Paitin, Barbaresco Serraboella 2020 - Bottle (7,5dl)",
-        "price": 130,
+        "category": "Beer",
+        "name": "Una más 5% - 44cl",
+        "subTitle": "Una más 5% - 44cl",
+        "description": "<p>Very balanced light beer with restrained malt notes underlined by a mild bitterness. Uná mas! - One more!</p>",
+        "price": 9,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_31831df2-303e-4b4a-bd99-4dc2cdad8fb5.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_31831df2-303e-4b4a-bd99-4dc2cdad8fb5_raw.png"
+      },
+      {
+        "category": "Beer",
+        "name": "Rainbow IPA 6% - 44cl",
+        "subTitle": "Rainbow IPA 6% - 44cl",
+        "description": "<p>A bright IPA with a nice balance between the fruity and resinous notes of the hops</p>",
+        "price": 10,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e6801d86-6ae3-48dc-b215-8caa2843034e.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e6801d86-6ae3-48dc-b215-8caa2843034e_raw.png"
+      },
+      {
+        "category": "Beer",
+        "name": "Zeer nonalcoholic IPA 0.3% - 33cl",
+        "subTitle": "Zeer nonalcoholic IPA 0.3% - 0.33l",
+        "description": "<p>Zeer is a Zeer - not a non-alcoholic beer. Balanced &amp; refreshing</p>",
+        "price": 10,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "name": "Cocktails",
+    "description": "Cocktails, mocktails and aperitifs",
+    "entries": [
+      {
+        "category": "Aperitivo",
+        "name": "Soul Spritz",
+        "subTitle": "",
+        "description": "<p>Eco Bitter, Eco Spritz, homemade Cranberry &amp; ginger soda</p>",
+        "price": 16,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Aperitivo",
+        "name": "Bitter Bianco",
+        "subTitle": "",
+        "description": "<p>Gin, White Vermouth, Luxardo Bianco,  Tonic</p>",
+        "price": 16,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Aperitivo",
+        "name": "Hugo Twist",
+        "subTitle": "",
+        "description": "<p>White wine, Elderflower Liquer, Cucumber, Soda</p>",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Aperitivo",
+        "name": "Kir Royale",
+        "subTitle": "",
+        "description": "<p>Prosecco, Crème de Cassis </p>",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Aperitivo",
+        "name": "Mimosa",
+        "subTitle": "",
+        "description": "",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Coffee Negroni",
+        "subTitle": "Coffee Negroni",
+        "description": "<p>Your classic Negroni infused with finest coffee.</p><p><br></p><p><em>Sip happens, especially if Negroni is involved. </em></p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Bellini",
+        "subTitle": "",
+        "description": "<p>Peach essence, Verjus, lime water, Vodka</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Soul Blossom",
+        "subTitle": "",
+        "description": "<p>Tequilla, Jasmine Tea, Vanilla, Orange, Citrus - <em>(contains lactose)</em></p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Highball",
+        "subTitle": "",
+        "description": "<p>Rye Whisky, Cucumber Elderflower Cordial, Soda</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Basil Smash",
+        "subTitle": "",
+        "description": "<p>Gin, Basil, Sweet &amp; Sour mix</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Bloody Mary",
+        "subTitle": "",
+        "description": "<p>Vodka, Lemon, Saksuka Sauce, Chilli, Smoked salt</p>",
+        "price": 15,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Mocktails",
+        "name": "Non Alcoholic Amaretto Sour",
+        "subTitle": "",
+        "description": "<p>Non-Alcoholic Amaretti, Orange juice, Citrus, Vegan Foam</p>",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Mocktails",
+        "name": "Dark & Spiced",
+        "subTitle": "",
+        "description": "<p>Rebels Dark Spiced, Citrus, Ginger beer</p>",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Mocktails",
+        "name": "Highball Non Alcoholic",
+        "subTitle": "",
+        "description": "",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Mocktails",
+        "name": "Virgin Mary",
+        "subTitle": "",
+        "description": "<p>Saksuka sauce, chilli, smoked salt</p>",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ]
+  },
+  {
+    "type": "menuGroup",
+    "name": "Lunch",
+    "entries": [
+      {
+        "name": "Chicken Salad Dakos",
+        "subTitle": "Chicken Salad",
+        "description": "<p>Mesclun salad with Dakos bread, goat cheese, tomato &amp; basil dressing - served with a soup</p>",
+        "price": 24,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Burrata",
+        "subTitle": "",
+        "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
+        "price": 19,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Rattatouille",
+        "subTitle": "",
+        "description": "<p>Slow cooked vegetables with tomato sauce and fresh herbs - served with warm bread and greek yogurt</p>",
+        "price": 21.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Lasagne",
+        "subTitle": "",
+        "description": "<p>Homemade bolognese, béchamel sauce &amp; parmesan cheese - served with salad or soup</p>",
+        "price": 23.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Spinach pie with a green salad",
+        "subTitle": "",
+        "description": "<p>Homemade Filo with spinach &amp; fresh herbs - served with Feta &amp; small salad</p>",
+        "price": 24,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cheese Pie",
+        "subTitle": "",
+        "description": "",
+        "price": 23,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pastrami-Sando with a green salad",
+        "subTitle": "Pastrami Sando",
+        "description": "<p>Homemade milk bread with pickles, homemade Mayo, Pastrami and a small salad</p>",
+        "price": 27,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Beef Tartare",
+        "subTitle": "",
+        "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
+        "price": 24.5,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ],
+    "description": "Lunch Menu (Mo-Fr / 12:00-16:00)"
+  },
+  {
+    "type": "menuGroup",
+    "name": "Brunch",
+    "entries": [
+      {
+        "name": "Greek yogurt with homemade granola, honey & fruits",
+        "subTitle": "Granola & Greek Yogurt",
+        "description": "<p>Homemade granola incl. 20 different type of nuts, dried fruits &amp; spices. served with greek yogurt and fresh fruits, honey and cinnamon</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Saksuka",
+        "subTitle": "Saksuka",
+        "description": "<p>Poached eggs with tomato sauce and vegetables - served with homemade bread</p>",
+        "price": 22,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Egg Royale",
+        "subTitle": "Eggs Royale",
+        "description": "<p>Homemade brioche bread, Guacamole sauce, 2 eggs 64˚C, smoked salmon topped with Hollandaise sauce</p>",
+        "price": 27,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pastrami-Sando with a green salad",
+        "subTitle": "Pastrami Sando",
+        "description": "<p>Homemade milk bread with pickles, homemade Mayo, Pastrami and a small salad</p>",
+        "price": 27,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Beef Tartare",
+        "subTitle": "",
+        "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
+        "price": 24.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Sweet potato with pico de gallo & romesco",
+        "subTitle": "Sweet Potato",
+        "description": "<p>Sweet potato with Romesco sauce, Pico de gallo &amp; feta</p>",
+        "price": 23,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Hummus & Mushroom",
+        "subTitle": "",
+        "description": "<p>Pita bread with king mushroom, hummus &amp; fresh herbs - served with lemon</p>",
+        "price": 23.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Spinach pie with a green salad",
+        "subTitle": "",
+        "description": "<p>Homemade Filo with spinach &amp; fresh herbs - served with Feta &amp; small salad</p>",
+        "price": 24,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Greek Salad",
+        "subTitle": "",
+        "description": "<p>Tomatoes, cucumbers, red bell pepper, onion, olives &amp; feta - served with homemade bread</p>",
+        "price": 19,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Burrata",
+        "subTitle": "",
+        "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
+        "price": 19,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ],
+    "description": "Brunch Menu (Mo-Fr / 08:00-12:00 {Sa, So 08:00-16:00})"
+  },
+  {
+    "name": "Drinks",
+    "description": "Hot and cold beverages",
+    "entries": [
+      {
+        "category": "Coffee",
+        "name": "Espresso",
+        "subTitle": "Espresso",
+        "description": "<p><strong>Single shot Espresso</strong></p><p><br></p><p>We offer you two different coffee beans you can choose from.</p><p><br></p><p><br></p><p>For more detailed information about the coffee or the roasters, feel free to ask us</p>",
+        "price": 5.2,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Espresso Machiato",
+        "price": 6,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Double Espresso",
+        "subTitle": "",
+        "description": "",
+        "price": 6.9,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Double Espresso Machiato",
+        "price": 7.3,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Americano",
+        "subTitle": "Americano",
+        "description": "<p><strong>Double shot Espresso on equal amount of water</strong></p><p><br></p><p>We offer you two different coffee beans you can choose from;</p><ul><li>66% Brazil / 34% Ethiopia - Notes: Chocolate, Hazelnut, Cherry</li></ul><p><br></p><p>OR</p><ul><li>100% Ethiopia - Notes: Creamy tropical ice cream, strawberry cake, raspberries</li></ul><p><br></p><p>For more detailed information about the coffee or the roasters, feel free to ask us</p>",
+        "price": 6.9,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Cappuccino",
+        "subTitle": "Cappuccino",
+        "description": "<p><strong>Single espresso with foamed milk/milk foam</strong></p><p><br></p><p>We offer you two different coffee beans to choose from;</p><p><br></p><ul><li>66% Brazil / 34% Ethiopia – Notes: Chocolate, Hazelnut, Cherry</li></ul><p>OR</p><ul><li>100% Ethiopia - Notes: Creamy tropical ice cream, strawberry cake, raspberries</li></ul><p><br></p><p><br></p><p>For more detailed information about the coffee or the roasters, please feel free to ask us</p>",
+        "price": 6.9,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Flat White",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Latte",
+        "subTitle": "",
+        "description": "",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Filter Coffee",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Coffee",
+        "name": "Special filter coffee",
+        "price": 15,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Hot beverage",
+        "name": "Matcha Latte",
+        "subTitle": "",
+        "description": "",
+        "price": 9,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Hot beverage",
+        "name": "Hot Chocolate",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Hot beverage",
+        "name": "Bio Long Cui Lu",
+        "subTitle": "China Long Cui Lu Bio",
+        "description": "<p>This green tea has a balanced sweetness and a complex aroma.</p>",
+        "price": 8.5,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c6e0f416-5103-440b-94bf-2ee18bf0a026.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c6e0f416-5103-440b-94bf-2ee18bf0a026_raw.png"
+      },
+      {
+        "category": "Hot beverage",
+        "name": "Black Tea",
+        "subTitle": "Monk Tea (Black Tea)",
+        "description": "<p>Flavored black tea with jasmine-bergamot flavor and vanilla notes</p>",
+        "price": 8.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Hot beverage",
+        "name": "Milky Oolong",
+        "subTitle": "Milky Oolong",
+        "description": "<p>Creamy, sweet and soft.</p><p><br></p><p>Richly rolled, dark green leaves. Lovely creamy aroma</p>",
+        "price": 8.5,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b614095f-c625-4c4d-be93-08c02b720689.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b614095f-c625-4c4d-be93-08c02b720689_raw.png"
+      },
+      {
+        "category": "Hot beverage",
+        "name": "Roibos Ginger Lemon",
+        "subTitle": "Ginger-Lemon Roobois",
+        "description": "<p>Refreshing roobois blend with ginger-lemon flavor (caffeine free)</p>",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Still Water 5dl",
+        "subTitle": "Water still 0.5l",
+        "description": "<p>We serve our water with a premium water dispenser from Brita with the latest technology and allow us to charge you for the water.</p><p><br></p><p>Technical precision from Germany for excellent hygiene with the optional HygienePlus system from BRITA, proven in the healthcare sector.</p><p><br></p><ul><li>A pre-filter removes coarse particles such as sand and protects our devices.</li><li>A hollow fiber membrane filters microplastics, hormones, pesticides and drug residues, as well as 99.999% of all bacteria and 99.95% of all cysts.</li><li>Activated carbon filtration removes substances that affect taste and odor.</li></ul><p><br></p><p><br></p><p>By switching from bottled mineral water to a piped water dispenser, you can avoid the use of single-use plastic.</p>",
+        "price": 5.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Still Water 1l",
+        "subTitle": "Water Still 1l",
+        "description": "<p>We serve our water with a premium water dispenser from Brita with the latest technology and allow us to charge you for the water.</p><p><br></p><p>Technical precision from Germany for excellent hygiene with the optional HygienePlus system from BRITA, proven in the healthcare sector.</p><p><br></p><p>A pre-filter removes coarse particles such as sand and protects our devices.</p><p>A hollow fiber membrane filters microplastics, hormones, pesticides and drug residues, as well as 99.999% of all bacteria and 99.95% of all cysts.</p><p>Activated carbon filtration removes substances that affect taste and odor.</p><p><br></p><p><br></p><p>By switching from bottled mineral water to a piped water dispenser, you can avoid the use of single-use plastic.</p>",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Sparkling Water 5dl",
+        "subTitle": "Sparkling water 0.5l",
+        "description": "<p>We serve our water with a premium water dispenser from Brita with the latest technology and allow us to charge you for the water.</p><p><br></p><p>Technical precision from Germany for excellent hygiene with the optional HygienePlus system from BRITA, proven in the healthcare sector.</p><p><br></p><ul><li>A pre-filter removes coarse particles such as sand and protects our devices.</li><li>A hollow fiber membrane filters microplastics, hormones, pesticides and drug residues, as well as 99.999% of all bacteria and 99.95% of all cysts.</li><li>Activated carbon filtration removes substances that affect taste and odor.</li></ul><p><br></p><p><br></p><p>By switching from bottled mineral water to a piped water dispenser, you can avoid the use of single-use plastic.</p>",
+        "price": 5.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Sparkling Water 1l",
+        "subTitle": "Sparkling water 1l",
+        "description": "<p>We serve our water with a premium water dispenser from Brita with the latest technology and allow us to charge you for the water.</p><p><br></p><p>Technical precision from Germany for excellent hygiene with the optional HygienePlus system from BRITA, proven in the healthcare sector.</p><ul><li><br></li><li>A pre-filter removes coarse particles such as sand and protects our devices.</li><li>A hollow fiber membrane filters microplastics, hormones, pesticides and drug residues, as well as 99.999% of all bacteria and 99.95% of all cysts.</li><li>Activated carbon filtration removes substances that affect taste and odor.</li></ul><p><br></p><p><br></p><p>By switching from bottled mineral water to a piped water dispenser, you can avoid the use of single-use plastic.</p>",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Orange Juice",
+        "subTitle": "",
+        "description": "",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Ginger Turmeric Juice",
+        "subTitle": "",
+        "description": "",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Homemade Iced Tea",
+        "subTitle": "",
+        "description": "",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Homemade Lemonade",
+        "subTitle": "",
+        "description": "",
+        "price": 7.5,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ab7dd45a-2b67-41e4-8dd3-98a35016c0f6.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ab7dd45a-2b67-41e4-8dd3-98a35016c0f6_raw.png"
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Tonic",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Grapefruit Soda",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Soda",
+        "price": 7,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Ginger Beer",
+        "price": 7.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cold beverage",
+        "name": "Crodino",
+        "price": 7,
         "imageThumbnail": null,
         "image": null
       }

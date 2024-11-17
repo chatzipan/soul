@@ -18,6 +18,7 @@ const customTheme = createTheme({
       '"Segoe UI"',
       "Roboto",
       '"Helvetica Neue"',
+      "Josefin Sans",
       "Arial",
       "sans-serif",
       '"Apple Color Emoji"',

@@ -13,10 +13,7 @@ const commonStyles = css`
   text-transform: uppercase;
   font-family: sans-serif;
   letter-spacing: 0.2cap;
-
-  &:hover {
-    transform: scale(1.05);
-  }
+  text-align: center;
 `;
 
 export const Button = styled.button`

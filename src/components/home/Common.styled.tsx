@@ -44,7 +44,7 @@ export const Heading = styled.div`
 
 export const Title = styled.p`
   font-size: 3rem;
-  font-family: "Cabin", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   line-height: 1.5;
   flex-shrink: 0;
   margin: 0;
