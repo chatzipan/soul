@@ -152,7 +152,7 @@ const formatMenu = (groups) => {
       description: brunchGroup.name,
     },
     {
-      name: "Drinks",
+      name: "Coffee & Co",
       description: "Hot and cold beverages",
       entries: beverageEntries,
     },

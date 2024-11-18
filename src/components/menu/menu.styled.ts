@@ -46,7 +46,7 @@ export const Category = styled(Link)`
     display: inline-block;
     padding: 1.25rem 0 1rem;
     font-size: 2.5rem;
-    width: 70vw;
+    width: 80vw;
   }
 `;
 
