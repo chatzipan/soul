@@ -1,9 +1,8 @@
 import * as S from "./menu.styled";
 
 import type { HeadFC } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Redirect, RouteComponentProps, useParams } from "@reach/router";
-import { capitalize } from "./entry";
 import menu from "../../../static/menu.json";
 
 type MenuEntry = {
@@ -27,35 +26,20 @@ type Menu = {
 export const createLink = (category: string) =>
   encodeURI(category.replaceAll(" ", "_")).toLowerCase();
 
+const formatDescription = (description: string) =>
+  description
+    .replace("/", " /")
+    .replace("[", " (")
+    .replace("]", ")")
+    .replace("{", " (")
+    .replace("}", ")");
+
 const MenuCategory: React.FC<RouteComponentProps> = ({}) => {
-  // const [menu, setMenu] = useState<Menu[]>([]);
   const params = useParams();
   const category = params.categoryId;
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const res = await fetch(
-  //       "https://storage.googleapis.com/soulzuerich.ch/menu.json",
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           Accept: "application/json",
-  //         },
-  //       }
-  //     );
-
-  //     setMenu(await res.json());
-  //   })();
-  // }, []);
-
-  // if (!menu.length) return null;
-
   const allCategories = menu
     .map((group) => group?.name.trim())
-    .map(capitalize)
-    .map((category) => category.replace(/\s*\([^)]*\)/, ""))
-    .map((category) => category.replace("/", " &"))
-    .map((category) => category.replace("é", "e"))
     .map((category) => createLink(category));
 
   if (!allCategories.includes(category)) {
@@ -65,7 +49,6 @@ const MenuCategory: React.FC<RouteComponentProps> = ({}) => {
   const menuIndex = allCategories.indexOf(category);
   const categoryMenu = menu[menuIndex];
 
-  console.log("categoryMenu", categoryMenu);
   const splitedByCategories = {
     description: categoryMenu.description,
     name: categoryMenu.name,
@@ -92,26 +75,7 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
   return (
     <S.Wrapper>
       <S.Main>
-        {menu.categories.length > 1 && (
-          <S.SectionTitle>
-            {menu.description
-              .replace("/", " /")
-              .replace("[", " (")
-              .replace("]", ")")
-              .replace("{", " (")
-              .replace("}", ")")}
-          </S.SectionTitle>
-        )}
-        {menu.categories.length === 1 && (
-          <S.SectionTitle>
-            {menu.description
-              .replace("/", " /")
-              .replace("[", " (")
-              .replace("]", ")")
-              .replace("{", " (")
-              .replace("}", ")")}
-          </S.SectionTitle>
-        )}
+        <S.SectionTitle>{formatDescription(menu.description)}</S.SectionTitle>
         {menu.categories.map((category) => (
           <S.Section key={category.name}>
             {menu.categories.length > 1 && (

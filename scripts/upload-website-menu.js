@@ -4,7 +4,7 @@ dotenv.config({ path: __dirname + "/./../.env" });
 const fs = require("fs");
 const { chromium } = require("playwright");
 const jsonDiff = require("json-diff");
-const { uploadFile } = require("./upload-file");
+// const { uploadFile } = require("./upload-file");
 
 const MENU_URL = "https://mylightspeed.app/UYRRDNWF/C-ordering/menu";
 const MENU_API_ENDPOINT = "https://mylightspeed.app/api/oa/pos/v1/menu";

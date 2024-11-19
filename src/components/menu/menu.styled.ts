@@ -62,7 +62,7 @@ export const SectionTitle = styled.h4`
   padding: 1rem;
 
   @media (max-width: ${({ theme }) => theme.sizes.laptop}) {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 `;
 
