@@ -15,7 +15,7 @@
         "name": "Beef Tartare",
         "subTitle": "",
         "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
-        "price": 24.5,
+        "price": 32.5,
         "imageThumbnail": null,
         "image": null
       },
@@ -404,7 +404,7 @@
         "name": "Chicken Salad Dakos",
         "subTitle": "Chicken Salad",
         "description": "<p>Mesclun salad with Dakos bread, goat cheese, tomato &amp; basil dressing - served with a soup</p>",
-        "price": 24,
+        "price": 22.5,
         "imageThumbnail": null,
         "image": null
       },
@@ -428,7 +428,7 @@
         "name": "Lasagne",
         "subTitle": "",
         "description": "<p>Homemade bolognese, béchamel sauce &amp; parmesan cheese - served with salad or soup</p>",
-        "price": 23.5,
+        "price": 27,
         "imageThumbnail": null,
         "image": null
       },
@@ -444,7 +444,7 @@
         "name": "Cheese Pie",
         "subTitle": "",
         "description": "",
-        "price": 23,
+        "price": 18,
         "imageThumbnail": null,
         "image": null
       },
@@ -460,7 +460,7 @@
         "name": "Beef Tartare",
         "subTitle": "",
         "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
-        "price": 24.5,
+        "price": 32.5,
         "imageThumbnail": null,
         "image": null
       }
@@ -507,7 +507,7 @@
         "name": "Beef Tartare",
         "subTitle": "",
         "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
-        "price": 24.5,
+        "price": 32.5,
         "imageThumbnail": null,
         "image": null
       },
@@ -523,7 +523,7 @@
         "name": "Hummus & Mushroom",
         "subTitle": "",
         "description": "<p>Pita bread with king mushroom, hummus &amp; fresh herbs - served with lemon</p>",
-        "price": 23.5,
+        "price": 22.5,
         "imageThumbnail": null,
         "image": null
       },
@@ -594,7 +594,7 @@
         "category": "Coffee",
         "name": "Americano",
         "subTitle": "Americano",
-        "description": "<p><strong>Double shot Espresso on equal amount of water</strong></p><p><br></p><p>We offer you two different coffee beans you can choose from;</p><ul><li>66% Brazil / 34% Ethiopia - Notes: Chocolate, Hazelnut, Cherry</li></ul><p><br></p><p>OR</p><ul><li>100% Ethiopia - Notes: Creamy tropical ice cream, strawberry cake, raspberries</li></ul><p><br></p><p>For more detailed information about the coffee or the roasters, feel free to ask us</p>",
+        "description": "<p><br></p>",
         "price": 6.9,
         "imageThumbnail": null,
         "image": null
@@ -603,7 +603,7 @@
         "category": "Coffee",
         "name": "Cappuccino",
         "subTitle": "Cappuccino",
-        "description": "<p><strong>Single espresso with foamed milk/milk foam</strong></p><p><br></p><p>We offer you two different coffee beans to choose from;</p><p><br></p><ul><li>66% Brazil / 34% Ethiopia – Notes: Chocolate, Hazelnut, Cherry</li></ul><p>OR</p><ul><li>100% Ethiopia - Notes: Creamy tropical ice cream, strawberry cake, raspberries</li></ul><p><br></p><p><br></p><p>For more detailed information about the coffee or the roasters, please feel free to ask us</p>",
+        "description": "<p><br></p>",
         "price": 6.9,
         "imageThumbnail": null,
         "image": null

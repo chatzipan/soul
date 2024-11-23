@@ -17,7 +17,7 @@
     "deploy": "firebase deploy --only functions",
     "typecheck": "tsc --noEmit",
     "upload-google-menu": "node ./scripts/upload-google-menu.js",
-    "upload-website-menu": "export GOOGLE_APPLICATION_CREDENTIALS=\"./google_cloud_keys.json\" && node ./scripts/upload-website-menu.js"
+    "update-menu": "export GOOGLE_APPLICATION_CREDENTIALS=\"./google_cloud_keys.json\" && node ./scripts/update-menu.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
