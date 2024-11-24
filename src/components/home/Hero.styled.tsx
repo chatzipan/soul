@@ -40,6 +40,14 @@ export const MenuButtons = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    flex-direction: column;
+    width: 100%;
+
+    & > * {
+    }
+  }
 `;
 
 export const Hours = styled.p`

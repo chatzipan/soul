@@ -63,10 +63,10 @@ const Hero = () => {
         <br />
         <S.MenuButtons>
           <Button to='/menu/dinner'>Dinner</Button>
-          <Button to='/menu/cocktails'>Cocktails</Button>
           <Button to='/menu/lunch'>Lunch</Button>
           <Button to='/menu/brunch'>Brunch</Button>
           <Button to='/menu/wine'>Wine</Button>
+          <Button to='/menu/cocktails'>Cocktails</Button>
           <Button to='/menu'>All menu</Button>
           <Button onClick={scrollToEventsSection}>Events</Button>
         </S.MenuButtons>
