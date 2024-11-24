@@ -4,6 +4,20 @@ const commonWrapper = css`
   padding: 5rem;
   display: flex;
   flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.primary};
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 30vw);
+    margin: 0 auto;
+    height: 1px;
+    display: block;
+    width: 60vw;
+    background-color: ${({ theme }) => theme.colors.secondary};
+  }
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     padding: 2rem;
@@ -12,29 +26,30 @@ const commonWrapper = css`
 
 export const Wrapper = styled.div`
   ${commonWrapper}
-  background-color: ${({ theme }) => theme.colors.secondary};
+`;
+
+export const DinnerWrapper = styled.div`
+  ${commonWrapper}
+
+  padding-top: 2rem;
 `;
 
 export const WineWrapper = styled.div`
   ${commonWrapper}
-  background-color: #b88364;
 `;
 
 export const EventWrapper = styled.div`
   ${commonWrapper}
-  background-color: #b9f6f8;
 `;
 
 export const FoodWrapper = styled.div`
   ${commonWrapper}
-  background-color: #f5f5f5;
 `;
 
 export const Heading = styled.div`
-  display: flex;
-  justify-content: space-between;
   gap: 7rem;
   margin-bottom: 3rem;
+  color: ${({ theme }) => theme.colors.secondary};
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     flex-direction: column;
@@ -48,13 +63,15 @@ export const Title = styled.p`
   line-height: 1.5;
   flex-shrink: 0;
   margin: 0;
+  text-transform: uppercase;
 `;
 
 export const Description = styled.p.withConfig({
   shouldForwardProp: (prop) => !["full"].includes(prop),
 })<{ full?: boolean }>`
+  font-family: "Josefin Sans", sans-serif;
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1.5;
   width: ${({ full }) => (full ? "100%" : "60%")};
   word-break: break-word;
@@ -77,13 +94,14 @@ export const ImageOuterWrapper = styled.section`
 `;
 
 export const ImageWrapper = styled.div`
-  width: calc(100% / 3 - 2rem);
-  aspect-ratio: 1/1;
+  width: calc(100% / 2 - 2rem);
   border-radius: 0.5rem;
   overflow: hidden;
+  flex-grow: 1;
+  object-fit: cover;
 
-  @media (max-width: ${({ theme }) => theme.sizes.laptopL}) {
-    width: calc(100% / 2 - 2rem);
+  & div {
+    height: 100%;
   }
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
@@ -109,4 +127,5 @@ export const FoodImageWrapper = styled.div`
 export const TelLink = styled.a`
   color: inherit;
   text-decoration-thickness: from-font;
+  font-family: "Josefin Sans", sans-serif;
 `;

@@ -73,8 +73,8 @@ const Contact = () => {
       </S.InnerWrapper>
       <S.ImageWrapper>
         <StaticImage
-          src='../../images/inside_2.jpg'
-          alt='A picture of the inside of the restaurant'
+          src='../../images/outside_rain.jpeg'
+          alt='A picture of the outside of the restaurant in the rain'
           style={{ height: "100%" }}
         />
       </S.ImageWrapper>

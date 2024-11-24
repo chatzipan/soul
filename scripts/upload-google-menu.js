@@ -38,17 +38,18 @@ async function saveGoogleMenu() {
 
   const menu_endpoint = `https://mybusiness.googleapis.com/v4/${accountId}/${locationId}/foodMenus?access_token=${client.credentials.access_token}`;
 
-  const storedMenuResponse = await fetch(
-    "https://storage.googleapis.com/soulzuerich.ch/menu.json",
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    }
-  );
+  // const storedMenuResponse = await fetch(
+  //   "https://storage.googleapis.com/soulzuerich.ch/menu.json",
+  //   {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //   }
+  // );
 
-  const storedMenu = await storedMenuResponse.json();
+  // const storedMenu = await storedMenuResponse.json();
+  const storedMenu = JSON.parse(fs.readFileSync("./static/menu.json", "utf8"));
 
   const googleMenu = {
     menus: [
@@ -57,27 +58,30 @@ async function saveGoogleMenu() {
           displayName: "All Day Menu",
           languageCode: "en",
         },
-        sections: storedMenu.map((section) => ({
-          labels: {
-            displayName: section.name,
-            languageCode: "en",
-          },
-          items: section.entries.map((entry) => [
-            {
-              labels: {
-                displayName: entry.name,
-                languageCode: "en",
-              },
-              attributes: {
-                price: {
-                  currencyCode: "CHF",
-                  units: Math.floor(entry.price),
-                  nanos: (entry.price - Math.floor(entry.price)) * 1000000000,
+        sections: storedMenu.map((section) => {
+          console.log("section", section);
+          return {
+            labels: {
+              displayName: section.name,
+              languageCode: "en",
+            },
+            items: section.entries.map((entry) => [
+              {
+                labels: {
+                  displayName: entry.name,
+                  languageCode: "en",
+                },
+                attributes: {
+                  price: {
+                    currencyCode: "CHF",
+                    units: Math.floor(entry.price),
+                    nanos: (entry.price - Math.floor(entry.price)) * 1000000000,
+                  },
                 },
               },
-            },
-          ]),
-        })),
+            ]),
+          };
+        }),
       },
     ],
   };

@@ -5,18 +5,18 @@ import type { HeadFC, PageProps } from "gatsby";
 
 import Contact from "../components/home/Contact";
 import Events from "../components/home/Events";
-import Food from "../components/home/Food";
+import Lunch from "../components/home/Lunch";
+import Brunch from "../components/home/Brunch";
 import Hero from "../components/home/Hero";
-import Location from "../components/home/Location";
-import Wine from "../components/home/Wine";
+import Dinner from "../components/home/Dinner";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <S.Wrapper>
       <Hero />
-      <Location />
-      <Wine />
-      <Food />
+      <Dinner />
+      <Lunch />
+      <Brunch />
       <Events />
       <Contact />
     </S.Wrapper>
@@ -25,4 +25,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Soul - Specialty Culture</title>;
+export const Head: HeadFC = () => <title>Soul - All</title>;

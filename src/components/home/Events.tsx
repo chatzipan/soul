@@ -5,28 +5,25 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const Events = () => {
   return (
-    <S.EventWrapper>
+    <S.EventWrapper id='events'>
       <S.Heading>
-        <S.Description>
-          We host a variety of events, from wine tastings to company
-          apéros.&nbsp;
-          <S.TelLink href='mailto:hallo@soulcoffee.info?subject=Inquiry%20about%20an%20event'>
-            Contact
+        <S.Title style={{ float: "right", marginLeft: "2rem" }}>Events</S.Title>
+        <S.Description full>
+          We host a variety of events, from our own wine tastings or cocktail
+          pairings to company apéros.&nbsp; You can also book our place for a
+          special occasion like a birthday or a team event. We prepare a
+          tailored menu for you.&nbsp;
+          <S.TelLink
+            href='mailto:hallo@soulcoffee.info?subject=Inquiry%20about%20an%20event'
+            target='_blank'
+          >
+            Write us an email
           </S.TelLink>
-          &nbsp;us for event reservations.
+          &nbsp; for reservations and inquiries.
         </S.Description>
-        <S.Title>Events</S.Title>
       </S.Heading>
       <S.ImageOuterWrapper>
-        <S.FoodImageWrapper>
-          <StaticImage
-            aspectRatio={1 / 1}
-            src='../../images/events.jpg'
-            alt='A picture of our chef preparing food in the kitchen'
-            transformOptions={{ fit: "fill" }}
-          />
-        </S.FoodImageWrapper>
-        <S.FoodImageWrapper>
+        <S.FoodImageWrapper style={{ margin: "0 auto" }}>
           <StaticImage
             aspectRatio={1 / 1}
             src='../../images/events_2.jpg'

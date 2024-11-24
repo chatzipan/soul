@@ -41,4 +41,6 @@ const MenuPageComponent: React.FC<{ menu: Menu[] }> = ({ menu }) => {
 
 export default MenuEntry;
 
-export const Head: HeadFC = () => <title>Menu - Soul - Kitchen Bar</title>;
+export const Head: HeadFC = () => (
+  <title>Menu - Soul - All Day Kitchen Bar</title>
+);
