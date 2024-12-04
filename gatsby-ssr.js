@@ -14,14 +14,9 @@ exports.wrapRootElement = ({ element }) => {
   return <ThemeProvider theme={Theme}>{element}</ThemeProvider>;
 };
 
-exports.onRenderBody = ({ setHeadComponents, pathname }) => {
+exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <html key='0' lang='en' />,
-    <link
-      key='canonical'
-      rel='canonical'
-      href={`https://soulzuerich.ch${pathname}`}
-    />,
     <link key='1' rel='preconnect' href='https://fonts.googleapis.com' />,
     <link
       key='2'
