@@ -1,4 +1,3 @@
-import { parseISO } from "date-fns";
 import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 import React, { useEffect, useState } from "react";
 import { useToggle } from "react-use";
@@ -189,7 +188,7 @@ export const AddReservationModal = ({
                   </Typography>
                   <DateCalendar
                     disablePast
-                    maxDate={new Date("2024-12-31").getTime()}
+                    maxDate={new Date("2025-12-31").getTime()}
                     onChange={(newDate) => {
                       setData({
                         ...data,
