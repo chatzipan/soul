@@ -4,10 +4,40 @@
     "name": "Dinner",
     "entries": [
       {
-        "name": "Tuna Tataki",
-        "subTitle": "Tuna Tataki",
-        "description": "<p>Tuna served with leek chips, chilli &amp; ponzu sauce</p>",
-        "price": 23.5,
+        "name": "Burrata",
+        "subTitle": "",
+        "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
+        "price": 21.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Feta Cream",
+        "price": 19,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Orzo Pasta",
+        "subTitle": "",
+        "description": "<p>Mushrooms, parmesan, lemon zest truffle oil</p>",
+        "price": 28,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Lasagne",
+        "subTitle": "",
+        "description": "<p>Homemade bolognese, béchamel sauce &amp; parmesan cheese - served with salad or soup</p>",
+        "price": 27,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Beef Filet",
+        "subTitle": "",
+        "description": "<p>chef's choice - weekly creation</p>",
+        "price": 48,
         "imageThumbnail": null,
         "image": null
       },
@@ -15,31 +45,47 @@
         "name": "Beef Tartare",
         "subTitle": "",
         "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
-        "price": 32.5,
+        "price": 31,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Bao",
-        "subTitle": "Bao Buns",
-        "description": "<p>Bao buns filled with pulled beef, pickles and chili marmalade</p>",
-        "price": 23,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Sweet potato with pico de gallo & romesco",
-        "subTitle": "Sweet Potato",
-        "description": "<p>Sweet potato with Romesco sauce, Pico de gallo &amp; feta</p>",
-        "price": 23,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Burrata",
+        "name": "Beef Tataki",
         "subTitle": "",
-        "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
-        "price": 19,
+        "description": "<p>Beef filet, chilli sauce, artichokes, dried tomatoes, leek-chips</p>",
+        "price": 38.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Beetroot Tartare",
+        "subTitle": "",
+        "description": "<p>Goat cheese, nut-crumble, orange zest, tonka honey</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Octopus",
+        "subTitle": "",
+        "description": "<p>Sweet potato waffle, fresh herbs, lemon-oil dressing</p>",
+        "price": 25.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Cheesy Crispy Rolls",
+        "subTitle": "",
+        "description": "<p>Honey-Soy &amp; Chilli glaze</p>",
+        "price": 14.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Dips & Bread",
+        "subTitle": "",
+        "description": "",
+        "price": 18.5,
         "imageThumbnail": null,
         "image": null
       }
@@ -119,24 +165,6 @@
         "subTitle": "Wagner-Stempel, Riesling BIO 2023 - Bottle (0.75l)",
         "description": "<ul><li><strong>Grape variety:</strong> <em>100% Riesling</em></li><li><strong>Origin: </strong><em>Rheinhessen, Germany</em></li><li><strong>Profile:</strong> <em>Fruit intense, expressive, youthful with lots of fresh lemon skin, tart apricots and some guava</em></li><li><strong>Style: </strong><em>Dry, fruity and well balanced</em></li></ul>",
         "price": 60,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "White wine",
-        "name": "Assyrtiko",
-        "subTitle": "Estate Argyros, Santorini Assyrtiko 2022 - Glass (0.1l)",
-        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Assyrtiko</em></li><li><strong>Origin: </strong><em>Santorini, Greece</em></li><li><strong>Profile:</strong> Lots of freshly squeezed lemon balm and hints of white flower petals</li><li><strong>Style: </strong><em>Dry, crispy &amp; juicy </em></li></ul>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "White wine",
-        "name": "Assyrtiko Flasche",
-        "subTitle": "Estate Argyros, Santorini Assyrtiko 2022 - Bottle (0.75l)",
-        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Assyrtiko</em></li><li><strong>Origin: </strong><em>Santorini, Greece</em></li><li><strong>Profile:</strong> Lots of freshly squeezed lemon balm and hints of white flower petals</li><li><strong>Style: </strong><em>Dry, crispy &amp; juicy </em></li></ul>",
-        "price": 85,
         "imageThumbnail": null,
         "image": null
       },
@@ -412,14 +440,6 @@
         "name": "Burrata",
         "subTitle": "",
         "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
-        "price": 19,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Rattatouille",
-        "subTitle": "",
-        "description": "<p>Slow cooked vegetables with tomato sauce and fresh herbs - served with warm bread and greek yogurt</p>",
         "price": 21.5,
         "imageThumbnail": null,
         "image": null
@@ -429,14 +449,6 @@
         "subTitle": "",
         "description": "<p>Homemade bolognese, béchamel sauce &amp; parmesan cheese - served with salad or soup</p>",
         "price": 27,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Spinach pie with a green salad",
-        "subTitle": "",
-        "description": "<p>Homemade Filo with spinach &amp; fresh herbs - served with Feta &amp; small salad</p>",
-        "price": 24,
         "imageThumbnail": null,
         "image": null
       },
@@ -457,10 +469,42 @@
         "image": null
       },
       {
+        "name": "Hummus & Mushroom",
+        "subTitle": "",
+        "description": "<p>Pita bread with king mushroom, hummus &amp; fresh herbs - served with lemon</p>",
+        "price": 22.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
         "name": "Beef Tartare",
         "subTitle": "",
         "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
-        "price": 32.5,
+        "price": 31,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Beef Poke Bowl",
+        "subTitle": "Beef Poke Bowl",
+        "description": "<p>Sushi rice, slow cooked beef, teriyaki sauce, soy egg, dry tomatoes, artichoke, truffle, sesame, green onion - served with soup or salad</p>",
+        "price": 28.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Tuna Poke Bowl",
+        "subTitle": "",
+        "description": "",
+        "price": 24.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Vegan Poke Bowl",
+        "subTitle": "Vegan Poke Bowl",
+        "description": "<p>Sushi rice, pickled cabbage, mushrooms, plant based ginger-mayo, sesame - served with soup or salad</p>",
+        "price": 19.5,
         "imageThumbnail": null,
         "image": null
       }
@@ -504,22 +548,6 @@
         "image": null
       },
       {
-        "name": "Beef Tartare",
-        "subTitle": "",
-        "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
-        "price": 32.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Sweet potato with pico de gallo & romesco",
-        "subTitle": "Sweet Potato",
-        "description": "<p>Sweet potato with Romesco sauce, Pico de gallo &amp; feta</p>",
-        "price": 23,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
         "name": "Hummus & Mushroom",
         "subTitle": "",
         "description": "<p>Pita bread with king mushroom, hummus &amp; fresh herbs - served with lemon</p>",
@@ -528,26 +556,18 @@
         "image": null
       },
       {
+        "name": "Beef Tartare",
+        "subTitle": "",
+        "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
+        "price": 31,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
         "name": "Spinach pie with a green salad",
         "subTitle": "",
         "description": "<p>Homemade Filo with spinach &amp; fresh herbs - served with Feta &amp; small salad</p>",
-        "price": 24,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Greek Salad",
-        "subTitle": "",
-        "description": "<p>Tomatoes, cucumbers, red bell pepper, onion, olives &amp; feta - served with homemade bread</p>",
-        "price": 19,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Burrata",
-        "subTitle": "",
-        "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
-        "price": 19,
+        "price": 18,
         "imageThumbnail": null,
         "image": null
       }
