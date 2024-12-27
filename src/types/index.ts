@@ -1,9 +1,15 @@
 export type Reservation = {
   canceled: boolean;
+  disableParallelBookings: boolean;
   date: number;
-  firstName: string;
   email: string;
+  durationHours?: number;
+  eventInfo?: string;
+  eventTitle?: string;
+  firstName: string;
   id: string;
+  isEvent: boolean;
+  isOwnEvent: boolean;
   lastName: string;
   notes: string;
   persons: number;

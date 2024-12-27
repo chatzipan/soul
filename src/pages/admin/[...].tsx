@@ -16,6 +16,7 @@ import Dashboard from "../../components/admin/Dashboard";
 import Login from "../../components/admin/Login";
 import Layout from "../../components/admin/layout/Layout";
 import Reservations from "../../components/admin/reservations/Reservations";
+import Events from "../../components/admin/reservations/Events";
 import PrivateRoute from "../../components/shared/PrivateRoute";
 import { useAuth } from "../../hooks/useAuth";
 import { AuthProvider } from "../../providers/AuthProvider";
@@ -34,6 +35,14 @@ const customTheme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
+  },
+  palette: {
+    primary: {
+      main: "#1B4235",
+    },
+    secondary: {
+      main: "#f5c469",
+    },
   },
 });
 
@@ -62,6 +71,7 @@ const Inner = () => {
           <Layout>
             <Router basepath='/admin'>
               <PrivateRoute path='/reservations' component={Reservations} />
+              <PrivateRoute path='/events' component={Events} />
               <PrivateRoute path='/' component={Dashboard} />
               <Login path='/login' />
               <Redirect from='*' to='/' />

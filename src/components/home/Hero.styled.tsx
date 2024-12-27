@@ -44,9 +44,6 @@ export const MenuButtons = styled.div`
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     flex-direction: column;
     width: 100%;
-
-    & > * {
-    }
   }
 `;
 

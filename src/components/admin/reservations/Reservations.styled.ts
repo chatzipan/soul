@@ -9,13 +9,11 @@ export const Actions = styled.div`
 `;
 
 export const ActionButton = styled(Button).withConfig({
-  shouldForwardProp: (prop) =>
-    !["isSmallMobile", "isMobile", "canceled"].includes(prop),
-})<{ canceled?: boolean; isSmallMobile?: boolean; isMobile?: boolean }>`
+  shouldForwardProp: (prop) => !["canceled", "isMobile"].includes(prop),
+})<{ canceled?: boolean; isMobile?: boolean }>`
   display: ${({ isMobile, canceled }) =>
     isMobile && canceled ? "none" : "flex"};
-  min-width: ${({ isSmallMobile }) =>
-    isSmallMobile ? "auto !important;" : "unset"};
+  min-width: unset;
   align-items: center;
   padding: 0 !important;
   gap: 10px;
@@ -73,14 +71,14 @@ export const ListItem = styled.li`
 `;
 
 export const ReservationList = styled.div`
-  height: calc(100vh - 320px);
+  max-height: calc(100vh - 320px);
   overflow-y: auto;
   padding-right: 10px;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     flex-direction: column;
     justify-content: center;
-    height: calc(100vh - 420px);
+    max-height: calc(100vh - 420px);
   }
 `;
 

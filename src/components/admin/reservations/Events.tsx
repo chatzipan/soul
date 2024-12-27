@@ -8,10 +8,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Tab from "@mui/material/Tab";
 import { RouteComponentProps } from "@reach/router";
 
-import { ReservationItem } from "./ReservationItem";
-import { useReservations } from "../../../hooks/useReservations";
+import { useEvents } from "../../../hooks/useEvents";
 import { Reservation } from "../../../types";
 import { ReservationForm } from "./reservation-form";
+import { ReservationItem } from "./ReservationItem";
 import { CancelModal } from "./CancelModal";
 import * as S from "./Reservations.styled";
 import {
@@ -22,9 +22,9 @@ import {
   monthNames,
 } from "./utils";
 
-const Reservations = (_: RouteComponentProps) => {
-  const response = useReservations();
-  const reservations = response?.data as Reservation[];
+const Events = (_: RouteComponentProps) => {
+  const response = useEvents();
+  const events = response?.data as Reservation[];
   const loading = response?.isFetching || response?.isLoading || !response;
   const listRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState(TabsView.Upcoming);
@@ -37,6 +37,7 @@ const Reservations = (_: RouteComponentProps) => {
 
   const handleViewChange = (_: React.SyntheticEvent, newValue: TabsView) => {
     setView(newValue);
+    // scroll to top
     listRef.current?.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -55,13 +56,13 @@ const Reservations = (_: RouteComponentProps) => {
     toggleAddReservationModal();
   };
 
-  const hasTodayReservations = (reservations || []).some((reservation) =>
-    isToday(new Date(reservation.date))
+  const hasTodayReservations = (events || []).some((event) =>
+    isToday(new Date(event.date))
   );
 
   const formatted = useMemo(
-    () => groupByDateAndTime((reservations || []) as Reservation[], view),
-    [reservations, view]
+    () => groupByDateAndTime((events || []) as Reservation[], view),
+    [events, view]
   );
 
   useEffect(
@@ -77,7 +78,7 @@ const Reservations = (_: RouteComponentProps) => {
   return (
     <S.Wrapper>
       <S.Header variant='h3' sx={{ mb: 2 }}>
-        🍲 Reservations
+        🍷 Events
         <S.AddButton
           color='primary'
           aria-label='add'
@@ -86,7 +87,7 @@ const Reservations = (_: RouteComponentProps) => {
           onClick={toggleAddReservationModal}
         >
           <AddIcon sx={{ mr: 1 }} />
-          Add reservation
+          Add event
         </S.AddButton>
       </S.Header>
       <S.TabBar value={view} onChange={handleViewChange}>
@@ -101,55 +102,64 @@ const Reservations = (_: RouteComponentProps) => {
         <Tab label='Previous' {...a11yProps(TabsView.Previous)} />
       </S.TabBar>
       {loading && <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />}
-      {Object.entries(formatted).map(([year, months]) => (
-        <S.ReservationList key={year} ref={listRef}>
-          {Object.entries(months).map(([month, days]) => (
-            <div key={`${year}-${month}`}>
-              {!isTodayView && (
-                <Typography variant='h5' sx={{ mb: 1 }} color='GrayText'>
-                  {month} {year}
-                </Typography>
-              )}
-              {Object.entries(days).map(([_day, entries]) => {
-                const monthIndex = (monthNames.indexOf(month) + 1)
-                  .toString()
-                  .padStart(2, "0");
-                const day = _day.padStart(2, "0");
+      {Object.keys(formatted).length === 0 ? (
+        <Typography>No events created yet</Typography>
+      ) : (
+        Object.entries(formatted).map(([year, months]) => (
+          <S.ReservationList key={year} ref={listRef}>
+            {Object.entries(months).map(([month, days]) => (
+              <div key={`${year}-${month}`}>
+                {!isTodayView && (
+                  <Typography variant='h5' sx={{ mb: 1 }} color='GrayText'>
+                    {month} {year}
+                  </Typography>
+                )}
+                {Object.entries(days).map(([_day, entries]) => {
+                  const monthIndex = (monthNames.indexOf(month) + 1)
+                    .toString()
+                    .padStart(2, "0");
+                  const day = _day.padStart(2, "0");
 
-                return (
-                  <S.ReservationListInner key={`${year}-${month}-${day}`}>
-                    {!isTodayView && (
-                      <Typography sx={{ mb: 1 }} variant='h6' color='GrayText'>
-                        {displayDate(
-                          new Date(`${year}-${monthIndex}-${day}T00:00:00.000Z`)
-                        )}
-                      </Typography>
-                    )}
-                    <S.List padded={!isTodayView}>
-                      {entries.map((r) => (
-                        <ReservationItem
-                          key={r.id}
-                          isEvent={r.isEvent}
-                          reservation={r}
-                          openCancelModal={openCancelModal}
-                          openEditModal={openEditModal}
-                        />
-                      ))}
-                    </S.List>
-                  </S.ReservationListInner>
-                );
-              })}
-            </div>
-          ))}
-        </S.ReservationList>
-      ))}
+                  return (
+                    <S.ReservationListInner key={`${year}-${month}-${day}`}>
+                      {!isTodayView && (
+                        <Typography
+                          sx={{ mb: 1 }}
+                          variant='h6'
+                          color='GrayText'
+                        >
+                          {displayDate(
+                            new Date(
+                              `${year}-${monthIndex}-${day}T00:00:00.000Z`
+                            )
+                          )}
+                        </Typography>
+                      )}
+                      <S.List padded={!isTodayView}>
+                        {entries.map((r) => (
+                          <ReservationItem
+                            key={r.id}
+                            reservation={r}
+                            openCancelModal={openCancelModal}
+                            openEditModal={openEditModal}
+                          />
+                        ))}
+                      </S.List>
+                    </S.ReservationListInner>
+                  );
+                })}
+              </div>
+            ))}
+          </S.ReservationList>
+        ))
+      )}
       <CancelModal
         isOpen={isCancelModalOpen}
         onClose={toggleCancelModal}
         reservation={selectedReservation as Reservation}
       />
       <ReservationForm
-        isEvent={selectedReservation?.isEvent}
+        isEvent
         isOpen={isAddReservationModalOpen}
         onClose={closeReservationModal}
         reservation={selectedReservation as Reservation}
@@ -158,4 +168,4 @@ const Reservations = (_: RouteComponentProps) => {
   );
 };
 
-export default Reservations;
+export default Events;

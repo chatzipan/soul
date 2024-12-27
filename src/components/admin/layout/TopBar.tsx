@@ -92,6 +92,19 @@ const TopBar = (_: RouteComponentProps) => {
             >
               Reservations
             </Typography>
+            <Typography
+              component={Link}
+              variant='body1'
+              fontSize={14}
+              to='/admin/events'
+              sx={{
+                color: "white",
+                textTransform: "uppercase",
+                textDecoration: "none",
+              }}
+            >
+              Events
+            </Typography>
           </Box>
           {user && (
             <Box sx={{ ml: "auto" }}>
@@ -164,15 +177,23 @@ const TopBar = (_: RouteComponentProps) => {
             </Link>
           </ListItemButton>
           <ListItemButton>
-            <ListItemIcon>
-              <InsertInvitationSharpIcon />
-            </ListItemIcon>
+            <ListItemIcon sx={{ fontSize: 24 }}>🍲</ListItemIcon>
             <Link
               to='/admin/reservations'
               style={{ textDecoration: "none", color: "inherit" }}
               onClick={toggleDrawer}
             >
               <ListItemText primary='Reservations' />
+            </Link>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon sx={{ fontSize: 24 }}>🍷</ListItemIcon>
+            <Link
+              to='/admin/events'
+              style={{ textDecoration: "none", color: "inherit" }}
+              onClick={toggleDrawer}
+            >
+              <ListItemText primary='Events' />
             </Link>
           </ListItemButton>
         </List>

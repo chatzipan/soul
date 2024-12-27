@@ -9,12 +9,13 @@
   ],
   "scripts": {
     "dev": "gatsby develop",
-    "emulators": "firebase emulators:start --import=./emulator-data --export-on-exit=./emulator-data",
+    "emulators": "firebase use default && firebase emulators:start --import=./emulator-data --export-on-exit=./emulator-data",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "deploy": "firebase deploy --only functions",
+    "deploy-prod": "firebase use prod && firebase deploy --only functions",
     "typecheck": "tsc --noEmit",
     "upload-google-menu": "node ./scripts/upload-google-menu.js",
     "update-menu": "export GOOGLE_APPLICATION_CREDENTIALS=\"./google_cloud_keys.json\" && node ./scripts/update-menu.js"

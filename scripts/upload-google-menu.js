@@ -59,27 +59,28 @@ async function saveGoogleMenu() {
           languageCode: "en",
         },
         sections: storedMenu.map((section) => {
-          console.log("section", section);
           return {
             labels: {
               displayName: section.name,
               languageCode: "en",
             },
-            items: section.entries.map((entry) => [
-              {
-                labels: {
-                  displayName: entry.name,
-                  languageCode: "en",
-                },
-                attributes: {
-                  price: {
-                    currencyCode: "CHF",
-                    units: Math.floor(entry.price),
-                    nanos: (entry.price - Math.floor(entry.price)) * 1000000000,
+            items: section.entries.map((entry) => {
+              return [
+                {
+                  labels: {
+                    displayName: entry.name,
+                    languageCode: "en",
+                  },
+                  attributes: {
+                    price: {
+                      currencyCode: "CHF",
+                      units: Math.floor(entry.price),
+                      nanos: Math.round((entry.price % 1) * 1000000000),
+                    },
                   },
                 },
-              },
-            ]),
+              ];
+            }),
           };
         }),
       },
@@ -87,7 +88,7 @@ async function saveGoogleMenu() {
   };
 
   try {
-    await fetch(menu_endpoint, {
+    const response = await fetch(menu_endpoint, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -95,7 +96,7 @@ async function saveGoogleMenu() {
       },
       body: JSON.stringify(googleMenu),
     });
-    console.log("New Menu Saved!");
+    console.log("New Menu Saved!", await response.json());
   } catch (error) {
     console.log("error", error);
   }

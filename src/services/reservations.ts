@@ -71,6 +71,32 @@ export const getAllReservations = async () => {
   }
 };
 
+export const getAllEvents = async () => {
+  try {
+    const res = await fetch(`${API_URL}/reservations/v1`, {
+      method: "GET",
+      headers: getHeaders(),
+    });
+
+    const response = (await res.json()) as Reservation[];
+    const events = response.filter((reservation) => reservation.isEvent);
+    const eventsWithTime = events.map((reservation) => {
+      const { date, ...rest } = reservation;
+      return {
+        ...rest,
+        date,
+        time: reservation.time
+          ? reservation.time
+          : getTimeFromDate(new Date(date)),
+      };
+    });
+
+    return eventsWithTime;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const updateReservation = async (
   reservation: Omit<Reservation, "time">
 ) => {
