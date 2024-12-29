@@ -90,15 +90,6 @@ export const ReservationItem = ({
     <S.ListItem key={reservation.id}>
       <S.ReservationText sx={{ fontSize: 20 }}>
         <S.ReservationTextInner>
-          {isEvent && reservation.isEvent && (
-            <Chip
-              label='E'
-              color='primary'
-              size='small'
-              component='span'
-              sx={{ ml: { xs: 0.25, sm: -4 }, mr: 1 }}
-            />
-          )}
           <S.ReservationTextBasic canceled={reservation.canceled}>
             <S.ReservationTime>{time}</S.ReservationTime>
             {!isOwnEvent && (
@@ -136,6 +127,15 @@ export const ReservationItem = ({
             >
               {title}
             </Typography>
+            {isEvent && reservation.isEvent && (
+              <Chip
+                label='EVENT'
+                color='primary'
+                size='small'
+                component='span'
+                sx={{ mr: 1 }}
+              />
+            )}
             {info && (
               <Button
                 onClick={(e) => handleTooltipClick(e, reservation.id)}

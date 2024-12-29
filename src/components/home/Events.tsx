@@ -41,6 +41,11 @@ const Events = () => {
             <u>Upcoming Events:</u>
           </S.Description>
           <S.EventList>
+            {events?.length === 0 && (
+              <S.Description full>
+                Stay tuned for upcoming events!
+              </S.Description>
+            )}
             {events?.map((event) => {
               const formattedDate = format(new Date(event.date), "dd.MM.yyyy");
               const href = `mailto:hallo@soulcoffee.info?subject=Inquiry%20about%20${event.eventTitle}&body=Hello%20Soul%20Coffee,%20I%20would%20like%20to%20book%20a%20place%20for%20X persons on the ${event.eventTitle}%20on%20${formattedDate}.%20Thank%20you!`;
