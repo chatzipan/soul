@@ -66,6 +66,22 @@ export const Title = styled.p`
   text-transform: uppercase;
 `;
 
+export const Event = styled.div`
+  margin-bottom: 2rem;
+`;
+
+export const EventList = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: auto;
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    max-height: unset;
+    overflow-y: visible;
+  }
+`;
+
 export const Description = styled.p.withConfig({
   shouldForwardProp: (prop) => !["full"].includes(prop),
 })<{ full?: boolean }>`
@@ -75,6 +91,7 @@ export const Description = styled.p.withConfig({
   line-height: 1.5;
   width: ${({ full }) => (full ? "100%" : "60%")};
   word-break: break-word;
+  color: ${({ theme }) => theme.colors.secondary};
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     width: 100%;
@@ -121,6 +138,7 @@ export const FoodImageWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     width: 100%;
+    aspect-ratio: unset;
   }
 `;
 

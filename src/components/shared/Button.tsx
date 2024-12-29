@@ -4,11 +4,20 @@ import * as S from "./Button.styled";
 interface ButtonProps {
   children: React.ReactNode;
   className?: string;
+  href?: string;
   onClick?: () => void;
+  small?: boolean;
   to?: string;
 }
 
-const Button = ({ children, className, onClick, to }: ButtonProps) => {
+const Button = ({
+  children,
+  className,
+  href,
+  onClick,
+  to,
+  small,
+}: ButtonProps) => {
   if (to) {
     return (
       <S.Link className={className} to={to}>
@@ -17,8 +26,21 @@ const Button = ({ children, className, onClick, to }: ButtonProps) => {
     );
   }
 
+  if (href) {
+    return (
+      <S.NativeLink
+        className={className}
+        href={href}
+        small={small}
+        target='_blank'
+      >
+        {children}
+      </S.NativeLink>
+    );
+  }
+
   return (
-    <S.Button className={className} onClick={onClick}>
+    <S.Button className={className} onClick={onClick} small={small}>
       {children}
     </S.Button>
   );

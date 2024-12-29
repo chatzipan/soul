@@ -1,9 +1,22 @@
 import * as React from "react";
+import { format } from "date-fns";
+
 import * as S from "./Common.styled";
+import { useSoulEvents } from "../../hooks/useSoulEvents";
 
 import { StaticImage } from "gatsby-plugin-image";
+import { Reservation } from "../../types";
+import Button from "../shared/Button";
 
 const Events = () => {
+  const response = useSoulEvents();
+  const today = new Date().setHours(0, 0, 0, 0);
+
+  const events = (response?.data as Reservation[])?.filter((event) => {
+    const eventDate = new Date(event.date).setHours(0, 0, 0, 0);
+    return eventDate >= today;
+  });
+
   return (
     <S.EventWrapper id='events'>
       <S.Heading>
@@ -19,10 +32,40 @@ const Events = () => {
           >
             Write us an email
           </S.TelLink>
-          &nbsp; for reservations and inquiries.
+          &nbsp;for reservations and inquiries.
         </S.Description>
       </S.Heading>
       <S.ImageOuterWrapper>
+        <S.FoodImageWrapper style={{ margin: "0 auto" }}>
+          <S.Description full>
+            <u>Upcoming Events:</u>
+          </S.Description>
+          <S.EventList>
+            {events?.map((event) => {
+              const formattedDate = format(new Date(event.date), "dd.MM.yyyy");
+              const href = `mailto:hallo@soulcoffee.info?subject=Inquiry%20about%20${event.eventTitle}&body=Hello%20Soul%20Coffee,%20I%20would%20like%20to%20book%20a%20place%20for%20X persons on the ${event.eventTitle}%20on%20${formattedDate}.%20Thank%20you!`;
+
+              return (
+                <S.Event key={event.id}>
+                  <S.Description full style={{ fontWeight: 300 }}>
+                    {formattedDate}&nbsp;-&nbsp;{event.eventTitle}
+                  </S.Description>
+                  <S.Description
+                    full
+                    style={{ fontSize: "1.25rem", fontWeight: 300 }}
+                  >
+                    {event.eventInfo}&nbsp;-&nbsp;Starts at&nbsp;{event.time}
+                    <br />
+                    <br />
+                    <Button small href={href}>
+                      Book now
+                    </Button>
+                  </S.Description>
+                </S.Event>
+              );
+            })}
+          </S.EventList>
+        </S.FoodImageWrapper>
         <S.FoodImageWrapper style={{ margin: "0 auto" }}>
           <StaticImage
             aspectRatio={1 / 1}

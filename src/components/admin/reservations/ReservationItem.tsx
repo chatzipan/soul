@@ -7,22 +7,12 @@ import EmailIcon from "@mui/icons-material/Email";
 import EventBusyIcon from "@mui/icons-material/EventBusy";
 import GroupsIcon from "@mui/icons-material/Groups";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import {
-  Button,
-  IconButton,
-  ListItemIcon,
-  Menu,
-  MenuItem,
-  Typography,
-} from "@mui/material";
+import { Button, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Popover from "@mui/material/Popover";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import PersonAdd from "@mui/icons-material/PersonAdd";
-import Settings from "@mui/icons-material/Settings";
-import Logout from "@mui/icons-material/Logout";
 
 import { Reservation } from "../../../types";
 import * as S from "./Reservations.styled";

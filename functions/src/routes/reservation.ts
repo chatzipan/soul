@@ -3,11 +3,30 @@ import express = require("express");
 import { Reservation } from "../types/reservation";
 import { db } from "..";
 
-// eslint-disable-next-line new-cap
-const router = express.Router();
+// Create separate routers for public and protected routes
+const protectedRouter = express.Router();
+const publicRouter = express.Router();
 const COLLECTION = "reservations";
 
-router.get("/", async (_, res) => {
+// Public routes
+publicRouter.get("/events", async (_, res) => {
+  try {
+    const allEntries: Reservation[] = [];
+    const querySnapshot = await db.collection(COLLECTION).get();
+    querySnapshot.forEach((doc) =>
+      allEntries.push({ ...doc.data(), id: doc.id } as Reservation)
+    );
+
+    return res
+      .status(200)
+      .json(allEntries.filter((reservation) => reservation.isOwnEvent));
+  } catch (error) {
+    return res.status(500).json("We found an error fetching your request!");
+  }
+});
+
+// Protected routes
+protectedRouter.get("/", async (_, res) => {
   try {
     const allEntries: Reservation[] = [];
     const querySnapshot = await db.collection(COLLECTION).get();
@@ -21,7 +40,7 @@ router.get("/", async (_, res) => {
   }
 });
 
-router.get("/:id", (req, res) =>
+protectedRouter.get("/:id", (req, res) =>
   db
     .collection(COLLECTION)
     .doc(req.params.id)
@@ -32,7 +51,7 @@ router.get("/:id", (req, res) =>
     )
 );
 
-router.post("/", async (req, res) => {
+protectedRouter.post("/", async (req, res) => {
   const writeResult = await db.collection(COLLECTION).add(req.body);
 
   return res.json({
@@ -41,7 +60,7 @@ router.post("/", async (req, res) => {
   });
 });
 
-router.put("/:id", (req, res) =>
+protectedRouter.put("/:id", (req, res) =>
   db
     .collection(COLLECTION)
     .doc(req.params.id)
@@ -52,7 +71,7 @@ router.put("/:id", (req, res) =>
     )
 );
 
-router.delete("/:id", (req, res) =>
+protectedRouter.delete("/:id", (req, res) =>
   db
     .collection(COLLECTION)
     .doc(req.params.id)
@@ -63,4 +82,5 @@ router.delete("/:id", (req, res) =>
     )
 );
 
-export default router;
+export const publicRoutes = publicRouter;
+export const protectedRoutes = protectedRouter;

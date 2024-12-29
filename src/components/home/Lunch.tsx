@@ -7,7 +7,7 @@ const Lunch = () => {
   return (
     <S.FoodWrapper>
       <S.Heading>
-        <S.Title style={{ float: "right", marginLeft: "2rem" }}>
+        <S.Title style={{ float: "right", marginLeft: "2rem", width: "250px" }}>
           Business Lunch
         </S.Title>
         <S.Description full>

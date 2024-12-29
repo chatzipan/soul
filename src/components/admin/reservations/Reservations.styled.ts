@@ -74,6 +74,7 @@ export const ReservationList = styled.div`
   max-height: calc(100vh - 320px);
   overflow-y: auto;
   padding-right: 10px;
+  padding-bottom: 20px;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     flex-direction: column;

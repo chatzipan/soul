@@ -17,7 +17,12 @@ export const requireAuth = async (
   res: express.Response,
   next: express.NextFunction
 ) => {
+  if (req.path.includes("/public")) {
+    return next();
+  }
+
   const tokenId = req.get("Authorization")?.split("Bearer ")[1] || "";
+
   try {
     await admin.auth().verifyIdToken(tokenId);
     next();
@@ -27,6 +32,7 @@ export const requireAuth = async (
   }
 };
 
+// Apply auth middleware globally but with public route exclusion
 app.use(requireAuth);
 
 // Handle API endpoint routes
