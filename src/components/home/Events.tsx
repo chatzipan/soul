@@ -1,5 +1,6 @@
 import * as React from "react";
 import { format } from "date-fns";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import * as S from "./Common.styled";
 import { useSoulEvents } from "../../hooks/useSoulEvents";
@@ -11,6 +12,7 @@ import Button from "../shared/Button";
 const Events = () => {
   const response = useSoulEvents();
   const today = new Date().setHours(0, 0, 0, 0);
+  const loading = response?.isFetching || response?.isLoading || !response;
 
   const events = (response?.data as Reservation[])?.filter((event) => {
     const eventDate = new Date(event.date).setHours(0, 0, 0, 0);
@@ -41,6 +43,7 @@ const Events = () => {
             🍸 <u>Upcoming Events:</u>
           </S.Description>
           <S.EventList>
+            {loading && <CircularProgress />}
             {events?.length === 0 && (
               <S.Description full>
                 Stay tuned for upcoming events!
