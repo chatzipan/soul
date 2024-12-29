@@ -14,7 +14,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "firebase deploy --only functions",
+    "deploy-dev": "firebase use default && firebase deploy --only functions",
     "deploy-prod": "firebase use prod && firebase deploy --only functions",
     "typecheck": "tsc --noEmit",
     "upload-google-menu": "node ./scripts/upload-google-menu.js",

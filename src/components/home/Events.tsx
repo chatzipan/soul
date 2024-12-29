@@ -38,7 +38,7 @@ const Events = () => {
       <S.ImageOuterWrapper>
         <S.FoodImageWrapper style={{ margin: "0 auto" }}>
           <S.Description full>
-            <u>Upcoming Events:</u>
+            🍸 <u>Upcoming Events:</u>
           </S.Description>
           <S.EventList>
             {events?.length === 0 && (
