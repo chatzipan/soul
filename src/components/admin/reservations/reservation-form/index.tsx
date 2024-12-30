@@ -42,7 +42,7 @@ const defaultData = {
   eventInfo: "",
   eventTitle: "",
   firstName: "",
-  isEvent: true,
+  isEvent: false,
   isOwnEvent: false,
   lastName: "",
   notes: "",
@@ -152,9 +152,10 @@ export const ReservationForm = ({
     } else {
       setData({
         ...defaultData,
+        isEvent,
       });
     }
-  }, [reservation]);
+  }, [reservation, isEvent]);
 
   return (
     <>

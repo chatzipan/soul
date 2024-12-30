@@ -78,7 +78,7 @@ export const EventInfo = ({
             }
           />
         }
-        label={data.isEvent ? "Yes" : "No"}
+        label={data.disableParallelBookings ? "Yes" : "No"}
       />
       <Typography variant='h6' gutterBottom>
         Is that a Soul event or a private event?
