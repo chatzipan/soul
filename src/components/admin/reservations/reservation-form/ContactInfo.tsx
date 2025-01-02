@@ -43,7 +43,7 @@ export const ContactInfo = ({
           />
           <TextField
             id='outlined-basic'
-            label='Last Name *'
+            label='Last Name'
             value={data.lastName}
             onChange={(e) => setData({ ...data, lastName: e.target.value })}
             variant='outlined'

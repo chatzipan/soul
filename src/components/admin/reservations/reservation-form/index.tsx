@@ -90,7 +90,7 @@ export const ReservationForm = ({
 
   const isSaveDisabled = data.isOwnEvent
     ? !data.eventTitle || !data.eventInfo || !data.durationHours
-    : !data.firstName || !data.lastName || isEmailInvalid || isTelephoneInvalid;
+    : !data.firstName || isEmailInvalid || isTelephoneInvalid;
 
   const handleCloseSnackbar = (
     _?: React.SyntheticEvent | Event,
