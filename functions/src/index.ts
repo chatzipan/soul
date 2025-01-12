@@ -35,7 +35,7 @@ export const requireAuth = async (
 // Apply auth middleware globally but with public route exclusion
 app.use(requireAuth);
 
-// Handle API endpoint routes
+// Initialize routes
 initRouter(app);
 
 const supportedOrigins = [

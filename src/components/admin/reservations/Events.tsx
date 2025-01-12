@@ -9,7 +9,7 @@ import Tab from "@mui/material/Tab";
 import { RouteComponentProps } from "@reach/router";
 
 import { useEvents } from "../../../hooks/useEvents";
-import { Reservation } from "../../../types";
+import { Reservation } from "../../../../functions/src/types/reservation";
 import { ReservationForm } from "./reservation-form";
 import { ReservationItem } from "./ReservationItem";
 import { CancelModal } from "./CancelModal";

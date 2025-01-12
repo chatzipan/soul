@@ -17,6 +17,7 @@ import Login from "../../components/admin/Login";
 import Layout from "../../components/admin/layout/Layout";
 import Reservations from "../../components/admin/reservations/Reservations";
 import Events from "../../components/admin/reservations/Events";
+import Settings from "../../components/admin/settings/Settings";
 import PrivateRoute from "../../components/shared/PrivateRoute";
 import { useAuth } from "../../hooks/useAuth";
 import { AuthProvider } from "../../providers/AuthProvider";
@@ -72,6 +73,7 @@ const Inner = () => {
             <Router basepath='/admin'>
               <PrivateRoute path='/reservations' component={Reservations} />
               <PrivateRoute path='/events' component={Events} />
+              <PrivateRoute path='/settings' component={Settings} />
               <PrivateRoute path='/' component={Dashboard} />
               <Login path='/login' />
               <Redirect from='*' to='/' />

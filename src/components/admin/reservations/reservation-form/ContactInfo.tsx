@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { Reservation } from "../../../../types";
+import { Reservation } from "../../../../../functions/src/types/reservation";
 
 const inputStyle = {
   minWidth: {

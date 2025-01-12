@@ -1,13 +1,6 @@
 import { getAllEvents } from "../services/reservations";
 import { useQueryWrapper } from "./useQuery";
 
-export const useEvents = (config = {} as { enable: boolean }) =>
-  useQueryWrapper({
-    queryKey: getKey(),
-    queryFn,
-    ...config,
-  });
-
 const getKey = () => [
   {
     domain: "admin",
@@ -15,6 +8,13 @@ const getKey = () => [
     entity: "list",
   },
 ];
+
+export const useEvents = (config = {} as { enable: boolean }) =>
+  useQueryWrapper({
+    queryKey: getKey(),
+    queryFn,
+    ...config,
+  });
 
 const queryFn = () => {
   return getAllEvents();

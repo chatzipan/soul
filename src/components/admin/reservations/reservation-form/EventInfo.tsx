@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { Reservation } from "../../../../types";
+import { Reservation } from "../../../../../functions/src/types/reservation";
 
 const inputStyle = {
   minWidth: {

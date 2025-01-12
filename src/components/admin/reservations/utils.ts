@@ -1,7 +1,7 @@
 import { format, isToday, isTomorrow } from "date-fns";
 import { groupBy } from "lodash";
 
-import { Reservation } from "../../../types";
+import { Reservation } from "../../../../functions/src/types/reservation";
 
 export enum TabsView {
   Today = "Today",

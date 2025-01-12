@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { Reservation } from "../../../../types";
+import { Reservation } from "../../../../../functions/src/types/reservation";
 
 const createTimeOptions = () => {
   // create options every 15 minutes

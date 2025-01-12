@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 
 import { useAuth } from "../../hooks/useAuth";
 import { RouteComponentProps } from "@reach/router";
-import { ArrowForwardRounded } from "@mui/icons-material";
+import { ArrowForwardRounded, Settings } from "@mui/icons-material";
 
 const Dashboard = (_: RouteComponentProps) => {
   const { user } = useAuth();
@@ -41,6 +41,19 @@ const Dashboard = (_: RouteComponentProps) => {
         >
           <ArrowForwardRounded />
           &nbsp; Events
+        </Typography>
+        <Typography
+          component={Link}
+          variant='body1'
+          display='flex'
+          to='/admin/settings'
+          sx={{
+            textTransform: "uppercase",
+            textDecoration: "none",
+          }}
+        >
+          <Settings />
+          &nbsp; Settings
         </Typography>
       </Box>
     </Box>

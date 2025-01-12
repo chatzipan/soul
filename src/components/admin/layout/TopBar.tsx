@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import InsertInvitationSharpIcon from "@mui/icons-material/InsertInvitationSharp";
 import Logout from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
@@ -21,6 +20,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { RouteComponentProps } from "@reach/router";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 import { useAuth } from "../../../hooks/useAuth";
 
@@ -104,6 +104,19 @@ const TopBar = (_: RouteComponentProps) => {
               }}
             >
               Events
+            </Typography>
+            <Typography
+              component={Link}
+              variant='body1'
+              fontSize={14}
+              to='/admin/settings'
+              sx={{
+                color: "white",
+                textTransform: "uppercase",
+                textDecoration: "none",
+              }}
+            >
+              Settings
             </Typography>
           </Box>
           {user && (
@@ -194,6 +207,18 @@ const TopBar = (_: RouteComponentProps) => {
               onClick={toggleDrawer}
             >
               <ListItemText primary='Events' />
+            </Link>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon>
+              <SettingsIcon />
+            </ListItemIcon>
+            <Link
+              to='/admin/settings'
+              style={{ textDecoration: "none", color: "inherit" }}
+              onClick={toggleDrawer}
+            >
+              <ListItemText primary='Settings' />
             </Link>
           </ListItemButton>
         </List>

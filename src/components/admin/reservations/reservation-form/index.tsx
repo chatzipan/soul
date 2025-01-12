@@ -24,7 +24,7 @@ import {
   createReservation,
   updateReservation,
 } from "../../../../services/reservations";
-import { Reservation } from "../../../../types";
+import { Reservation } from "../../../../../functions/src/types/reservation";
 import { isValidEmail } from "../utils";
 
 type ResponsiveDialogProps = {

@@ -14,7 +14,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { useReservations } from "../../../hooks/useReservations";
 import { updateReservation } from "../../../services/reservations";
-import { Reservation } from "../../../types";
+import { Reservation } from "../../../../functions/src/types/reservation";
 
 type ResponsiveDialogProps = {
   isOpen: boolean;

@@ -10,7 +10,7 @@ import { RouteComponentProps } from "@reach/router";
 
 import { ReservationItem } from "./ReservationItem";
 import { useReservations } from "../../../hooks/useReservations";
-import { Reservation } from "../../../types";
+import { Reservation } from "../../../../functions/src/types/reservation";
 import { ReservationForm } from "./reservation-form";
 import { CancelModal } from "./CancelModal";
 import * as S from "./Reservations.styled";

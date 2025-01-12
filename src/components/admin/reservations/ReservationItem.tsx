@@ -14,7 +14,7 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-import { Reservation } from "../../../types";
+import { Reservation } from "../../../../functions/src/types/reservation";
 import * as S from "./Reservations.styled";
 
 const ITEM_HEIGHT = 48;
