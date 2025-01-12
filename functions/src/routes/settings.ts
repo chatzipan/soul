@@ -9,7 +9,7 @@ const SETTINGS_DOC_ID = "global";
 
 const defaultSettings: RestaurantSettings = {
   maxCapacity: 20,
-  slotDuration: 60,
+  timeSlotDuration: 60,
   openingDays: {
     [DayOfWeek.Monday]: {
       openingHours: { start: "09:00", end: "17:00" },

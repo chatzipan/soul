@@ -1,4 +1,7 @@
-import { BlockedDate, RecurringBlock } from "../types/settings";
+import {
+  BlockedDate,
+  RecurringBlock,
+} from "../../functions/src/types/settings";
 
 export const isTimeSlotBlocked = (
   date: Date,
@@ -16,7 +19,7 @@ export const isTimeSlotBlocked = (
   const recurringBlock = recurringBlocks.find(
     (block) =>
       block.active &&
-      block.dayOfWeek === dayOfWeek &&
+      //  block.dayOfWeek === dayOfWeek &&
       block.timeRange.start <= time &&
       block.timeRange.end >= time
   );

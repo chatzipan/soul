@@ -5,7 +5,7 @@ export interface TimeRange {
 
 export interface RecurringBlock {
   id: string;
-  dayOfWeek: number; // 0-6 (Sunday-Saturday)
+  dayOfWeek: DayOfWeek; // 0-6 (Sunday-Saturday)
   timeRange: TimeRange;
   active: boolean;
 }
@@ -34,8 +34,8 @@ export interface OpeningDay {
 
 export interface RestaurantSettings {
   maxCapacity: number;
-  slotDuration: number;
   openingDays: Record<DayOfWeek, OpeningDay>;
+  timeSlotDuration: number;
   // recurringBlocks: RecurringBlock[];
   // blockedDates: BlockedDate[];
 }

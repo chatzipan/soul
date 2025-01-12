@@ -1,4 +1,4 @@
-import { RestaurantSettings } from "../types/settings";
+import { RestaurantSettings } from "../../functions/src/types/settings";
 
 const getHeaders = () => ({
   "Content-Type": "application/json",

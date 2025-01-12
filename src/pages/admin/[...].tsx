@@ -73,7 +73,7 @@ const Inner = () => {
             <Router basepath='/admin'>
               <PrivateRoute path='/reservations' component={Reservations} />
               <PrivateRoute path='/events' component={Events} />
-              <PrivateRoute path='/settings' component={Settings} />
+              <PrivateRoute path='/settings/*' component={Settings} />
               <PrivateRoute path='/' component={Dashboard} />
               <Login path='/login' />
               <Redirect from='*' to='/' />
