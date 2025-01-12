@@ -2,16 +2,27 @@ import * as React from "react";
 import * as S from "./Hero.styled";
 
 import { StaticImage } from "gatsby-plugin-image";
+import { useOpeningHours } from "../../hooks/useOpeningHours";
+import { DayOfWeek } from "../../../functions/src/types/settings";
+import { OpeningDay } from "../../../functions/src/types/settings";
 
-const entries = [
-  ["Monday:", "8:00 - 18:00"],
-  ["Tuesday - Wednesday:", "8:00 - 20:00"],
-  ["Thursday - Friday:", "8:00 - 21:00"],
-  ["Saturday:", "9:00 - 21:00"],
-  ["Sunday:", "9:00 - 18:00"],
+const daysOfWeek = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
 ];
 
 const Contact = () => {
+  const response = useOpeningHours();
+  const openingDays = response?.data as unknown as Record<
+    DayOfWeek,
+    OpeningDay
+  >;
+
   return (
     <S.Wrapper>
       <S.InnerWrapper>
@@ -64,12 +75,19 @@ const Contact = () => {
         <br />
         <br />
         <S.Text>Opening Hours</S.Text>
-        {entries.map((entry, index) => (
-          <S.Hours key={index}>
-            <span>{entry[0]}</span>
-            <span>{entry[1]}</span>
-          </S.Hours>
-        ))}
+        {daysOfWeek.map((day) => {
+          const openingHours =
+            openingDays?.[day as keyof typeof openingDays]?.openingHours;
+
+          return (
+            <S.Hours key={day}>
+              <span>{day}</span>
+              <span>
+                {openingHours?.start} - {openingHours?.end}
+              </span>
+            </S.Hours>
+          );
+        })}
       </S.InnerWrapper>
       <S.ImageWrapper>
         <StaticImage

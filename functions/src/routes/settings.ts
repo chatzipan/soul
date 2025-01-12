@@ -4,6 +4,8 @@ import { DayOfWeek, RestaurantSettings } from "../types/settings";
 
 // Create separate routers for public and protected routes
 const protectedRouter = express.Router();
+const publicRouter = express.Router();
+
 const COLLECTION = "settings";
 const SETTINGS_DOC_ID = "global";
 
@@ -42,6 +44,18 @@ const defaultSettings: RestaurantSettings = {
   },
 };
 
+// Public routes
+publicRouter.get("/opening-hours", async (_, res) => {
+  try {
+    const doc = await db.collection(COLLECTION).doc(SETTINGS_DOC_ID).get();
+    const data = doc.data() as RestaurantSettings;
+    return res.status(200).json(data.openingDays);
+  } catch (error) {
+    console.error("Error fetching settings:", error);
+    return res.status(500).json("Error fetching settings");
+  }
+});
+
 // Protected routes
 protectedRouter.get("/", async (_, res) => {
   try {
@@ -78,5 +92,5 @@ protectedRouter.put("/", async (req, res) => {
   }
 });
 
-// Export as an object to match the reservation router pattern
 export const protectedRoutes = protectedRouter;
+export const publicRoutes = publicRouter;

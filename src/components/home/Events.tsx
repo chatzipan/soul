@@ -6,7 +6,7 @@ import * as S from "./Common.styled";
 import { useSoulEvents } from "../../hooks/useSoulEvents";
 
 import { StaticImage } from "gatsby-plugin-image";
-import { Reservation } from "../../types";
+import { Reservation } from "../../../functions/src/types/reservation";
 import Button from "../shared/Button";
 
 const Events = () => {

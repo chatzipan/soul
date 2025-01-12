@@ -21,6 +21,19 @@ export const getSettings = async () => {
   }
 };
 
+export const getOpeningHours = async () => {
+  try {
+    const res = await fetch(`${API_URL}/public/v1/settings/opening-hours`, {
+      method: "GET",
+    });
+
+    const response = await res.json();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const updateSettings = async (settings: Partial<RestaurantSettings>) => {
   try {
     const res = await fetch(`${API_URL}/v1/settings`, {

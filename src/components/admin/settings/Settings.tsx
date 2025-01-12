@@ -6,10 +6,9 @@ import TuneIcon from "@mui/icons-material/Tune";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import PersonPinIcon from "@mui/icons-material/PersonPin";
 import TableBarIcon from "@mui/icons-material/TableBar";
-
 import { Router, Redirect } from "@reach/router";
+
 import OpeningHours from "./OpeningHours";
 import OtherSettings from "./OtherSettings";
 interface LinkTabProps {
