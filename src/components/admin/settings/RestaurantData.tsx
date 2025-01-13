@@ -2,7 +2,7 @@ import React from "react";
 import { RouteComponentProps } from "@reach/router";
 import { Box, Typography, Card, CardContent } from "@mui/material";
 
-const OtherSettings = (_: RouteComponentProps) => {
+const RestaurantData = (_: RouteComponentProps) => {
   return (
     <Box display='flex' flexDirection='column' gap={3}>
       <Card>
@@ -17,4 +17,4 @@ const OtherSettings = (_: RouteComponentProps) => {
   );
 };
 
-export default OtherSettings;
+export default RestaurantData;

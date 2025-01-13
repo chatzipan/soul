@@ -10,7 +10,7 @@ import TableBarIcon from "@mui/icons-material/TableBar";
 import { Router, Redirect } from "@reach/router";
 
 import OpeningHours from "./OpeningHours";
-import OtherSettings from "./OtherSettings";
+import RestaurantData from "./RestaurantData";
 interface LinkTabProps {
   label?: string;
   href?: string;
@@ -69,15 +69,15 @@ const Settings = (_: RouteComponentProps) => {
         />
         <LinkTab
           icon={<TableBarIcon />}
-          label='Reservations Config'
-          href='reservation-config'
+          label='Restaurant Data'
+          href='restaurant-data'
         />
       </Tabs>
 
       <Router>
         <Redirect from='/' to='opening-hours' noThrow />
         <OpeningHours path='opening-hours' />
-        <OtherSettings path='config' />
+        <RestaurantData path='restaurant-data' />
       </Router>
     </Box>
   );
