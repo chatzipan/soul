@@ -10,6 +10,8 @@ import {
   Button,
 } from "@mui/material";
 import { TimePicker } from "@mui/x-date-pickers";
+import CircularProgress from "@mui/material/CircularProgress";
+
 import { useSettings, useUpdateSettings } from "../../../hooks/useSettings";
 import {
   DayOfWeek,
@@ -82,6 +84,9 @@ const OpeningHours = (_: RouteComponentProps) => {
               </li>
             </ul>
           </Typography>
+          {loading && (
+            <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />
+          )}
 
           {Object.keys(DayOfWeek).map((day) => (
             <Box

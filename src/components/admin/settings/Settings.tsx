@@ -44,7 +44,9 @@ function LinkTab(props: LinkTabProps) {
 const Settings = (_: RouteComponentProps) => {
   const location =
     typeof window !== "undefined" ? window.location.pathname : "";
-  const [value, setValue] = React.useState(location.includes("other") ? 1 : 0);
+  const [value, setValue] = React.useState(
+    location.includes("restaurant-data") ? 1 : 0
+  );
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -65,12 +67,12 @@ const Settings = (_: RouteComponentProps) => {
         <LinkTab
           icon={<AccessTimeIcon />}
           label='Opening Hours'
-          href='opening-hours'
+          href='/admin/settings/opening-hours'
         />
         <LinkTab
           icon={<TableBarIcon />}
           label='Restaurant Data'
-          href='restaurant-data'
+          href='/admin/settings/restaurant-data'
         />
       </Tabs>
 
