@@ -10,3 +10,4 @@ elite.json
 .env.*
 
 *debug.log
+firestore-debug.log
