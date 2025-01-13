@@ -71,11 +71,8 @@ const OpeningHours = (_: RouteComponentProps) => {
     <Box display='flex' flexDirection='column' gap={3}>
       <Card>
         <CardContent>
-          <Typography variant='h5' display='flex' alignItems='center' mb={2}>
-            Opening Hours
-          </Typography>
           <Typography component='div' mb={4}>
-            Changes here will:
+            Changes in the opening hours section will:
             <ul>
               <li>show up in our website</li>
               <li>
@@ -89,9 +86,17 @@ const OpeningHours = (_: RouteComponentProps) => {
           {Object.keys(DayOfWeek).map((day) => (
             <Box
               key={day}
-              sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", md: "row" },
+                alignItems: { xs: "flex-start", md: "center" },
+                gap: 1,
+                mb: { xs: 4, md: 2 },
+              }}
             >
-              <Typography minWidth={100}>{day}</Typography>
+              <Typography minWidth={100} sx={{ mb: { xs: 2, md: 0 } }}>
+                {day}
+              </Typography>
               <TimePicker
                 label='Start Time'
                 value={parseISO(
@@ -117,6 +122,7 @@ const OpeningHours = (_: RouteComponentProps) => {
                     },
                   });
                 }}
+                sx={{ width: { xs: "100%", md: "auto" } }}
               />
               <TimePicker
                 label='End Time'
@@ -143,6 +149,7 @@ const OpeningHours = (_: RouteComponentProps) => {
                     },
                   });
                 }}
+                sx={{ width: { xs: "100%", md: "auto" } }}
               />
               <FormControlLabel
                 control={
