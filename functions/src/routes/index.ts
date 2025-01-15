@@ -8,6 +8,6 @@ export const initRouter = (app: express.Application) => {
   app.use("/api/v1/settings", settingsRouter.protectedRoutes);
   app.use("/api/public/v1/settings", settingsRouter.publicRoutes);
 
-  app.use("/api/reservations/v1/public", reservationRouter.publicRoutes);
-  app.use("/api/reservations/v1", reservationRouter.protectedRoutes);
+  app.use("/api/v1/public/reservations", reservationRouter.publicRoutes);
+  app.use("/api/v1/reservations", reservationRouter.protectedRoutes);
 };

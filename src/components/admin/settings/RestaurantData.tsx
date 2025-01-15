@@ -7,6 +7,7 @@ import {
   CardContent,
   TextField,
   Button,
+  CircularProgress,
 } from "@mui/material";
 import { useSettings, useUpdateSettings } from "../../../hooks/useSettings";
 import { RestaurantSettings } from "../../../../functions/src/types/settings";
@@ -49,7 +50,7 @@ const RestaurantData = (_: RouteComponentProps) => {
   };
 
   if (loading || !localSettings) {
-    return <div>Loading...</div>;
+    return <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />;
   }
 
   return (

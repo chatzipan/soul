@@ -113,7 +113,7 @@ export const ReservationItem = ({
             &nbsp;&#183;&nbsp;
             <Typography
               noWrap
-              // ellipsis
+              component='span'
               style={{
                 display: "block",
                 width: "100%",

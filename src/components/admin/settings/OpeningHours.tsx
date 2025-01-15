@@ -19,15 +19,7 @@ import {
 } from "../../../../functions/src/types/settings";
 import { parseISO } from "date-fns";
 import { isEqual } from "lodash";
-
-const getFormattedTime = (date: Date) => {
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-
-  return `${hours.toString().padStart(2, "0")}:${minutes
-    .toString()
-    .padStart(2, "0")}`;
-};
+import { getFormattedTime } from "../reservations/utils";
 
 const OpeningHours = (_: RouteComponentProps) => {
   const response = useSettings();
@@ -66,7 +58,7 @@ const OpeningHours = (_: RouteComponentProps) => {
   };
 
   if (loading || !localSettings) {
-    return <div>Loading...</div>;
+    return <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />;
   }
 
   return (
@@ -84,10 +76,6 @@ const OpeningHours = (_: RouteComponentProps) => {
               </li>
             </ul>
           </Typography>
-          {loading && (
-            <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />
-          )}
-
           {Object.keys(DayOfWeek).map((day) => (
             <Box
               key={day}
