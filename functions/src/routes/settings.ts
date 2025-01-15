@@ -14,34 +14,36 @@ const defaultSettings: RestaurantSettings = {
   timeSlotDuration: 60,
   openingDays: {
     [DayOfWeek.Monday]: {
-      openingHours: { start: "09:00", end: "17:00" },
       isOpen: true,
+      openingHours: { start: "09:00", end: "17:00" },
     },
     [DayOfWeek.Tuesday]: {
-      openingHours: { start: "09:00", end: "17:00" },
       isOpen: true,
+      openingHours: { start: "09:00", end: "17:00" },
     },
     [DayOfWeek.Wednesday]: {
-      openingHours: { start: "09:00", end: "17:00" },
       isOpen: true,
+      openingHours: { start: "09:00", end: "17:00" },
     },
     [DayOfWeek.Thursday]: {
-      openingHours: { start: "09:00", end: "17:00" },
       isOpen: true,
+      openingHours: { start: "09:00", end: "17:00" },
     },
     [DayOfWeek.Friday]: {
-      openingHours: { start: "09:00", end: "17:00" },
       isOpen: true,
+      openingHours: { start: "09:00", end: "17:00" },
     },
     [DayOfWeek.Saturday]: {
-      openingHours: { start: "09:00", end: "17:00" },
       isOpen: true,
+      openingHours: { start: "09:00", end: "17:00" },
     },
     [DayOfWeek.Sunday]: {
-      openingHours: { start: "09:00", end: "17:00" },
       isOpen: true,
+      openingHours: { start: "09:00", end: "17:00" },
     },
   },
+  recurringBlocks: [],
+  singleBlocks: [],
 };
 
 // Public routes

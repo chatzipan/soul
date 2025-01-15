@@ -7,10 +7,13 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import TableBarIcon from "@mui/icons-material/TableBar";
+import BlockIcon from "@mui/icons-material/Block";
 import { Router, Redirect } from "@reach/router";
 
 import OpeningHours from "./OpeningHours";
 import RestaurantData from "./RestaurantData";
+import BlockedDates from "./BlockedDates";
+
 interface LinkTabProps {
   label?: string;
   href?: string;
@@ -45,7 +48,11 @@ const Settings = (_: RouteComponentProps) => {
   const location =
     typeof window !== "undefined" ? window.location.pathname : "";
   const [value, setValue] = React.useState(
-    location.includes("restaurant-data") ? 1 : 0
+    location.includes("restaurant-data")
+      ? 1
+      : location.includes("blocked-dates")
+      ? 2
+      : 0
   );
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -74,12 +81,18 @@ const Settings = (_: RouteComponentProps) => {
           label='Restaurant Data'
           href='/admin/settings/restaurant-data'
         />
+        <LinkTab
+          icon={<BlockIcon />}
+          label='Blocked Dates'
+          href='/admin/settings/blocked-dates'
+        />
       </Tabs>
 
       <Router>
         <Redirect from='/' to='opening-hours' noThrow />
         <OpeningHours path='opening-hours' />
         <RestaurantData path='restaurant-data' />
+        <BlockedDates path='blocked-dates' />
       </Router>
     </Box>
   );
