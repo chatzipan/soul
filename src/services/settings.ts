@@ -23,7 +23,7 @@ export const getSettings = async () => {
 
 export const getOpeningHours = async () => {
   try {
-    const res = await fetch(`${API_URL}/public/v1/settings/opening-hours`, {
+    const res = await fetch(`${API_URL}/v1/public/settings/opening-hours`, {
       method: "GET",
     });
 

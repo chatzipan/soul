@@ -101,7 +101,7 @@ export const getSoulEvents = async () => {
 
 export const getAllEvents = async () => {
   try {
-    const res = await fetch(`${API_URL}/reservations/v1`, {
+    const res = await fetch(`${API_URL}/v1/reservations`, {
       method: "GET",
       headers: getHeaders(),
     });
