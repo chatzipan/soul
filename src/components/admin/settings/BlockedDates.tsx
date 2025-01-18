@@ -49,6 +49,56 @@ const getTimeConstraints = (
   };
 };
 
+const getAvailableTimeSlots = (
+  blocks: (RecurringBlock | SingleBlock)[],
+  date: Date | null,
+  dayOfWeek: DayOfWeek | undefined,
+  settings: RestaurantSettings
+): { minTime: Date; maxTime: Date }[] => {
+  const baseConstraints = getTimeConstraints(settings, dayOfWeek, date);
+  const startOfDay = baseConstraints.minTime;
+  const endOfDay = baseConstraints.maxTime;
+
+  // If no blocks exist, return the full day
+  if (!blocks.length) {
+    return [{ minTime: startOfDay, maxTime: endOfDay }];
+  }
+
+  // Sort blocks by start time
+  const sortedBlocks = [...blocks].sort((a, b) => {
+    const aTime = parseISO(`2024-01-01T${a.start}`);
+    const bTime = parseISO(`2024-01-01T${b.start}`);
+    return aTime.getTime() - bTime.getTime();
+  });
+
+  const availableSlots: { minTime: Date; maxTime: Date }[] = [];
+  let currentTime = startOfDay;
+
+  sortedBlocks.forEach((block) => {
+    const blockStart = parseISO(`2024-01-01T${block.start}`);
+    const blockEnd = parseISO(`2024-01-01T${block.end}`);
+
+    // Add slot before current block if there's space
+    if (currentTime < blockStart) {
+      availableSlots.push({
+        minTime: currentTime,
+        maxTime: blockStart,
+      });
+    }
+    currentTime = blockEnd;
+  });
+
+  // Add final slot after last block if there's space
+  if (currentTime < endOfDay) {
+    availableSlots.push({
+      minTime: currentTime,
+      maxTime: endOfDay,
+    });
+  }
+
+  return availableSlots;
+};
+
 const BlockedDates = (_: RouteComponentProps) => {
   const response = useSettings();
   const eventsResponse = useEvents();
@@ -183,6 +233,15 @@ const BlockedDates = (_: RouteComponentProps) => {
               block.dayOfWeek
             );
 
+            const availableSlots = getAvailableTimeSlots(
+              (localSettings.recurringBlocks || []).filter(
+                (_, i) => i !== index
+              ),
+              null,
+              block.dayOfWeek,
+              localSettings
+            );
+
             return (
               <Box
                 key={index}
@@ -226,6 +285,12 @@ const BlockedDates = (_: RouteComponentProps) => {
                     };
                     handleUpdateSettings({ recurringBlocks: newBlocks });
                   }}
+                  shouldDisableTime={(timeValue) => {
+                    return !availableSlots.some(
+                      (slot) =>
+                        timeValue >= slot.minTime && timeValue <= slot.maxTime
+                    );
+                  }}
                   minTime={minTime}
                   maxTime={maxTime}
                 />
@@ -242,6 +307,16 @@ const BlockedDates = (_: RouteComponentProps) => {
                       end: getFormattedTime(newValue),
                     };
                     handleUpdateSettings({ recurringBlocks: newBlocks });
+                  }}
+                  shouldDisableTime={(timeValue) => {
+                    const startTime = parseISO(`2024-01-01T${block.start}`);
+                    return (
+                      timeValue <= startTime ||
+                      !availableSlots.some(
+                        (slot) =>
+                          timeValue >= slot.minTime && timeValue <= slot.maxTime
+                      )
+                    );
                   }}
                   minTime={minTime}
                   maxTime={maxTime}
@@ -276,6 +351,13 @@ const BlockedDates = (_: RouteComponentProps) => {
               localSettings,
               undefined,
               date
+            );
+
+            const availableSlots = getAvailableTimeSlots(
+              (localSettings.singleBlocks || []).filter((_, i) => i !== index),
+              date,
+              undefined,
+              localSettings
             );
 
             return (
@@ -313,6 +395,12 @@ const BlockedDates = (_: RouteComponentProps) => {
                     };
                     handleUpdateSettings({ singleBlocks: newBlocks });
                   }}
+                  shouldDisableTime={(timeValue) => {
+                    return !availableSlots.some(
+                      (slot) =>
+                        timeValue >= slot.minTime && timeValue <= slot.maxTime
+                    );
+                  }}
                   minTime={minTime}
                   maxTime={maxTime}
                 />
@@ -327,6 +415,16 @@ const BlockedDates = (_: RouteComponentProps) => {
                       end: getFormattedTime(newValue),
                     };
                     handleUpdateSettings({ singleBlocks: newBlocks });
+                  }}
+                  shouldDisableTime={(timeValue) => {
+                    const startTime = parseISO(`2024-01-01T${block.start}`);
+                    return (
+                      timeValue <= startTime ||
+                      !availableSlots.some(
+                        (slot) =>
+                          timeValue >= slot.minTime && timeValue <= slot.maxTime
+                      )
+                    );
                   }}
                   minTime={minTime}
                   maxTime={maxTime}
