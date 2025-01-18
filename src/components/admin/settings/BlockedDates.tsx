@@ -55,7 +55,11 @@ const getAvailableTimeSlots = (
   dayOfWeek: DayOfWeek | undefined,
   settings: RestaurantSettings
 ): { minTime: Date; maxTime: Date }[] => {
-  const baseConstraints = getTimeConstraints(settings, dayOfWeek, date);
+  const baseConstraints = getTimeConstraints(
+    settings,
+    dayOfWeek,
+    date || undefined
+  );
   const startOfDay = baseConstraints.minTime;
   const endOfDay = baseConstraints.maxTime;
 
@@ -98,6 +102,45 @@ const getAvailableTimeSlots = (
 
   return availableSlots;
 };
+
+function areBlocksOutsideHours(
+  blocks: RecurringBlock[],
+  settings: RestaurantSettings
+): boolean {
+  // Returns true if any block is outside its day’s opening hours
+  return blocks.some((block) => {
+    const { dayOfWeek, start, end } = block;
+    const dayOpening = settings.openingDays[dayOfWeek];
+    // If no opening config, the block is effectively outside hours
+    if (!dayOpening) return true;
+    const openingStart = parseISO(
+      `2024-01-01T${dayOpening.openingHours.start}`
+    );
+    const openingEnd = parseISO(`2024-01-01T${dayOpening.openingHours.end}`);
+    const blockStart = parseISO(`2024-01-01T${start}`);
+    const blockEnd = parseISO(`2024-01-01T${end}`);
+    return blockStart < openingStart || blockEnd > openingEnd;
+  });
+}
+
+function areBlocksOverlapping(blocks: RecurringBlock[]): boolean {
+  // Returns true if any blocks overlap each other
+  const sortedBlocks = [...blocks].sort((a, b) => {
+    const aTime = parseISO(`2024-01-01T${a.start}`).getTime();
+    const bTime = parseISO(`2024-01-01T${b.start}`).getTime();
+    return aTime - bTime;
+  });
+
+  for (let i = 0; i < sortedBlocks.length - 1; i++) {
+    const currentEnd = parseISO(`2024-01-01T${sortedBlocks[i].end}`);
+    const nextStart = parseISO(`2024-01-01T${sortedBlocks[i + 1].start}`);
+    if (currentEnd > nextStart) {
+      return true;
+    }
+  }
+
+  return false;
+}
 
 const BlockedDates = (_: RouteComponentProps) => {
   const response = useSettings();
@@ -188,6 +231,10 @@ const BlockedDates = (_: RouteComponentProps) => {
   if (loading || !localSettings) {
     return <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />;
   }
+
+  const disableSave =
+    areBlocksOutsideHours(localSettings.recurringBlocks || [], localSettings) ||
+    areBlocksOverlapping(localSettings.recurringBlocks || []);
 
   const blockedEvents =
     events?.filter(
@@ -454,7 +501,9 @@ const BlockedDates = (_: RouteComponentProps) => {
           variant='contained'
           color='primary'
           onClick={handleSaveChanges}
-          disabled={updateSettingsMutation.isPending || !hasChanges}
+          disabled={
+            updateSettingsMutation.isPending || !hasChanges || disableSave
+          }
         >
           {updateSettingsMutation.isPending ? "Saving..." : "Save Changes"}
         </Button>
