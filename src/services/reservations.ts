@@ -10,7 +10,7 @@ const getHeaders = () => ({
 const API_URL = process.env.GATSBY_API_URL;
 
 export const createReservation = async (
-  reservation: Omit<Reservation, "id" | "time">
+  reservation: Omit<Reservation, "id" | "time">,
 ) => {
   try {
     const res = await fetch(`${API_URL}/v1/reservations`, {
@@ -126,7 +126,7 @@ export const getAllEvents = async () => {
 };
 
 export const updateReservation = async (
-  reservation: Omit<Reservation, "time">
+  reservation: Omit<Reservation, "time">,
 ) => {
   try {
     const res = await fetch(`${API_URL}/v1/reservations/${reservation.id}`, {

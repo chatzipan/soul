@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-import { RouteComponentProps } from "@reach/router";
+
+import { isEqual } from "lodash";
+
 import {
   Box,
-  Typography,
+  Button,
   Card,
   CardContent,
-  TextField,
-  Button,
   CircularProgress,
+  TextField,
+  Typography,
 } from "@mui/material";
-import { useSettings, useUpdateSettings } from "../../../hooks/useSettings";
+import { RouteComponentProps } from "@reach/router";
+
 import { RestaurantSettings } from "../../../../functions/src/types/settings";
-import { isEqual } from "lodash";
+import { useSettings, useUpdateSettings } from "../../../hooks/useSettings";
 
 const RestaurantData = (_: RouteComponentProps) => {
   const response = useSettings();
@@ -19,7 +22,7 @@ const RestaurantData = (_: RouteComponentProps) => {
   const settings = response?.data as unknown as RestaurantSettings;
   const loading = response?.isFetching || response?.isLoading || !response;
   const [localSettings, setLocalSettings] = useState<RestaurantSettings | null>(
-    null
+    null,
   );
 
   const hasChanges = !isEqual(settings, localSettings);
@@ -31,7 +34,7 @@ const RestaurantData = (_: RouteComponentProps) => {
   }, [settings]);
 
   const handleUpdateSettings = (
-    updatedSettings: Partial<RestaurantSettings>
+    updatedSettings: Partial<RestaurantSettings>,
   ) => {
     if (!localSettings) return;
 
@@ -54,20 +57,20 @@ const RestaurantData = (_: RouteComponentProps) => {
   }
 
   return (
-    <Box display='flex' flexDirection='column' gap={3}>
+    <Box display="flex" flexDirection="column" gap={3}>
       <Card>
         <CardContent>
-          <Typography variant='h5' display='flex' alignItems='center' mb={2}>
+          <Typography variant="h5" display="flex" alignItems="center" mb={2}>
             Time Slot Duration
           </Typography>
-          <Typography component='div' mb={4}>
+          <Typography component="div" mb={4}>
             This setting determines the duration of each reservation slot in
             minutes. This affects how reservations can be made and their
             spacing.
           </Typography>
           <TextField
-            type='number'
-            label='Duration (minutes)'
+            type="number"
+            label="Duration (minutes)"
             value={localSettings.timeSlotDuration}
             onChange={(e) =>
               handleUpdateSettings({
@@ -82,16 +85,16 @@ const RestaurantData = (_: RouteComponentProps) => {
 
       <Card>
         <CardContent>
-          <Typography variant='h5' display='flex' alignItems='center' mb={2}>
+          <Typography variant="h5" display="flex" alignItems="center" mb={2}>
             Maximum Capacity
           </Typography>
-          <Typography component='div' mb={4}>
+          <Typography component="div" mb={4}>
             Set the maximum number of guests that can have a reservation at
             once. This helps prevent overbooking.
           </Typography>
           <TextField
-            type='number'
-            label='Max Capacity'
+            type="number"
+            label="Max Capacity"
             value={localSettings.maxCapacity || 100}
             onChange={(e) =>
               handleUpdateSettings({
@@ -104,11 +107,11 @@ const RestaurantData = (_: RouteComponentProps) => {
         </CardContent>
       </Card>
 
-      <Box display='flex' sx={{ mb: 2 }}>
+      <Box display="flex" sx={{ mb: 2 }}>
         <Button
           sx={{ ml: "auto" }}
-          variant='contained'
-          color='primary'
+          variant="contained"
+          color="primary"
           onClick={handleSaveChanges}
           disabled={updateSettingsMutation.isPending || !hasChanges}
         >

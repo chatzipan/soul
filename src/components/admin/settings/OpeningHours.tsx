@@ -1,24 +1,26 @@
 import React, { useState } from "react";
-import { RouteComponentProps } from "@reach/router";
+
+import { isEqual } from "lodash";
+
 import {
   Box,
-  Typography,
+  Button,
   Card,
   CardContent,
   FormControlLabel,
   Switch,
-  Button,
+  Typography,
 } from "@mui/material";
-import { TimePicker } from "@mui/x-date-pickers";
 import CircularProgress from "@mui/material/CircularProgress";
+import { TimePicker } from "@mui/x-date-pickers";
+import { RouteComponentProps } from "@reach/router";
+import { parseISO } from "date-fns";
 
-import { useSettings, useUpdateSettings } from "../../../hooks/useSettings";
 import {
   DayOfWeek,
   RestaurantSettings,
 } from "../../../../functions/src/types/settings";
-import { parseISO } from "date-fns";
-import { isEqual } from "lodash";
+import { useSettings, useUpdateSettings } from "../../../hooks/useSettings";
 import { getFormattedTime } from "../reservations/utils";
 
 export const SORTED_DAYS = [
@@ -32,7 +34,7 @@ const OpeningHours = (_: RouteComponentProps) => {
   const settings = response?.data as unknown as RestaurantSettings;
   const loading = response?.isFetching || response?.isLoading || !response;
   const [localSettings, setLocalSettings] = useState<RestaurantSettings | null>(
-    null
+    null,
   );
 
   const hasChanges = !isEqual(settings, localSettings);
@@ -44,7 +46,7 @@ const OpeningHours = (_: RouteComponentProps) => {
   }, [settings]);
 
   const handleUpdateSettings = (
-    updatedSettings: Partial<RestaurantSettings>
+    updatedSettings: Partial<RestaurantSettings>,
   ) => {
     if (!localSettings) return;
 
@@ -67,10 +69,10 @@ const OpeningHours = (_: RouteComponentProps) => {
   }
 
   return (
-    <Box display='flex' flexDirection='column' gap={3}>
+    <Box display="flex" flexDirection="column" gap={3}>
       <Card>
         <CardContent>
-          <Typography component='div' mb={4}>
+          <Typography component="div" mb={4}>
             Changes in the opening hours section will:
             <ul>
               <li>show up in our website</li>
@@ -96,12 +98,12 @@ const OpeningHours = (_: RouteComponentProps) => {
                 {day}
               </Typography>
               <TimePicker
-                label='Start Time'
+                label="Start Time"
                 value={parseISO(
                   `2024-01-01T${
                     localSettings?.openingDays[day as DayOfWeek].openingHours
                       .start || "09:00"
-                  }`
+                  }`,
                 )}
                 onChange={(newValue) => {
                   if (!newValue) return;
@@ -123,12 +125,12 @@ const OpeningHours = (_: RouteComponentProps) => {
                 sx={{ width: { xs: "100%", md: "auto" } }}
               />
               <TimePicker
-                label='End Time'
+                label="End Time"
                 value={parseISO(
                   `2024-01-01T${
                     localSettings?.openingDays[day as DayOfWeek].openingHours
                       .end || "17:00"
-                  }`
+                  }`,
                 )}
                 onChange={(newValue) => {
                   if (!newValue) return;
@@ -180,11 +182,11 @@ const OpeningHours = (_: RouteComponentProps) => {
             </Box>
           ))}
 
-          <Box display='flex' sx={{ mb: 2 }}>
+          <Box display="flex" sx={{ mb: 2 }}>
             <Button
               sx={{ ml: "auto" }}
-              variant='contained'
-              color='primary'
+              variant="contained"
+              color="primary"
               onClick={handleSaveChanges}
               disabled={updateSettingsMutation.isPending || !hasChanges}
             >

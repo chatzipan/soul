@@ -1,33 +1,36 @@
 import React, { useState } from "react";
-import { RouteComponentProps } from "@reach/router";
+
+import { isEqual } from "lodash";
+
+import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
 import {
   Box,
-  Typography,
+  Button,
   Card,
   CardContent,
-  Button,
   CircularProgress,
   IconButton,
-  Select,
   MenuItem,
+  Select,
+  Typography,
 } from "@mui/material";
 import { TimePicker } from "@mui/x-date-pickers";
 import { DatePicker } from "@mui/x-date-pickers";
-import DeleteIcon from "@mui/icons-material/Delete";
-import AddIcon from "@mui/icons-material/Add";
-import { useSettings, useUpdateSettings } from "../../../hooks/useSettings";
+import { RouteComponentProps } from "@reach/router";
+import { parseISO } from "date-fns";
+import { format } from "date-fns";
+
+import { Reservation } from "../../../../functions/src/types/reservation";
 import {
   DayOfWeek,
-  RestaurantSettings,
   RecurringBlock,
+  RestaurantSettings,
   SingleBlock,
 } from "../../../../functions/src/types/settings";
-import { parseISO } from "date-fns";
-import { isEqual } from "lodash";
-import { getFormattedTime } from "../reservations/utils";
 import { useEvents } from "../../../hooks/useEvents";
-import { Reservation } from "../../../../functions/src/types/reservation";
-import { format } from "date-fns";
+import { useSettings, useUpdateSettings } from "../../../hooks/useSettings";
+import { getFormattedTime } from "../reservations/utils";
 import { SORTED_DAYS } from "./OpeningHours";
 import {
   areBlocksOutsideHours,
@@ -67,7 +70,7 @@ const BlockedDates = (_: RouteComponentProps) => {
   }, [settings]);
 
   const handleUpdateSettings = (
-    updatedSettings: Partial<RestaurantSettings>
+    updatedSettings: Partial<RestaurantSettings>,
   ) => {
     if (!localSettings) return;
 
@@ -93,11 +96,11 @@ const BlockedDates = (_: RouteComponentProps) => {
     // Get the first available time slot for Monday
     const availableSlots = getAvailableTimeSlots(
       localSettings.recurringBlocks.filter(
-        (block) => block.dayOfWeek === defaultDay
+        (block) => block.dayOfWeek === defaultDay,
       ),
       null,
       defaultDay,
-      localSettings
+      localSettings,
     );
 
     let start: string | null = null;
@@ -166,15 +169,15 @@ const BlockedDates = (_: RouteComponentProps) => {
 
   const blockedEvents =
     events?.filter(
-      (event) => event.disableParallelBookings && !event.canceled
+      (event) => event.disableParallelBookings && !event.canceled,
     ) || [];
 
   return (
-    <Box display='flex' flexDirection='column' gap={3}>
+    <Box display="flex" flexDirection="column" gap={3}>
       {blockedEvents.length > 0 && (
         <Card>
           <CardContent>
-            <Typography variant='h6' sx={{ mb: 2 }}>
+            <Typography variant="h6" sx={{ mb: 2 }}>
               Events that block Reservations
             </Typography>
             {blockedEvents.map((event) => (
@@ -200,7 +203,7 @@ const BlockedDates = (_: RouteComponentProps) => {
 
       <Card>
         <CardContent>
-          <Typography variant='h6' sx={{ mb: 2 }}>
+          <Typography variant="h6" sx={{ mb: 2 }}>
             Recurring Blocks&nbsp;
             <small style={{ fontSize: "0.8em" }}>
               (blocks that repeat every week)
@@ -209,7 +212,7 @@ const BlockedDates = (_: RouteComponentProps) => {
           {localSettings.recurringBlocks.map((block, index) => {
             const { minTime, maxTime } = getTimeConstraints(
               localSettings,
-              block.dayOfWeek
+              block.dayOfWeek,
             );
 
             const availableSlots = getAvailableTimeSlots(
@@ -218,7 +221,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                 .filter((b) => b.dayOfWeek === block.dayOfWeek),
               null,
               block.dayOfWeek,
-              localSettings
+              localSettings,
             );
 
             return (
@@ -251,7 +254,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                   ))}
                 </Select>
                 <TimePicker
-                  label='Start Time'
+                  label="Start Time"
                   value={parseISO(`2024-01-01T${block.start}`)}
                   disabled={!block.dayOfWeek}
                   sx={{ width: { xs: "100%", md: "auto" } }}
@@ -269,14 +272,14 @@ const BlockedDates = (_: RouteComponentProps) => {
 
                     return !availableSlots.some(
                       (slot) =>
-                        timeValue >= slot.minTime && timeValue <= slot.maxTime
+                        timeValue >= slot.minTime && timeValue <= slot.maxTime,
                     );
                   }}
                   minTime={minTime}
                   maxTime={maxTime}
                 />
                 <TimePicker
-                  label='End Time'
+                  label="End Time"
                   value={parseISO(`2024-01-01T${block.end}`)}
                   disabled={!block.start}
                   sx={{ width: { xs: "100%", md: "auto" } }}
@@ -296,7 +299,8 @@ const BlockedDates = (_: RouteComponentProps) => {
                       timeValue <= startTime ||
                       !availableSlots.some(
                         (slot) =>
-                          timeValue >= slot.minTime && timeValue <= slot.maxTime
+                          timeValue >= slot.minTime &&
+                          timeValue <= slot.maxTime,
                       )
                     );
                   }}
@@ -304,7 +308,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                   maxTime={maxTime}
                 />
                 <IconButton
-                  color='error'
+                  color="error"
                   onClick={() => deleteRecurringBlock(index)}
                 >
                   <DeleteIcon />
@@ -314,7 +318,7 @@ const BlockedDates = (_: RouteComponentProps) => {
           })}
           <Button
             startIcon={<AddIcon />}
-            variant='outlined'
+            variant="outlined"
             onClick={addRecurringBlock}
           >
             Add Recurring Block
@@ -323,7 +327,7 @@ const BlockedDates = (_: RouteComponentProps) => {
       </Card>
       <Card>
         <CardContent>
-          <Typography variant='h6' sx={{ mb: 2 }}>
+          <Typography variant="h6" sx={{ mb: 2 }}>
             Single Date Blocks&nbsp;
             <small style={{ fontSize: "0.8em" }}>
               (blocks that only apply to a single date)
@@ -334,14 +338,14 @@ const BlockedDates = (_: RouteComponentProps) => {
             const { minTime, maxTime } = getTimeConstraints(
               localSettings,
               undefined,
-              date
+              date,
             );
 
             const availableSlots = getAvailableTimeSlots(
               (localSettings.singleBlocks || []).filter((_, i) => i !== index),
               date,
               undefined,
-              localSettings
+              localSettings,
             );
 
             return (
@@ -357,7 +361,7 @@ const BlockedDates = (_: RouteComponentProps) => {
               >
                 <DatePicker
                   disablePast
-                  label='Date'
+                  label="Date"
                   sx={{ width: { xs: "100%", md: "auto" } }}
                   value={date}
                   onChange={(newValue) => {
@@ -371,7 +375,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                   }}
                 />
                 <TimePicker
-                  label='Start Time'
+                  label="Start Time"
                   value={parseISO(`2024-01-01T${block.start}`)}
                   sx={{ width: { xs: "100%", md: "auto" } }}
                   onChange={(newValue) => {
@@ -386,14 +390,14 @@ const BlockedDates = (_: RouteComponentProps) => {
                   shouldDisableTime={(timeValue) =>
                     !availableSlots.some(
                       (slot) =>
-                        timeValue >= slot.minTime && timeValue <= slot.maxTime
+                        timeValue >= slot.minTime && timeValue <= slot.maxTime,
                     )
                   }
                   minTime={minTime}
                   maxTime={maxTime}
                 />
                 <TimePicker
-                  label='End Time'
+                  label="End Time"
                   value={parseISO(`2024-01-01T${block.end}`)}
                   sx={{ width: { xs: "100%", md: "auto" } }}
                   onChange={(newValue) => {
@@ -411,7 +415,8 @@ const BlockedDates = (_: RouteComponentProps) => {
                       timeValue <= startTime ||
                       !availableSlots.some(
                         (slot) =>
-                          timeValue >= slot.minTime && timeValue <= slot.maxTime
+                          timeValue >= slot.minTime &&
+                          timeValue <= slot.maxTime,
                       )
                     );
                   }}
@@ -419,7 +424,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                   maxTime={maxTime}
                 />
                 <IconButton
-                  color='error'
+                  color="error"
                   onClick={() => deleteSingleBlock(index)}
                 >
                   <DeleteIcon />
@@ -429,7 +434,7 @@ const BlockedDates = (_: RouteComponentProps) => {
           })}
           <Button
             startIcon={<AddIcon />}
-            variant='outlined'
+            variant="outlined"
             onClick={addSingleBlock}
           >
             Add Single Block
@@ -437,11 +442,11 @@ const BlockedDates = (_: RouteComponentProps) => {
         </CardContent>
       </Card>
 
-      <Box display='flex'>
+      <Box display="flex">
         <Button
           sx={{ ml: "auto" }}
-          variant='contained'
-          color='primary'
+          variant="contained"
+          color="primary"
           onClick={handleSaveChanges}
           disabled={
             updateSettingsMutation.isPending || !hasChanges || disableSave
