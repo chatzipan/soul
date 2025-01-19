@@ -29,6 +29,7 @@ import { getFormattedTime } from "../reservations/utils";
 import { useEvents } from "../../../hooks/useEvents";
 import { Reservation } from "../../../../functions/src/types/reservation";
 import { format } from "date-fns";
+import { SORTED_DAYS } from "./OpeningHours";
 
 const getTimeConstraints = (
   settings: RestaurantSettings,
@@ -124,6 +125,17 @@ function areBlocksOutsideHours(
 }
 
 function areBlocksOverlapping(blocks: RecurringBlock[]): boolean {
+  // Return true if any block has end <= start
+  if (
+    blocks.some((block) => {
+      const blockStart = parseISO(`2024-01-01T${block.start}`);
+      const blockEnd = parseISO(`2024-01-01T${block.end}`);
+      return blockEnd <= blockStart;
+    })
+  ) {
+    return true;
+  }
+
   // Returns true if any blocks overlap each other
   const sortedBlocks = [...blocks].sort((a, b) => {
     const aTime = parseISO(`2024-01-01T${a.start}`).getTime();
@@ -153,15 +165,22 @@ const BlockedDates = (_: RouteComponentProps) => {
     response?.isLoading ||
     !response ||
     eventsResponse?.isLoading;
-  const [localSettings, setLocalSettings] = useState<RestaurantSettings | null>(
-    null
-  );
+
+  const [localSettings, setLocalSettings] = useState<RestaurantSettings>({
+    ...settings,
+    recurringBlocks: [],
+    singleBlocks: [],
+  });
 
   const hasChanges = !isEqual(settings, localSettings);
 
   React.useEffect(() => {
     if (settings) {
-      setLocalSettings(settings);
+      setLocalSettings({
+        ...settings,
+        recurringBlocks: settings.recurringBlocks ?? [],
+        singleBlocks: settings.singleBlocks ?? [],
+      });
     }
   }, [settings]);
 
@@ -187,14 +206,39 @@ const BlockedDates = (_: RouteComponentProps) => {
   const addRecurringBlock = () => {
     if (!localSettings) return;
 
+    const defaultDay = DayOfWeek.Monday;
+
+    // Get the first available time slot for Monday
+    const availableSlots = getAvailableTimeSlots(
+      localSettings.recurringBlocks,
+      null,
+      defaultDay,
+      localSettings
+    );
+
+    let start: string | null = null;
+    let end: string | null = null;
+
+    if (availableSlots.length > 0) {
+      const slot = availableSlots[0];
+      const nextFreeHour = new Date(slot.minTime.getTime());
+      nextFreeHour.setHours(nextFreeHour.getHours() + 1);
+      const adjustedEnd =
+        nextFreeHour <= slot.maxTime ? nextFreeHour : slot.maxTime;
+
+      start = getFormattedTime(slot.minTime);
+      end = getFormattedTime(adjustedEnd);
+    }
+
+    // Fallback defaults if no available slots
     const newBlock: RecurringBlock = {
-      dayOfWeek: DayOfWeek.Monday,
-      start: "12:00",
-      end: "17:00",
+      dayOfWeek: defaultDay,
+      start: start ?? "09:00",
+      end: end ?? "10:00",
     };
 
     handleUpdateSettings({
-      recurringBlocks: [...(localSettings.recurringBlocks || []), newBlock],
+      recurringBlocks: [...localSettings.recurringBlocks, newBlock],
     });
   };
 
@@ -215,7 +259,7 @@ const BlockedDates = (_: RouteComponentProps) => {
   const deleteRecurringBlock = (index: number) => {
     if (!localSettings) return;
 
-    const newBlocks = [...(localSettings.recurringBlocks || [])];
+    const newBlocks = [...localSettings.recurringBlocks];
     newBlocks.splice(index, 1);
     handleUpdateSettings({ recurringBlocks: newBlocks });
   };
@@ -233,8 +277,8 @@ const BlockedDates = (_: RouteComponentProps) => {
   }
 
   const disableSave =
-    areBlocksOutsideHours(localSettings.recurringBlocks || [], localSettings) ||
-    areBlocksOverlapping(localSettings.recurringBlocks || []);
+    areBlocksOutsideHours(localSettings.recurringBlocks, localSettings) ||
+    areBlocksOverlapping(localSettings.recurringBlocks);
 
   const blockedEvents =
     events?.filter(
@@ -274,16 +318,14 @@ const BlockedDates = (_: RouteComponentProps) => {
           <Typography variant='h6' sx={{ mb: 2 }}>
             Recurring Blocks
           </Typography>
-          {(localSettings.recurringBlocks || []).map((block, index) => {
+          {localSettings.recurringBlocks.map((block, index) => {
             const { minTime, maxTime } = getTimeConstraints(
               localSettings,
               block.dayOfWeek
             );
 
             const availableSlots = getAvailableTimeSlots(
-              (localSettings.recurringBlocks || []).filter(
-                (_, i) => i !== index
-              ),
+              localSettings.recurringBlocks.filter((_, i) => i !== index),
               null,
               block.dayOfWeek,
               localSettings
@@ -302,9 +344,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                 <Select
                   value={block.dayOfWeek}
                   onChange={(e) => {
-                    const newBlocks = [
-                      ...(localSettings.recurringBlocks || []),
-                    ];
+                    const newBlocks = [...localSettings.recurringBlocks];
                     newBlocks[index] = {
                       ...block,
                       dayOfWeek: e.target.value as DayOfWeek,
@@ -312,7 +352,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                     handleUpdateSettings({ recurringBlocks: newBlocks });
                   }}
                 >
-                  {Object.values(DayOfWeek).map((day) => (
+                  {SORTED_DAYS.map((day) => (
                     <MenuItem key={day} value={day}>
                       {day}
                     </MenuItem>
@@ -321,11 +361,10 @@ const BlockedDates = (_: RouteComponentProps) => {
                 <TimePicker
                   label='Start Time'
                   value={parseISO(`2024-01-01T${block.start}`)}
+                  disabled={!block.dayOfWeek}
                   onChange={(newValue) => {
                     if (!newValue) return;
-                    const newBlocks = [
-                      ...(localSettings.recurringBlocks || []),
-                    ];
+                    const newBlocks = [...localSettings.recurringBlocks];
                     newBlocks[index] = {
                       ...block,
                       start: getFormattedTime(newValue),
@@ -333,6 +372,8 @@ const BlockedDates = (_: RouteComponentProps) => {
                     handleUpdateSettings({ recurringBlocks: newBlocks });
                   }}
                   shouldDisableTime={(timeValue) => {
+                    if (!block.start) return false;
+
                     return !availableSlots.some(
                       (slot) =>
                         timeValue >= slot.minTime && timeValue <= slot.maxTime
@@ -344,11 +385,10 @@ const BlockedDates = (_: RouteComponentProps) => {
                 <TimePicker
                   label='End Time'
                   value={parseISO(`2024-01-01T${block.end}`)}
+                  disabled={!block.start}
                   onChange={(newValue) => {
                     if (!newValue) return;
-                    const newBlocks = [
-                      ...(localSettings.recurringBlocks || []),
-                    ];
+                    const newBlocks = [...localSettings.recurringBlocks];
                     newBlocks[index] = {
                       ...block,
                       end: getFormattedTime(newValue),
@@ -356,6 +396,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                     handleUpdateSettings({ recurringBlocks: newBlocks });
                   }}
                   shouldDisableTime={(timeValue) => {
+                    if (!block.start || !block.end) return false;
                     const startTime = parseISO(`2024-01-01T${block.start}`);
                     return (
                       timeValue <= startTime ||
@@ -386,7 +427,7 @@ const BlockedDates = (_: RouteComponentProps) => {
           </Button>
         </CardContent>
       </Card>
-
+      {/* 
       <Card>
         <CardContent>
           <Typography variant='h6' sx={{ mb: 2 }}>
@@ -418,6 +459,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                 }}
               >
                 <DatePicker
+                  disablePast
                   label='Date'
                   value={date}
                   onChange={(newValue) => {
@@ -493,7 +535,7 @@ const BlockedDates = (_: RouteComponentProps) => {
             Add Single Block
           </Button>
         </CardContent>
-      </Card>
+      </Card> */}
 
       <Box display='flex'>
         <Button

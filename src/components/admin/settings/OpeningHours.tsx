@@ -21,7 +21,10 @@ import { parseISO } from "date-fns";
 import { isEqual } from "lodash";
 import { getFormattedTime } from "../reservations/utils";
 
-const sortedDays = [...Object.keys(DayOfWeek).slice(1, 6), DayOfWeek.Sunday];
+export const SORTED_DAYS = [
+  ...Object.keys(DayOfWeek).slice(1, 7),
+  DayOfWeek.Sunday,
+];
 
 const OpeningHours = (_: RouteComponentProps) => {
   const response = useSettings();
@@ -78,7 +81,7 @@ const OpeningHours = (_: RouteComponentProps) => {
               </li>
             </ul>
           </Typography>
-          {sortedDays.map((day) => (
+          {SORTED_DAYS.map((day) => (
             <Box
               key={day}
               sx={{
