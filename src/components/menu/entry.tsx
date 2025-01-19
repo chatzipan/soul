@@ -1,9 +1,11 @@
-import * as S from "./menu.styled";
+import React from "react";
 
 import type { HeadFC } from "gatsby";
-import React from "react";
+
 import { RouteComponentProps } from "@reach/router";
+
 import menu from "../../../static/menu.json";
+import * as S from "./menu.styled";
 
 type TMenuEntry = {
   image: null | string;
@@ -17,7 +19,7 @@ type Menu = {
   entries: TMenuEntry[];
 };
 
-const MenuEntry: React.FC<RouteComponentProps> = ({}) => {
+const MenuEntry: React.FC<RouteComponentProps> = () => {
   return <MenuPageComponent menu={menu} />;
 };
 
@@ -34,7 +36,7 @@ const MenuPageComponent: React.FC<{ menu: Menu[] }> = ({ menu }) => {
           {category}
         </S.Category>
       ))}
-      <S.HomeLink to='/'>Home</S.HomeLink>
+      <S.HomeLink to="/">Home</S.HomeLink>
     </S.Wrapper>
   );
 };

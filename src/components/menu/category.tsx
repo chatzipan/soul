@@ -1,9 +1,11 @@
-import * as S from "./menu.styled";
+import React from "react";
 
 import type { HeadFC } from "gatsby";
-import React from "react";
+
 import { Redirect, RouteComponentProps, useParams } from "@reach/router";
+
 import menu from "../../../static/menu.json";
+import * as S from "./menu.styled";
 
 type MenuEntry = {
   category?: string;
@@ -34,7 +36,7 @@ const formatDescription = (description: string) =>
     .replace("{", " (")
     .replace("}", ")");
 
-const MenuCategory: React.FC<RouteComponentProps> = ({}) => {
+const MenuCategory: React.FC<RouteComponentProps> = () => {
   const params = useParams();
   const category = params.categoryId;
 
@@ -43,7 +45,7 @@ const MenuCategory: React.FC<RouteComponentProps> = ({}) => {
     .map((category) => createLink(category));
 
   if (!allCategories.includes(category)) {
-    return <Redirect to='/menu' noThrow />;
+    return <Redirect to="/menu" noThrow />;
   }
 
   const menuIndex = allCategories.indexOf(category);
@@ -53,18 +55,21 @@ const MenuCategory: React.FC<RouteComponentProps> = ({}) => {
     description: categoryMenu.description,
     name: categoryMenu.name,
     categories: Object.entries(
-      categoryMenu.entries.reduce((acc, entry) => {
-        const category =
-          "category" in entry ? entry.category : categoryMenu.name;
-        if (!acc[category]) {
-          acc[category] = {
-            name: category,
-            entries: [],
-          };
-        }
-        acc[category].entries.push(entry);
-        return acc;
-      }, {} as Record<string, { name: string; entries: MenuEntry[] }>)
+      categoryMenu.entries.reduce(
+        (acc, entry) => {
+          const category =
+            "category" in entry ? entry.category : categoryMenu.name;
+          if (!acc[category]) {
+            acc[category] = {
+              name: category,
+              entries: [],
+            };
+          }
+          acc[category].entries.push(entry);
+          return acc;
+        },
+        {} as Record<string, { name: string; entries: MenuEntry[] }>,
+      ),
     ).map(([_, value]) => value),
   };
 
@@ -94,7 +99,7 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
               ))}
           </S.Section>
         ))}
-        <S.HomeLink to='/menu'>Back To Menu</S.HomeLink>
+        <S.HomeLink to="/menu">Back To Menu</S.HomeLink>
       </S.Main>
     </S.Wrapper>
   );
