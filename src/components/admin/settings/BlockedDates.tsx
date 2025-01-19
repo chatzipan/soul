@@ -108,7 +108,7 @@ function areBlocksOutsideHours(
   blocks: RecurringBlock[],
   settings: RestaurantSettings
 ): boolean {
-  // Returns true if any block is outside its day’s opening hours
+  // Returns true if any block is outside its day's opening hours
   return blocks.some((block) => {
     const { dayOfWeek, start, end } = block;
     const dayOpening = settings.openingDays[dayOfWeek];
@@ -136,18 +136,34 @@ function areBlocksOverlapping(blocks: RecurringBlock[]): boolean {
     return true;
   }
 
-  // Returns true if any blocks overlap each other
-  const sortedBlocks = [...blocks].sort((a, b) => {
-    const aTime = parseISO(`2024-01-01T${a.start}`).getTime();
-    const bTime = parseISO(`2024-01-01T${b.start}`).getTime();
-    return aTime - bTime;
-  });
+  // Group blocks by dayOfWeek so we only check overlap for blocks on the same day
+  const blocksByDay = blocks.reduce((acc, block) => {
+    if (!acc[block.dayOfWeek]) {
+      acc[block.dayOfWeek] = [];
+    }
+    acc[block.dayOfWeek].push(block);
+    return acc;
+  }, {} as Record<DayOfWeek, RecurringBlock[]>);
 
-  for (let i = 0; i < sortedBlocks.length - 1; i++) {
-    const currentEnd = parseISO(`2024-01-01T${sortedBlocks[i].end}`);
-    const nextStart = parseISO(`2024-01-01T${sortedBlocks[i + 1].start}`);
-    if (currentEnd > nextStart) {
-      return true;
+  // Check each day's blocks for overlap
+  for (const day in blocksByDay) {
+    const dailyBlocks = blocksByDay[day as DayOfWeek];
+
+    // Sort by start time
+    dailyBlocks.sort((a, b) => {
+      const aTime = parseISO(`2024-01-01T${a.start}`).getTime();
+      const bTime = parseISO(`2024-01-01T${b.start}`).getTime();
+      return aTime - bTime;
+    });
+
+    // Check for overlapping blocks that share the same dayOfWeek
+    for (let i = 0; i < dailyBlocks.length - 1; i++) {
+      const currentEnd = parseISO(`2024-01-01T${dailyBlocks[i].end}`);
+      const nextStart = parseISO(`2024-01-01T${dailyBlocks[i + 1].start}`);
+
+      if (currentEnd > nextStart) {
+        return true; // overlap found
+      }
     }
   }
 
@@ -210,7 +226,9 @@ const BlockedDates = (_: RouteComponentProps) => {
 
     // Get the first available time slot for Monday
     const availableSlots = getAvailableTimeSlots(
-      localSettings.recurringBlocks,
+      localSettings.recurringBlocks.filter(
+        (block) => block.dayOfWeek === defaultDay
+      ),
       null,
       defaultDay,
       localSettings
@@ -291,7 +309,7 @@ const BlockedDates = (_: RouteComponentProps) => {
         <Card>
           <CardContent>
             <Typography variant='h6' sx={{ mb: 2 }}>
-              Events Blocking Reservations
+              Events that block Reservations
             </Typography>
             {blockedEvents.map((event) => (
               <Box
@@ -304,7 +322,8 @@ const BlockedDates = (_: RouteComponentProps) => {
                 }}
               >
                 <Typography>
-                  {format(new Date(event.date), "dd.MM.yyyy")} {event.time} -{" "}
+                  {format(new Date(event.date), "dd.MM.yyyy")} {event.time}{" "}
+                  -&nbsp;
                   {event.eventTitle || `${event.firstName} ${event.lastName}`}
                 </Typography>
               </Box>
@@ -316,7 +335,10 @@ const BlockedDates = (_: RouteComponentProps) => {
       <Card>
         <CardContent>
           <Typography variant='h6' sx={{ mb: 2 }}>
-            Recurring Blocks
+            Recurring Blocks&nbsp;
+            <small style={{ fontSize: "0.8em" }}>
+              (blocks that repeat every week)
+            </small>
           </Typography>
           {localSettings.recurringBlocks.map((block, index) => {
             const { minTime, maxTime } = getTimeConstraints(
@@ -325,7 +347,9 @@ const BlockedDates = (_: RouteComponentProps) => {
             );
 
             const availableSlots = getAvailableTimeSlots(
-              localSettings.recurringBlocks.filter((_, i) => i !== index),
+              localSettings.recurringBlocks
+                .filter((_, i) => i !== index)
+                .filter((b) => b.dayOfWeek === block.dayOfWeek),
               null,
               block.dayOfWeek,
               localSettings
@@ -336,13 +360,15 @@ const BlockedDates = (_: RouteComponentProps) => {
                 key={index}
                 sx={{
                   display: "flex",
-                  alignItems: "center",
+                  flexDirection: { xs: "column", md: "row" },
+                  alignItems: { xs: "flex-start", md: "center" },
                   gap: 2,
-                  mb: 2,
+                  mb: { xs: 4, md: 2 },
                 }}
               >
                 <Select
                   value={block.dayOfWeek}
+                  sx={{ width: { xs: "100%", md: 135 } }}
                   onChange={(e) => {
                     const newBlocks = [...localSettings.recurringBlocks];
                     newBlocks[index] = {
@@ -362,6 +388,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                   label='Start Time'
                   value={parseISO(`2024-01-01T${block.start}`)}
                   disabled={!block.dayOfWeek}
+                  sx={{ width: { xs: "100%", md: "auto" } }}
                   onChange={(newValue) => {
                     if (!newValue) return;
                     const newBlocks = [...localSettings.recurringBlocks];
@@ -386,6 +413,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                   label='End Time'
                   value={parseISO(`2024-01-01T${block.end}`)}
                   disabled={!block.start}
+                  sx={{ width: { xs: "100%", md: "auto" } }}
                   onChange={(newValue) => {
                     if (!newValue) return;
                     const newBlocks = [...localSettings.recurringBlocks];
@@ -427,11 +455,13 @@ const BlockedDates = (_: RouteComponentProps) => {
           </Button>
         </CardContent>
       </Card>
-      {/* 
       <Card>
         <CardContent>
           <Typography variant='h6' sx={{ mb: 2 }}>
-            Single Date Blocks
+            Single Date Blocks&nbsp;
+            <small style={{ fontSize: "0.8em" }}>
+              (blocks that only apply to a single date)
+            </small>
           </Typography>
           {(localSettings.singleBlocks || []).map((block, index) => {
             const date = new Date(block.date);
@@ -453,14 +483,16 @@ const BlockedDates = (_: RouteComponentProps) => {
                 key={index}
                 sx={{
                   display: "flex",
-                  alignItems: "center",
+                  flexDirection: { xs: "column", md: "row" },
+                  alignItems: { xs: "flex-start", md: "center" },
                   gap: 2,
-                  mb: 2,
+                  mb: { xs: 4, md: 2 },
                 }}
               >
                 <DatePicker
                   disablePast
                   label='Date'
+                  sx={{ width: { xs: "100%", md: "auto" } }}
                   value={date}
                   onChange={(newValue) => {
                     if (!newValue) return;
@@ -475,6 +507,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                 <TimePicker
                   label='Start Time'
                   value={parseISO(`2024-01-01T${block.start}`)}
+                  sx={{ width: { xs: "100%", md: "auto" } }}
                   onChange={(newValue) => {
                     if (!newValue) return;
                     const newBlocks = [...(localSettings.singleBlocks || [])];
@@ -496,6 +529,7 @@ const BlockedDates = (_: RouteComponentProps) => {
                 <TimePicker
                   label='End Time'
                   value={parseISO(`2024-01-01T${block.end}`)}
+                  sx={{ width: { xs: "100%", md: "auto" } }}
                   onChange={(newValue) => {
                     if (!newValue) return;
                     const newBlocks = [...(localSettings.singleBlocks || [])];
@@ -535,7 +569,7 @@ const BlockedDates = (_: RouteComponentProps) => {
             Add Single Block
           </Button>
         </CardContent>
-      </Card> */}
+      </Card>
 
       <Box display='flex'>
         <Button
