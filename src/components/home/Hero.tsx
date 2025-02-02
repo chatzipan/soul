@@ -1,16 +1,14 @@
 import * as React from "react";
-import * as S from "./Hero.styled";
 
-import Button from "../shared/Button";
-
-import outside from "../../images/outside.jpeg";
-import dinnerOptions from "../../images/dinner_options.jpeg";
-import chef_cooking from "../../images/chef_cooking.jpg";
-import evening_outside from "../../images/evening_outside.jpg";
 import buratta from "../../images/buratta.jpg";
-import cocktail from "../../images/cocktail.jpeg";
-
+import chef_cooking from "../../images/chef_cooking.jpg";
+import cocktail from "../../images/cocktail_2.jpg";
+import dinnerOptions from "../../images/dinner_options_2.jpg";
+import evening_outside from "../../images/evening_outside.jpg";
+import outside from "../../images/outside.jpeg";
+import Button from "../shared/Button";
 import { Carousel, CarouselItem } from "./Carousel";
+import * as S from "./Hero.styled";
 
 const images = [
   {
@@ -62,12 +60,12 @@ const Hero = () => {
         <S.SubTitle>ALL DAY KITCHEN BAR</S.SubTitle>
         <br />
         <S.MenuButtons>
-          <Button to='/menu/dinner'>Dinner</Button>
-          <Button to='/menu/lunch'>Lunch</Button>
-          <Button to='/menu/brunch'>Brunch</Button>
-          <Button to='/menu/wine'>Wine</Button>
-          <Button to='/menu/cocktails'>Cocktails</Button>
-          <Button to='/menu'>All menu</Button>
+          <Button to="/menu/dinner">Dinner</Button>
+          <Button to="/menu/lunch">Lunch</Button>
+          <Button to="/menu/brunch">Brunch</Button>
+          <Button to="/menu/wine">Wine</Button>
+          <Button to="/menu/cocktails">Cocktails</Button>
+          <Button to="/menu">All menu</Button>
           <Button onClick={scrollToEventsSection}>Events</Button>
         </S.MenuButtons>
       </S.InnerWrapper>
@@ -78,9 +76,9 @@ const Hero = () => {
             <CarouselItem key={item.id} isSnapPoint={isSnapPoint}>
               <img
                 src={item.src}
-                width='100%'
-                height='auto'
-                alt=''
+                width="100%"
+                height="auto"
+                alt=""
                 style={{
                   objectFit: "cover",
                 }}
