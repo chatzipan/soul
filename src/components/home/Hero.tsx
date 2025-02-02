@@ -6,6 +6,7 @@ import cocktail from "../../images/cocktail_2.jpg";
 import dinnerOptions from "../../images/dinner_options_2.jpg";
 import evening_outside from "../../images/evening_outside.jpg";
 import outside from "../../images/outside.jpeg";
+import { BookingModal } from "../booking-modal/BookingModal";
 import Button from "../shared/Button";
 import { Carousel, CarouselItem } from "./Carousel";
 import * as S from "./Hero.styled";
@@ -44,6 +45,8 @@ const images = [
 ];
 
 const Hero = () => {
+  const [openBookingModal, setOpenBookingModal] = React.useState(false);
+
   const scrollToEventsSection = () => {
     const eventsSection = document.getElementById("events");
     if (eventsSection) {
@@ -67,6 +70,9 @@ const Hero = () => {
           <Button to="/menu/cocktails">Cocktails</Button>
           <Button to="/menu">All menu</Button>
           <Button onClick={scrollToEventsSection}>Events</Button>
+          <Button reverse onClick={() => setOpenBookingModal(true)}>
+            Book
+          </Button>
         </S.MenuButtons>
       </S.InnerWrapper>
       <S.ImageWrapper>
@@ -87,6 +93,10 @@ const Hero = () => {
           )}
         />
       </S.ImageWrapper>
+      <BookingModal
+        isOpen={openBookingModal}
+        onClose={() => setOpenBookingModal(false)}
+      />
     </S.Wrapper>
   );
 };

@@ -9,20 +9,9 @@ import {
   Typography,
 } from "@mui/material";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { Reservation } from "../../../../../functions/src/types/reservation";
 
-const createTimeOptions = () => {
-  // create options every 15 minutes
-  const options = [];
-  for (let i = 8; i < 22; i++) {
-    for (let j = 0; j < 60; j += 15) {
-      const hours = `${i}`.padStart(2, "0");
-      const minutes = `${j}`.padEnd(2, "0");
-      options.push(`${hours}:${minutes}`);
-    }
-  }
-  return options.concat("22:00");
-};
+import { Reservation } from "../../../../../functions/src/types/reservation";
+import { createTimeOptions, getDateInOneYear } from "../../../../utils/date";
 
 export const BasicInfo = ({
   data,
@@ -44,34 +33,34 @@ export const BasicInfo = ({
   return (
     <>
       <div>
-        <Typography variant='h6' gutterBottom>
+        <Typography variant="h6" gutterBottom>
           Select Date
         </Typography>
         <DateCalendar
           disablePast
-          maxDate={new Date("2025-12-31").getTime()}
-          onChange={(newDate) => {
+          maxDate={getDateInOneYear().getTime()}
+          onChange={(newDate) =>
             setData({
               ...data,
               date: new Date(newDate).getTime(),
-            });
-          }}
-          timezone='Europe/Zurich'
+            })
+          }
+          timezone="Europe/Zurich"
           value={data.date ? data.date : null}
         />
       </div>
       <div>
-        <Typography variant='h6' gutterBottom sx={{ mb: 1 }}>
+        <Typography variant="h6" gutterBottom sx={{ mb: 1 }}>
           Select Persons
         </Typography>
         <FormControl fullWidth sx={{ mb: 8 }}>
-          <InputLabel id='demo-simple-select-label'>Persons</InputLabel>
+          <InputLabel id="demo-simple-select-label">Persons</InputLabel>
           <Select
-            labelId='demo-simple-select-label'
-            id='demo-simple-select'
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
             value={data.persons ? data.persons.toString() : ""}
             sx={{ minWidth: 320 }}
-            label='Persons'
+            label="Persons"
             onChange={handlePersonsChange}
           >
             {Array.from(Array(isEvent ? 40 : 20).keys()).map((p) => (
@@ -81,16 +70,16 @@ export const BasicInfo = ({
             ))}
           </Select>
         </FormControl>
-        <Typography variant='h6' gutterBottom sx={{ mb: 1 }}>
+        <Typography variant="h6" gutterBottom sx={{ mb: 1 }}>
           Select Time
         </Typography>
         <FormControl fullWidth>
-          <InputLabel id='demo-simple-select-label'>Time</InputLabel>
+          <InputLabel id="demo-simple-select-label">Time</InputLabel>
           <Select
-            labelId='demo-simple-select-label'
-            id='demo-simple-select'
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
             value={data.time}
-            label='Time'
+            label="Time"
             onChange={handleTimeChange}
           >
             {createTimeOptions().map((_time) => (

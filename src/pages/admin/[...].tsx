@@ -1,22 +1,22 @@
 // with date-fns v2.x
-import de from "date-fns/locale/de";
+import {
+  QueryCache,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 import React, { useMemo } from "react";
 
 import { ThemeProvider, createTheme } from "@mui/material";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { Redirect, Router } from "@reach/router";
-import {
-  QueryCache,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import de from "date-fns/locale/de";
 
 import Dashboard from "../../components/admin/Dashboard";
 import Login from "../../components/admin/Login";
 import Layout from "../../components/admin/layout/Layout";
-import Reservations from "../../components/admin/reservations/Reservations";
 import Events from "../../components/admin/reservations/Events";
+import Reservations from "../../components/admin/reservations/Reservations";
 import Settings from "../../components/admin/settings/Settings";
 import PrivateRoute from "../../components/shared/PrivateRoute";
 import { useAuth } from "../../hooks/useAuth";
@@ -62,7 +62,7 @@ const Inner = () => {
           },
         }),
       }),
-    [logout]
+    [logout],
   );
 
   return (
@@ -70,13 +70,13 @@ const Inner = () => {
       <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={de}>
         <ThemeProvider theme={customTheme}>
           <Layout>
-            <Router basepath='/admin'>
-              <PrivateRoute path='/reservations' component={Reservations} />
-              <PrivateRoute path='/events' component={Events} />
-              <PrivateRoute path='/settings/*' component={Settings} />
-              <PrivateRoute path='/' component={Dashboard} />
-              <Login path='/login' />
-              <Redirect from='*' to='/' />
+            <Router basepath="/admin">
+              <PrivateRoute path="/reservations" component={Reservations} />
+              <PrivateRoute path="/events" component={Events} />
+              <PrivateRoute path="/settings/*" component={Settings} />
+              <PrivateRoute path="/" component={Dashboard} />
+              <Login path="/login" />
+              <Redirect from="*" to="/" />
             </Router>
           </Layout>
         </ThemeProvider>

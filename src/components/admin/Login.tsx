@@ -1,10 +1,10 @@
-import "firebase/compat/auth";
+import React from "react";
 
 import { navigate } from "gatsby";
-import React from "react";
 
 import { Typography } from "@mui/material";
 import { RouteComponentProps } from "@reach/router";
+import "firebase/compat/auth";
 
 import { useAuth } from "../../hooks/useAuth";
 import { isBrowser } from "../../utils/isBrowser";
@@ -23,7 +23,7 @@ const Login = (_: RouteComponentProps) => {
 
   return (
     <S.Wrapper>
-      <Typography variant='body1'>Login</Typography>
+      <Typography variant="body1">Login</Typography>
       {!isSSR && (
         <React.Suspense fallback={<div />}>
           <StyledFirebaseAuth

@@ -1,4 +1,8 @@
-import { RestaurantSettings } from "../../functions/src/types/settings";
+import {
+  DayOfWeek,
+  OpeningHours,
+  RestaurantSettings,
+} from "../../functions/src/types/settings";
 
 const getHeaders = () => ({
   "Content-Type": "application/json",
@@ -27,7 +31,7 @@ export const getOpeningHours = async () => {
       method: "GET",
     });
 
-    const response = await res.json();
+    const response = (await res.json()) as Record<DayOfWeek, OpeningHours>;
     return response;
   } catch (error) {
     console.error(error);

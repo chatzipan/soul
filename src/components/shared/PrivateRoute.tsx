@@ -1,5 +1,6 @@
-import { navigate } from "gatsby";
 import React from "react";
+
+import { navigate } from "gatsby";
 
 import { RouteComponentProps } from "@reach/router";
 

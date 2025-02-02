@@ -1,26 +1,27 @@
 import * as React from "react";
-import * as S from "./Hero.styled";
 
 import { StaticImage } from "gatsby-plugin-image";
-import { useOpeningHours } from "../../hooks/useOpeningHours";
-import { DayOfWeek } from "../../../functions/src/types/settings";
-import { OpeningDay } from "../../../functions/src/types/settings";
 
-const daysOfWeek = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
+import { DayOfWeek } from "../../../functions/src/types/settings";
+import { OpeningHours } from "../../../functions/src/types/settings";
+import { useOpeningHours } from "../../hooks/useOpeningHours";
+import * as S from "./Hero.styled";
+
+export const SORTED_DAYS = [
+  DayOfWeek.Monday,
+  DayOfWeek.Tuesday,
+  DayOfWeek.Wednesday,
+  DayOfWeek.Thursday,
+  DayOfWeek.Friday,
+  DayOfWeek.Saturday,
+  DayOfWeek.Sunday,
 ];
 
 const Contact = () => {
   const response = useOpeningHours();
   const openingDays = response?.data as unknown as Record<
     DayOfWeek,
-    OpeningDay
+    OpeningHours
   >;
 
   return (
@@ -28,18 +29,18 @@ const Contact = () => {
       <S.InnerWrapper>
         <S.Text>Contact Us</S.Text>
         <S.TelLink
-          href='https://maps.app.goo.gl/WRv18c9xyjtEPY6AA'
-          target='_blank'
+          href="https://maps.app.goo.gl/WRv18c9xyjtEPY6AA"
+          target="_blank"
         >
           Limmatquai 94, 8001, Zürich
         </S.TelLink>
-        <S.TelLink href='tel:+41445991366'>+41 44 599 13 66</S.TelLink>
-        <S.TelLink href='mailto:hallo@soulcoffee.info' target='_blank'>
+        <S.TelLink href="tel:+41445991366">+41 44 599 13 66</S.TelLink>
+        <S.TelLink href="mailto:hallo@soulcoffee.info" target="_blank">
           hallo@soulcoffee.info
         </S.TelLink>
         <S.TelLink
-          href='https://www.instagram.com/soul_zurich/'
-          target='_blank'
+          href="https://www.instagram.com/soul_zurich/"
+          target="_blank"
         >
           soul_zurich
         </S.TelLink>
@@ -52,21 +53,21 @@ const Contact = () => {
           will find you a table as soon as possible.
           <br />
           <br />- ALL other days and hours:&nbsp;
-          <S.TelLinkUnderlined href='tel:+41445991366'>
+          <S.TelLinkUnderlined href="tel:+41445991366">
             Call
           </S.TelLinkUnderlined>
           &nbsp;or&nbsp;
           <S.TelLinkUnderlined
-            href='mailto:hallo@soulcoffee.info'
-            target='_blank'
+            href="mailto:hallo@soulcoffee.info"
+            target="_blank"
           >
             email us.
           </S.TelLinkUnderlined>
           <br />
           <br />- Special Occasions: Birthdays or a Team Event?&nbsp;
           <S.TelLinkUnderlined
-            href='mailto:hallo@soulcoffee.info'
-            target='_blank'
+            href="mailto:hallo@soulcoffee.info"
+            target="_blank"
           >
             email us.
           </S.TelLinkUnderlined>
@@ -75,7 +76,7 @@ const Contact = () => {
         <br />
         <br />
         <S.Text>Opening Hours</S.Text>
-        {daysOfWeek.map((day) => {
+        {SORTED_DAYS.map((day) => {
           const openingHours =
             openingDays?.[day as keyof typeof openingDays]?.openingHours;
 
@@ -91,8 +92,8 @@ const Contact = () => {
       </S.InnerWrapper>
       <S.ImageWrapper>
         <StaticImage
-          src='../../images/outside_rain.jpeg'
-          alt='A picture of the outside of the restaurant in the rain'
+          src="../../images/outside_rain.jpeg"
+          alt="A picture of the outside of the restaurant in the rain"
           style={{ height: "100%" }}
         />
       </S.ImageWrapper>
