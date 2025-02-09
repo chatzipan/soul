@@ -46,6 +46,22 @@ const images = [
 
 const Hero = () => {
   const [openBookingModal, setOpenBookingModal] = React.useState(false);
+  const [initialBookingDate, setInitialBookingDate] =
+    React.useState<Date | null>(null);
+
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const bookingDate = params.get("booking");
+
+    if (bookingDate) {
+      const date = new Date(bookingDate);
+      // Check if date is valid
+      if (!isNaN(date.getTime())) {
+        setInitialBookingDate(date);
+        setOpenBookingModal(true);
+      }
+    }
+  }, []);
 
   const scrollToEventsSection = () => {
     const eventsSection = document.getElementById("events");
@@ -95,6 +111,7 @@ const Hero = () => {
       </S.ImageWrapper>
       <BookingModal
         isOpen={openBookingModal}
+        initialDate={initialBookingDate}
         onClose={() => setOpenBookingModal(false)}
       />
     </S.Wrapper>

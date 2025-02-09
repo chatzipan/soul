@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import { Box, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
@@ -56,9 +56,11 @@ export const getZurichTimeNow = () =>
 export const BookingModal = ({
   isOpen,
   onClose,
+  initialDate,
 }: {
   isOpen: boolean;
   onClose: () => void;
+  initialDate?: Date | null;
 }) => {
   const dateInZurichNow = new Date(getZurichTimeNow().split(" ")[0]);
   const theme = useTheme();
@@ -66,7 +68,16 @@ export const BookingModal = ({
   const [persons, setPersons] = useState<number>(2);
   const [bookingType, setBookingType] = useState<BookingType | null>(null);
   const [bookingTime, setBookingTime] = useState<string | null>(null);
-  const [bookingDate, setBookingDate] = useState<Date>(dateInZurichNow);
+  const [bookingDate, setBookingDate] = useState<Date>(
+    initialDate || dateInZurichNow,
+  );
+
+  useEffect(() => {
+    if (initialDate) {
+      setBookingDate(initialDate);
+    }
+  }, [initialDate]);
+
   const [currentStep, setCurrentStep] = useState<Step>(Step.TYPE);
   const [contact, setContactData] = useState(initialContactData);
   const response = useOpeningHours();
