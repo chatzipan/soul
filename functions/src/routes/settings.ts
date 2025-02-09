@@ -1,6 +1,7 @@
-import express = require("express");
 import { db } from "..";
 import { DayOfWeek, RestaurantSettings } from "../types/settings";
+
+import express = require("express");
 
 // Create separate routers for public and protected routes
 const protectedRouter = express.Router();
@@ -51,7 +52,7 @@ publicRouter.get("/opening-hours", async (_, res) => {
   try {
     const doc = await db.collection(COLLECTION).doc(SETTINGS_DOC_ID).get();
     const data = doc.data() as RestaurantSettings;
-    return res.status(200).json(data.openingDays);
+    return res.status(200).json(data);
   } catch (error) {
     console.error("Error fetching settings:", error);
     return res.status(500).json("Error fetching settings");

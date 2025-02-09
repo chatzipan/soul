@@ -2,8 +2,10 @@ import * as React from "react";
 
 import { StaticImage } from "gatsby-plugin-image";
 
-import { DayOfWeek } from "../../../functions/src/types/settings";
-import { OpeningHours } from "../../../functions/src/types/settings";
+import {
+  DayOfWeek,
+  RestaurantSettings,
+} from "../../../functions/src/types/settings";
 import { useOpeningHours } from "../../hooks/useOpeningHours";
 import * as S from "./Hero.styled";
 
@@ -19,10 +21,8 @@ export const SORTED_DAYS = [
 
 const Contact = () => {
   const response = useOpeningHours();
-  const openingDays = response?.data as unknown as Record<
-    DayOfWeek,
-    OpeningHours
-  >;
+  const openingDays = (response?.data as unknown as RestaurantSettings)
+    ?.openingDays;
 
   return (
     <S.Wrapper>

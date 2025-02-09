@@ -1,16 +1,13 @@
 import React from "react";
 
 import { Box, FormControl, MenuItem, Typography } from "@mui/material";
+import { format } from "date-fns";
 
 import { getDateInOneYear } from "../../utils/date";
 import * as Common from "../home/Hero.styled";
 import * as S from "./BookingModal.styled";
+import { BookingType } from "./types";
 
-enum BookingType {
-  BRUNCH = "Brunch",
-  LUNCH = "Lunch",
-  DINNER = "Dinner",
-}
 const BookingTypeIcons = {
   [BookingType.BRUNCH]: "🍳",
   [BookingType.LUNCH]: "🍲",
@@ -18,6 +15,7 @@ const BookingTypeIcons = {
 };
 
 export const BookingTypeStep = ({
+  availableBookingTypes,
   bookingDate,
   bookingType,
   persons,
@@ -26,6 +24,7 @@ export const BookingTypeStep = ({
   setBookingType,
   setPersons,
 }: {
+  availableBookingTypes: BookingType[];
   bookingDate: Date;
   bookingType: BookingType | null;
   persons: number;
@@ -35,6 +34,10 @@ export const BookingTypeStep = ({
   setBookingType: (bookingType: BookingType) => void;
 }) => {
   const isBigGroup = persons > 6;
+  const isToday = bookingDate.toDateString() === new Date().toDateString();
+  const noAvailabilityText = `No more available booking slots for ${
+    isToday ? "today" : format(bookingDate, "EEEE, MMMM d, yyyy")
+  }.`;
 
   return (
     <>
@@ -75,9 +78,23 @@ export const BookingTypeStep = ({
       </Box>
       <Box display="flex">
         <FormControl fullWidth sx={{ flex: 1 }}>
-          {!isBigGroup ? (
-            Object.values(BookingType).map((type) => {
-              const isDinner = type === BookingType.DINNER;
+          {isBigGroup ? (
+            <Typography variant="h6" display="inline">
+              For Groups of more than 6 people, please contact us directly
+              at&nbsp;
+              <Common.TelLinkUnderlined
+                href="mailto:hallo@soulcoffee.info"
+                target="_blank"
+              >
+                hallo@soulcoffee.info
+              </Common.TelLinkUnderlined>
+            </Typography>
+          ) : availableBookingTypes.length === 0 ? (
+            <Typography variant="h6" sx={{ textAlign: "center", mt: 1, mb: 1 }}>
+              {noAvailabilityText}
+            </Typography>
+          ) : (
+            availableBookingTypes.map((type) => {
               return (
                 <S.Button
                   key={type}
@@ -94,17 +111,6 @@ export const BookingTypeStep = ({
                 </S.Button>
               );
             })
-          ) : (
-            <Typography variant="h6" display="inline">
-              For Groups of more than 6 people, please contact us directly
-              at&nbsp;
-              <Common.TelLinkUnderlined
-                href="mailto:hallo@soulcoffee.info"
-                target="_blank"
-              >
-                hallo@soulcoffee.info
-              </Common.TelLinkUnderlined>
-            </Typography>
           )}
         </FormControl>
       </Box>

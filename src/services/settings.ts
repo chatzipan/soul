@@ -31,7 +31,7 @@ export const getOpeningHours = async () => {
       method: "GET",
     });
 
-    const response = (await res.json()) as Record<DayOfWeek, OpeningHours>;
+    const response = (await res.json()) as RestaurantSettings;
     return response;
   } catch (error) {
     console.error(error);

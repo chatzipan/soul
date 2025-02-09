@@ -26,6 +26,23 @@ export const createReservation = async (
   }
 };
 
+export const createReservationPublic = async (
+  reservation: Omit<Reservation, "id" | "time">,
+) => {
+  try {
+    const res = await fetch(`${API_URL}/v1/public/reservations`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reservation),
+    });
+
+    const response = await res.json();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const deleteReservation = async (reservationId: string) => {
   try {
     const res = await fetch(`${API_URL}/v1/reservations/${reservationId}`, {

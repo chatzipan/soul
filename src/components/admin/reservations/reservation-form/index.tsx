@@ -1,4 +1,4 @@
-import { matchIsValidTel } from "mui-tel-input";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 
 import { Box, Typography } from "@mui/material";
@@ -11,21 +11,21 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Snackbar from "@mui/material/Snackbar";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { format } from "date-fns";
+import moment from "moment-timezone";
+import { matchIsValidTel } from "mui-tel-input";
 
-import { BasicInfo } from "./BasicInfo";
-import { EventInfo } from "./EventInfo";
-import { ContactInfo } from "./ContactInfo";
-
+import { Reservation } from "../../../../../functions/src/types/reservation";
 import { useEvents } from "../../../../hooks/useEvents";
 import { useReservations } from "../../../../hooks/useReservations";
-
 import {
   createReservation,
   updateReservation,
 } from "../../../../services/reservations";
-import { Reservation } from "../../../../../functions/src/types/reservation";
 import { isValidEmail } from "../utils";
+import { BasicInfo } from "./BasicInfo";
+import { ContactInfo } from "./ContactInfo";
+import { EventInfo } from "./EventInfo";
 
 type ResponsiveDialogProps = {
   isEvent?: boolean;
@@ -67,7 +67,7 @@ export const ReservationForm = ({
   const title = isEditMode ? editTitle : addTitle;
   const submitText = isEditMode ? "Save Edit" : "Save";
   const [data, setData] = useState<Omit<Reservation, "id" | "canceled">>(
-    reservation || { ...defaultData, isEvent }
+    reservation || { ...defaultData, isEvent },
   );
 
   const steps = [
@@ -94,7 +94,7 @@ export const ReservationForm = ({
 
   const handleCloseSnackbar = (
     _?: React.SyntheticEvent | Event,
-    reason?: string
+    reason?: string,
   ) => {
     if (reason === "clickaway") {
       return;
@@ -124,9 +124,13 @@ export const ReservationForm = ({
       date.setHours(parseInt(timeArray[0]));
       date.setMinutes(parseInt(timeArray[1]));
 
+      const formattedDate = format(date, "yyyy-MM-dd");
+
+      const zurichTime = moment.tz(`${formattedDate} ${time}`, "Europe/Zurich");
+
       const _data = {
         ...rest,
-        date: date.getTime(),
+        date: zurichTime.toDate().getTime(),
       };
 
       return isEditMode
@@ -161,12 +165,12 @@ export const ReservationForm = ({
     <>
       <Dialog
         fullScreen={isMobile}
-        maxWidth='xl'
+        maxWidth="xl"
         open={isOpen}
         onClose={closeModal}
-        aria-labelledby='responsive-dialog-title'
+        aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle id='responsive-dialog-title'>{title}</DialogTitle>
+        <DialogTitle id="responsive-dialog-title">{title}</DialogTitle>
         <DialogContent>
           <Box
             sx={{
@@ -188,7 +192,7 @@ export const ReservationForm = ({
         </DialogContent>
         <DialogActions>
           <Typography
-            variant='caption'
+            variant="caption"
             sx={{ color: "GrayText", mr: "auto", ml: 2 }}
           >
             * Required fields
@@ -206,7 +210,7 @@ export const ReservationForm = ({
             onClick={() =>
               isLastStep ? mutation.mutate() : setCurrentStep(currentStep + 1)
             }
-            variant='contained'
+            variant="contained"
           >
             {isLastStep ? submitText : "Next"}
           </Button>
@@ -219,8 +223,8 @@ export const ReservationForm = ({
       >
         <Alert
           onClose={handleCloseSnackbar}
-          severity='success'
-          variant='filled'
+          severity="success"
+          variant="filled"
           sx={{ width: "100%" }}
         >
           Successfully Saved!

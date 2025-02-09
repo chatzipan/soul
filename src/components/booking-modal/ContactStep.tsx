@@ -2,8 +2,8 @@ import React from "react";
 
 import { Box, Typography } from "@mui/material";
 
-import { ContactData } from "./BookingModal";
 import * as S from "./BookingModal.styled";
+import { ContactData } from "./types";
 
 export const ContactStep = ({
   contact,
