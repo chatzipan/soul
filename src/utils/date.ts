@@ -1,3 +1,4 @@
+import { RecurringBlock } from "../../functions/src/types/settings";
 import { BookingType } from "../components/booking-modal/types";
 
 const BookingTypeHourLimits = {
@@ -34,6 +35,8 @@ export const createTimeOptionsFromOpeningHours = (
   },
   bookingType: BookingType | null,
   timeInZurichNow: string | null,
+  recurringBlocks?: RecurringBlock[],
+  currentDayOfWeek?: string,
 ) => {
   if (!openingHours || !bookingType) {
     return [];
@@ -70,15 +73,48 @@ export const createTimeOptionsFromOpeningHours = (
     return timeInMinutes <= closingTimeInMinutes - 30;
   });
 
-  // If no current time provided, return all slots
+  // Filter out times that fall within recurring blocks for the current day
+  const filteredByBlocks =
+    currentDayOfWeek && recurringBlocks?.length
+      ? filteredByType.filter((time) => {
+          const [hour, minute] = time.split(":").map(Number);
+          const timeInMinutes = hour * 60 + minute;
+
+          // Check if time falls within any recurring block for this day
+          const isBlocked = recurringBlocks.some((block) => {
+            if (block.dayOfWeek !== currentDayOfWeek) {
+              return false;
+            }
+
+            const [blockStartHour, blockStartMinute] = block.start
+              .split(":")
+              .map(Number);
+            const [blockEndHour, blockEndMinute] = block.end
+              .split(":")
+              .map(Number);
+
+            const blockStartMinutes = blockStartHour * 60 + blockStartMinute;
+            const blockEndMinutes = blockEndHour * 60 + blockEndMinute;
+
+            return (
+              timeInMinutes >= blockStartMinutes &&
+              timeInMinutes < blockEndMinutes
+            );
+          });
+
+          return !isBlocked;
+        })
+      : filteredByType;
+
+  // If no current time provided, return filtered slots
   if (!timeInZurichNow) {
-    return filteredByType;
+    return filteredByBlocks;
   }
 
   // Filter out times less than 1 hour from now
   const [currentHour, currentMinute] = timeInZurichNow.split(":").map(Number);
 
-  return filteredByType.filter((time) => {
+  return filteredByBlocks.filter((time) => {
     const [slotHour, slotMinute] = time.split(":").map(Number);
 
     // If hours differ by more than 1, slot is valid

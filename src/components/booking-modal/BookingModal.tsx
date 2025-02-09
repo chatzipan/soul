@@ -73,6 +73,7 @@ export const BookingModal = ({
 
   const response = useOpeningHours();
   const settings = response?.data as unknown as RestaurantSettings;
+  console.log(settings, "settings");
   const bookingDay = SORTED_DAYS[bookingDate.getDay()];
   const openingHours = settings?.openingDays?.[bookingDay]?.openingHours;
 
@@ -109,12 +110,14 @@ export const BookingModal = ({
             openingHours,
             type,
             earliestBookingTime,
+            settings?.recurringBlocks,
+            bookingDay,
           );
           return acc;
         },
         {} as Record<BookingType, string[]>,
       ),
-    [openingHours, earliestBookingTime],
+    [openingHours, earliestBookingTime, settings?.recurringBlocks, bookingDay],
   );
 
   const timeOptions = bookingType ? timeOptionsPerType[bookingType] : [];
