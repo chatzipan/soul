@@ -50,7 +50,7 @@ const SORTED_DAYS = [
   DayOfWeek.Saturday,
 ];
 
-const getZurichTimeNow = () =>
+export const getZurichTimeNow = () =>
   moment.tz("Europe/Zurich").format("YYYY-MM-DD HH:mm");
 
 export const BookingModal = ({
@@ -60,22 +60,18 @@ export const BookingModal = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
+  const dateInZurichNow = new Date(getZurichTimeNow().split(" ")[0]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [persons, setPersons] = useState<number>(2);
   const [bookingType, setBookingType] = useState<BookingType | null>(null);
   const [bookingTime, setBookingTime] = useState<string | null>(null);
-  const [bookingDate, setBookingDate] = useState<Date>(
-    new Date(getZurichTimeNow().split(" ")[0]),
-  );
+  const [bookingDate, setBookingDate] = useState<Date>(dateInZurichNow);
   const [currentStep, setCurrentStep] = useState<Step>(Step.TYPE);
   const [contact, setContactData] = useState(initialContactData);
-
   const response = useOpeningHours();
   const settings = response?.data as unknown as RestaurantSettings;
-  console.log(settings, "settings");
   const bookingDay = SORTED_DAYS[bookingDate.getDay()];
-  const openingHours = settings?.openingDays?.[bookingDay]?.openingHours;
 
   const backLabel = [Step.TYPE, Step.CONFIRM].includes(currentStep)
     ? "Close"
@@ -86,38 +82,31 @@ export const BookingModal = ({
   const isEmailInvalid = contact.email ? isValidEmail(contact.email) : false;
 
   const isNextDisabled =
-    currentStep === Step.TYPE
-      ? !bookingType || isBigGroup
+    currentStep === Step.CONTACT
+      ? !contact.firstName ||
+        !contact.lastName ||
+        !contact.lastName ||
+        isEmailInvalid ||
+        !contact.telephone
       : currentStep === Step.TIME
         ? !bookingTime
-        : currentStep === Step.CONTACT
-          ? !contact.firstName ||
-            !contact.lastName ||
-            !contact.lastName ||
-            isEmailInvalid ||
-            !contact.telephone
-          : false;
-
-  const isToday = bookingDate.toDateString() === new Date().toDateString();
-  const timeInZurichNow = getZurichTimeNow().split(" ")[1];
-  const earliestBookingTime = isToday ? timeInZurichNow : null;
+        : !bookingType || isBigGroup;
 
   const timeOptionsPerType = useMemo(
     () =>
       [BookingType.BRUNCH, BookingType.LUNCH, BookingType.DINNER].reduce(
         (acc, type) => {
-          acc[type] = createTimeOptionsFromOpeningHours(
-            openingHours,
-            type,
-            earliestBookingTime,
-            settings?.recurringBlocks,
-            bookingDay,
-          );
+          acc[type] = createTimeOptionsFromOpeningHours({
+            bookingType: type,
+            currentDayOfWeek: bookingDay,
+            selectedDate: bookingDate,
+            settings,
+          });
           return acc;
         },
         {} as Record<BookingType, string[]>,
       ),
-    [openingHours, earliestBookingTime, settings?.recurringBlocks, bookingDay],
+    [bookingDay, bookingDate, settings],
   );
 
   const timeOptions = bookingType ? timeOptionsPerType[bookingType] : [];
@@ -131,7 +120,7 @@ export const BookingModal = ({
     setPersons(2);
     setBookingType(null);
     setBookingTime(null);
-    setBookingDate(new Date(ZURICH_TIME_NOW.split(" ")[0]));
+    setBookingDate(dateInZurichNow);
     setContactData(initialContactData);
     setCurrentStep(Step.TYPE);
   };

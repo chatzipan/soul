@@ -1,4 +1,8 @@
-import { RecurringBlock } from "../../functions/src/types/settings";
+import {
+  DayOfWeek,
+  RestaurantSettings,
+} from "../../functions/src/types/settings";
+import { getZurichTimeNow } from "../components/booking-modal/BookingModal";
 import { BookingType } from "../components/booking-modal/types";
 
 const BookingTypeHourLimits = {
@@ -28,16 +32,22 @@ export const getDateInOneYear = () => {
   return new Date(today.setFullYear(today.getFullYear() + 1));
 };
 
-export const createTimeOptionsFromOpeningHours = (
-  openingHours: {
-    start: string;
-    end: string;
-  },
-  bookingType: BookingType | null,
-  timeInZurichNow: string | null,
-  recurringBlocks?: RecurringBlock[],
-  currentDayOfWeek?: string,
-) => {
+export const createTimeOptionsFromOpeningHours = ({
+  bookingType,
+  currentDayOfWeek,
+  selectedDate,
+  settings,
+}: {
+  bookingType: BookingType | null;
+  currentDayOfWeek: DayOfWeek;
+  selectedDate: Date;
+  settings: RestaurantSettings;
+}) => {
+  const openingHours = settings?.openingDays?.[currentDayOfWeek]?.openingHours;
+  const isToday = selectedDate.toDateString() === new Date().toDateString();
+  const timeInZurichNow = getZurichTimeNow().split(" ")[1];
+  const earliestBookingTime = isToday ? timeInZurichNow : null;
+
   if (!openingHours || !bookingType) {
     return [];
   }
@@ -74,14 +84,14 @@ export const createTimeOptionsFromOpeningHours = (
   });
 
   // Filter out times that fall within recurring blocks for the current day
-  const filteredByBlocks =
-    currentDayOfWeek && recurringBlocks?.length
+  const filteredByRecurringBlocks =
+    currentDayOfWeek && settings?.recurringBlocks?.length
       ? filteredByType.filter((time) => {
           const [hour, minute] = time.split(":").map(Number);
           const timeInMinutes = hour * 60 + minute;
 
           // Check if time falls within any recurring block for this day
-          const isBlocked = recurringBlocks.some((block) => {
+          const isBlocked = settings?.recurringBlocks.some((block) => {
             if (block.dayOfWeek !== currentDayOfWeek) {
               return false;
             }
@@ -106,15 +116,51 @@ export const createTimeOptionsFromOpeningHours = (
         })
       : filteredByType;
 
+  // Filter out times that fall within single blocks for the selected date
+  const filteredByAllBlocks =
+    selectedDate && settings?.singleBlocks?.length
+      ? filteredByRecurringBlocks.filter((time) => {
+          const [hour, minute] = time.split(":").map(Number);
+          const timeInMinutes = hour * 60 + minute;
+
+          // Check if time falls within any single block for this date
+          const isBlocked = settings?.singleBlocks.some((block) => {
+            const blockDate = new Date(block.date);
+            if (blockDate.toDateString() !== selectedDate.toDateString()) {
+              return false;
+            }
+
+            const [blockStartHour, blockStartMinute] = block.start
+              .split(":")
+              .map(Number);
+            const [blockEndHour, blockEndMinute] = block.end
+              .split(":")
+              .map(Number);
+
+            const blockStartMinutes = blockStartHour * 60 + blockStartMinute;
+            const blockEndMinutes = blockEndHour * 60 + blockEndMinute;
+
+            return (
+              timeInMinutes >= blockStartMinutes &&
+              timeInMinutes < blockEndMinutes
+            );
+          });
+
+          return !isBlocked;
+        })
+      : filteredByRecurringBlocks;
+
   // If no current time provided, return filtered slots
-  if (!timeInZurichNow) {
-    return filteredByBlocks;
+  if (!earliestBookingTime) {
+    return filteredByAllBlocks;
   }
 
   // Filter out times less than 1 hour from now
-  const [currentHour, currentMinute] = timeInZurichNow.split(":").map(Number);
+  const [currentHour, currentMinute] = earliestBookingTime
+    .split(":")
+    .map(Number);
 
-  return filteredByBlocks.filter((time) => {
+  return filteredByAllBlocks.filter((time) => {
     const [slotHour, slotMinute] = time.split(":").map(Number);
 
     // If hours differ by more than 1, slot is valid
