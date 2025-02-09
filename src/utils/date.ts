@@ -1,3 +1,6 @@
+import { format } from "date-fns";
+import moment from "moment-timezone";
+
 import {
   DayOfWeek,
   RestaurantSettings,
@@ -44,7 +47,9 @@ export const createTimeOptionsFromOpeningHours = ({
   settings: RestaurantSettings;
 }) => {
   const openingHours = settings?.openingDays?.[currentDayOfWeek]?.openingHours;
-  const isToday = selectedDate.toDateString() === new Date().toDateString();
+  const isToday =
+    format(selectedDate, "yyyy-MM-dd") ===
+    moment.tz("Europe/Zurich").format("yyyy-MM-DD");
   const timeInZurichNow = getZurichTimeNow().split(" ")[1];
   const earliestBookingTime = isToday ? timeInZurichNow : null;
 

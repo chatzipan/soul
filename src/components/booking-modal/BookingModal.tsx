@@ -73,8 +73,12 @@ export const BookingModal = ({
   );
 
   useEffect(() => {
+    const dateInZurichNow = new Date(getZurichTimeNow().split(" ")[0]);
+
     if (initialDate) {
-      setBookingDate(initialDate);
+      setBookingDate(
+        initialDate >= dateInZurichNow ? initialDate : dateInZurichNow,
+      );
     }
   }, [initialDate]);
 
