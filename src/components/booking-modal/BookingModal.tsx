@@ -141,13 +141,12 @@ export const BookingModal = ({
     } else if (currentStep === Step.TIME) {
       setCurrentStep(Step.CONTACT);
     } else if (currentStep === Step.CONTACT) {
-      await mutation.mutate();
-      setCurrentStep(Step.CONFIRM);
+      await mutate();
     }
   };
 
-  const mutation = useMutation({
-    mutationFn: () => {
+  const { mutate, isPending } = useMutation({
+    mutationFn: async () => {
       const formattedDate = format(bookingDate, "yyyy-MM-dd");
 
       const zurichTime = moment.tz(
@@ -171,6 +170,9 @@ export const BookingModal = ({
         telephone: contact.telephone,
         canceled: false,
       });
+    },
+    onSuccess: () => {
+      setCurrentStep(Step.CONFIRM);
     },
   });
 
@@ -206,7 +208,11 @@ export const BookingModal = ({
           />
         )}
         {currentStep === Step.CONTACT && (
-          <ContactStep contact={contact} setContactData={setContactData} />
+          <ContactStep
+            contact={contact}
+            isPending={isPending}
+            setContactData={setContactData}
+          />
         )}
         {currentStep === Step.CONFIRM && (
           <Box>
@@ -223,7 +229,7 @@ export const BookingModal = ({
       <DialogActions sx={{ justifyContent: "space-between", p: 3 }}>
         <Button onClick={handleBack}>{backLabel}</Button>
         {currentStep !== Step.CONFIRM && (
-          <Button disabled={isNextDisabled} onClick={handleNext}>
+          <Button disabled={isNextDisabled || isPending} onClick={handleNext}>
             {currentStep === Step.CONTACT ? "Book" : "Next"}
           </Button>
         )}

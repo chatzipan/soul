@@ -1,15 +1,17 @@
 import React from "react";
 
-import { Box, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 import * as S from "./BookingModal.styled";
 import { ContactData } from "./types";
 
 export const ContactStep = ({
   contact,
+  isPending,
   setContactData,
 }: {
   contact: ContactData;
+  isPending: boolean;
   setContactData: (contact: ContactData) => void;
 }) => {
   const handleContactChange: React.ChangeEventHandler<
@@ -17,6 +19,16 @@ export const ContactStep = ({
   > = (e) => {
     setContactData({ ...contact, [e.target.name]: e.target.value });
   };
+
+  if (isPending) {
+    return (
+      <Box display="flex">
+        <Box display="flex" flexDirection="column" width="100%">
+          <CircularProgress sx={{ margin: "0 auto" }} />
+        </Box>
+      </Box>
+    );
+  }
 
   return (
     <Box display="flex">
