@@ -1,6 +1,12 @@
 import React from "react";
 
-import { Box, FormControl, MenuItem, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  FormControl,
+  MenuItem,
+  Typography,
+} from "@mui/material";
 import { format } from "date-fns";
 
 import { getDateInOneYear } from "../../utils/date";
@@ -18,6 +24,7 @@ export const BookingTypeStep = ({
   availableBookingTypes,
   bookingDate,
   bookingType,
+  isLoading,
   persons,
   setBookingDate,
   setBookingTime,
@@ -27,6 +34,7 @@ export const BookingTypeStep = ({
   availableBookingTypes: BookingType[];
   bookingDate: Date;
   bookingType: BookingType | null;
+  isLoading: boolean;
   persons: number;
   setBookingDate: (bookingDate: Date) => void;
   setBookingTime: (bookingTime: string | null) => void;
@@ -38,6 +46,16 @@ export const BookingTypeStep = ({
   const noAvailabilityText = `No more available booking slots for ${
     isToday ? "today" : format(bookingDate, "EEEE, MMMM d, yyyy")
   }.`;
+
+  if (isLoading) {
+    return (
+      <Box display="flex">
+        <Box display="flex" flexDirection="column" width="100%">
+          <CircularProgress sx={{ margin: "0 auto" }} />
+        </Box>
+      </Box>
+    );
+  }
 
   return (
     <>

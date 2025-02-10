@@ -208,6 +208,7 @@ export const BookingModal = ({
             availableBookingTypes={availableBookingTypes}
             bookingDate={bookingDate}
             bookingType={bookingType}
+            isLoading={response?.isLoading}
             persons={persons}
             setBookingDate={setBookingDate}
             setBookingTime={setBookingTime}
