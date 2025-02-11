@@ -1,19 +1,13 @@
-import * as nodemailer from "nodemailer";
 import * as moment from "moment-timezone";
+
 import { db } from "..";
 import { Reservation } from "../types/reservation";
+import { createEmailTransporter } from "../utils/email";
 
 export const sendReservationSummary = async (date: Date) => {
   const COLLECTION = "reservations";
 
-  // Configure your email service (example using Gmail)
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "v.chatzipanagiotis@soulcoffee.info",
-      pass: process.env.GMAIL_PASSWORD,
-    },
-  });
+  const transporter = createEmailTransporter();
 
   const start = moment(date)
     .tz("Europe/Zurich")
@@ -39,7 +33,7 @@ export const sendReservationSummary = async (date: Date) => {
 
     console.log(
       "Number of Reservations for the specified date:",
-      reservations.length
+      reservations.length,
     );
 
     const emailContent = generateEmailContent(reservations, new Date(start));

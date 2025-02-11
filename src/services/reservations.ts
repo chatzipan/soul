@@ -27,7 +27,7 @@ export const createReservation = async (
 };
 
 export const createReservationPublic = async (
-  reservation: Omit<Reservation, "id" | "time">,
+  reservation: Omit<Reservation, "id"> & { bookingType: string },
 ) => {
   try {
     const res = await fetch(`${API_URL}/v1/public/reservations`, {

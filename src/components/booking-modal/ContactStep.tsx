@@ -44,6 +44,7 @@ export const ContactStep = ({
           onChange={handleContactChange}
           variant="outlined"
           sx={{ mb: 2, width: "100%" }}
+          inputProps={{ maxLength: 24 }}
           fullWidth
         />
         <S.TextField
@@ -55,6 +56,7 @@ export const ContactStep = ({
           variant="outlined"
           sx={{ mb: 2, width: "100%" }}
           fullWidth
+          inputProps={{ maxLength: 24 }}
         />
         <S.TextField
           id="outlined-basic"
@@ -77,6 +79,7 @@ export const ContactStep = ({
           variant="outlined"
           defaultCountry="CH"
           fullWidth
+          inputProps={{ maxLength: 24 }}
         />
         <S.TextArea
           id="outlined-multiline-static"
@@ -84,10 +87,12 @@ export const ContactStep = ({
           multiline
           sx={{ width: "100%" }}
           rows={2}
+          maxRows={4}
           fullWidth
           name="notes"
           value={contact.notes}
           onChange={handleContactChange}
+          inputProps={{ maxLength: 24 }}
         />
       </Box>
     </Box>

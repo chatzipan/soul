@@ -173,7 +173,7 @@ export const BookingModal = ({
         date: zurichTime.toDate().getTime(),
         disableParallelBookings: false,
         durationHours: undefined,
-        email: contact.email,
+        email: contact.email.toLowerCase().trim(),
         eventInfo: "",
         eventTitle: "",
         firstName: contact.firstName,
@@ -184,6 +184,8 @@ export const BookingModal = ({
         persons: persons,
         telephone: contact.telephone,
         canceled: false,
+        time: bookingTime || "",
+        bookingType: bookingType || "",
       });
     },
     onSuccess: () => {

@@ -34,7 +34,7 @@ export const BookingTypeStep = ({
   availableBookingTypes: BookingType[];
   bookingDate: Date;
   bookingType: BookingType | null;
-  isLoading: boolean;
+  isLoading?: boolean;
   persons: number;
   setBookingDate: (bookingDate: Date) => void;
   setBookingTime: (bookingTime: string | null) => void;
