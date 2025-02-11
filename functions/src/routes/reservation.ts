@@ -163,7 +163,7 @@ publicRouter.post("/", async (req, res) => {
     });
 
     transporter.sendMail({
-      from: "Soul Team <hallo@soulcoffee.info>",
+      from: "Soul Bookings <hallo@soulcoffee.info>",
       to: [email],
       subject: `${PREFIX}Confirmation of your reservation`,
       html: emailContent,
@@ -171,7 +171,7 @@ publicRouter.post("/", async (req, res) => {
 
     transporter.sendMail({
       from: "Soul Bookings <hallo@soulcoffee.info>",
-      to: ["Soul Team <hallo@soulcoffee.info>"],
+      to: ["Soul Team <hallo@soulcoffee.info>", "vchatzipan@gmail.com"],
       subject: `${PREFIX}New ${bookingType} Reservation for ${
         isToday
           ? "Today"
