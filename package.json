@@ -9,13 +9,10 @@
   ],
   "scripts": {
     "dev": "gatsby develop",
-    "emulators": "firebase use default && firebase emulators:start --import=./emulator-data --export-on-exit=./emulator-data",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy-dev": "firebase use default && firebase deploy --only functions",
-    "deploy-prod": "firebase use prod && firebase deploy --only functions",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",

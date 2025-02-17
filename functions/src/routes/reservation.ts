@@ -119,9 +119,7 @@ publicRouter.post("/", async (req, res) => {
       bookingType: string;
     };
     const writeResult = await db.collection(COLLECTION).add(rest);
-    console.log("process.env.ENVIRONMENT", process.env.ENVIRONMENT);
-    console.log("process.env.ENV", process.env.ENV);
-    const PREFIX = process.env.ENVIRONMENT === "dev" ? "TEST!!! -" : "";
+    const PREFIX = process.env.ENVIRONMENT === "dev" ? "TEST!!! -  " : "";
     // Use the shared email configuration
     const transporter = createEmailTransporter();
 
@@ -163,14 +161,14 @@ publicRouter.post("/", async (req, res) => {
     });
 
     transporter.sendMail({
-      from: "Soul Bookings <hallo@soulcoffee.info>",
+      from: `${PREFIX}Soul Bookings <hallo@soulcoffee.info>`,
       to: [email],
       subject: `${PREFIX}Confirmation of your reservation`,
       html: emailContent,
     });
 
     transporter.sendMail({
-      from: "Soul Bookings <hallo@soulcoffee.info>",
+      from: `${PREFIX}Soul Bookings <hallo@soulcoffee.info>`,
       to: ["Soul Team <hallo@soulcoffee.info>", "vchatzipan@gmail.com"],
       subject: `${PREFIX}New ${bookingType} Reservation for ${
         isToday
