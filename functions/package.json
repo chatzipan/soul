@@ -10,7 +10,7 @@
     "deploy-dev": "firebase use default && firebase deploy --only functions",
     "deploy-prod": "firebase use prod && firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "emulators": "firebase use default && firebase emulators:start --import=./emulator-data --export-on-exit=./emulator-data"
+    "emulators": "firebase use default && firebase emulators:start --import=../emulator-data --export-on-exit=../emulator-data"
   },
   "engines": {
     "node": "18"

@@ -60,6 +60,11 @@ const Hero = () => {
         setInitialBookingDate(date);
         setOpenBookingModal(true);
       }
+      // Check if date is valid
+      if (bookingDate === "true") {
+        setInitialBookingDate(new Date());
+        setOpenBookingModal(true);
+      }
     }
   }, []);
 
