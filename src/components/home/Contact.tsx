@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import CircularProgress from "@mui/material/CircularProgress";
 import { StaticImage } from "gatsby-plugin-image";
 
 import {
@@ -73,19 +74,34 @@ const Contact = () => {
           <br />
           <br />
           <S.Text>Opening Hours</S.Text>
-          {SORTED_DAYS.map((day) => {
-            const openingHours =
-              openingDays?.[day as keyof typeof openingDays]?.openingHours;
+          {response?.isLoading ? (
+            <CircularProgress />
+          ) : (
+            SORTED_DAYS.map((day) => {
+              const openingHours =
+                openingDays?.[day as keyof typeof openingDays]?.openingHours;
 
-            return (
-              <S.Hours key={day}>
-                <span>{day}</span>
-                <span>
-                  {openingHours?.start} - {openingHours?.end}
-                </span>
-              </S.Hours>
-            );
-          })}
+              const isDinnerDay = [
+                DayOfWeek.Thursday,
+                DayOfWeek.Friday,
+                DayOfWeek.Saturday,
+              ].includes(day);
+
+              return (
+                <S.Hours key={day}>
+                  <span>
+                    {day}
+                    {isDinnerDay && <>&nbsp;*</>}
+                  </span>
+                  <span>
+                    {openingHours?.start} - {openingHours?.end}
+                  </span>
+                </S.Hours>
+              );
+            })
+          )}
+          <br />
+          <S.Hours>* Kitchen closes at 21:00</S.Hours>
         </S.InnerWrapper>
         <S.ImageWrapper>
           <StaticImage
