@@ -1,4 +1,5 @@
 import { onSchedule } from "firebase-functions/v2/scheduler";
+
 import { sendReservationSummary } from "./reservationEmail";
 
 export const sendDailyReservationsSummary = onSchedule(
@@ -8,7 +9,10 @@ export const sendDailyReservationsSummary = onSchedule(
     retryCount: 3, // Optional: number of retry attempts if the function fails
   },
   async () => {
+    if (process.env.ENVIRONMENT === "dev") {
+      return;
+    }
     const today = new Date();
     await sendReservationSummary(today);
-  }
+  },
 );

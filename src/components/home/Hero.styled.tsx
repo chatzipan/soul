@@ -1,6 +1,8 @@
 import { Link as GatsbyLink } from "gatsby";
-import Icon from "../../assets/logo.svg";
+
 import styled from "styled-components";
+
+import Icon from "../../assets/logo.svg";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -127,6 +129,8 @@ export const TelLinkUnderlined = styled.a`
   font-size: 1.35rem;
   line-height: 1.5;
   font-family: "Josefin Sans", sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
     margin: 0.5rem 0;

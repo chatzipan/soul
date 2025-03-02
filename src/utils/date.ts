@@ -46,6 +46,11 @@ export const createTimeOptionsFromOpeningHours = ({
   selectedDate: Date;
   settings: RestaurantSettings;
 }) => {
+  const isDinnerDay = [
+    DayOfWeek.Thursday,
+    DayOfWeek.Friday,
+    DayOfWeek.Saturday,
+  ].includes(currentDayOfWeek);
   const openingHours = settings?.openingDays?.[currentDayOfWeek]?.openingHours;
   const isToday =
     format(selectedDate, "yyyy-MM-dd") ===
@@ -84,8 +89,8 @@ export const createTimeOptionsFromOpeningHours = ({
     const timeInMinutes = hour * 60 + minute;
     const closingTimeInMinutes = endHour * 60 + endMinute;
 
-    // Ensure at least 30 minutes before closing time
-    return timeInMinutes <= closingTimeInMinutes - 30;
+    // Ensure at least 30 minutes before closing time, but on Dinner days 90 minutes
+    return timeInMinutes <= closingTimeInMinutes - (isDinnerDay ? 90 : 30);
   });
 
   // Filter out times that fall within recurring blocks for the current day
