@@ -1,13 +1,13 @@
 import * as React from "react";
-import { format } from "date-fns";
+
 import CircularProgress from "@mui/material/CircularProgress";
-
-import * as S from "./Common.styled";
-import { useSoulEvents } from "../../hooks/useSoulEvents";
-
+import { format } from "date-fns";
 import { StaticImage } from "gatsby-plugin-image";
+
 import { Reservation } from "../../../functions/src/types/reservation";
+import { useSoulEvents } from "../../hooks/useSoulEvents";
 import Button from "../shared/Button";
+import * as S from "./Common.styled";
 
 const Events = () => {
   const response = useSoulEvents();
@@ -20,7 +20,7 @@ const Events = () => {
   });
 
   return (
-    <S.EventWrapper id='events'>
+    <S.EventWrapper id="events">
       <S.Heading>
         <S.Title style={{ float: "right", marginLeft: "2rem" }}>Events</S.Title>
         <S.Description full>
@@ -29,8 +29,8 @@ const Events = () => {
           special occasion like a birthday or a team event. We prepare a
           tailored menu for you.&nbsp;
           <S.TelLink
-            href='mailto:hallo@soulcoffee.info?subject=Inquiry%20about%20an%20event'
-            target='_blank'
+            href="mailto:hallo@soulzuerich.ch?subject=Inquiry%20about%20an%20event"
+            target="_blank"
           >
             Write us an email
           </S.TelLink>
@@ -51,7 +51,7 @@ const Events = () => {
             )}
             {events?.map((event) => {
               const formattedDate = format(new Date(event.date), "dd.MM.yyyy");
-              const href = `mailto:hallo@soulcoffee.info?subject=Inquiry%20about%20${event.eventTitle}&body=Hello%20Soul%20Coffee,%20I%20would%20like%20to%20book%20a%20place%20for%20X persons on the ${event.eventTitle}%20on%20${formattedDate}.%20Thank%20you!`;
+              const href = `mailto:hallo@soulzuerich.ch?subject=Inquiry%20about%20${event.eventTitle}&body=Hello%20Soul%20Coffee,%20I%20would%20like%20to%20book%20a%20place%20for%20X persons on the ${event.eventTitle}%20on%20${formattedDate}.%20Thank%20you!`;
 
               return (
                 <S.Event key={event.id}>
@@ -77,8 +77,8 @@ const Events = () => {
         <S.FoodImageWrapper style={{ margin: "0 auto" }}>
           <StaticImage
             aspectRatio={1 / 1}
-            src='../../images/events_2.jpg'
-            alt='A picture of our chef preparing food for an event'
+            src="../../images/events_2.jpg"
+            alt="A picture of our chef preparing food for an event"
           />
         </S.FoodImageWrapper>
       </S.ImageOuterWrapper>

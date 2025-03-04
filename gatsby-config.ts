@@ -1,9 +1,9 @@
+// eslint-disable-next-line import/first
+import type { GatsbyConfig } from "gatsby";
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-
-// eslint-disable-next-line import/first
-import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   // headers: [
@@ -19,7 +19,7 @@ const config: GatsbyConfig = {
   // ],
   siteMetadata: {
     title: `soul`,
-    siteUrl: `https://www.soulcoffee.info`,
+    siteUrl: `https://soulzuerich.ch/`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

@@ -39,8 +39,8 @@ export const sendReservationSummary = async (date: Date) => {
     const emailContent = generateEmailContent(reservations, new Date(start));
 
     await transporter.sendMail({
-      from: "Soul Bookings <hallo@soulcoffee.info>",
-      to: ["Soul Team <hallo@soulcoffee.info>", "vchatzipan@gmail.com"],
+      from: "Soul Bookings <hallo@soulzuerich.ch>",
+      to: ["Soul Team <hallo@soulzuerich.ch>", "vchatzipan@gmail.com"],
       subject: `Reservations for ${moment(date)
         .tz("Europe/Zurich")
         .startOf("day")

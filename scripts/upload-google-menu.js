@@ -11,7 +11,7 @@ const client = new JWT({
     "https://www.googleapis.com/auth/cloud-platform",
     "https://www.googleapis.com/auth/business.manage",
   ],
-  subject: "v.chatzipanagiotis@soulcoffee.info",
+  subject: "v.chatzipanagiotis@soulzuerich.ch",
 });
 
 async function saveGoogleMenu() {
@@ -23,14 +23,14 @@ async function saveGoogleMenu() {
   await client.getTokenInfo(client.credentials.access_token);
 
   const accountsRequest = await fetch(
-    `https://mybusinessaccountmanagement.googleapis.com/v1/accounts?access_token=${client.credentials.access_token}`
+    `https://mybusinessaccountmanagement.googleapis.com/v1/accounts?access_token=${client.credentials.access_token}`,
   );
 
   const { accounts } = await accountsRequest.json();
   const accountId = accounts[0].name;
 
   const locationsRequest = await fetch(
-    `https://mybusinessbusinessinformation.googleapis.com/v1/${accountId}/locations?readMask=storeCode,regularHours,name,languageCode,title,phoneNumbers,categories,storefrontAddress,websiteUri,regularHours,specialHours,serviceArea,labels,adWordsLocationExtensions,latlng,openInfo,metadata,profile,relationshipData,moreHours&access_token=${client.credentials.access_token}`
+    `https://mybusinessbusinessinformation.googleapis.com/v1/${accountId}/locations?readMask=storeCode,regularHours,name,languageCode,title,phoneNumbers,categories,storefrontAddress,websiteUri,regularHours,specialHours,serviceArea,labels,adWordsLocationExtensions,latlng,openInfo,metadata,profile,relationshipData,moreHours&access_token=${client.credentials.access_token}`,
   );
 
   const { locations } = await locationsRequest.json();

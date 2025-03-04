@@ -40,8 +40,8 @@ const Contact = () => {
             Limmatquai 94, 8001, Zürich
           </S.TelLink>
           <S.TelLink href="tel:+41445991366">+41 44 599 13 66</S.TelLink>
-          <S.TelLink href="mailto:hallo@soulcoffee.info" target="_blank">
-            hallo@soulcoffee.info
+          <S.TelLink href="mailto:hallo@soulzuerich.ch" target="_blank">
+            hallo@soulzuerich.ch
           </S.TelLink>
           <S.TelLink
             href="https://www.instagram.com/soul_zurich/"
@@ -64,7 +64,7 @@ const Contact = () => {
             <br />
             <br />- Special Occasions: Birthdays or a Team Event?&nbsp;
             <S.TelLinkUnderlined
-              href="mailto:hallo@soulcoffee.info"
+              href="mailto:hallo@soulzuerich.ch"
               target="_blank"
             >
               email us.

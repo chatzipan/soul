@@ -101,10 +101,10 @@ export const BookingTypeStep = ({
               For Groups of more than 6 people, please contact us directly
               at&nbsp;
               <Common.TelLinkUnderlined
-                href="mailto:hallo@soulcoffee.info"
+                href="mailto:hallo@soulzuerich.ch"
                 target="_blank"
               >
-                hallo@soulcoffee.info
+                hallo@soulzuerich.ch
               </Common.TelLinkUnderlined>
             </Typography>
           ) : availableBookingTypes.length === 0 ? (

@@ -45,7 +45,7 @@ const generateCustomerEmail = ({
   content += `<br />`;
   content += `<p>Best regards,</p>`;
   content += `<p>Soul Team</p>`;
-  content += `<p>PS: If you have any questions, or need to change / cancel your reservation, please contact us at <a href="mailto:hallo@soulcoffee.info">hallo@soulcoffee.info</a></p>`;
+  content += `<p>PS: If you have any questions, or need to change / cancel your reservation, please contact us at <a href="mailto:hallo@soulzuerich.ch">hallo@soulzuerich.ch</a></p>`;
   return content;
 };
 
@@ -161,15 +161,15 @@ publicRouter.post("/", async (req, res) => {
     });
 
     transporter.sendMail({
-      from: `${PREFIX}Soul Bookings <hallo@soulcoffee.info>`,
+      from: `${PREFIX}Soul Bookings <hallo@soulzuerich.ch>`,
       to: [email],
       subject: `${PREFIX}Confirmation of your reservation`,
       html: emailContent,
     });
 
     transporter.sendMail({
-      from: `${PREFIX}Soul Bookings <hallo@soulcoffee.info>`,
-      to: ["Soul Team <hallo@soulcoffee.info>", "vchatzipan@gmail.com"],
+      from: `${PREFIX}Soul Bookings <hallo@soulzuerich.ch>`,
+      to: ["Soul Team <hallo@soulzuerich.ch>", "vchatzipan@gmail.com"],
       subject: `${PREFIX}New ${bookingType} Reservation for ${
         isToday
           ? "Today"
