@@ -108,5 +108,5 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
 export default MenuCategory;
 
 export const Head: HeadFC = () => (
-  <title>Menu - Soul - All Day Kitchen Bar</title>
+  <title>Menu - Soul - Modern Kitchen Bar</title>
 );
