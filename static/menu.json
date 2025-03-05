@@ -85,7 +85,7 @@
         "name": "Dips & Bread",
         "subTitle": "",
         "description": "",
-        "price": 18.5,
+        "price": 22.5,
         "imageThumbnail": null,
         "image": null
       }
@@ -606,6 +606,8 @@
       {
         "category": "Coffee",
         "name": "Double Espresso Machiato",
+        "subTitle": "",
+        "description": "",
         "price": 7.3,
         "imageThumbnail": null,
         "image": null
