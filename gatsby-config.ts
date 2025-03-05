@@ -18,8 +18,10 @@ const config: GatsbyConfig = {
   //   },
   // ],
   siteMetadata: {
-    title: `soul`,
-    siteUrl: `https://soulzuerich.ch/`,
+    title: `Soul Café - Modern Kitchen Bar`,
+    siteUrl: `https://soulzuerich.ch`,
+    description: `Soul Café: Zurich's modern all-day kitchen bar. Enjoy brunch, business lunches, refined dinners, cocktails, and wines in a warm, vibrant city atmosphere.`,
+    author: `Soul Café`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -27,6 +29,27 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-styled-components",
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://soulzuerich.ch`,
+        stripQueryString: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://soulzuerich.ch",
+        sitemap: "https://soulzuerich.ch/sitemap-index.xml",
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: ["/admin"],
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

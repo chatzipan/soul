@@ -5,11 +5,13 @@ import type { HeadFC } from "gatsby";
 import { Redirect, RouteComponentProps, useParams } from "@reach/router";
 
 import menu from "../../../static/menu.json";
+import SEO from "../shared/SEO";
 import * as S from "./menu.styled";
 
 type MenuEntry = {
   category?: string;
-  description: string;
+  description?: string;
+  subTitle?: string;
   image: null | string;
   imageThumbnail: null | string;
   name: string;
@@ -92,9 +94,11 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
                 <S.Item key={entry.name}>
                   <S.ItemName>{entry.name}</S.ItemName>
                   <S.Price>{entry.price.toString()}</S.Price>
-                  <S.ItemDescription
-                    dangerouslySetInnerHTML={{ __html: entry.description }}
-                  />
+                  {entry.description && (
+                    <S.ItemDescription
+                      dangerouslySetInnerHTML={{ __html: entry.description }}
+                    />
+                  )}
                 </S.Item>
               ))}
           </S.Section>
@@ -107,6 +111,18 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
 
 export default MenuCategory;
 
-export const Head: HeadFC = () => (
-  <title>Menu - Soul - Modern Kitchen Bar</title>
-);
+export const Head: HeadFC = () => {
+  const params = new URLSearchParams(window.location.search);
+  const categoryId = params.get("categoryId");
+  const formattedCategory = categoryId
+    ? categoryId.replace(/_/g, " ").toLowerCase()
+    : "";
+
+  return (
+    <SEO
+      title={`${formattedCategory} Menu`}
+      description={`Discover our ${formattedCategory} menu at Soul Café Zurich. Fresh, seasonal ingredients prepared with passion.`}
+      pathname={`/menu/${categoryId}`}
+    />
+  );
+};

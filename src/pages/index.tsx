@@ -18,6 +18,7 @@ import Dinner from "../components/home/Dinner";
 import Events from "../components/home/Events";
 import Hero from "../components/home/Hero";
 import Lunch from "../components/home/Lunch";
+import SEO from "../components/shared/SEO";
 import * as S from "../styles/index.styled";
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -47,4 +48,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Soul - Modern Kitchen Bar</title>;
+export const Head: HeadFC = () => <SEO />;
