@@ -169,7 +169,7 @@ publicRouter.post("/", async (req, res) => {
 
     transporter.sendMail({
       from: `${PREFIX}Soul Bookings <hallo@soulzuerich.ch>`,
-      to: ["Soul Team <hallo@soulzuerich.ch>", "vchatzipan@gmail.com"],
+      to: ["Soul Team <hallo@soulzuerich.ch>"],
       subject: `${PREFIX}New ${bookingType} Reservation for ${
         isToday
           ? "Today"
