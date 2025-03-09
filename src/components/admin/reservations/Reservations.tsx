@@ -1,4 +1,3 @@
-import { isToday } from "date-fns";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useToggle } from "react-use";
 
@@ -7,13 +6,15 @@ import { Typography } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Tab from "@mui/material/Tab";
 import { RouteComponentProps } from "@reach/router";
+import { isToday } from "date-fns";
 
-import { ReservationItem } from "./ReservationItem";
-import { useReservations } from "../../../hooks/useReservations";
 import { Reservation } from "../../../../functions/src/types/reservation";
-import { ReservationForm } from "./reservation-form";
+import { usePastReservations } from "../../../hooks/usePastReservations";
+import { useReservations } from "../../../hooks/useReservations";
 import { CancelModal } from "./CancelModal";
+import { ReservationItem } from "./ReservationItem";
 import * as S from "./Reservations.styled";
+import { ReservationForm } from "./reservation-form";
 import {
   TabsView,
   a11yProps,
@@ -34,6 +35,12 @@ const Reservations = (_: RouteComponentProps) => {
     useState<Reservation | null>(null);
   const [isAddReservationModalOpen, toggleAddReservationModal] =
     useToggle(false);
+
+  const pastResponse = usePastReservations({
+    enable: view === TabsView.Previous,
+  });
+
+  const pastReservations = pastResponse?.data as Reservation[];
 
   const handleViewChange = (_: React.SyntheticEvent, newValue: TabsView) => {
     setView(newValue);
@@ -56,12 +63,12 @@ const Reservations = (_: RouteComponentProps) => {
   };
 
   const hasTodayReservations = (reservations || []).some((reservation) =>
-    isToday(new Date(reservation.date))
+    isToday(new Date(reservation.date)),
   );
 
   const formatted = useMemo(
     () => groupByDateAndTime((reservations || []) as Reservation[], view),
-    [reservations, view]
+    [reservations, view],
   );
 
   useEffect(
@@ -71,17 +78,17 @@ const Reservations = (_: RouteComponentProps) => {
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [hasTodayReservations]
+    [hasTodayReservations],
   );
 
   return (
     <S.Wrapper>
-      <S.Header variant='h3' sx={{ mb: 2 }}>
+      <S.Header variant="h3" sx={{ mb: 2 }}>
         🍲 Reservations
         <S.AddButton
-          color='primary'
-          aria-label='add'
-          variant='extended'
+          color="primary"
+          aria-label="add"
+          variant="extended"
           sx={{ ml: { xs: 0, md: "auto" } }}
           onClick={toggleAddReservationModal}
         >
@@ -92,13 +99,13 @@ const Reservations = (_: RouteComponentProps) => {
       <S.TabBar value={view} onChange={handleViewChange}>
         {hasTodayReservations && (
           <Tab
-            label='Today'
+            label="Today"
             {...a11yProps(TabsView.Today)}
             disabled={!hasTodayReservations}
           />
         )}
-        <Tab label='Upcoming' {...a11yProps(TabsView.Upcoming)} />
-        <Tab label='Previous' {...a11yProps(TabsView.Previous)} />
+        <Tab label="Upcoming" {...a11yProps(TabsView.Upcoming)} />
+        <Tab label="Previous" {...a11yProps(TabsView.Previous)} />
       </S.TabBar>
       {loading && <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />}
       {Object.entries(formatted).map(([year, months]) => (
@@ -106,7 +113,7 @@ const Reservations = (_: RouteComponentProps) => {
           {Object.entries(months).map(([month, days]) => (
             <div key={`${year}-${month}`}>
               {!isTodayView && (
-                <Typography variant='h5' sx={{ mb: 1 }} color='GrayText'>
+                <Typography variant="h5" sx={{ mb: 1 }} color="GrayText">
                   {month} {year}
                 </Typography>
               )}
@@ -119,9 +126,11 @@ const Reservations = (_: RouteComponentProps) => {
                 return (
                   <S.ReservationListInner key={`${year}-${month}-${day}`}>
                     {!isTodayView && (
-                      <Typography sx={{ mb: 1 }} variant='h6' color='GrayText'>
+                      <Typography sx={{ mb: 1 }} variant="h6" color="GrayText">
                         {displayDate(
-                          new Date(`${year}-${monthIndex}-${day}T00:00:00.000Z`)
+                          new Date(
+                            `${year}-${monthIndex}-${day}T00:00:00.000Z`,
+                          ),
                         )}
                       </Typography>
                     )}

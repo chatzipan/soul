@@ -1,7 +1,7 @@
-import { getAllFutureReservations } from "../services/reservations";
+import { getAllPastReservations } from "../services/reservations";
 import { useQueryWrapper } from "./useQuery";
 
-export const useReservations = (config = {} as { enable: boolean }) =>
+export const usePastReservations = (config = {} as { enable: boolean }) =>
   useQueryWrapper({
     queryKey: getKey(),
     queryFn,
@@ -17,8 +17,8 @@ const getKey = () => [
 ];
 
 const queryFn = () => {
-  return getAllFutureReservations();
+  return getAllPastReservations();
 };
 
-useReservations.getKey = getKey;
-useReservations.queryFn = queryFn;
+usePastReservations.getKey = getKey;
+usePastReservations.queryFn = queryFn;

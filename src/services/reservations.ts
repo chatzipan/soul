@@ -65,9 +65,29 @@ const getTimeFromDate = (date: Date) => {
   return `${hours}:${minutes === 0 ? "00" : minutes}`;
 };
 
-export const getAllReservations = async () => {
+const addQueryParams = (url: string, params: Record<string, string>) => {
+  const urlObj = new URL(url);
+  Object.entries(params).forEach(([key, value]) => {
+    if (value) {
+      urlObj.searchParams.append(key, value);
+    }
+  });
+  return urlObj.toString();
+};
+
+export const getReservationsWithDateRange = async (
+  dateFrom?: number,
+  dateUntil?: number,
+) => {
   try {
-    const res = await fetch(`${API_URL}/v1/reservations`, {
+    console.log("dateFrom", dateFrom);
+    console.log("dateUntil", dateUntil);
+    const url = addQueryParams(`${API_URL}/v1/reservations`, {
+      dateFrom: dateFrom?.toString() || "",
+      dateUntil: dateUntil?.toString() || "",
+    });
+
+    const res = await fetch(url, {
       method: "GET",
       headers: getHeaders(),
     });
@@ -88,7 +108,18 @@ export const getAllReservations = async () => {
     return reservationsWithTime;
   } catch (error) {
     console.error(error);
+    return [];
   }
+};
+
+export const getAllFutureReservations = async () => {
+  const today = moment.tz("Europe/Zurich").toDate().getTime();
+  return getReservationsWithDateRange(today, undefined);
+};
+
+export const getAllPastReservations = async () => {
+  const today = moment.tz("Europe/Zurich").toDate().getTime();
+  return getReservationsWithDateRange(undefined, today);
 };
 
 export const getSoulEvents = async () => {
