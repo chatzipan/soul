@@ -5,6 +5,9 @@ export const usePastReservations = (config = {} as { enable: boolean }) =>
   useQueryWrapper({
     queryKey: getKey(),
     queryFn,
+    enabled: config.enable,
+    staleTime: config.enable ? undefined : Infinity, // Prevent background refetches when disabled
+    gcTime: config.enable ? undefined : 0, // Don't cache data when disabled
     ...config,
   });
 
