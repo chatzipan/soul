@@ -36,7 +36,6 @@ const Reservations = (_: RouteComponentProps) => {
   const [isAddReservationModalOpen, toggleAddReservationModal] =
     useToggle(false);
 
-  console.log(view);
   const pastResponse = usePastReservations({
     enable: view === TabsView.Previous,
   });

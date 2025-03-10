@@ -80,8 +80,6 @@ export const getReservationsWithDateRange = async (
   dateUntil?: number,
 ) => {
   try {
-    console.log("dateFrom", dateFrom);
-    console.log("dateUntil", dateUntil);
     const url = addQueryParams(`${API_URL}/v1/reservations`, {
       dateFrom: dateFrom?.toString() || "",
       dateUntil: dateUntil?.toString() || "",
@@ -113,12 +111,12 @@ export const getReservationsWithDateRange = async (
 };
 
 export const getAllFutureReservations = async () => {
-  const today = moment.tz("Europe/Zurich").toDate().getTime();
+  const today = moment.tz("Europe/Zurich").toDate().setHours(0, 0, 0, 0);
   return getReservationsWithDateRange(today, undefined);
 };
 
 export const getAllPastReservations = async () => {
-  const today = moment.tz("Europe/Zurich").toDate().getTime();
+  const today = moment.tz("Europe/Zurich").toDate().setHours(0, 0, 0, 0);
   return getReservationsWithDateRange(undefined, today);
 };
 
