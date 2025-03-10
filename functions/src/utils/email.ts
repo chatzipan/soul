@@ -10,7 +10,7 @@ export const createEmailTransporter = () => {
   return nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "hallo@soulzuerich.ch",
+      user: "v.chatzipanagiotis@soulcoffee.info",
       pass: password,
     },
   });
