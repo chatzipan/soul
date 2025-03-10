@@ -11,7 +11,7 @@ export const useReservations = (config = {} as { enable: boolean }) =>
 const getKey = () => [
   {
     domain: "admin",
-    scope: "reservations",
+    scope: "reservations-future",
     entity: "list",
   },
 ];

@@ -36,6 +36,7 @@ const Reservations = (_: RouteComponentProps) => {
   const [isAddReservationModalOpen, toggleAddReservationModal] =
     useToggle(false);
 
+  console.log(view);
   const pastResponse = usePastReservations({
     enable: view === TabsView.Previous,
   });
@@ -67,8 +68,13 @@ const Reservations = (_: RouteComponentProps) => {
   );
 
   const formatted = useMemo(
-    () => groupByDateAndTime((reservations || []) as Reservation[], view),
-    [reservations, view],
+    () =>
+      groupByDateAndTime(
+        (reservations || []) as Reservation[],
+        (pastReservations || []) as Reservation[],
+        view,
+      ),
+    [reservations, pastReservations, view],
   );
 
   useEffect(
