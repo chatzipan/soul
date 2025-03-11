@@ -42,7 +42,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
     <meta
       name="description"
       key="4"
-      content="Soul Café: Zurich's modern all-day kitchen bar. Enjoy brunch, business lunches, refined dinners, cocktails, and wines in a warm, vibrant city atmosphere."
+      content="Soul: Zurich's modern all-day kitchen bar. Enjoy brunch, business lunches, refined dinners, cocktails, and wines in a warm, vibrant city atmosphere."
     />,
   ]);
 };

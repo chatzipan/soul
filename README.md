@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Soul Café Website
+  Soul Kitchen Bar Website
 </h1>
 
 ### Netlify Status

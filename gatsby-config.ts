@@ -6,22 +6,11 @@ require("dotenv").config({
 });
 
 const config: GatsbyConfig = {
-  // headers: [
-  //   {
-  //     source: "/admin/*",
-  //     headers: [
-  //       {
-  //         key: `Basic-Auth`,
-  //         value: `${process.env.BASIC_AUTH_USERNAME}:${process.env.BASIC_AUTH_PASSWORD}`,
-  //       },
-  //     ],
-  //   },
-  // ],
   siteMetadata: {
-    title: `Soul Café - Modern Kitchen Bar`,
+    title: `Soul - Modern Kitchen Bar`,
     siteUrl: `https://soulzuerich.ch`,
-    description: `Soul Café: Zurich's modern all-day kitchen bar. Enjoy brunch, business lunches, refined dinners, cocktails, and wines in a warm, vibrant city atmosphere.`,
-    author: `Soul Café`,
+    description: `Soul: Zurich's modern all-day kitchen bar. Enjoy brunch, business lunches, refined dinners, cocktails, and wines in a warm, vibrant city atmosphere.`,
+    author: `Soul`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

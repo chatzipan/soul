@@ -121,7 +121,7 @@ export const Head: HeadFC = () => {
   return (
     <SEO
       title={`${formattedCategory} Menu`}
-      description={`Discover our ${formattedCategory} menu at Soul Café Zurich. Fresh, seasonal ingredients prepared with passion.`}
+      description={`Discover our ${formattedCategory} menu at Soul Kitchen Bar Zurich. Fresh, seasonal ingredients prepared with passion.`}
       pathname={`/menu/${categoryId}`}
     />
   );

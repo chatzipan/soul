@@ -47,6 +47,6 @@ export default MenuEntry;
 export const Head: HeadFC = () => (
   <SEO
     title="Menu"
-    description="Explore our diverse menu featuring brunch, lunch, dinner, cocktails, and an extensive wine selection at Soul Café Zurich."
+    description="Explore our diverse menu featuring brunch, lunch, dinner, cocktails, and an extensive wine selection at Soul Kitchen Bar Zurich."
   />
 );
