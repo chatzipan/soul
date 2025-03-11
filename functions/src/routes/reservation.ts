@@ -189,16 +189,29 @@ publicRouter.post("/", async (req, res) => {
 });
 
 // Protected routes
-protectedRouter.get("/", async (_, res) => {
+protectedRouter.get("/", async (req, res) => {
   try {
+    const { dateFrom, dateUntil } = req.query;
+    const dateFromNumber = dateFrom ? parseInt(dateFrom as string) : undefined;
+    const dateUntilNumber = dateUntil
+      ? parseInt(dateUntil as string)
+      : undefined;
+
+    const query = dateFromNumber
+      ? db.collection(COLLECTION).where("date", ">=", dateFromNumber)
+      : dateUntilNumber
+        ? db.collection(COLLECTION).where("date", "<=", dateUntilNumber)
+        : db.collection(COLLECTION).orderBy("date");
+
     const allEntries: Reservation[] = [];
-    const querySnapshot = await db.collection(COLLECTION).get();
+    const querySnapshot = await query.get();
     querySnapshot.forEach((doc) =>
       allEntries.push({ ...doc.data(), id: doc.id } as Reservation),
     );
 
     return res.status(200).json(allEntries);
   } catch (error) {
+    console.error("Error fetching reservations:", error);
     return res.status(500).json("We found an error fetching your request!");
   }
 });

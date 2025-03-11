@@ -1,4 +1,4 @@
-import { getAllReservations } from "../services/reservations";
+import { getAllFutureReservations } from "../services/reservations";
 import { useQueryWrapper } from "./useQuery";
 
 export const useReservations = (config = {} as { enable: boolean }) =>
@@ -11,13 +11,13 @@ export const useReservations = (config = {} as { enable: boolean }) =>
 const getKey = () => [
   {
     domain: "admin",
-    scope: "reservations",
+    scope: "reservations-future",
     entity: "list",
   },
 ];
 
 const queryFn = () => {
-  return getAllReservations();
+  return getAllFutureReservations();
 };
 
 useReservations.getKey = getKey;
