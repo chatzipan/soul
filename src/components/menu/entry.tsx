@@ -1,11 +1,8 @@
 import React from "react";
 
-import type { HeadFC } from "gatsby";
-
 import { RouteComponentProps } from "@reach/router";
 
 import menu from "../../../static/menu.json";
-import SEO from "../shared/SEO";
 import * as S from "./menu.styled";
 
 type TMenuEntry = {
@@ -43,10 +40,3 @@ const MenuPageComponent: React.FC<{ menu: Menu[] }> = ({ menu }) => {
 };
 
 export default MenuEntry;
-
-export const Head: HeadFC = () => (
-  <SEO
-    title="Menu"
-    description="Explore our diverse menu featuring brunch, lunch, dinner, cocktails, and an extensive wine selection at Soul Kitchen Bar Zurich."
-  />
-);

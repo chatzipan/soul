@@ -1,11 +1,8 @@
 import React from "react";
 
-import type { HeadFC } from "gatsby";
-
 import { Redirect, RouteComponentProps, useParams } from "@reach/router";
 
 import menu from "../../../static/menu.json";
-import SEO from "../shared/SEO";
 import * as S from "./menu.styled";
 
 type MenuEntry = {
@@ -110,19 +107,3 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
 };
 
 export default MenuCategory;
-
-export const Head: HeadFC = () => {
-  const params = new URLSearchParams(window.location.search);
-  const categoryId = params.get("categoryId");
-  const formattedCategory = categoryId
-    ? categoryId.replace(/_/g, " ").toLowerCase()
-    : "";
-
-  return (
-    <SEO
-      title={`${formattedCategory} Menu`}
-      description={`Discover our ${formattedCategory} menu at Soul Kitchen Bar Zurich. Fresh, seasonal ingredients prepared with passion.`}
-      pathname={`/menu/${categoryId}`}
-    />
-  );
-};

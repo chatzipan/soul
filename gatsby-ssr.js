@@ -16,7 +16,6 @@ exports.wrapRootElement = ({ element }) => {
 
 exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-    <html key="0" lang="en" />,
     <link key="1" rel="preconnect" href="https://fonts.googleapis.com" />,
     <link
       key="2"
@@ -38,11 +37,6 @@ exports.onRenderBody = ({ setHeadComponents }) => {
       type="font/woff2"
       crossOrigin="anonymous"
       key="adriannaFont"
-    />,
-    <meta
-      name="description"
-      key="4"
-      content="Soul: Zurich's modern all-day kitchen bar. Enjoy brunch, business lunches, refined dinners, cocktails, and wines in a warm, vibrant city atmosphere."
     />,
   ]);
 };
