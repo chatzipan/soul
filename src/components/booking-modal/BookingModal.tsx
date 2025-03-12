@@ -190,6 +190,7 @@ export const BookingModal = ({
     },
     onSuccess: () => {
       setCurrentStep(Step.CONFIRM);
+      response?.refetch();
     },
   });
 

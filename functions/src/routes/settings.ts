@@ -1,4 +1,7 @@
+import * as moment from "moment-timezone";
+
 import { db } from "..";
+import { Reservation } from "../types/reservation";
 import { DayOfWeek, RestaurantSettings } from "../types/settings";
 
 import express = require("express");
@@ -49,10 +52,140 @@ const defaultSettings: RestaurantSettings = {
 
 // Public routes
 publicRouter.get("/opening-hours", async (_, res) => {
+  console.log("NEW REQUEST !!!");
   try {
+    // Get settings
     const doc = await db.collection(COLLECTION).doc(SETTINGS_DOC_ID).get();
-    const data = doc.data() as RestaurantSettings;
-    return res.status(200).json(data);
+    const settings = doc.data() as RestaurantSettings;
+
+    // Get future reservations
+    const now = moment.tz("Europe/Zurich");
+    const startOfToday = now.startOf("day").valueOf();
+
+    const reservationsSnapshot = await db
+      .collection("reservations")
+      .where("date", ">=", startOfToday)
+      .where("canceled", "==", false)
+      .get();
+
+    const reservations = reservationsSnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    })) as Reservation[];
+
+    // Group reservations by date
+    const reservationsByDate = new Map<string, Reservation[]>();
+
+    reservations.forEach((reservation) => {
+      const date = moment(reservation.date).format("YYYY-MM-DD");
+      if (!reservationsByDate.has(date)) {
+        reservationsByDate.set(date, []);
+      }
+      reservationsByDate.get(date)?.push(reservation);
+    });
+
+    // Find blocked slots for each date
+    const blockedSlots = [];
+
+    for (const [date, dateReservations] of reservationsByDate.entries()) {
+      // Sort reservations by time
+      dateReservations.sort((a, b) => {
+        const timeA = moment.tz(
+          `${date} ${a.time}`,
+          "YYYY-MM-DD HH:mm",
+          "Europe/Zurich",
+        );
+        const timeB = moment.tz(
+          `${date} ${b.time}`,
+          "YYYY-MM-DD HH:mm",
+          "Europe/Zurich",
+        );
+        return timeA.valueOf() - timeB.valueOf();
+      });
+
+      // Check each minute of the day for overlapping reservations
+      const dayStart = moment.tz(
+        `${date} 00:00`,
+        "YYYY-MM-DD HH:mm",
+        "Europe/Zurich",
+      );
+      const dayEnd = moment.tz(
+        `${date} 23:59`,
+        "YYYY-MM-DD HH:mm",
+        "Europe/Zurich",
+      );
+
+      const currentTime = dayStart.clone();
+      let blockStart: moment.Moment | null = null;
+
+      while (currentTime.isBefore(dayEnd)) {
+        // Find all reservations that overlap with current time
+        const overlappingReservations = dateReservations.filter(
+          (reservation) => {
+            const resStart = moment.tz(
+              `${date} ${reservation.time}`,
+              "YYYY-MM-DD HH:mm",
+              "Europe/Zurich",
+            );
+            const resEnd = resStart
+              .clone()
+              .add(settings.timeSlotDuration, "minutes");
+            return currentTime.isBetween(resStart, resEnd, undefined, "[)");
+          },
+        );
+
+        // Calculate total persons at current time
+        const totalPersons = overlappingReservations.reduce(
+          (sum, res) => sum + res.persons,
+          0,
+        );
+
+        if (totalPersons >= settings.maxCapacity) {
+          // Start a new block if we haven't started one
+          if (!blockStart) {
+            blockStart = currentTime.clone();
+          }
+        } else if (blockStart) {
+          // End the current block and add it
+          blockedSlots.push({
+            date,
+            start: blockStart.format("HH:mm"),
+            end: currentTime.format("HH:mm"),
+          });
+          blockStart = null;
+        }
+
+        currentTime.add(1, "minute");
+      }
+
+      // Don't forget to add the last block if we have one
+      if (blockStart) {
+        blockedSlots.push({
+          date,
+          start: blockStart.format("HH:mm"),
+          end: currentTime.format("HH:mm"),
+        });
+      }
+    }
+
+    // Add the blocked slots to the settings response
+    const settingsWithBlocks = {
+      ...settings,
+      singleBlocks: [
+        // Filter out past single blocks
+        ...(settings.singleBlocks || []).filter((block) => {
+          const blockDate = moment.tz(
+            `${block.date}`,
+            "YYYY-MM-DD",
+            "Europe/Zurich",
+          );
+          return blockDate.isSameOrAfter(now.startOf("day"));
+        }),
+        ...blockedSlots,
+      ],
+    };
+
+    return res.status(200).json(settingsWithBlocks);
   } catch (error) {
     console.error("Error fetching settings:", error);
     return res.status(500).json("Error fetching settings");
