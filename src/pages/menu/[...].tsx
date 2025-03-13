@@ -62,8 +62,8 @@ export const Head: HeadFC = ({ location, params }) => {
       title={isCategoryPage ? `${formattedCategory} Menu` : "Menu"}
       description={
         isCategoryPage
-          ? `Discover our ${formattedCategory} menu at Soul Café Zurich. Fresh, seasonal ingredients prepared with passion.`
-          : "Explore our diverse menu featuring brunch, lunch, dinner, cocktails, and an extensive wine selection at Soul Café Zurich."
+          ? `Discover our ${formattedCategory} menu at Soul Kitchen Bar Zurich. Fresh, seasonal ingredients prepared with passion.`
+          : "Explore our diverse menu featuring brunch, lunch, dinner, cocktails, and an extensive wine selection at Soul Kitchen Bar Zurich."
       }
       pathname={location?.pathname}
     />

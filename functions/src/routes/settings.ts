@@ -52,7 +52,6 @@ const defaultSettings: RestaurantSettings = {
 
 // Public routes
 publicRouter.get("/opening-hours", async (_, res) => {
-  console.log("NEW REQUEST !!!");
   try {
     // Get settings
     const doc = await db.collection(COLLECTION).doc(SETTINGS_DOC_ID).get();

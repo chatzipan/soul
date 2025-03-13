@@ -19,13 +19,6 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-styled-components",
     {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://soulzuerich.ch`,
-        stripQueryString: true,
-      },
-    },
-    {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://soulzuerich.ch",
