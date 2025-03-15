@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import { TimePicker } from "@mui/x-date-pickers";
+import { RouteComponentProps } from "@reach/router";
 import { parseISO } from "date-fns";
 
 import {
@@ -27,7 +28,7 @@ export const SORTED_DAYS = [
   DayOfWeek.Sunday,
 ];
 
-const OpeningHours = () => {
+const OpeningHours = (_: RouteComponentProps) => {
   const response = useSettings();
   const updateSettingsMutation = useUpdateSettings();
   const settings = response?.data as unknown as RestaurantSettings;
