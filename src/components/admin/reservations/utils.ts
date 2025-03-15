@@ -79,12 +79,15 @@ const getSortPerTabViewLegacy = (
   a: Reservation,
   b: Reservation,
 ) => {
+  const aDate =
+    typeof a.date === "number" ? new Date(a.date).toISOString() : a.date;
+  const bDate =
+    typeof b.date === "number" ? new Date(b.date).toISOString() : b.date;
+
   if (view === TabsView.Upcoming) {
-    return a.date.localeCompare(b.date) || a.time.localeCompare(b.time);
+    return aDate.localeCompare(bDate) || a.time.localeCompare(b.time);
   } else {
-    const bDate =
-      typeof b.date === "number" ? new Date(b.date).toISOString() : b.date;
-    return bDate.localeCompare(a.date) || b.time.localeCompare(a.time);
+    return bDate.localeCompare(aDate) || b.time.localeCompare(a.time);
   }
 };
 
@@ -93,6 +96,7 @@ export const groupByDateAndTime = (
   pastReservations: Reservation[],
   view: TabsView,
 ) => {
+  console.log("reservations", reservations, pastReservations, view);
   const perTabView = getReservationsPerTabView(
     reservations,
     pastReservations,

@@ -54,10 +54,16 @@ const MenuCategory: React.FC<RouteComponentProps> = () => {
     description: categoryMenu.description,
     name: categoryMenu.name,
     categories: Object.entries(
-      categoryMenu.entries.reduce(
-        (acc, entry) => {
+      // @ts-ignore
+      categoryMenu.entries.reduce<
+        Record<string, { name: string; entries: MenuEntry[] }>
+      >(
+        (
+          acc: Record<string, { name: string; entries: MenuEntry[] }>,
+          entry: MenuEntry,
+        ) => {
           const category =
-            "category" in entry ? entry.category : categoryMenu.name;
+            (entry as { category?: string }).category ?? categoryMenu.name;
           if (!acc[category]) {
             acc[category] = {
               name: category,
@@ -67,12 +73,12 @@ const MenuCategory: React.FC<RouteComponentProps> = () => {
           acc[category].entries.push(entry);
           return acc;
         },
-        {} as Record<string, { name: string; entries: MenuEntry[] }>,
+        {},
       ),
     ).map(([_, value]) => value),
   };
 
-  return <MenuCategoryComponent menu={splitedByCategories} />;
+  return <MenuCategoryComponent menu={splitedByCategories as Menu} />;
 };
 
 const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {

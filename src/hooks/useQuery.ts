@@ -1,25 +1,30 @@
-import { useMemo } from "react";
-
 import { QueryKey, UseQueryOptions, useQuery } from "@tanstack/react-query";
+import { useMemo } from "react";
 
 export function useQueryWrapper<
   TQueryFnData = unknown,
-  TError = Error,
+  TError extends { code?: string } = { code?: string },
   TData = TQueryFnData,
-  TQueryKey extends QueryKey = QueryKey
->(options: UseQueryOptions<TQueryFnData, TData, TQueryKey>) {
-  const useQueryResult = useQuery<TQueryFnData, TData, TQueryKey>(options);
+  TQueryKey extends QueryKey = QueryKey,
+>(options: UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>) {
+  const useQueryResult = useQuery<TQueryFnData, TError, TData, TQueryKey>(
+    options,
+  );
 
   const errorCode = useMemo(() => {
-    // If queryFn throws an error of type MyError, you will be able to access the code property
-    if (useQueryResult.error !== null) {
-      return useQueryResult.error?.code;
+    if (useQueryResult.error && "code" in useQueryResult.error) {
+      return (useQueryResult.error as { code?: string }).code;
     }
-
     return undefined;
   }, [useQueryResult.error]);
 
-  if (useQueryResult?.data?.code?.startsWith("auth/")) {
+  if (
+    useQueryResult.data &&
+    typeof useQueryResult.data === "object" &&
+    "code" in useQueryResult.data &&
+    typeof (useQueryResult.data as { code?: string }).code === "string" &&
+    (useQueryResult.data as { code: string }).code.startsWith("auth/")
+  ) {
     return undefined;
   }
 

@@ -1,3 +1,4 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 
 import Alert from "@mui/material/Alert";
@@ -10,11 +11,10 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Snackbar from "@mui/material/Snackbar";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+import { Reservation } from "../../../../functions/src/types/reservation";
 import { useReservations } from "../../../hooks/useReservations";
 import { updateReservation } from "../../../services/reservations";
-import { Reservation } from "../../../../functions/src/types/reservation";
 
 type ResponsiveDialogProps = {
   isOpen: boolean;
@@ -33,8 +33,8 @@ export const CancelModal = ({
   const [showSnackbar, setShowSnackbar] = useState(false);
 
   const handleCloseSnackbar = (
-    event?: React.SyntheticEvent | Event,
-    reason?: string
+    _?: React.SyntheticEvent | Event,
+    reason?: string,
   ) => {
     if (reason === "clickaway") {
       return;
@@ -62,9 +62,9 @@ export const CancelModal = ({
         fullScreen={fullScreen}
         open={isOpen}
         onClose={onClose}
-        aria-labelledby='responsive-dialog-title'
+        aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle id='responsive-dialog-title'>
+        <DialogTitle id="responsive-dialog-title">
           Cancel Reservation
         </DialogTitle>
         <DialogContent>
@@ -80,7 +80,7 @@ export const CancelModal = ({
             disabled={mutation.isPending}
             onClick={() => mutation.mutate()}
             autoFocus
-            color='error'
+            color="error"
           >
             Yes, cancel it
           </Button>
@@ -94,8 +94,8 @@ export const CancelModal = ({
       >
         <Alert
           onClose={handleCloseSnackbar}
-          severity='success'
-          variant='filled'
+          severity="success"
+          variant="filled"
           sx={{ width: "100%" }}
         >
           Successfully canceled reservation!

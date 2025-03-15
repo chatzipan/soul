@@ -1,4 +1,3 @@
-import { isToday } from "date-fns";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useToggle } from "react-use";
 
@@ -7,13 +6,14 @@ import { Typography } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Tab from "@mui/material/Tab";
 import { RouteComponentProps } from "@reach/router";
+import { isPast, isToday } from "date-fns";
 
-import { useEvents } from "../../../hooks/useEvents";
 import { Reservation } from "../../../../functions/src/types/reservation";
-import { ReservationForm } from "./reservation-form";
-import { ReservationItem } from "./ReservationItem";
+import { useEvents } from "../../../hooks/useEvents";
 import { CancelModal } from "./CancelModal";
+import { ReservationItem } from "./ReservationItem";
 import * as S from "./Reservations.styled";
+import { ReservationForm } from "./reservation-form";
 import {
   TabsView,
   a11yProps,
@@ -57,12 +57,16 @@ const Events = (_: RouteComponentProps) => {
   };
 
   const hasTodayReservations = (events || []).some((event) =>
-    isToday(new Date(event.date))
+    isToday(new Date(event.date)),
+  );
+
+  const pastEvents = (events || []).filter((event) =>
+    isPast(new Date(event.date)),
   );
 
   const formatted = useMemo(
-    () => groupByDateAndTime((events || []) as Reservation[], view),
-    [events, view]
+    () => groupByDateAndTime((events || []) as Reservation[], pastEvents, view),
+    [events, pastEvents, view],
   );
 
   useEffect(
@@ -72,17 +76,17 @@ const Events = (_: RouteComponentProps) => {
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [hasTodayReservations]
+    [hasTodayReservations],
   );
 
   return (
     <S.Wrapper>
-      <S.Header variant='h3' sx={{ mb: 2 }}>
+      <S.Header variant="h3" sx={{ mb: 2 }}>
         🍷 Events
         <S.AddButton
-          color='primary'
-          aria-label='add'
-          variant='extended'
+          color="primary"
+          aria-label="add"
+          variant="extended"
           sx={{ ml: { xs: 0, md: "auto" } }}
           onClick={toggleAddReservationModal}
         >
@@ -93,13 +97,13 @@ const Events = (_: RouteComponentProps) => {
       <S.TabBar value={view} onChange={handleViewChange}>
         {hasTodayReservations && (
           <Tab
-            label='Today'
+            label="Today"
             {...a11yProps(TabsView.Today)}
             disabled={!hasTodayReservations}
           />
         )}
-        <Tab label='Upcoming' {...a11yProps(TabsView.Upcoming)} />
-        <Tab label='Previous' {...a11yProps(TabsView.Previous)} />
+        <Tab label="Upcoming" {...a11yProps(TabsView.Upcoming)} />
+        <Tab label="Previous" {...a11yProps(TabsView.Previous)} />
       </S.TabBar>
       {loading && <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />}
       {Object.keys(formatted).length === 0 ? (
@@ -110,7 +114,7 @@ const Events = (_: RouteComponentProps) => {
             {Object.entries(months).map(([month, days]) => (
               <div key={`${year}-${month}`}>
                 {!isTodayView && (
-                  <Typography variant='h5' sx={{ mb: 1 }} color='GrayText'>
+                  <Typography variant="h5" sx={{ mb: 1 }} color="GrayText">
                     {month} {year}
                   </Typography>
                 )}
@@ -125,13 +129,13 @@ const Events = (_: RouteComponentProps) => {
                       {!isTodayView && (
                         <Typography
                           sx={{ mb: 1 }}
-                          variant='h6'
-                          color='GrayText'
+                          variant="h6"
+                          color="GrayText"
                         >
                           {displayDate(
                             new Date(
-                              `${year}-${monthIndex}-${day}T00:00:00.000Z`
-                            )
+                              `${year}-${monthIndex}-${day}T00:00:00.000Z`,
+                            ),
                           )}
                         </Typography>
                       )}
