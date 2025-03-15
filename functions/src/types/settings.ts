@@ -15,6 +15,7 @@ export interface TimeBlock {
 
 export interface OpeningHours {
   isOpen: boolean;
+  offersDinner: boolean;
   openingHours: TimeBlock;
 }
 

@@ -12,6 +12,7 @@ const BookingTypeHourLimits = {
   [BookingType.BRUNCH]: [8, 12],
   [BookingType.LUNCH]: [12, 16],
   [BookingType.DINNER]: [16, 22],
+  [BookingType.APERO]: [16, 22],
 };
 
 export const createTimeOptions = (from = 8, to = 22) => {
@@ -37,20 +38,17 @@ export const getDateInOneYear = () => {
 
 export const createTimeOptionsFromOpeningHours = ({
   bookingType,
+  isDinnerDay,
   currentDayOfWeek,
   selectedDate,
   settings,
 }: {
   bookingType: BookingType | null;
   currentDayOfWeek: DayOfWeek;
+  isDinnerDay: boolean;
   selectedDate: Date;
   settings: RestaurantSettings;
 }) => {
-  const isDinnerDay = [
-    DayOfWeek.Thursday,
-    DayOfWeek.Friday,
-    DayOfWeek.Saturday,
-  ].includes(currentDayOfWeek);
   const openingHours = settings?.openingDays?.[currentDayOfWeek]?.openingHours;
   const isToday =
     format(selectedDate, "yyyy-MM-dd") ===

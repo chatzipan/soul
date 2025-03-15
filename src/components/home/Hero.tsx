@@ -84,6 +84,9 @@ const Hero = () => {
         <S.SubTitle>ALL DAY KITCHEN BAR</S.SubTitle>
         <br />
         <S.MenuButtons>
+          <Button reverse onClick={() => setOpenBookingModal(true)}>
+            Book
+          </Button>
           <Button to="/menu/dinner">Dinner</Button>
           <Button to="/menu/lunch">Lunch</Button>
           <Button to="/menu/brunch">Brunch</Button>
@@ -91,9 +94,6 @@ const Hero = () => {
           <Button to="/menu/cocktails">Cocktails</Button>
           <Button to="/menu">All menu</Button>
           <Button onClick={scrollToEventsSection}>Events</Button>
-          <Button reverse onClick={() => setOpenBookingModal(true)}>
-            Book
-          </Button>
         </S.MenuButtons>
       </S.InnerWrapper>
       <S.ImageWrapper>

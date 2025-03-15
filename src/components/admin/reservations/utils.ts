@@ -96,7 +96,6 @@ export const groupByDateAndTime = (
   pastReservations: Reservation[],
   view: TabsView,
 ) => {
-  console.log("reservations", reservations, pastReservations, view);
   const perTabView = getReservationsPerTabView(
     reservations,
     pastReservations,

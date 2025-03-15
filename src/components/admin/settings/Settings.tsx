@@ -46,7 +46,7 @@ function LinkTab(props: LinkTabProps) {
   );
 }
 
-const Settings = (_: RouteComponentProps) => {
+const Settings = () => {
   const location =
     typeof window !== "undefined" ? window.location.pathname : "";
   const [value, setValue] = React.useState(

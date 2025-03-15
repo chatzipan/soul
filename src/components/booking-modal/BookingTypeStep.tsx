@@ -17,6 +17,7 @@ import { BookingType } from "./types";
 const BookingTypeIcons = {
   [BookingType.BRUNCH]: "🍳",
   [BookingType.LUNCH]: "🍲",
+  [BookingType.APERO]: "🥂",
   [BookingType.DINNER]: "🍷",
 };
 

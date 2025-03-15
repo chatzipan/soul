@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import { TimePicker } from "@mui/x-date-pickers";
-import { RouteComponentProps } from "@reach/router";
 import { parseISO } from "date-fns";
 
 import {
@@ -28,7 +27,7 @@ export const SORTED_DAYS = [
   DayOfWeek.Sunday,
 ];
 
-const OpeningHours = (_: RouteComponentProps) => {
+const OpeningHours = () => {
   const response = useSettings();
   const updateSettingsMutation = useUpdateSettings();
   const settings = response?.data as unknown as RestaurantSettings;
@@ -177,6 +176,34 @@ const OpeningHours = (_: RouteComponentProps) => {
                   localSettings?.openingDays[day as DayOfWeek]?.isOpen
                     ? "Open"
                     : "Closed"
+                }
+              />
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={
+                      localSettings?.openingDays[day as DayOfWeek]
+                        ?.offersDinner || false
+                    }
+                    onChange={() => {
+                      handleUpdateSettings({
+                        openingDays: {
+                          ...localSettings?.openingDays,
+                          [day as DayOfWeek]: {
+                            ...localSettings?.openingDays[day as DayOfWeek],
+                            offersDinner:
+                              !localSettings?.openingDays[day as DayOfWeek]
+                                ?.offersDinner,
+                          },
+                        },
+                      });
+                    }}
+                  />
+                }
+                label={
+                  localSettings?.openingDays[day as DayOfWeek]?.offersDinner
+                    ? "Offers Dinner"
+                    : "Does not offer dinner"
                 }
               />
             </Box>

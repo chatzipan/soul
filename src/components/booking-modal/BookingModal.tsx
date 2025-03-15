@@ -107,13 +107,22 @@ export const BookingModal = ({
         ? !bookingTime
         : !bookingType || isBigGroup;
 
+  const isDinnerDay =
+    settings?.openingDays?.[bookingDay]?.offersDinner || false;
+
   const timeOptionsPerType = useMemo(
     () =>
-      [BookingType.BRUNCH, BookingType.LUNCH, BookingType.DINNER].reduce(
+      [
+        BookingType.BRUNCH,
+        BookingType.LUNCH,
+        isDinnerDay ? BookingType.DINNER : BookingType.APERO,
+      ].reduce(
         (acc, type) => {
+          if (!type) return acc;
           acc[type] = createTimeOptionsFromOpeningHours({
             bookingType: type,
             currentDayOfWeek: bookingDay,
+            isDinnerDay,
             selectedDate: bookingDate,
             settings,
           });
@@ -121,11 +130,12 @@ export const BookingModal = ({
         },
         {} as Record<BookingType, string[]>,
       ),
-    [bookingDay, bookingDate, settings],
+    [bookingDay, bookingDate, isDinnerDay, settings],
   );
 
   const timeOptions = bookingType ? timeOptionsPerType[bookingType] : [];
 
+  console.log("timeOptions", timeOptions);
   const availableBookingTypes = Object.keys(timeOptionsPerType).filter(
     (type) => timeOptionsPerType[type as BookingType].length > 0,
   ) as BookingType[];
