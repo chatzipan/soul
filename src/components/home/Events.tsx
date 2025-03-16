@@ -64,10 +64,10 @@ const Events = () => {
                   >
                     {event.eventInfo}&nbsp;-&nbsp;Starts at&nbsp;{event.time}
                     <br />
-                    <br />
+                    {/* <br />
                     <Button small href={href}>
                       Book now
-                    </Button>
+                    </Button> */}
                   </S.Description>
                 </S.Event>
               );
@@ -77,7 +77,7 @@ const Events = () => {
         <S.FoodImageWrapper style={{ margin: "0 auto" }}>
           <StaticImage
             aspectRatio={1 / 1}
-            src="../../images/events_2.jpg"
+            src="../../images/events.jpeg"
             alt="A picture of our chef preparing food for an event"
           />
         </S.FoodImageWrapper>
