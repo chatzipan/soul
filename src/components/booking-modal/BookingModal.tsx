@@ -135,7 +135,6 @@ export const BookingModal = ({
 
   const timeOptions = bookingType ? timeOptionsPerType[bookingType] : [];
 
-  console.log("timeOptions", timeOptions);
   const availableBookingTypes = Object.keys(timeOptionsPerType).filter(
     (type) => timeOptionsPerType[type as BookingType].length > 0,
   ) as BookingType[];

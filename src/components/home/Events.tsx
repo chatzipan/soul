@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import { Reservation } from "../../../functions/src/types/reservation";
 import { useSoulEvents } from "../../hooks/useSoulEvents";
-import Button from "../shared/Button";
+// import Button from "../shared/Button";
 import * as S from "./Common.styled";
 
 const Events = () => {
@@ -51,7 +51,7 @@ const Events = () => {
             )}
             {events?.map((event) => {
               const formattedDate = format(new Date(event.date), "dd.MM.yyyy");
-              const href = `mailto:hallo@soulzuerich.ch?subject=Inquiry%20about%20${event.eventTitle}&body=Hello%20Soul%20Coffee,%20I%20would%20like%20to%20book%20a%20place%20for%20X persons on the ${event.eventTitle}%20on%20${formattedDate}.%20Thank%20you!`;
+              // const href = `mailto:hallo@soulzuerich.ch?subject=Inquiry%20about%20${event.eventTitle}&body=Hello%20Soul%20Coffee,%20I%20would%20like%20to%20book%20a%20place%20for%20X persons on the ${event.eventTitle}%20on%20${formattedDate}.%20Thank%20you!`;
 
               return (
                 <S.Event key={event.id}>
