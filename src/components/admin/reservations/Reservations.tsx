@@ -66,15 +66,19 @@ const Reservations = (_: RouteComponentProps) => {
     isToday(new Date(reservation.date)),
   );
 
-  const formatted = useMemo(
-    () =>
-      groupByDateAndTime(
-        (reservations || []) as Reservation[],
-        (pastReservations || []) as Reservation[],
-        view,
-      ),
-    [reservations, pastReservations, view],
-  );
+  const formatted = useMemo(() => {
+    const formatted = groupByDateAndTime(
+      (reservations || []) as Reservation[],
+      (pastReservations || []) as Reservation[],
+      view,
+    );
+
+    const sortedGroupedByYear = Object.entries(formatted).sort(
+      (a, b) => parseInt(b[0]) - parseInt(a[0]),
+    );
+
+    return sortedGroupedByYear;
+  }, [reservations, pastReservations, view]);
 
   useEffect(
     () => {
@@ -113,7 +117,7 @@ const Reservations = (_: RouteComponentProps) => {
         <Tab label="Previous" {...a11yProps(TabsView.Previous)} />
       </S.TabBar>
       {loading && <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />}
-      {Object.entries(formatted).map(([year, months]) => (
+      {formatted.map(([year, months]) => (
         <S.ReservationList key={year} ref={listRef}>
           {Object.entries(months).map(([month, days]) => (
             <div key={`${year}-${month}`}>
