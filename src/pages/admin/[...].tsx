@@ -48,7 +48,7 @@ const customTheme = createTheme({
 });
 
 const Inner = () => {
-  const { logout, forceReauthenticate } = useAuth();
+  const { forceReauthenticate } = useAuth();
 
   const queryClient = useMemo(
     () =>
