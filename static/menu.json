@@ -13,6 +13,8 @@
       },
       {
         "name": "Feta Cream",
+        "subTitle": "Feta Cremé ",
+        "description": "<p>Served with cherry marmelade, dakos soil and olives</p>",
         "price": 19,
         "imageThumbnail": null,
         "image": null
@@ -22,14 +24,6 @@
         "subTitle": "",
         "description": "<p>Mushrooms, parmesan, lemon zest truffle oil</p>",
         "price": 28,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Lasagne",
-        "subTitle": "",
-        "description": "<p>Homemade bolognese, béchamel sauce &amp; parmesan cheese - served with salad or soup</p>",
-        "price": 27,
         "imageThumbnail": null,
         "image": null
       },
@@ -58,14 +52,6 @@
         "image": null
       },
       {
-        "name": "Beetroot Tartare",
-        "subTitle": "",
-        "description": "<p>Goat cheese, nut-crumble, orange zest, tonka honey</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
         "name": "Octopus",
         "subTitle": "",
         "description": "<p>Sweet potato waffle, fresh herbs, lemon-oil dressing</p>",
@@ -74,17 +60,9 @@
         "image": null
       },
       {
-        "name": "Cheesy Crispy Rolls",
-        "subTitle": "",
-        "description": "<p>Honey-Soy &amp; Chilli glaze</p>",
-        "price": 14.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
         "name": "Dips & Bread",
-        "subTitle": "",
-        "description": "",
+        "subTitle": "Dips & Bread ",
+        "description": "<p>Greek olives, Homeade Humus, Guacamole, Homeade focaccia and Pita bread</p>",
         "price": 22.5,
         "imageThumbnail": null,
         "image": null
@@ -188,18 +166,9 @@
       },
       {
         "category": "Rosé",
-        "name": "Mas del Pérlé, A Table - Glas (0.1l)",
-        "subTitle": "Mas del Péré, A Table! - Glass (0.1l)",
-        "description": "<ul><li><strong>Grape variety:</strong> Malbec/ Tannat</li><li><strong>Origin: </strong><em>South-West, France</em></li><li><strong>Profile:</strong> Very ripe red fruit, red cherries, mulberry, grenadine, raspberry &amp; rose hip</li><li><strong>Style: </strong><em>Dry, Rosé with intense color, slightly cloudy</em></li></ul><p><br></p>",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Rosé",
-        "name": "Mas del Pérlé, A Table - Bottle (0.75l)",
-        "subTitle": "Mas del Périé, A table Rosé 2022",
-        "description": "<ul><li><strong>Grape variety:</strong> Malbec/ Tannat</li><li><strong>Origin: </strong><em>South-West, France</em></li><li><strong>Profile:</strong> Very ripe red fruit, red cherries, mulberry, grenadine, raspberry &amp; rose hip</li><li><strong>Style: </strong><em>Dry, Rosé with intense color, slightly cloudy</em></li></ul><p><br></p>",
+        "name": "Mas del Pérlé, A Table - Glass / Bottle",
+        "subTitle": "Mas del Péré, A Table! - Glass / Bottle",
+        "description": "<ul><li><strong>Grape variety:</strong> Malbec/ Tannat</li><li><strong>Origin: </strong><em>South-West, France</em></li><li><strong>Profile:</strong> Very ripe red fruit, red cherries, mulberry, grenadine, raspberry &amp; rose hip</li><li><strong>Style: </strong><em>Dry, Rosé with intense color, slightly cloudy</em></li></ul>",
         "price": 60,
         "imageThumbnail": null,
         "image": null
@@ -210,15 +179,6 @@
         "subTitle": "Ruedin by Jacques Tatasciore - Bottle",
         "description": "<ul><li><strong>Grape variety:</strong><em> Pinot Noir</em></li><li><strong>Origin: </strong><em>Neuchâtel, Switzerland</em></li><li><strong>Profile: </strong><em>Red berries / wild strawberries / fresh apricot accompanied by spicy notes such as cardamom and pink pepper</em></li><li><strong>Style:</strong> <em>Dry / Rosé</em></li></ul><p><br></p>",
         "price": 12,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Rosé",
-        "name": "Oeil-de-Perdrix - Bottle (0.75l)",
-        "subTitle": "Ruedin by Jacques Tatasciore - Bottle (0.75l)",
-        "description": "<ul><li><strong>Grape variety:</strong><em> Pinot Noir</em></li><li><strong>Origin: </strong><em>Neuchâtel, Switzerland</em></li><li><strong>Profile: </strong><em>Red berries / wild strawberries / fresh apricot accompanied by spicy notes such as cardamom and pink pepper</em></li><li><strong>Style:</strong> <em>Dry / Rosé</em></li></ul>",
-        "price": 70,
         "imageThumbnail": null,
         "image": null
       },
@@ -326,8 +286,8 @@
       {
         "category": "Aperitivo",
         "name": "Mimosa",
-        "subTitle": "",
-        "description": "",
+        "subTitle": "Mimosa",
+        "description": "<p>Sparkling wine, fresh Orange Juice</p>",
         "price": 14,
         "imageThumbnail": null,
         "image": null
@@ -346,15 +306,6 @@
         "name": "Bellini",
         "subTitle": "",
         "description": "<p>Peach essence, Verjus, lime water, Vodka</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktails",
-        "name": "Soul Blossom",
-        "subTitle": "",
-        "description": "<p>Tequilla, Jasmine Tea, Vanilla, Orange, Citrus - <em>(contains lactose)</em></p>",
         "price": 18,
         "imageThumbnail": null,
         "image": null
@@ -431,7 +382,7 @@
       {
         "name": "Chicken Salad Dakos",
         "subTitle": "Chicken Salad",
-        "description": "<p>Mesclun salad with Dakos bread, goat cheese, tomato &amp; basil dressing - served with a soup</p>",
+        "description": "<p>Mesclun salad with Dakos bread, goat cheese, tomato &amp; basil dressing</p>",
         "price": 22.5,
         "imageThumbnail": null,
         "image": null
@@ -445,17 +396,9 @@
         "image": null
       },
       {
-        "name": "Lasagne",
-        "subTitle": "",
-        "description": "<p>Homemade bolognese, béchamel sauce &amp; parmesan cheese - served with salad or soup</p>",
-        "price": 27,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
         "name": "Cheese Pie",
-        "subTitle": "",
-        "description": "",
+        "subTitle": "Homeade Pies or Tarts",
+        "description": "<p>served with Salad</p>",
         "price": 18,
         "imageThumbnail": null,
         "image": null
@@ -494,8 +437,8 @@
       },
       {
         "name": "Tuna Poke Bowl",
-        "subTitle": "",
-        "description": "",
+        "subTitle": "Tuna Poke Bowl",
+        "description": "<p>Sushi rice, tuna tataki, ponzu sauce, avocado, cucumber, leek chips, sesame, bell pepper coulis - served with soup or salad</p>",
         "price": 24.5,
         "imageThumbnail": null,
         "image": null
@@ -564,9 +507,9 @@
         "image": null
       },
       {
-        "name": "Spinach pie with a green salad",
-        "subTitle": "",
-        "description": "<p>Homemade Filo with spinach &amp; fresh herbs - served with Feta &amp; small salad</p>",
+        "name": "Cheese Pie",
+        "subTitle": "Homeade Pies or Tarts",
+        "description": "<p>served with Salad</p>",
         "price": 18,
         "imageThumbnail": null,
         "image": null
@@ -657,22 +600,6 @@
         "category": "Coffee",
         "name": "Special filter coffee",
         "price": 15,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Hot beverage",
-        "name": "Matcha Latte",
-        "subTitle": "",
-        "description": "",
-        "price": 9,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Hot beverage",
-        "name": "Hot Chocolate",
-        "price": 8,
         "imageThumbnail": null,
         "image": null
       },

@@ -38,7 +38,7 @@ const getMenuDiffs = (oldMenu, newMenu) => {
               diff.push("Difference for: " + diffType);
 
               const diffs = Object.entries(entry[1]).filter(
-                ([key, val]) => val?.__old !== undefined
+                ([key, val]) => val?.__old !== undefined,
               );
 
               diffs.forEach(([key, val]) => {
@@ -48,7 +48,7 @@ const getMenuDiffs = (oldMenu, newMenu) => {
               });
             });
         });
-    }
+    },
   );
 
   return diff;
@@ -56,15 +56,15 @@ const getMenuDiffs = (oldMenu, newMenu) => {
 
 const formatMenu = (groups) => {
   const dinnerGroup = groups.find((group) =>
-    group.name.toLowerCase().includes("evening")
+    group.name.toLowerCase().includes("evening"),
   );
 
   const lunchGroup = groups.find((group) =>
-    group.name.toLowerCase().includes("lunch")
+    group.name.toLowerCase().includes("lunch"),
   );
 
   const brunchGroup = groups.find((group) =>
-    group.name.toLowerCase().includes("brunch")
+    group.name.toLowerCase().includes("brunch"),
   );
 
   // Consolidate wine groups
@@ -73,13 +73,13 @@ const formatMenu = (groups) => {
       (group) =>
         group.name.toLowerCase().includes("beer") ||
         group.name.toLowerCase().includes("wine") ||
-        group.name.toLowerCase().includes("rosé")
+        group.name.toLowerCase().includes("rosé"),
     )
     .flatMap((group) =>
       group.entries.map((entry) => ({
         ...entry,
         category: group.name,
-      }))
+      })),
     )
     .sort((a, b) => {
       const categoryOrder = {
@@ -100,13 +100,13 @@ const formatMenu = (groups) => {
     .filter(
       (group) =>
         group.name.toLowerCase().includes("beverage") ||
-        group.name.toLowerCase().includes("coffee")
+        group.name.toLowerCase().includes("coffee"),
     )
     .flatMap((group) =>
       group.entries.map((entry) => ({
         ...entry,
         category: group.name,
-      }))
+      })),
     );
 
   // Consolidate cocktails, mocktails and aperitivo groups
@@ -115,13 +115,13 @@ const formatMenu = (groups) => {
       (group) =>
         group.name.toLowerCase().includes("cocktail") ||
         group.name.toLowerCase().includes("mocktail") ||
-        group.name.toLowerCase().includes("aperitivo")
+        group.name.toLowerCase().includes("aperitivo"),
     )
     .flatMap((group) =>
       group.entries.map((entry) => ({
         ...entry,
         category: group.name,
-      }))
+      })),
     );
 
   // Filter out all consolidated groups and add new consolidated groups
@@ -187,11 +187,11 @@ const formatMenu = (groups) => {
     .sort((a, b) => {
       const aOrder =
         Object.entries(sortOrder).find(([key]) =>
-          a.name.toLowerCase().includes(key)
+          a.name.toLowerCase().includes(key),
         )?.[1] || 999;
       const bOrder =
         Object.entries(sortOrder).find(([key]) =>
-          b.name.toLowerCase().includes(key)
+          b.name.toLowerCase().includes(key),
         )?.[1] || 999;
       return aOrder - bOrder;
     });
@@ -211,7 +211,7 @@ async function scrap() {
 
     const menuDiffs = getMenuDiffs(
       menu.groups,
-      JSON.parse(fs.readFileSync(localFileName, "utf8"))
+      JSON.parse(fs.readFileSync(localFileName, "utf8")),
     );
 
     if (menuDiffs.length === 0) {
