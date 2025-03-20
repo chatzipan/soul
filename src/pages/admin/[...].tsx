@@ -48,21 +48,24 @@ const customTheme = createTheme({
 });
 
 const Inner = () => {
-  const { logout } = useAuth();
+  const { logout, forceReauthenticate } = useAuth();
 
   const queryClient = useMemo(
     () =>
       new QueryClient({
         queryCache: new QueryCache({
-          onSuccess(data: any) {
-            if (data?.code?.startsWith("auth/")) {
-              //
-              return logout();
+          onError(error: any) {
+            // Check for auth errors
+            if (
+              error?.code?.startsWith("auth/") ||
+              error?.response?.status === 401
+            ) {
+              forceReauthenticate();
             }
           },
         }),
       }),
-    [logout],
+    [forceReauthenticate],
   );
 
   return (

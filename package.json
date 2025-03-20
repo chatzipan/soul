@@ -17,7 +17,7 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "update-website-menu": "export GOOGLE_APPLICATION_CREDENTIALS=\"./google_cloud_keys.json\" && node ./scripts/update-menu.js",
-    "upload-google-menu": "node ./scripts/upload-google-menu.js"
+    "update-google-menu": "node ./scripts/upload-google-menu.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

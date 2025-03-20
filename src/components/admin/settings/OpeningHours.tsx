@@ -201,11 +201,7 @@ const OpeningHours = (_: RouteComponentProps) => {
                     }}
                   />
                 }
-                label={
-                  localSettings?.openingDays[day as DayOfWeek]?.offersDinner
-                    ? "Offers Dinner"
-                    : "Does not offer dinner"
-                }
+                label="Offers Dinner"
               />
             </Box>
           ))}

@@ -1,8 +1,3 @@
-import "firebase/compat/auth";
-
-import { User } from "firebase/auth";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import _firebase from "firebase/compat/app";
 import React, {
   createContext,
   useCallback,
@@ -10,6 +5,13 @@ import React, {
   useMemo,
   useState,
 } from "react";
+
+import { navigate } from "gatsby";
+
+import { User } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import _firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 import { uiConfig as _uiConfig, firebase } from "../services/firebase";
 
@@ -20,6 +22,7 @@ export type AuthContextType = {
   logout: () => void;
   token: string | null;
   user: User | null;
+  forceReauthenticate: () => void;
 };
 
 export const AuthContext = createContext<AuthContextType>({
@@ -29,12 +32,20 @@ export const AuthContext = createContext<AuthContextType>({
   logout: () => {},
   token: null,
   user: null,
+  forceReauthenticate: () => {},
 });
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<null | User>(null);
   const [token, setToken] = useState<string | null>(null);
   const [hasLoaded, setHasLoaded] = useState(false);
+
+  const forceReauthenticate = useCallback(() => {
+    setUser(null);
+    setToken(null);
+    localStorage.removeItem("token");
+    navigate("/admin/login");
+  }, []);
 
   const firebaseUiConfig = useMemo(
     () =>
@@ -46,19 +57,24 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             return true;
           },
         },
-      } as firebaseui.auth.Config),
-    [setUser]
+      }) as firebaseui.auth.Config,
+    [setUser],
   );
 
   useEffect(() => {
     const auth = getAuth();
 
-    onAuthStateChanged(auth, async (_user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (_user) => {
       if (_user) {
-        setUser(_user);
-        const idToken = await _user.getIdToken(true);
-        setToken(idToken);
-        localStorage.setItem("token", idToken);
+        try {
+          const idToken = await _user.getIdToken(true);
+          setUser(_user);
+          setToken(idToken);
+          localStorage.setItem("token", idToken);
+        } catch (error) {
+          console.error("Failed to get token:", error);
+          forceReauthenticate();
+        }
       } else {
         setUser(null);
         setToken(null);
@@ -66,7 +82,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       }
       setHasLoaded(true);
     });
-  }, []);
+
+    return () => unsubscribe();
+  }, [forceReauthenticate]);
 
   const isLoggedIn = Boolean(user);
 
@@ -74,11 +92,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     firebase.auth().signOut();
     setUser(null);
     setToken(null);
+    localStorage.removeItem("token");
   }, []);
 
   const value = useMemo(
-    () => ({ firebase, firebaseUiConfig, isLoggedIn, logout, token, user }),
-    [firebaseUiConfig, isLoggedIn, logout, token, user]
+    () => ({
+      firebase,
+      firebaseUiConfig,
+      isLoggedIn,
+      logout,
+      token,
+      user,
+      forceReauthenticate,
+    }),
+    [firebaseUiConfig, isLoggedIn, logout, token, user, forceReauthenticate],
   );
 
   if (!hasLoaded) {

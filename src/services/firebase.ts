@@ -23,7 +23,7 @@ if (typeof window !== "undefined") {
   // site key and pass it to activate()
   initializeAppCheck(app, {
     provider: new ReCaptchaEnterpriseProvider(
-      process.env.GATSBY_RECAPTCHA_SITE_KEY as string
+      process.env.GATSBY_RECAPTCHA_SITE_KEY as string,
     ),
     isTokenAutoRefreshEnabled: true, // Set to true to allow auto-refresh.
   });
