@@ -55,6 +55,7 @@ const Inner = () => {
       new QueryClient({
         queryCache: new QueryCache({
           onError(error: any) {
+            console.error("onError !!", error);
             // Check for auth errors
             if (
               error?.code?.startsWith("auth/") ||
