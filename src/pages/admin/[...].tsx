@@ -1,5 +1,6 @@
 // with date-fns v2.x
 import {
+  DefaultError,
   QueryCache,
   QueryClient,
   QueryClientProvider,
@@ -21,6 +22,17 @@ import Settings from "../../components/admin/settings/Settings";
 import PrivateRoute from "../../components/shared/PrivateRoute";
 import { useAuth } from "../../hooks/useAuth";
 import { AuthProvider } from "../../providers/AuthProvider";
+
+// Add type for API error
+interface ApiError extends DefaultError {
+  response?: {
+    status: number;
+    data?: {
+      code?: string;
+      message?: string;
+    };
+  };
+}
 
 const customTheme = createTheme({
   typography: {
@@ -53,13 +65,25 @@ const Inner = () => {
   const queryClient = useMemo(
     () =>
       new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: false,
+            // Don't throw errors to React's error boundary
+            throwOnError: (error: any) => {
+              // Only throw non-auth errors
+              const isAuthError =
+                error?.response?.status === 401 ||
+                error?.response?.data?.code?.startsWith("auth/");
+              return !isAuthError;
+            },
+          },
+        },
         queryCache: new QueryCache({
-          onError(error: any) {
-            console.error("onError !!", error);
-            // Check for auth errors
+          onError(error: ApiError) {
+            // Check for auth errors in actual error responses
             if (
-              error?.code?.startsWith("auth/") ||
-              error?.response?.status === 401
+              error?.response?.status === 401 ||
+              error?.response?.data?.code?.startsWith("auth/")
             ) {
               forceReauthenticate();
             }

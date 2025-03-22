@@ -203,6 +203,24 @@ export const BookingModal = ({
     },
   });
 
+  if (response?.isError) {
+    return (
+      <S.Modal
+        fullScreen={isMobile}
+        maxWidth="xl"
+        open={isOpen}
+        onClose={closeModal}
+      >
+        <DialogTitle>Our booking system is currently down.</DialogTitle>
+        <DialogContent sx={{ width: { xs: "auto", sm: "500px" } }}>
+          <Typography>
+            Please try again later or contact us directly via phone or email.
+          </Typography>
+        </DialogContent>
+      </S.Modal>
+    );
+  }
+
   return (
     <S.Modal
       fullScreen={isMobile}

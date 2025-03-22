@@ -1,11 +1,7 @@
 import moment from "moment-timezone";
 
 import { Reservation } from "../../functions/src/types/reservation";
-
-const getHeaders = () => ({
-  "Content-Type": "application/json",
-  Authorization: `Bearer ${localStorage.getItem("token")}`,
-});
+import { fetchWithAuth } from "../utils/fetchWithAuth";
 
 const API_URL = process.env.GATSBY_API_URL;
 
@@ -13,16 +9,13 @@ export const createReservation = async (
   reservation: Omit<Reservation, "id" | "time">,
 ) => {
   try {
-    const res = await fetch(`${API_URL}/v1/reservations`, {
+    return await fetchWithAuth(`${API_URL}/v1/reservations`, {
       method: "POST",
-      headers: getHeaders(),
       body: JSON.stringify(reservation),
     });
-
-    const response = await res.json();
-    return response;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
 
@@ -30,30 +23,25 @@ export const createReservationPublic = async (
   reservation: Omit<Reservation, "id"> & { bookingType: string },
 ) => {
   try {
-    const res = await fetch(`${API_URL}/v1/public/reservations`, {
+    return await fetchWithAuth(`${API_URL}/v1/public/reservations`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reservation),
     });
-
-    const response = await res.json();
-    return response;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
 
 export const deleteReservation = async (reservationId: string) => {
   try {
-    const res = await fetch(`${API_URL}/v1/reservations/${reservationId}`, {
+    return await fetchWithAuth(`${API_URL}/v1/reservations/${reservationId}`, {
       method: "DELETE",
-      headers: getHeaders(),
     });
-
-    const response = await res.json();
-    return response;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
 
@@ -85,14 +73,9 @@ export const getReservationsWithDateRange = async (
       dateUntil: dateUntil?.toString() || "",
     });
 
-    const res = await fetch(url, {
-      method: "GET",
-      headers: getHeaders(),
-    });
+    const response = await fetchWithAuth<Reservation[]>(url);
 
-    const response = (await res.json()) as Reservation[];
-
-    const reservationsWithTime = response.map((reservation) => {
+    const reservationsWithTime = response?.map((reservation) => {
       const { date, ...rest } = reservation;
       return {
         ...rest,
@@ -106,7 +89,7 @@ export const getReservationsWithDateRange = async (
     return reservationsWithTime;
   } catch (error) {
     console.error(error);
-    return [];
+    throw error;
   }
 };
 
@@ -122,12 +105,9 @@ export const getAllPastReservations = async () => {
 
 export const getSoulEvents = async () => {
   try {
-    const res = await fetch(`${API_URL}/v1/public/reservations/events`, {
-      method: "GET",
-      headers: getHeaders(),
-    });
-
-    const events = (await res.json()) as Reservation[];
+    const events = await fetchWithAuth<Reservation[]>(
+      `${API_URL}/v1/public/reservations/events`,
+    );
     const eventsWithTime = events.map((reservation) => {
       const { date, ...rest } = reservation;
       return {
@@ -142,17 +122,16 @@ export const getSoulEvents = async () => {
     return eventsWithTime;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
 
 export const getAllEvents = async () => {
   try {
-    const res = await fetch(`${API_URL}/v1/reservations`, {
-      method: "GET",
-      headers: getHeaders(),
-    });
+    const response = await fetchWithAuth<Reservation[]>(
+      `${API_URL}/v1/reservations`,
+    );
 
-    const response = (await res.json()) as Reservation[];
     const events = response.filter((reservation) => reservation.isEvent);
     const eventsWithTime = events.map((reservation) => {
       const { date, ...rest } = reservation;
@@ -168,6 +147,7 @@ export const getAllEvents = async () => {
     return eventsWithTime;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
 
@@ -175,15 +155,12 @@ export const updateReservation = async (
   reservation: Omit<Reservation, "time">,
 ) => {
   try {
-    const res = await fetch(`${API_URL}/v1/reservations/${reservation.id}`, {
+    return await fetchWithAuth(`${API_URL}/v1/reservations/${reservation.id}`, {
       method: "PUT",
-      headers: getHeaders(),
       body: JSON.stringify(reservation),
     });
-
-    const response = await res.json();
-    return response;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
