@@ -53,7 +53,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         ..._uiConfig,
         callbacks: {
           signInSuccessWithAuthResult: (authResult) => {
-            setUser(authResult.user);
+            // Get fresh token
+            authResult.user.getIdToken(true).then((idToken: string) => {
+              setUser(authResult.user);
+              setToken(idToken);
+              localStorage.setItem("token", idToken);
+            });
             return true;
           },
         },
