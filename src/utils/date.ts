@@ -9,10 +9,10 @@ import { getZurichTimeNow } from "../components/booking-modal/BookingModal";
 import { BookingType } from "../components/booking-modal/types";
 
 const BookingTypeHourLimits = {
-  [BookingType.BRUNCH]: [8, 12],
-  [BookingType.LUNCH]: [12, 16],
-  [BookingType.DINNER]: [16, 22],
-  [BookingType.APERO]: [16, 22],
+  [BookingType.BRUNCH]: ["08:00", "11:30"],
+  [BookingType.LUNCH]: ["11:30", "16:00"],
+  [BookingType.DINNER]: ["16:00", "22:00"],
+  [BookingType.APERO]: ["16:00", "22:00"],
 };
 
 export const createTimeOptions = (from = 8, to = 22) => {
@@ -73,18 +73,22 @@ export const createTimeOptionsFromOpeningHours = ({
   });
 
   // Filter based on booking type limits
-  const [minHour, maxHour] = BookingTypeHourLimits[bookingType];
+  const [minTime, maxTime] = BookingTypeHourLimits[bookingType];
+  const [minHour, minMinute] = minTime.split(":").map(Number);
+  const [maxHour, maxMinute] = maxTime.split(":").map(Number);
 
   const filteredByType = timeSlots.filter((time) => {
     const [hour, minute] = time.split(":").map(Number);
+    const timeInMinutes = hour * 60 + minute;
+    const minTimeInMinutes = minHour * 60 + minMinute;
+    const maxTimeInMinutes = maxHour * 60 + maxMinute;
 
     // Check if within booking type hours and at least 30 min before closing
-    if (hour < minHour || hour >= maxHour) {
+    if (timeInMinutes < minTimeInMinutes || timeInMinutes >= maxTimeInMinutes) {
       return false;
     }
 
     // Convert current time to minutes since midnight
-    const timeInMinutes = hour * 60 + minute;
     const closingTimeInMinutes = endHour * 60 + endMinute;
 
     // Ensure at least 30 minutes before closing time, but on Dinner days 90 minutes
