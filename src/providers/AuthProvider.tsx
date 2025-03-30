@@ -18,6 +18,7 @@ import { uiConfig as _uiConfig, firebase } from "../services/firebase";
 export type AuthContextType = {
   firebaseUiConfig: firebaseui.auth.Config;
   firebase: typeof _firebase;
+  hasLoaded: boolean;
   isLoggedIn: boolean;
   logout: () => void;
   token: string | null;
@@ -28,6 +29,7 @@ export type AuthContextType = {
 export const AuthContext = createContext<AuthContextType>({
   firebaseUiConfig: _uiConfig,
   firebase: firebase,
+  hasLoaded: false,
   isLoggedIn: false,
   logout: () => {},
   token: null,
@@ -104,18 +106,22 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     () => ({
       firebase,
       firebaseUiConfig,
+      hasLoaded,
       isLoggedIn,
       logout,
       token,
       user,
       forceReauthenticate,
     }),
-    [firebaseUiConfig, isLoggedIn, logout, token, user, forceReauthenticate],
+    [
+      firebaseUiConfig,
+      hasLoaded,
+      isLoggedIn,
+      logout,
+      token,
+      user,
+      forceReauthenticate,
+    ],
   );
-
-  if (!hasLoaded) {
-    return null;
-  }
-
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

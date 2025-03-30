@@ -1,6 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
+import { CircularProgress } from "@mui/material";
+
 import { useAuth } from "../../../hooks/useAuth";
 import * as S from "./Layout.styled";
 import TopBar from "./TopBar";
@@ -10,7 +12,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const { isLoggedIn } = useAuth();
+  const { hasLoaded, isLoggedIn } = useAuth();
 
   return (
     <>
@@ -18,6 +20,7 @@ export default function Layout({ children }: LayoutProps) {
       <Helmet>
         <meta name={"robots"} content={"noindex, nofollow"} />
       </Helmet>
+      {!hasLoaded && <CircularProgress sx={{ mt: "49vh", ml: "49vw" }} />}
       <S.Wrapper>{children}</S.Wrapper>
     </>
   );
