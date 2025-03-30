@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import { Button, Fab, Tabs, Typography } from "@mui/material";
+import styled from "styled-components";
 
 export const Actions = styled.div`
   display: flex;
@@ -50,7 +49,7 @@ export const Header = styled(Typography)`
 export const List = styled.ul.withConfig({
   shouldForwardProp: (prop) => !["padded"].includes(prop),
 })<{ padded?: boolean }>`
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   padding-left: ${({ padded }) => (padded ? "20px" : "0")};
 
   @media (max-width: ${({ theme }) => theme.sizes.tablet}) {

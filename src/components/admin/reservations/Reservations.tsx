@@ -117,50 +117,56 @@ const Reservations = (_: RouteComponentProps) => {
         <Tab label="Previous" {...a11yProps(TabsView.Previous)} />
       </S.TabBar>
       {loading && <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />}
-      {formatted.map(([year, months]) => (
-        <S.ReservationList key={year} ref={listRef}>
-          {Object.entries(months).map(([month, days]) => (
-            <div key={`${year}-${month}`}>
-              {!isTodayView && (
-                <Typography variant="h5" sx={{ mb: 1 }} color="GrayText">
-                  {month} {year}
-                </Typography>
-              )}
-              {Object.entries(days).map(([_day, entries]) => {
-                const monthIndex = (monthNames.indexOf(month) + 1)
-                  .toString()
-                  .padStart(2, "0");
-                const day = _day.padStart(2, "0");
+      <S.ReservationList ref={listRef}>
+        {formatted.map(([year, months]) => (
+          <>
+            {Object.entries(months).map(([month, days]) => (
+              <div key={`${year}-${month}`}>
+                {!isTodayView && (
+                  <Typography variant="h5" sx={{ mb: 1 }} color="GrayText">
+                    {month} {year}
+                  </Typography>
+                )}
+                {Object.entries(days).map(([_day, entries]) => {
+                  const monthIndex = (monthNames.indexOf(month) + 1)
+                    .toString()
+                    .padStart(2, "0");
+                  const day = _day.padStart(2, "0");
 
-                return (
-                  <S.ReservationListInner key={`${year}-${month}-${day}`}>
-                    {!isTodayView && (
-                      <Typography sx={{ mb: 1 }} variant="h6" color="GrayText">
-                        {displayDate(
-                          new Date(
-                            `${year}-${monthIndex}-${day}T00:00:00.000Z`,
-                          ),
-                        )}
-                      </Typography>
-                    )}
-                    <S.List padded={!isTodayView}>
-                      {entries.map((r) => (
-                        <ReservationItem
-                          key={r.id}
-                          isEvent={r.isEvent}
-                          reservation={r}
-                          openCancelModal={openCancelModal}
-                          openEditModal={openEditModal}
-                        />
-                      ))}
-                    </S.List>
-                  </S.ReservationListInner>
-                );
-              })}
-            </div>
-          ))}
-        </S.ReservationList>
-      ))}
+                  return (
+                    <S.ReservationListInner key={`${year}-${month}-${day}`}>
+                      {!isTodayView && (
+                        <Typography
+                          sx={{ mb: 1 }}
+                          variant="h6"
+                          color="GrayText"
+                        >
+                          {displayDate(
+                            new Date(
+                              `${year}-${monthIndex}-${day}T00:00:00.000Z`,
+                            ),
+                          )}
+                        </Typography>
+                      )}
+                      <S.List padded={!isTodayView}>
+                        {entries.map((r) => (
+                          <ReservationItem
+                            key={r.id}
+                            isEvent={r.isEvent}
+                            reservation={r}
+                            openCancelModal={openCancelModal}
+                            openEditModal={openEditModal}
+                          />
+                        ))}
+                      </S.List>
+                    </S.ReservationListInner>
+                  );
+                })}
+              </div>
+            ))}
+          </>
+        ))}
+      </S.ReservationList>
       <CancelModal
         isOpen={isCancelModalOpen}
         onClose={toggleCancelModal}

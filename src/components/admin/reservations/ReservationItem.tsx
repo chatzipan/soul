@@ -1,4 +1,3 @@
-import { isBefore } from "date-fns";
 import React, { useState } from "react";
 
 import CallIcon from "@mui/icons-material/Call";
@@ -7,12 +6,13 @@ import EmailIcon from "@mui/icons-material/Email";
 import EventBusyIcon from "@mui/icons-material/EventBusy";
 import GroupsIcon from "@mui/icons-material/Groups";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Button, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Popover from "@mui/material/Popover";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { isBefore } from "date-fns";
 
 import { Reservation } from "../../../../functions/src/types/reservation";
 import * as S from "./Reservations.styled";
@@ -38,7 +38,7 @@ export const ReservationItem = ({
 
   const handleTooltipClick = (
     event: React.MouseEvent<HTMLButtonElement>,
-    id: string
+    id: string,
   ) => {
     setAnchorEl(event.currentTarget);
     setTooltipId(id);
@@ -72,11 +72,11 @@ export const ReservationItem = ({
   const title = isOwnEvent ? `🍷 SOUL: ${eventTitle}` : fullName;
   const isBeforeToday = isBefore(
     new Date(date).setHours(0, 0, 0, 0),
-    new Date().setHours(0, 0, 0, 0)
+    new Date().setHours(0, 0, 0, 0),
   );
 
   const [anchorElMore, setAnchorElMore] = React.useState<null | HTMLElement>(
-    null
+    null,
   );
   const openMore = Boolean(anchorElMore);
   const handleClickMore = (event: React.MouseEvent<HTMLElement>) => {
@@ -113,7 +113,7 @@ export const ReservationItem = ({
             &nbsp;&#183;&nbsp;
             <Typography
               noWrap
-              component='span'
+              component="span"
               style={{
                 display: "block",
                 width: "100%",
@@ -129,10 +129,10 @@ export const ReservationItem = ({
             </Typography>
             {isEvent && reservation.isEvent && (
               <Chip
-                label='EVENT'
-                color='primary'
-                size='small'
-                component='span'
+                label="EVENT"
+                color="primary"
+                size="small"
+                component="span"
                 sx={{ mr: 1 }}
               />
             )}
@@ -163,23 +163,23 @@ export const ReservationItem = ({
           </S.ReservationTextBasic>
           {reservation.canceled && (
             <Chip
-              label='Canceled'
-              color='error'
-              variant='outlined'
-              size='small'
-              component='span'
+              label="Canceled"
+              color="error"
+              variant="outlined"
+              size="small"
+              component="span"
               sx={{ ml: 1 }}
             />
           )}
           {hasContact && !isOwnEvent && (
             <S.ReservationContact>
               {telephone && !isSmallMobile && (
-                <S.ReservationLink href={`tel:${telephone}`} target='_blank'>
+                <S.ReservationLink href={`tel:${telephone}`} target="_blank">
                   {isMobile ? <CallIcon /> : telephone}
                 </S.ReservationLink>
               )}
               {email && !isSmallMobile && (
-                <S.ReservationLink href={`mailto:${email}`} target='_blank'>
+                <S.ReservationLink href={`mailto:${email}`} target="_blank">
                   {isMobile ? <EmailIcon /> : email}
                 </S.ReservationLink>
               )}
@@ -190,17 +190,17 @@ export const ReservationItem = ({
       {isSmallMobile ? (
         <div>
           <IconButton
-            aria-label='more'
-            id='long-button'
+            aria-label="more"
+            id="long-button"
             aria-controls={openMore ? "long-menu" : undefined}
             aria-expanded={openMore ? "true" : undefined}
-            aria-haspopup='true'
+            aria-haspopup="true"
             onClick={handleClickMore}
           >
             <MoreVertIcon />
           </IconButton>
           <Menu
-            id='long-menu'
+            id="long-menu"
             MenuListProps={{
               "aria-labelledby": "long-button",
             }}
@@ -235,7 +235,7 @@ export const ReservationItem = ({
                 onClick={handleCloseMore}
                 sx={{ display: "flex", alignItems: "center", gap: 1 }}
               >
-                <S.ReservationLink href={`tel:${telephone}`} target='_blank'>
+                <S.ReservationLink href={`tel:${telephone}`} target="_blank">
                   <CallIcon />
                   &nbsp;Call
                 </S.ReservationLink>
@@ -244,7 +244,7 @@ export const ReservationItem = ({
 
             {email && (
               <MenuItem onClick={handleCloseMore}>
-                <S.ReservationLink href={`mailto:${email}`} target='_blank'>
+                <S.ReservationLink href={`mailto:${email}`} target="_blank">
                   <EmailIcon />
                   &nbsp;&nbsp;Email
                 </S.ReservationLink>
@@ -263,7 +263,7 @@ export const ReservationItem = ({
             Edit
           </S.ActionButton>
           <S.ActionButton
-            color='error'
+            color="error"
             isMobile={isMobile}
             canceled={reservation.canceled}
             onClick={() => openCancelModal(reservation)}
