@@ -67,7 +67,7 @@ export const getReservationsPerTabView = (
 };
 
 const getSortPerTabView = (view: TabsView, a: Reservation, b: Reservation) => {
-  if (view === TabsView.Upcoming) {
+  if ([TabsView.Upcoming, TabsView.Today].includes(view)) {
     return a.date > b.date ? 1 : -1;
   } else {
     return a.date < b.date ? 1 : -1;
