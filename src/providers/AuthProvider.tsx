@@ -42,6 +42,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [hasLoaded, setHasLoaded] = useState(false);
 
+  // Skip auth initialization during build
+  const isBuildTime = typeof window === "undefined";
+
   const forceReauthenticate = useCallback(() => {
     setUser(null);
     setToken(null);
@@ -123,5 +126,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       forceReauthenticate,
     ],
   );
+
+  if (isBuildTime) {
+    return null;
+  }
+
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
