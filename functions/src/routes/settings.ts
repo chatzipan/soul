@@ -20,30 +20,37 @@ const defaultSettings: RestaurantSettings = {
     [DayOfWeek.Monday]: {
       isOpen: true,
       openingHours: { start: "09:00", end: "17:00" },
+      offersDinner: false,
     },
     [DayOfWeek.Tuesday]: {
       isOpen: true,
       openingHours: { start: "09:00", end: "17:00" },
+      offersDinner: false,
     },
     [DayOfWeek.Wednesday]: {
       isOpen: true,
       openingHours: { start: "09:00", end: "17:00" },
+      offersDinner: false,
     },
     [DayOfWeek.Thursday]: {
       isOpen: true,
       openingHours: { start: "09:00", end: "17:00" },
+      offersDinner: true,
     },
     [DayOfWeek.Friday]: {
       isOpen: true,
       openingHours: { start: "09:00", end: "17:00" },
+      offersDinner: true,
     },
     [DayOfWeek.Saturday]: {
       isOpen: true,
       openingHours: { start: "09:00", end: "17:00" },
+      offersDinner: true,
     },
     [DayOfWeek.Sunday]: {
       isOpen: true,
       openingHours: { start: "09:00", end: "17:00" },
+      offersDinner: false,
     },
   },
   recurringBlocks: [],
