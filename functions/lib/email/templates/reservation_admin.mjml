@@ -25,23 +25,32 @@
           <b>{{date}}</b> at <b>{{time}}</b> for
           <b>{{persons}}</b> guests</mj-text
         >
-        <mj-text color="#525252">
+        <mj-text font-size="14px" color="#525252">
           Please find the reservation details below:
+          <br />
+          <br />
           <br />
           Name: <b>{{firstName}} {{lastName}}</b>
           <br />
+          <br />
           Date: <b>{{date}}</b>
+          <br />
           <br />
           Time: <b>{{time}}</b>
           <br />
+          <br />
           Persons: <b>{{persons}}</b>
           <br />
+          <br />
           Telephone: <a href='"tel:'{{telephone}}'"'>{{telephone}}</a>
+          <br />
           <br />
           Email: <a href='"mailto:'{{email}}'"'>{{email}}</a>
         </mj-text>
         {{#if notes}}
-        <mj-text color="#525252"> Notes: <b>{{notes}}</b> </mj-text>
+        <mj-text font-size="14px" color="#525252">
+          Notes: <b>{{notes}}</b>
+        </mj-text>
         {{/if}}
         <mj-button background-color="#114f45" color="#f5c469" href="https://soulzuerich.ch/admin/reservations/"
           >All Reservations</mj-button

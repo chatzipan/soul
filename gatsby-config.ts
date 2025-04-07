@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
           {
             userAgent: "*",
             allow: "/",
-            disallow: ["/admin"],
+            disallow: ["/admin", "/reservations/cancel"],
           },
         ],
       },

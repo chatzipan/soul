@@ -164,3 +164,31 @@ export const updateReservation = async (
     throw error;
   }
 };
+
+export const getReservationById = async (id: string) => {
+  try {
+    const response = await fetchWithAuth<Reservation>(
+      `${API_URL}/v1/public/reservations/${id}`,
+    );
+    return {
+      ...response,
+      time: getTimeFromDate(new Date(response.date)),
+    };
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const cancelReservation = async (id: string) => {
+  try {
+    return await fetchWithAuth(`${API_URL}/v1/public/reservations/cancel`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};

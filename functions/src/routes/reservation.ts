@@ -30,6 +30,50 @@ publicRouter.get("/events", async (_, res) => {
   }
 });
 
+// Get a single reservation by ID
+publicRouter.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const doc = await db.collection(COLLECTION).doc(id).get();
+
+    if (!doc.exists) {
+      return res.status(404).json("Reservation not found");
+    }
+
+    return res.status(200).json({ ...doc.data(), id: doc.id });
+  } catch (error) {
+    console.error("Error fetching reservation:", error);
+    return res.status(500).json("We found an error fetching your request!");
+  }
+});
+
+// Cancel a reservation
+publicRouter.post("/cancel", async (req, res) => {
+  try {
+    const { id } = req.body;
+
+    if (!id) {
+      return res.status(400).json("Reservation ID is required");
+    }
+
+    const docRef = db.collection(COLLECTION).doc(id);
+    const doc = await docRef.get();
+
+    if (!doc.exists) {
+      return res.status(404).json("Reservation not found");
+    }
+
+    await docRef.update({ canceled: true });
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Reservation canceled successfully" });
+  } catch (error) {
+    console.error("Error canceling reservation:", error);
+    return res.status(500).json("We found an error processing your request!");
+  }
+});
+
 publicRouter.post("/", async (req, res) => {
   try {
     const { bookingType, ...rest } = req.body as Reservation & {
