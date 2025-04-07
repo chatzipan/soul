@@ -1,7 +1,8 @@
 import * as React from "react";
-import * as S from "./Common.styled";
 
 import { StaticImage } from "gatsby-plugin-image";
+
+import * as S from "./Common.styled";
 
 const Brunch = () => {
   return (
@@ -14,29 +15,29 @@ const Brunch = () => {
           sando, we have you covered. Accompany your meal with a freshly brewed
           coffee carefully selected by our partner&nbsp;
           <a
-            href='https://beanbank.coffee/en'
-            target='_blank'
-            rel='noreferrer'
+            href="https://beanbank.coffee/en"
+            target="_blank"
+            rel="noreferrer"
             style={{ color: "inherit" }}
           >
             Bean Bank Roasters
           </a>
-          . Mondays to Fridays from 08:00 to 12:00. Weekends until 16:00.
+          . Mondays to Fridays from 08:00 to 11:30. Weekends until 16:00.
         </S.Description>
       </S.Heading>
       <S.ImageOuterWrapper>
         <S.ImageWrapper>
           <StaticImage
-            src='../../images/brunch.jpg'
-            alt='A picture of the pastrami sando'
+            src="../../images/brunch.jpg"
+            alt="A picture of the pastrami sando"
             aspectRatio={1 / 1}
             transformOptions={{ fit: "contain" }}
           />
         </S.ImageWrapper>
         <S.ImageWrapper>
           <StaticImage
-            src='../../images/sando.jpg'
-            alt='A picture of the brunch'
+            src="../../images/sando.jpg"
+            alt="A picture of the brunch"
             aspectRatio={2 / 3}
           />
         </S.ImageWrapper>

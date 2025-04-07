@@ -115,7 +115,8 @@ export const BookingModal = ({
       [
         BookingType.BRUNCH,
         BookingType.LUNCH,
-        isDinnerDay ? BookingType.DINNER : BookingType.APERO,
+        BookingType.APERO,
+        ...(isDinnerDay ? [BookingType.DINNER] : []),
       ].reduce(
         (acc, type) => {
           if (!type) return acc;

@@ -10,9 +10,9 @@ import { BookingType } from "../components/booking-modal/types";
 
 const BookingTypeHourLimits = {
   [BookingType.BRUNCH]: ["08:00", "11:30"],
-  [BookingType.LUNCH]: ["11:30", "16:00"],
-  [BookingType.DINNER]: ["16:00", "22:00"],
-  [BookingType.APERO]: ["16:00", "22:00"],
+  [BookingType.LUNCH]: ["11:30", "14:00"],
+  [BookingType.DINNER]: ["18:00", "22:00"],
+  [BookingType.APERO]: ["14:00", "18:00"],
 };
 
 export const createTimeOptions = (from = 8, to = 22) => {
@@ -91,8 +91,8 @@ export const createTimeOptionsFromOpeningHours = ({
     // Convert current time to minutes since midnight
     const closingTimeInMinutes = endHour * 60 + endMinute;
 
-    // Ensure at least 30 minutes before closing time, but on Dinner days 90 minutes
-    return timeInMinutes <= closingTimeInMinutes - (isDinnerDay ? 90 : 30);
+    // Ensure at least 30 minutes before closing time, but on Dinner days 75 minutes
+    return timeInMinutes <= closingTimeInMinutes - (isDinnerDay ? 75 : 30);
   });
 
   // Filter out times that fall within recurring blocks for the current day
