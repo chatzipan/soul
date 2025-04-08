@@ -11,8 +11,8 @@ import { BookingType } from "../components/booking-modal/types";
 const BookingTypeHourLimits = {
   [BookingType.BRUNCH]: ["08:00", "11:30"],
   [BookingType.LUNCH]: ["11:30", "14:00"],
-  [BookingType.DINNER]: ["18:00", "22:00"],
-  [BookingType.APERO]: ["14:00", "18:00"],
+  [BookingType.APERO]: ["14:00", "17:00"],
+  [BookingType.DINNER]: ["17:00", "22:00"],
 };
 
 export const createTimeOptions = (from = 8, to = 22) => {
