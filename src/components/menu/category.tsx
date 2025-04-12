@@ -92,7 +92,21 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
               <S.SectionSubTitle>{category.name}</S.SectionSubTitle>
             )}
             {category.entries
-              .sort((a, b) => (a.price > b.price ? 1 : -1))
+              .sort((a, b) => {
+                if (category.name === "Lunch") {
+                  const aHasBowl = a.name.toLowerCase().includes("bowl");
+                  const bHasBowl = b.name.toLowerCase().includes("bowl");
+
+                  if (aHasBowl && !bHasBowl) return -1; // a has bowl, b doesn't -> a comes first
+                  if (!aHasBowl && bHasBowl) return 1; // b has bowl, a doesn't -> b comes first
+
+                  // If both have or don't have "bowl", sort by price (increasing)
+                  return a.price - b.price;
+                } else {
+                  // For other categories, sort by price (increasing)
+                  return a.price - b.price;
+                }
+              })
               .map((entry) => (
                 <S.Item key={entry.name}>
                   <S.ItemName>{entry.name}</S.ItemName>

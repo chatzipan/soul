@@ -187,7 +187,7 @@
         "name": "Pinot Noir",
         "subTitle": "Pinot Noir Terroir 2022, winery Schwarzenbach - Glass (0.1l)",
         "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
-        "price": 10,
+        "price": 15,
         "imageThumbnail": null,
         "image": null
       },
@@ -202,15 +202,19 @@
       },
       {
         "category": "Red wine",
-        "name": "Ridge, East Bench Zinfandel 2019 - Bottle (7,5dl)",
-        "price": 100,
+        "name": "Weingut Zeter Petz",
+        "subTitle": "Weingut Zeter Petz ",
+        "description": "<ul><li><strong>Grape variety:</strong>&nbsp;Blend of Merlot, Cabernet Sauvignon</li><li><strong>Origin:&nbsp; </strong>Pfalz, Germany</li><li><strong>Profile:</strong>&nbsp;Lots of red and dark Berries like dark sour cherries, wild raspberries and black currant</li><li><strong>Style:&nbsp;</strong><em>Dry, but Fruit driven and soft in Tannins</em></li></ul><p><br></p>",
+        "price": 9,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "Red wine",
-        "name": "Paitin, Barbaresco Serraboella 2020 - Bottle (7,5dl)",
-        "price": 130,
+        "name": "Weingut Zeter Petz Bottle",
+        "subTitle": "Weingut Zeter Petz Bottle",
+        "description": "<ul><li><strong>Grape variety:</strong>&nbsp;Blend of Merlot, Cabernet Sauvignon</li><li><strong>Origin:&nbsp;</strong>Pfalz, Germany</li><li><strong>Profile:</strong>&nbsp;Lots of red and dark Berries like dark sour cherries, wild raspberries and black currant</li><li><strong>Style:&nbsp;</strong><em>Dry, but Fruit driven and soft in Tannins</em></li></ul><p><br></p>",
+        "price": 60,
         "imageThumbnail": null,
         "image": null
       },
@@ -296,7 +300,7 @@
         "category": "Cocktails",
         "name": "Coffee Negroni",
         "subTitle": "Coffee Negroni",
-        "description": "<p>Your classic Negroni infused with finest coffee.</p><p><br></p><p><em>Sip happens, especially if Negroni is involved. </em></p>",
+        "description": "<p>A bold twist on the classic — infused with 100% Ethiopia coffee from Bean Bank Roastery.</p>",
         "price": 18,
         "imageThumbnail": null,
         "image": null
@@ -313,7 +317,7 @@
       {
         "category": "Cocktails",
         "name": "Highball",
-        "subTitle": "",
+        "subTitle": "Highball ",
         "description": "<p>Rye Whisky, Cucumber Elderflower Cordial, Soda</p>",
         "price": 18,
         "imageThumbnail": null,
@@ -358,8 +362,8 @@
       {
         "category": "Mocktails",
         "name": "Highball Non Alcoholic",
-        "subTitle": "",
-        "description": "",
+        "subTitle": "Highball Non Alcoholic",
+        "description": "<p>Rebels Malt, Cucumber Elderflower Cordial, Soda</p>",
         "price": 14,
         "imageThumbnail": null,
         "image": null
@@ -396,9 +400,9 @@
         "image": null
       },
       {
-        "name": "Cheese Pie",
+        "name": "Homeade Pies Or Tarts",
         "subTitle": "Homeade Pies or Tarts",
-        "description": "<p>served with Salad</p>",
+        "description": "<p>Homemade pies or tarts — daily creations from our kitchen team — served with salad.</p>",
         "price": 18,
         "imageThumbnail": null,
         "image": null
@@ -412,9 +416,9 @@
         "image": null
       },
       {
-        "name": "Hummus & Mushroom",
-        "subTitle": "",
-        "description": "<p>Pita bread with king mushroom, hummus &amp; fresh herbs - served with lemon</p>",
+        "name": "Hummus & Kimchi",
+        "subTitle": "Hummus & Kimchi ",
+        "description": "<p>Warm pita bread served with creamy hummus, spicy kimchi &amp; fresh herbs, finished with vibrant parsley oil.</p>",
         "price": 22.5,
         "imageThumbnail": null,
         "image": null
@@ -428,31 +432,31 @@
         "image": null
       },
       {
-        "name": "Beef Poke Bowl",
-        "subTitle": "Beef Poke Bowl",
-        "description": "<p>Sushi rice, slow cooked beef, teriyaki sauce, soy egg, dry tomatoes, artichoke, truffle, sesame, green onion - served with soup or salad</p>",
+        "name": "Beef Teriyaki Bowl",
+        "subTitle": "Beef Teriyaki Bowl",
+        "description": "<p>Sushi rice, slow cooked beef, teriyaki sauce, soy egg, dry tomatoes, artichoke, truffle, sesame, green onion, Bell Pepper Coulis - served with soup or salad</p>",
         "price": 28.5,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Tuna Poke Bowl",
-        "subTitle": "Tuna Poke Bowl",
+        "name": "Tuna Tataki Bowl",
+        "subTitle": "Tuna Tataki Bowl",
         "description": "<p>Sushi rice, tuna tataki, ponzu sauce, avocado, cucumber, leek chips, sesame, bell pepper coulis - served with soup or salad</p>",
         "price": 24.5,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Vegan Poke Bowl",
-        "subTitle": "Vegan Poke Bowl",
+        "name": "Veggie Rise Bowl",
+        "subTitle": "Veggie Rise Bowl",
         "description": "<p>Sushi rice, pickled cabbage, mushrooms, plant based ginger-mayo, sesame - served with soup or salad</p>",
         "price": 19.5,
         "imageThumbnail": null,
         "image": null
       }
     ],
-    "description": "Lunch Menu (Mo-Fr / 12:00-16:00)"
+    "description": "Lunch Menu (Mo-Fr / 11:30-14:00)"
   },
   {
     "type": "menuGroup",
@@ -491,9 +495,9 @@
         "image": null
       },
       {
-        "name": "Hummus & Mushroom",
-        "subTitle": "",
-        "description": "<p>Pita bread with king mushroom, hummus &amp; fresh herbs - served with lemon</p>",
+        "name": "Hummus & Kimchi",
+        "subTitle": "Hummus & Kimchi ",
+        "description": "<p>Warm pita bread served with creamy hummus, spicy kimchi &amp; fresh herbs, finished with vibrant parsley oil.</p>",
         "price": 22.5,
         "imageThumbnail": null,
         "image": null
@@ -507,15 +511,15 @@
         "image": null
       },
       {
-        "name": "Cheese Pie",
+        "name": "Homeade Pies Or Tarts",
         "subTitle": "Homeade Pies or Tarts",
-        "description": "<p>served with Salad</p>",
+        "description": "<p>Homemade pies or tarts — daily creations from our kitchen team — served with salad.</p>",
         "price": 18,
         "imageThumbnail": null,
         "image": null
       }
     ],
-    "description": "Brunch Menu (Mo-Fr / 08:00-12:00 {Sa, So 08:00-16:00})"
+    "description": "Brunch Menu (Mo-Fr / 08:00-11:30 {Sa, So 08:00-16:00})"
   },
   {
     "name": "Coffee & Co",
