@@ -38,6 +38,7 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
   const {
     data: reservation,
     isLoading,
+    isFetched,
     error,
     errorMessage,
   } = useReservationById(id, { enable: true });
@@ -80,7 +81,10 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
     );
   }
 
-  if ((error || reservation?.canceled) && !cancelSuccess) {
+  if (
+    (error || (isFetched && !reservation) || reservation?.canceled) &&
+    !cancelSuccess
+  ) {
     return (
       <Box p={3}>
         <Alert severity="error">
@@ -97,6 +101,14 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
         >
           Return to Home
         </Button>
+      </Box>
+    );
+  }
+
+  if (!reservation) {
+    return (
+      <Box p={3}>
+        <Alert severity="error">Reservation not found.</Alert>
       </Box>
     );
   }
