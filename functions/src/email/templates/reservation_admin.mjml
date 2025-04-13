@@ -20,12 +20,12 @@
           font-size="16px"
           color="#525252">Dear Admin,</mj-text
         >
-        <mj-text font-size="14px" color="#525252"
+        <mj-text font-size="16px" color="#525252"
           >A new <b>{{bookingType}}</b> reservation has been made for
           <b>{{date}}</b> at <b>{{time}}</b> for
           <b>{{persons}}</b> guests</mj-text
         >
-        <mj-text font-size="14px" color="#525252">
+        <mj-text font-size="16px" color="#525252">
           Please find the reservation details below:
           <br />
           <br />
@@ -48,11 +48,11 @@
           Email: <a href='"mailto:'{{email}}'"'>{{email}}</a>
         </mj-text>
         {{#if notes}}
-        <mj-text font-size="14px" color="#525252">
+        <mj-text font-size="16px" color="#525252">
           Notes: <b>{{notes}}</b>
         </mj-text>
         {{/if}}
-        <mj-button background-color="#114f45" color="#f5c469" href="https://soulzuerich.ch/admin/reservations/"
+        <mj-button background-color="#114f45" font-size="16px" color="#f5c469" href="https://soulzuerich.ch/admin/reservations/"
           >All Reservations</mj-button
         >
       </mj-column>

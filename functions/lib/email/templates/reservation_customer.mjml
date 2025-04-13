@@ -16,27 +16,27 @@
         <mj-text font-size="20px" font-family="Helvetica Neue"
           >Reservation Confirmed!</mj-text
         >
-        <mj-text font-size="14px" color="#525252"
+        <mj-text font-size="16px" color="#525252"
           >Dear {{firstName}} {{lastName}},</mj-text
         >
-        <mj-text font-size="14px" color="#525252">
+        <mj-text font-size="16px" color="#525252">
           Thank you for your reservation!
         </mj-text>
-        <mj-text font-size="14px" color="#525252">
+        <mj-text font-size="16px" color="#525252" line-height="24px">
           Your reservation for <b>{{persons}}</b> guests is confirmed for
           <b>{{date}}</b>
           at <b>{{time}}</b>.
         </mj-text>
         {{#if notes}}
-        <mj-text font-size="14px" color="#525252">
+        <mj-text font-size="16px" color="#525252">
           Notes: <b>{{notes}}</b>
         </mj-text>
         {{/if}}
-        <mj-text font-size="14px" color="#525252">
+        <mj-text font-size="16px" color="#525252">
           We look forward to seeing you!
         </mj-text>
-        <mj-text font-size="14px" color="#525252"> Best regards, </mj-text>
-        <mj-text font-size="14px" color="#525252"> Soul Team </mj-text>
+        <mj-text font-size="16px" color="#525252"> Best regards, </mj-text>
+        <mj-text font-size="16px" color="#525252"> Soul Team </mj-text>
         <mj-button background-color="red" href="#"
           >Cancel reservation</mj-button
         >

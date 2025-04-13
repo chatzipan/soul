@@ -4,6 +4,7 @@ import * as moment from "moment-timezone";
 import { db } from "..";
 import { sendBookingToAdmin } from "../email/sendBookingToAdmin";
 import { sendBookingToCustomer } from "../email/sendBookingToCustomer";
+import { sendCancelledBookingToAdmin } from "../email/sendCancelledBookingToAdmin";
 import { Reservation } from "../types/reservation";
 
 import express = require("express");
@@ -64,6 +65,27 @@ publicRouter.post("/cancel", async (req, res) => {
     }
 
     await docRef.update({ canceled: true });
+    const data = doc.data() as Reservation;
+
+    const isToday =
+      format(new Date(data.date), "yyyy-MM-dd") ===
+      moment.tz("Europe/Zurich").format("yyyy-MM-DD");
+
+    const formattedDate = isToday
+      ? "Today"
+      : moment(new Date(data.date)).tz("Europe/Zurich").format("MMMM D, YYYY");
+
+    sendCancelledBookingToAdmin({
+      date: formattedDate,
+      email: data.email,
+      isToday,
+      firstName: data.firstName,
+      notes: data.notes,
+      lastName: data.lastName,
+      persons: data.persons,
+      telephone: data.telephone,
+      time: data.time,
+    });
 
     return res
       .status(200)

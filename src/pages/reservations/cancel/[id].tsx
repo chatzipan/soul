@@ -36,12 +36,10 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
   const queryClient = useQueryClient();
 
   const {
-    // @ts-ignore
     data: reservation,
-    // @ts-ignore
     isLoading,
-    // @ts-ignore
     error,
+    errorMessage,
   } = useReservationById(id, { enable: true });
   const [cancelDialogOpen, setCancelDialogOpen] = useState(false);
   const [cancelSuccess, setCancelSuccess] = useState(false);
@@ -82,46 +80,14 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
     );
   }
 
-  if (error) {
+  if ((error || !reservation || reservation.canceled) && !cancelSuccess) {
     return (
       <Box p={3}>
         <Alert severity="error">
-          Failed to load reservation details. Please try again later.
-        </Alert>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate("/")}
-          sx={{ mt: 2 }}
-        >
-          Return to Home
-        </Button>
-      </Box>
-    );
-  }
-
-  if (!reservation) {
-    return (
-      <Box p={3}>
-        <Alert severity="warning">Reservation not found</Alert>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => navigate("/")}
-          sx={{ mt: 2 }}
-        >
-          Return to Home
-        </Button>
-      </Box>
-    );
-  }
-
-  // If reservation is already canceled
-  if (reservation.canceled) {
-    return (
-      <Box p={3}>
-        <Alert severity="info">
-          This reservation has already been canceled.
+          {reservation?.canceled
+            ? "This reservation has already been canceled."
+            : errorMessage ||
+              "Failed to load reservation details. Please try again later."}
         </Alert>
         <Button
           variant="contained"
@@ -163,11 +129,6 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
           <Typography>
             <strong>Number of Persons:</strong> {reservation.persons}
           </Typography>
-          {reservation.notes && (
-            <Typography>
-              <strong>Notes:</strong> {reservation.notes}
-            </Typography>
-          )}
         </CardContent>
       </Card>
 
@@ -176,21 +137,30 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
       </Typography>
 
       <Box display="flex" gap={2}>
-        <Button variant="contained" color="error" onClick={handleCancelClick}>
+        <Button
+          variant="contained"
+          color="error"
+          onClick={handleCancelClick}
+          disabled={reservation?.canceled}
+        >
           Yes, Cancel Reservation
         </Button>
-        <Button variant="outlined" onClick={() => navigate("/")}>
+        <Button
+          disabled={reservation?.canceled}
+          variant="outlined"
+          onClick={() => navigate("/")}
+        >
           No, Keep Reservation
         </Button>
       </Box>
 
-      {/* Cancel Confirmation Dialog */}
       <Dialog open={cancelDialogOpen} onClose={handleCloseDialog}>
         <DialogTitle>Confirm Cancellation</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Are you sure you want to cancel your reservation for {formattedDate}{" "}
-            at {formattedTime}? This action cannot be undone.
+            Are you sure you want to cancel your reservation for&nbsp;
+            {formattedDate}&nbsp;at&nbsp;{formattedTime}? This action cannot be
+            undone.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

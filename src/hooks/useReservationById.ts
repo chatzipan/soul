@@ -1,11 +1,22 @@
+import { Reservation } from "../../functions/src/types/reservation";
 import { getReservationById } from "../services/reservations";
 import { useQueryWrapper } from "./useQuery";
+
+interface ApiError {
+  response?: {
+    status: number;
+    data?: {
+      code?: string;
+      message?: string;
+    };
+  };
+}
 
 export const useReservationById = (
   id: string | undefined,
   config = {} as { enable: boolean },
 ) =>
-  useQueryWrapper({
+  useQueryWrapper<Reservation, ApiError>({
     queryKey: getKey(id),
     queryFn: () => queryFn(id),
     enabled: !!id && config.enable !== false,

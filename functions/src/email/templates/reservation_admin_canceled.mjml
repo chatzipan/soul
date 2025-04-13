@@ -14,45 +14,18 @@
     <mj-section background-color="#fafafa">
       <mj-column width="400px">
         <mj-text font-size="20px" font-family="Helvetica Neue"
-          >New {{bookingType}} Reservation!</mj-text
+          >Reservation Canceled!</mj-text
         >
-        <mj-text
-          font-size="16px"
-          color="#525252">Dear Admin,</mj-text
-        >
-        <mj-text font-size="16px" color="#525252"
-          >A new <b>{{bookingType}}</b> reservation has been made for
-          <b>{{date}}</b> at <b>{{time}}</b> for
-          <b>{{persons}}</b> guests</mj-text
-        >
-        <mj-text font-size="16px" color="#525252">
-          Please find the reservation details below:
-          <br />
-          <br />
-          <br />
-          Name: <b>{{firstName}} {{lastName}}</b>
-          <br />
-          <br />
-          Date: <b>{{date}}</b>
-          <br />
-          <br />
-          Time: <b>{{time}}</b>
-          <br />
-          <br />
-          Persons: <b>{{persons}}</b>
-          <br />
-          <br />
-          Telephone: <a href='"tel:'{{telephone}}'"'>{{telephone}}</a>
-          <br />
-          <br />
-          Email: <a href='"mailto:'{{email}}'"'>{{email}}</a>
+        <mj-text font-size="16px" color="#525252">Dear Admin,</mj-text>
+        <mj-text font-size="16px" line-height="24px" color="#525252">
+          A reservation has been <b>CANCELLED</b> for <b>{{date}}</b> at
+          <b>{{time}}</b> for <b>{{persons}}</b> guests, in the name of
+          <b>{{firstName}} {{lastName}}</b>
         </mj-text>
-        {{#if notes}}
-        <mj-text font-size="16px" color="#525252">
-          Notes: <b>{{notes}}</b>
-        </mj-text>
-        {{/if}}
-        <mj-button background-color="#114f45" font-size="16px" color="#f5c469" href="https://soulzuerich.ch/admin/reservations/"
+        <mj-button
+          background-color="#114f45"
+          color="#f5c469"
+          href="https://soulzuerich.ch/admin/reservations/"
           >All Reservations</mj-button
         >
       </mj-column>
