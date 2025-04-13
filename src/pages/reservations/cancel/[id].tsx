@@ -102,8 +102,11 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
   }
 
   // Format date and time
-  const formattedDate = format(new Date(reservation.date), "MMMM d, yyyy");
-  const formattedTime = reservation.time;
+  const formattedDate = format(
+    new Date(reservation?.date || ""),
+    "MMMM d, yyyy",
+  );
+  const formattedTime = reservation?.time;
 
   return (
     <Box p={3} maxWidth="600px" mx="auto">
@@ -117,8 +120,8 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
             Reservation Details
           </Typography>
           <Typography>
-            <strong>Name:</strong> {reservation.firstName}{" "}
-            {reservation.lastName}
+            <strong>Name:</strong> {reservation?.firstName}{" "}
+            {reservation?.lastName}
           </Typography>
           <Typography>
             <strong>Date:</strong> {formattedDate}
@@ -127,7 +130,7 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
             <strong>Time:</strong> {formattedTime}
           </Typography>
           <Typography>
-            <strong>Number of Persons:</strong> {reservation.persons}
+            <strong>Number of Persons:</strong> {reservation?.persons}
           </Typography>
         </CardContent>
       </Card>
