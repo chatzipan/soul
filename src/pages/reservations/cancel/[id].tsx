@@ -112,11 +112,7 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
   }
 
   if (!reservation) {
-    return (
-      <Box p={3}>
-        <Alert severity="error">Reservation not found.</Alert>
-      </Box>
-    );
+    return null;
   }
 
   // Format date and time
