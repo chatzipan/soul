@@ -38,6 +38,7 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
   const {
     data: reservation,
     isLoading,
+    isFetching,
     isFetched,
     error,
     errorMessage,
@@ -68,7 +69,7 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
     setCancelDialogOpen(false);
   };
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return (
       <Box
         display="flex"
