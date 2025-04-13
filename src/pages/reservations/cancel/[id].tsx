@@ -80,7 +80,7 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
     );
   }
 
-  if ((error || !reservation || reservation.canceled) && !cancelSuccess) {
+  if ((error || reservation?.canceled) && !cancelSuccess) {
     return (
       <Box p={3}>
         <Alert severity="error">
