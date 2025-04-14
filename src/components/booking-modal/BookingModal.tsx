@@ -94,7 +94,7 @@ export const BookingModal = ({
 
   const isBigGroup = persons > 6;
 
-  const isEmailInvalid = contact.email ? isValidEmail(contact.email) : false;
+  const isEmailInvalid = contact.email ? isValidEmail(contact.email) : true;
 
   const isNextDisabled =
     currentStep === Step.CONTACT
@@ -213,7 +213,7 @@ export const BookingModal = ({
         onClose={closeModal}
       >
         <DialogTitle>Our booking system is currently down.</DialogTitle>
-        <DialogContent sx={{ width: { xs: "auto", sm: "500px" } }}>
+        <DialogContent sx={{ width: { xs: "auto", md: "500px" } }}>
           <Typography>
             Please try again later or contact us directly via phone or email.
           </Typography>
@@ -233,7 +233,7 @@ export const BookingModal = ({
       <DialogTitle sx={{ fontSize: "2rem" }} id="responsive-dialog-title">
         Book a table
       </DialogTitle>
-      <DialogContent sx={{ pb: 0, width: { xs: "auto", sm: "500px" } }}>
+      <DialogContent sx={{ pb: 0, width: { xs: "auto", md: "500px" } }}>
         {currentStep === Step.TYPE && (
           <BookingTypeStep
             availableBookingTypes={availableBookingTypes}
