@@ -28,17 +28,17 @@ const Brunch = () => {
       <S.ImageOuterWrapper>
         <S.ImageWrapper>
           <StaticImage
-            src="../../images/brunch.jpg"
-            alt="A picture of the pastrami sando"
+            src="../../images/eggs.jpg"
+            alt="A picture of the shakshouka"
             aspectRatio={1 / 1}
             transformOptions={{ fit: "contain" }}
           />
         </S.ImageWrapper>
         <S.ImageWrapper>
           <StaticImage
-            src="../../images/sando.jpg"
-            alt="A picture of the brunch"
-            aspectRatio={2 / 3}
+            src="../../images/sando2.jpg"
+            alt="A picture of the pastrami sando"
+            aspectRatio={1 / 1}
           />
         </S.ImageWrapper>
       </S.ImageOuterWrapper>

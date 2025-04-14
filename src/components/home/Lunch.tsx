@@ -1,7 +1,8 @@
 import * as React from "react";
-import * as S from "./Common.styled";
 
 import { StaticImage } from "gatsby-plugin-image";
+
+import * as S from "./Common.styled";
 
 const Lunch = () => {
   return (
@@ -15,18 +16,18 @@ const Lunch = () => {
           accompanying daily soup or salad. We use high quality local
           ingredients from partners such as&nbsp;
           <a
-            href='https://www.metzgerei-keller.ch/en'
-            target='_blank'
-            rel='noreferrer'
+            href="https://www.metzgerei-keller.ch/en"
+            target="_blank"
+            rel="noreferrer"
             style={{ color: "inherit" }}
           >
             Metzgerei-Keller
           </a>
           &nbsp;and&nbsp;
           <a
-            href='https://www.doerigfisch.ch/home/'
-            target='_blank'
-            rel='noreferrer'
+            href="https://www.doerigfisch.ch/home/"
+            target="_blank"
+            rel="noreferrer"
             style={{ color: "inherit" }}
           >
             doerigfisch
@@ -37,15 +38,15 @@ const Lunch = () => {
       <S.ImageOuterWrapper>
         <S.ImageWrapper>
           <StaticImage
-            src='../../images/poke_bowl.jpeg'
-            alt='A picture of the poke bowl'
+            src="../../images/tuna_bowl.jpg"
+            alt="A picture of the tuna bowl"
             aspectRatio={2 / 3}
           />
         </S.ImageWrapper>
         <S.ImageWrapper>
           <StaticImage
-            src='../../images/salad.jpeg'
-            alt='A picture of the salad'
+            src="../../images/beef_bowl.jpg"
+            alt="A picture of the beef bowl"
             aspectRatio={2 / 3}
           />
         </S.ImageWrapper>

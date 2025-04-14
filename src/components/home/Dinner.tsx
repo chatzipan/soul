@@ -1,7 +1,8 @@
 import * as React from "react";
-import * as S from "./Common.styled";
 
 import { StaticImage } from "gatsby-plugin-image";
+
+import * as S from "./Common.styled";
 
 const Dinner = () => {
   return (
@@ -16,9 +17,9 @@ const Dinner = () => {
           carefully selected wines from GaultMillau Switzerland Sommelier of the
           Year 2021&nbsp;
           <a
-            href='https://www.cultivatingtaste.com/'
-            target='_blank'
-            rel='noreferrer'
+            href="https://www.cultivatingtaste.com/"
+            target="_blank"
+            rel="noreferrer"
             style={{ color: "inherit" }}
           >
             Lisa Bader
@@ -29,14 +30,14 @@ const Dinner = () => {
       <S.ImageOuterWrapper>
         <S.ImageWrapper>
           <StaticImage
-            src='../../images/dinner_tuna.jpeg'
-            alt='A picture of the tuna tataki dish'
+            src="../../images/filet.jpg"
+            alt="A picture of the tuna tataki dish"
           />
         </S.ImageWrapper>
         <S.ImageWrapper>
           <StaticImage
-            src='../../images/dinner_cocktail.jpeg'
-            alt='A picture of a cocktail in a glass'
+            src="../../images/dinner_cocktail.jpeg"
+            alt="A picture of a cocktail in a glass"
             aspectRatio={1 / 1}
           />
         </S.ImageWrapper>
