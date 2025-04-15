@@ -11,8 +11,19 @@ import { BookingType } from "../components/booking-modal/types";
 const BookingTypeHourLimits = {
   [BookingType.BRUNCH]: ["08:00", "11:30"],
   [BookingType.LUNCH]: ["11:30", "14:00"],
-  [BookingType.APERO]: ["14:00", "17:00"],
+  [BookingType.APERO]: ["14:00", "20:00"],
   [BookingType.DINNER]: ["17:00", "22:00"],
+};
+
+const getBookingTypeHourLimits = (
+  bookingType: BookingType,
+  isDinnerDay: boolean,
+) => {
+  if (bookingType === BookingType.APERO && isDinnerDay) {
+    // on dinner days, apero is only until 5pm, then dinner starts
+    return ["14:00", "17:00"];
+  }
+  return BookingTypeHourLimits[bookingType];
 };
 
 export const createTimeOptions = (from = 8, to = 22) => {
@@ -73,7 +84,7 @@ export const createTimeOptionsFromOpeningHours = ({
   });
 
   // Filter based on booking type limits
-  const [minTime, maxTime] = BookingTypeHourLimits[bookingType];
+  const [minTime, maxTime] = getBookingTypeHourLimits(bookingType, isDinnerDay);
   const [minHour, minMinute] = minTime.split(":").map(Number);
   const [maxHour, maxMinute] = maxTime.split(":").map(Number);
 
