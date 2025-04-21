@@ -217,23 +217,28 @@ export const ReservationItem = ({
             }}
           >
             <MenuItem
-              onClick={handleCloseMore}
+              onClick={() => openEditModal(reservation)}
               sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              disabled={reservation.canceled || isBeforeToday}
             >
               <EditCalendarIcon />
               &nbsp;Edit {isEvent ? "event" : "reservation"}
             </MenuItem>
             <MenuItem
-              onClick={handleCloseMore}
+              onClick={() => openCancelModal(reservation)}
               sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              disabled={reservation.canceled || isBeforeToday}
             >
               <EventBusyIcon />
               &nbsp;Cancel {isEvent ? "event" : "reservation"}
             </MenuItem>
             {telephone && (
               <MenuItem
-                onClick={handleCloseMore}
+                onClick={() => {
+                  window.open(`tel:${telephone}`, "_blank");
+                }}
                 sx={{ display: "flex", alignItems: "center", gap: 1 }}
+                disabled={reservation.canceled || isBeforeToday}
               >
                 <S.ReservationLink href={`tel:${telephone}`} target="_blank">
                   <CallIcon />
@@ -243,7 +248,12 @@ export const ReservationItem = ({
             )}
 
             {email && (
-              <MenuItem onClick={handleCloseMore}>
+              <MenuItem
+                onClick={() => {
+                  window.open(`mailto:${email}`, "_blank");
+                }}
+                disabled={reservation.canceled || isBeforeToday}
+              >
                 <S.ReservationLink href={`mailto:${email}`} target="_blank">
                   <EmailIcon />
                   &nbsp;&nbsp;Email

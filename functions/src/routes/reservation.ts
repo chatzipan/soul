@@ -130,6 +130,7 @@ publicRouter.post("/", async (req, res) => {
       notes,
       persons,
       time,
+      id: writeResult.id,
     });
 
     sendBookingToAdmin({

@@ -37,9 +37,9 @@
         </mj-text>
         <mj-text font-size="16px" color="#525252"> Best regards, </mj-text>
         <mj-text font-size="16px" color="#525252"> Soul Team </mj-text>
-        <mj-button background-color="red" href="#"
-          >Cancel reservation</mj-button
-        >
+        <mj-button background-color="red" href="{{cancelUrl}}">
+          Cancel reservation
+        </mj-button>
       </mj-column>
     </mj-section>
     <mj-section background-color="#114f45">

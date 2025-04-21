@@ -179,14 +179,7 @@ publicRouter.get("/opening-hours", async (_, res) => {
       ...settings,
       singleBlocks: [
         // Filter out past single blocks
-        ...(settings.singleBlocks || []).filter((block) => {
-          const blockDate = moment.tz(
-            `${block.date}`,
-            "YYYY-MM-DD",
-            "Europe/Zurich",
-          );
-          return blockDate.isSameOrAfter(now.startOf("day"));
-        }),
+        ...settings.singleBlocks,
         ...blockedSlots,
       ],
     };

@@ -14,10 +14,18 @@ type Data = {
   lastName: string;
   notes: string;
   time: string;
+  id: string;
 };
 
 export const sendBookingToCustomer = async (data: Data) => {
   const PREFIX = process.env.ENVIRONMENT === "dev" ? "TEST!!! -  " : "";
+  const host =
+    process.env.ENVIRONMENT === "local"
+      ? "http://localhost:8000"
+      : process.env.ENVIRONMENT === "dev"
+        ? "https://develop.soulzuerich.ch"
+        : "https://soulzuerich.ch";
+  const cancelUrl = `${host}/reservations/cancel/${data.id}`;
   const transporter = createEmailTransporter();
   const { email, ...rest } = data;
   const template = fs.readFileSync(
@@ -26,7 +34,7 @@ export const sendBookingToCustomer = async (data: Data) => {
   );
 
   const parsed = handlebars.compile(template);
-  const htmlBody = parsed(rest);
+  const htmlBody = parsed({ ...rest, cancelUrl });
   const convertedMjml = mjml2html(htmlBody);
 
   transporter.sendMail({
