@@ -26,7 +26,7 @@ import {
 } from "@mui/material";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { format } from "date-fns";
+import { format, isPast } from "date-fns";
 import de from "date-fns/locale/de";
 
 import { useReservationById } from "../../../hooks/useReservationById";
@@ -69,6 +69,8 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
     setCancelDialogOpen(false);
   };
 
+  const isReservationPast = isPast(new Date(reservation?.date || ""));
+
   if (isLoading || isFetching) {
     return (
       <Box
@@ -83,16 +85,21 @@ const CancelReservationPage: React.FC<{ id: string }> = ({ id }) => {
   }
 
   if (
-    (error || (isFetched && !reservation) || reservation?.canceled) &&
+    (error ||
+      (isFetched && !reservation) ||
+      reservation?.canceled ||
+      isReservationPast) &&
     !cancelSuccess
   ) {
     return (
       <Box p={3}>
         <Alert severity="error">
-          {reservation?.canceled
-            ? "This reservation has already been canceled."
-            : errorMessage ||
-              "Failed to load reservation details. Please try again later."}
+          {isReservationPast
+            ? "This reservation has already passed and cannot be canceled."
+            : reservation?.canceled
+              ? "This reservation has already been canceled."
+              : errorMessage ||
+                "Failed to load reservation details. Please try again later."}
         </Alert>
         <Button
           variant="contained"
