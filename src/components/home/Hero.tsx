@@ -6,7 +6,7 @@ import cocktail from "../../images/cocktail_2.jpg";
 import dinnerOptions from "../../images/dinner_options_2.jpg";
 import evening_outside from "../../images/evening_outside.jpg";
 import outside from "../../images/outside.jpeg";
-import { BookingModal } from "../booking-modal/BookingModal";
+import { BookingForm } from "../booking-form/BookingForm";
 import Button from "../shared/Button";
 import { Carousel, CarouselItem } from "./Carousel";
 import * as S from "./Hero.styled";
@@ -45,8 +45,8 @@ const images = [
 ];
 
 const Hero = () => {
-  const [openBookingModal, setOpenBookingModal] = React.useState(false);
-  const [initialBookingDate, setInitialBookingDate] =
+  const [openBookingForm, setOpenBookingForm] = React.useState(false);
+  const [selectedBookingDate, setSelectedBookingDate] =
     React.useState<Date | null>(null);
 
   React.useEffect(() => {
@@ -57,13 +57,13 @@ const Hero = () => {
       const date = new Date(bookingDate);
       // Check if date is valid
       if (!isNaN(date.getTime())) {
-        setInitialBookingDate(date);
-        setOpenBookingModal(true);
+        setSelectedBookingDate(date);
+        setOpenBookingForm(true);
       }
       // Check if date is valid
       if (bookingDate === "true") {
-        setInitialBookingDate(new Date());
-        setOpenBookingModal(true);
+        setSelectedBookingDate(new Date());
+        setOpenBookingForm(true);
       }
     }
   }, []);
@@ -84,7 +84,7 @@ const Hero = () => {
         <S.SubTitle>ALL DAY KITCHEN BAR</S.SubTitle>
         <br />
         <S.MenuButtons>
-          <Button reverse onClick={() => setOpenBookingModal(true)}>
+          <Button reverse onClick={() => setOpenBookingForm(true)}>
             Book
           </Button>
           <Button to="/menu/dinner">Dinner</Button>
@@ -114,10 +114,10 @@ const Hero = () => {
           )}
         />
       </S.ImageWrapper>
-      <BookingModal
-        isOpen={openBookingModal}
-        initialDate={initialBookingDate}
-        onClose={() => setOpenBookingModal(false)}
+      <BookingForm
+        isOpen={openBookingForm}
+        onClose={() => setOpenBookingForm(false)}
+        selectedDate={selectedBookingDate}
       />
     </S.Wrapper>
   );

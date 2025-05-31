@@ -2,7 +2,7 @@ import React from "react";
 
 import { Box, CircularProgress, Typography } from "@mui/material";
 
-import * as S from "./BookingModal.styled";
+import * as S from "./BookingForm.styled";
 import { ContactData } from "./types";
 
 export const ContactStep = ({

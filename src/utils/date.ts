@@ -5,8 +5,8 @@ import {
   DayOfWeek,
   RestaurantSettings,
 } from "../../functions/src/types/settings";
-import { getZurichTimeNow } from "../components/booking-modal/BookingModal";
-import { BookingType } from "../components/booking-modal/types";
+import { getZurichTimeNow } from "../components/booking-form/BookingForm";
+import { BookingType } from "../components/booking-form/types";
 
 const BookingTypeHourLimits = {
   [BookingType.BRUNCH]: ["08:00", "11:30"],

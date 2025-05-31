@@ -11,7 +11,7 @@ import { format } from "date-fns";
 
 import { getDateInOneYear } from "../../utils/date";
 import * as Common from "../home/Hero.styled";
-import * as S from "./BookingModal.styled";
+import * as S from "./BookingForm.styled";
 import { BookingType } from "./types";
 
 const BookingTypeIcons = {

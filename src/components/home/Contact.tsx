@@ -8,7 +8,7 @@ import {
   RestaurantSettings,
 } from "../../../functions/src/types/settings";
 import { useOpeningHours } from "../../hooks/useOpeningHours";
-import { BookingModal } from "../booking-modal/BookingModal";
+import { BookingForm } from "../booking-form/BookingForm";
 import * as S from "./Hero.styled";
 
 export const SORTED_DAYS = [
@@ -23,7 +23,7 @@ export const SORTED_DAYS = [
 
 const Contact = () => {
   const response = useOpeningHours();
-  const [openBookingModal, setOpenBookingModal] = React.useState(false);
+  const [openBookingForm, setOpenBookingForm] = React.useState(false);
 
   const openingDays = (response?.data as unknown as RestaurantSettings)
     ?.openingDays;
@@ -58,7 +58,7 @@ const Contact = () => {
             will find you a table as soon as possible.
             <br />
             <br />- ALL other days and hours:&nbsp;
-            <S.TelLinkUnderlined onClick={() => setOpenBookingModal(true)}>
+            <S.TelLinkUnderlined onClick={() => setOpenBookingForm(true)}>
               <u>book here</u>
             </S.TelLinkUnderlined>
             <br />
@@ -111,10 +111,10 @@ const Contact = () => {
           />
         </S.ImageWrapper>
       </S.Wrapper>
-      <BookingModal
-        isOpen={openBookingModal}
-        initialDate={null}
-        onClose={() => setOpenBookingModal(false)}
+      <BookingForm
+        isOpen={openBookingForm}
+        onClose={() => setOpenBookingForm(false)}
+        selectedDate={null}
       />
     </>
   );

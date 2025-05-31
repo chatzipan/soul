@@ -2,7 +2,7 @@ import React from "react";
 
 import { Box } from "@mui/material";
 
-import * as S from "./BookingModal.styled";
+import * as S from "./BookingForm.styled";
 
 export const BookingTimeStep = ({
   bookingTime,
