@@ -1,0 +1,1 @@
+export const HIDE_CANCELED = "SOUL_ADMIN_HIDE_CANCELED";

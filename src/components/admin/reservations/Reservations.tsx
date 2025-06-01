@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useToggle } from "react-use";
+import { useLocalStorage, useToggle } from "react-use";
 
 import AddIcon from "@mui/icons-material/Add";
-import { Button, FormControlLabel, Switch, Typography } from "@mui/material";
+import { FormControlLabel, Switch, Typography } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Tab from "@mui/material/Tab";
 import { RouteComponentProps } from "@reach/router";
@@ -11,6 +11,7 @@ import { isToday } from "date-fns";
 import { Reservation } from "../../../../functions/src/types/reservation";
 import { usePastReservations } from "../../../hooks/usePastReservations";
 import { useReservations } from "../../../hooks/useReservations";
+import { HIDE_CANCELED } from "../../../utils/storageKeys";
 import { CancelModal } from "./CancelModal";
 import { ReservationItem } from "./ReservationItem";
 import * as S from "./Reservations.styled";
@@ -28,7 +29,7 @@ const Reservations = (_: RouteComponentProps) => {
   const loading = response?.isFetching || response?.isLoading || !response;
   const listRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState(TabsView.Upcoming);
-  const [hideCanceled, setHideCanceled] = useState(true);
+  const [hideCanceled, setHideCanceled] = useLocalStorage(HIDE_CANCELED, true);
   const isTodayView = view === TabsView.Today;
   const [isCancelModalOpen, toggleCancelModal] = useToggle(false);
   const [selectedReservation, setSelectedReservation] =
