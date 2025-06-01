@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useToggle } from "react-use";
 
 import AddIcon from "@mui/icons-material/Add";
-import { Typography } from "@mui/material";
+import { Button, FormControlLabel, Switch, Typography } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Tab from "@mui/material/Tab";
 import { RouteComponentProps } from "@reach/router";
@@ -25,10 +25,10 @@ import {
 
 const Reservations = (_: RouteComponentProps) => {
   const response = useReservations();
-  const reservations = response?.data as Reservation[];
   const loading = response?.isFetching || response?.isLoading || !response;
   const listRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState(TabsView.Upcoming);
+  const [hideCanceled, setHideCanceled] = useState(true);
   const isTodayView = view === TabsView.Today;
   const [isCancelModalOpen, toggleCancelModal] = useToggle(false);
   const [selectedReservation, setSelectedReservation] =
@@ -40,7 +40,13 @@ const Reservations = (_: RouteComponentProps) => {
     enable: view === TabsView.Previous,
   });
 
-  const pastReservations = pastResponse?.data as Reservation[];
+  const reservations = (response?.data || []).filter((reservation) =>
+    hideCanceled ? !reservation.canceled : true,
+  ) as Reservation[];
+
+  const pastReservations = (pastResponse?.data || []).filter((reservation) =>
+    hideCanceled ? !reservation.canceled : true,
+  ) as Reservation[];
 
   const handleViewChange = (_: React.SyntheticEvent, newValue: TabsView) => {
     setView(newValue);
@@ -67,13 +73,13 @@ const Reservations = (_: RouteComponentProps) => {
   );
 
   const formatted = useMemo(() => {
-    const formatted = groupByDateAndTime(
+    const _formatted = groupByDateAndTime(
       (reservations || []) as Reservation[],
       (pastReservations || []) as Reservation[],
       view,
     );
 
-    const sortedGroupedByYear = Object.entries(formatted).sort(
+    const sortedGroupedByYear = Object.entries(_formatted).sort(
       (a, b) => parseInt(b[0]) - parseInt(a[0]),
     );
 
@@ -105,7 +111,11 @@ const Reservations = (_: RouteComponentProps) => {
           Add reservation
         </S.AddButton>
       </S.Header>
-      <S.TabBar value={view} onChange={handleViewChange}>
+      <S.TabBar
+        value={view}
+        onChange={handleViewChange}
+        sx={{ alignItems: "center", justifyContent: "center", display: "flex" }}
+      >
         {hasTodayReservations && (
           <Tab
             label="Today"
@@ -115,6 +125,17 @@ const Reservations = (_: RouteComponentProps) => {
         )}
         <Tab label="Upcoming" {...a11yProps(TabsView.Upcoming)} />
         <Tab label="Previous" {...a11yProps(TabsView.Previous)} />
+        <FormControlLabel
+          sx={{ ml: "auto", alignSelf: "center", justifySelf: "center" }}
+          control={
+            <Switch
+              checked={hideCanceled}
+              inputProps={{ "aria-label": "controlled" }}
+              onChange={(e) => setHideCanceled(e.target.checked)}
+            />
+          }
+          label="Hide canceled"
+        />
       </S.TabBar>
       {loading && <CircularProgress sx={{ mt: 2, ml: "auto", mr: "auto" }} />}
       <S.ReservationList ref={listRef}>
