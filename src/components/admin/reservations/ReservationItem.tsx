@@ -171,6 +171,16 @@ export const ReservationItem = ({
               sx={{ ml: 1 }}
             />
           )}
+          {reservation.edited && (
+            <Chip
+              label="Edited"
+              color="info"
+              variant="outlined"
+              size="small"
+              component="span"
+              sx={{ ml: 1 }}
+            />
+          )}
           {hasContact && !isOwnEvent && (
             <S.ReservationContact>
               {telephone && !isSmallMobile && (

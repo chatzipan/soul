@@ -10,8 +10,9 @@ export type Reservation = {
   canceled: boolean;
   disableParallelBookings: boolean;
   date: number;
-  email: string;
   durationHours?: number;
+  edited?: boolean;
+  email: string;
   eventInfo?: string;
   eventTitle?: string;
   firstName: string;

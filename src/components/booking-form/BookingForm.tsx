@@ -217,6 +217,7 @@ export const BookingForm = ({
       if (isEditMode) {
         const data = {
           ...initialReservation,
+          edited: true,
           date: zurichTime.toDate().getTime(),
           email: contact.email.toLowerCase().trim(),
           firstName: contact.firstName,

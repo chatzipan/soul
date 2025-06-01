@@ -8,6 +8,37 @@ import { fetchWithAuth } from "../utils/fetchWithAuth";
 
 const API_URL = process.env.GATSBY_API_URL;
 
+const addQueryParams = (url: string, params: Record<string, string>) => {
+  const urlObj = new URL(url);
+  Object.entries(params).forEach(([key, value]) => {
+    if (value) {
+      urlObj.searchParams.append(key, value);
+    }
+  });
+  return urlObj.toString();
+};
+
+const getTimeFromDate = (date: Date) => {
+  const zurichTime = moment(date).tz("Europe/Zurich");
+  const hours = zurichTime.hours();
+  const minutes = zurichTime.minutes();
+
+  return `${hours}:${minutes === 0 ? "00" : minutes}`;
+};
+
+export const cancelReservation = async (id: string) => {
+  try {
+    return await fetchWithAuth(`${API_URL}/v1/public/reservations/cancel`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
 export const createReservation = async (
   reservation: Omit<Reservation, "id" | "time">,
 ) => {
@@ -48,22 +79,57 @@ export const deleteReservation = async (reservationId: string) => {
   }
 };
 
-const getTimeFromDate = (date: Date) => {
-  const zurichTime = moment(date).tz("Europe/Zurich");
-  const hours = zurichTime.hours();
-  const minutes = zurichTime.minutes();
+export const getAllEvents = async () => {
+  try {
+    const response = await fetchWithAuth<Reservation[]>(
+      `${API_URL}/v1/reservations`,
+    );
 
-  return `${hours}:${minutes === 0 ? "00" : minutes}`;
+    const events = response.filter((reservation) => reservation.isEvent);
+    const eventsWithTime = events.map((reservation) => {
+      const { date, ...rest } = reservation;
+      return {
+        ...rest,
+        date,
+        time: reservation.time
+          ? reservation.time
+          : getTimeFromDate(new Date(date)),
+      };
+    });
+
+    return eventsWithTime;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };
 
-const addQueryParams = (url: string, params: Record<string, string>) => {
-  const urlObj = new URL(url);
-  Object.entries(params).forEach(([key, value]) => {
-    if (value) {
-      urlObj.searchParams.append(key, value);
-    }
-  });
-  return urlObj.toString();
+export const getAllFutureReservations = async () => {
+  const today = moment.tz("Europe/Zurich").toDate().setHours(0, 0, 0, 0);
+  return getReservationsWithDateRange(today, undefined);
+};
+
+export const getAllPastReservations = async () => {
+  const today = moment.tz("Europe/Zurich").toDate().setHours(0, 0, 0, 0);
+  return getReservationsWithDateRange(undefined, today);
+};
+
+export const getReservationById = async (id: string) => {
+  try {
+    const response = await fetchWithAuth<Reservation>(
+      `${API_URL}/v1/public/reservations/${id}`,
+    );
+
+    return {
+      ...response,
+      time: response.time
+        ? response.time
+        : getTimeFromDate(new Date(response.date)),
+    };
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };
 
 export const getReservationsWithDateRange = async (
@@ -96,46 +162,11 @@ export const getReservationsWithDateRange = async (
   }
 };
 
-export const getAllFutureReservations = async () => {
-  const today = moment.tz("Europe/Zurich").toDate().setHours(0, 0, 0, 0);
-  return getReservationsWithDateRange(today, undefined);
-};
-
-export const getAllPastReservations = async () => {
-  const today = moment.tz("Europe/Zurich").toDate().setHours(0, 0, 0, 0);
-  return getReservationsWithDateRange(undefined, today);
-};
-
 export const getSoulEvents = async () => {
   try {
     const events = await fetchWithAuth<Reservation[]>(
       `${API_URL}/v1/public/reservations/events`,
     );
-    const eventsWithTime = events.map((reservation) => {
-      const { date, ...rest } = reservation;
-      return {
-        ...rest,
-        date,
-        time: reservation.time
-          ? reservation.time
-          : getTimeFromDate(new Date(date)),
-      };
-    });
-
-    return eventsWithTime;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-export const getAllEvents = async () => {
-  try {
-    const response = await fetchWithAuth<Reservation[]>(
-      `${API_URL}/v1/reservations`,
-    );
-
-    const events = response.filter((reservation) => reservation.isEvent);
     const eventsWithTime = events.map((reservation) => {
       const { date, ...rest } = reservation;
       return {
@@ -177,35 +208,4 @@ export const updateReservationPublic = async (reservation: Reservation) => {
       body: JSON.stringify(reservation),
     },
   );
-};
-
-export const getReservationById = async (id: string) => {
-  try {
-    const response = await fetchWithAuth<Reservation>(
-      `${API_URL}/v1/public/reservations/${id}`,
-    );
-
-    return {
-      ...response,
-      time: response.time
-        ? response.time
-        : getTimeFromDate(new Date(response.date)),
-    };
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-export const cancelReservation = async (id: string) => {
-  try {
-    return await fetchWithAuth(`${API_URL}/v1/public/reservations/cancel`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id }),
-    });
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
 };
