@@ -4,66 +4,82 @@
     "name": "Dinner",
     "entries": [
       {
+        "name": "Dips & Bread",
+        "subTitle": "Dips & Bread ",
+        "description": "<p>Greek olives, Homeade Humus, Guacamole, Homeade focaccia and Pita bread</p>",
+        "price": 22.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Spicy Feta Cream",
+        "subTitle": "Spicy Feta cream ",
+        "description": "<p>Served with Pita bread</p>",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Greek Kalamata Olives",
+        "subTitle": "Greek Kalamata Olives",
+        "description": "<p>Served with Ciabatta </p>",
+        "price": 10,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Hummus",
+        "subTitle": "Hummus ",
+        "description": "<p>Served with Pita Bread</p>",
+        "price": 15.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Kimchi",
+        "subTitle": "Kimchi",
+        "description": "<p>Served with Ciabatta</p>",
+        "price": 12,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
         "name": "Burrata",
         "subTitle": "",
-        "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
+        "description": "<p>Seasonal fruits &amp; cherry tomatoes, basil &amp; focaccia</p>",
         "price": 21.5,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Feta Cream",
-        "subTitle": "Feta Cremé ",
-        "description": "<p>Served with cherry marmelade, dakos soil and olives</p>",
-        "price": 19,
+        "name": "Octopus",
+        "subTitle": "Octopus",
+        "description": "<p>Hummus, Fresh herbs, Lemon-oil dressing, Baba ganoush, Tomato marmelade</p>",
+        "price": 25.5,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Orzo Pasta",
-        "subTitle": "",
-        "description": "<p>Mushrooms, parmesan, lemon zest truffle oil</p>",
-        "price": 28,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Beef Filet",
-        "subTitle": "",
-        "description": "<p>chef's choice - weekly creation</p>",
-        "price": 48,
+        "name": "Ceviche",
+        "subTitle": "Ceviche",
+        "description": "<p>Fish of the day marinated with Tiger milk</p>",
+        "price": 24.5,
         "imageThumbnail": null,
         "image": null
       },
       {
         "name": "Beef Tartare",
-        "subTitle": "",
-        "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
+        "subTitle": "Beef Tartare",
+        "description": "<p>Brioche bread, egg yolk cream, truffle oil, onion chips</p>",
         "price": 31,
         "imageThumbnail": null,
         "image": null
       },
       {
         "name": "Beef Tataki",
-        "subTitle": "",
-        "description": "<p>Beef filet, chilli sauce, artichokes, dried tomatoes, leek-chips</p>",
+        "subTitle": "Beef Tataki",
+        "description": "<p>Beef filet, chilli sauce, artichokes, dried tomatoes, leek chips</p>",
         "price": 38.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Octopus",
-        "subTitle": "",
-        "description": "<p>Sweet potato waffle, fresh herbs, lemon-oil dressing</p>",
-        "price": 25.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Dips & Bread",
-        "subTitle": "Dips & Bread ",
-        "description": "<p>Greek olives, Homeade Humus, Guacamole, Homeade focaccia and Pita bread</p>",
-        "price": 22.5,
         "imageThumbnail": null,
         "image": null
       }
@@ -76,48 +92,12 @@
     "entries": [
       {
         "category": "Sparkling Wine",
-        "name": "Prosecco",
-        "subTitle": "Nani Rizzi, Prosecco Valdobbiadene Brut DOCG - Glass (0.1l)",
-        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Glera</em></li><li><strong>Origin: </strong><em>Conegliano-Valdobbiadene, Veneto Italy</em></li><li><strong>Profile:</strong> <em>Lots of flower and blossom, tart green apple &amp; white peaches</em></li><li><strong>Style: </strong><em>Dry</em></li></ul>",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Sparkling Wine",
-        "name": "Prosecco Bottle Nani Rizzi",
-        "subTitle": "Nani Rizzi, Prosecco Valdobbiadene Brut DOCG - Bottle (0.75l)",
-        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Glera</em></li><li><strong>Origin: </strong><em>Conegliano-Valdobbiadene, Veneto Italy</em></li><li><strong>Profile:</strong> <em>Lots of flower and blossom, tart green apple &amp; white peaches</em></li><li><strong>Style: </strong><em>Dry</em></li></ul>",
-        "price": 60,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Sparkling Wine",
-        "name": "Laurent Perrier Champagne 1dl",
-        "subTitle": "Laurent Perrier, Millesime 2015 - Glass (0.1l)",
-        "description": "<ul><li><strong>Grape variety:</strong> <em>50% Pinot Noir, 50% Chardonnay</em></li><li><strong>Origin: </strong><em>Cote de Blancs, Champagne France</em></li><li><strong>Profile:</strong> <em>Concentrated citrus fruit, candied lemon &amp; orange, honeysucle, bee wax alongside with herbal notes</em></li><li><strong>Style: </strong><em>Brut - 7 years of aging on the lees</em></li></ul>",
-        "price": 23,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Sparkling Wine",
         "name": "Laurent Perrier Champagne Bottle",
         "subTitle": "Laurent Perrier, Millesime 2015 - Bottle (0.75l)",
         "description": "<ul><li><strong>Grape variety:</strong> <em>50% Pinot Noir, 50% Chardonnay</em></li><li><strong>Origin: </strong><em>Cote de Blancs, Champagne France</em></li><li><strong>Profile:</strong> <em>Concentrated citrus fruit, candied lemon &amp; orange, honeysucle, bee wax alongside with herbal notes</em></li><li><strong>Style: </strong><em>Brut - 7 years of aging on the lees</em></li></ul>",
         "price": 140,
         "imageThumbnail": null,
         "image": null
-      },
-      {
-        "category": "Sparkling Wine",
-        "name": "Anne Claire Schott, Pét-Nat Rosé 2021 - Glass (1dl)",
-        "subTitle": "Anne Claire Schott, Pét-Nat - Glass (0.1l)",
-        "description": "<ul><li><strong>Grape variety:</strong> <em>85% Chasselas, 15% Muscat</em></li><li><strong>Origin: </strong><em>Neuchâtel, Switzerland</em></li><li><strong>Profile:</strong> <em>Ripe citrus fruit, yellow apples, Honey &amp; Beewax</em></li><li><strong>Style: </strong><em>Natural - dry &amp; fizzy</em></li></ul><p><br></p><p>This creation of art, as Anne-Claire refers to her wines, was produced in Neuchâtel.</p><p><br></p><p>Given the heat and the cold winter in this area, the three lakes play an important role in moderating the climate.</p><p><br></p><p>All her vineyard work and winemaking techniques are based on biodynamic approaches, which is always resulting in very character driven wines.</p><p><br></p><p>This natural fizzy wine impresses with ripe citrus fruit accompanied by dried wildflowers and honey.</p><p><br></p><p>This creative craft - is always surprising!</p>",
-        "price": 18,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f5eb0af1-aeb6-4f68-9abc-1e76fcff6bab.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f5eb0af1-aeb6-4f68-9abc-1e76fcff6bab_raw.png"
       },
       {
         "category": "Sparkling Wine",
@@ -129,92 +109,146 @@
         "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7c707675-c178-4c88-a654-3fe0f47bc2ff_raw.png"
       },
       {
+        "category": "Sparkling Wine",
+        "name": "Prosecco Il colle",
+        "subTitle": "Azienda Vitivinicola Il Colle, Prosecco Valdobbiadene DOC",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> 90% Glera, 10% Chardonnay</em></p></li><li><p><strong>Origin: </strong><em>Conegliano-Valdobbiadene DOC, Veneto, Italy</em></p></li><li><p><strong>Profile: </strong><em>Lots of flowers and blossoms (acacia, orange blossom, daisies…),Dried grass / sweet in style, tart green apple and white peaches</em></p></li><li><p><strong>Style:</strong> <em>Dry (not bone dry, but dry; around 8g/l RS), Martinotti Method, 1month fining on lees</em></p></li></ul>",
+        "price": 10,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Sparkling Wine",
+        "name": "Il Colle Bottle",
+        "subTitle": "Azienda Vitivinicola Il Colle, Prosecco Valdobbiadene DOC Bottle",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> 90% Glera, 10% Chardonnay</em></p></li><li><p><strong>Origin: </strong><em>Conegliano-Valdobbiadene DOC, Veneto, Italy</em></p></li><li><p><strong>Profile: </strong><em>Lots of flowers and blossoms (acacia, orange blossom, daisies…),Dried grass / sweet in style, tart green apple and white peaches</em></p></li><li><p><strong>Style:</strong> <em>Dry (not bone dry, but dry; around 8g/l RS), Martinotti Method, 1month fining on lees</em></p></li></ul>",
+        "price": 60,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Sparkling Wine",
+        "name": "Weingut Hees Sekt Brut",
+        "subTitle": "Weingut Hees, Sekt Brut",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Riesling</em></p></li><li><p><strong>Origin: </strong><em>Nahe, Germany</em></p></li><li><p><strong>Profile: </strong><em>Just ripe stone fruit; citrus fruit / fresh lemon juice, Slight touch of freshly baked croissants (buttery, fresh dough) coming, Mineral driven / wet stone character</em></p></li><li><p><strong>Style:</strong> Dry, Champagne Method 24months on the lees</p></li></ul>",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Sparkling Wine",
+        "name": "Weingut Hees Riesling bottle",
+        "subTitle": "Weingut Hees, Sekt Brut Bottle ",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Riesling</em></p></li><li><p><strong>Origin: </strong><em>Nahe, Germany</em></p></li><li><p><strong>Profile: </strong><em>Just ripe stone fruit; citrus fruit / fresh lemon juice, Slight touch of freshly baked croissants (buttery, fresh dough) coming, Mineral driven / wet stone character</em></p></li><li><p><strong>Style:</strong> Dry, Champagne Method 24months on the lees</p></li></ul>",
+        "price": 80,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
         "category": "White wine",
-        "name": "Riesling",
-        "subTitle": "Wagner-Stempel, Riesling BIO 2023 - Glass (0.1l)",
-        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Riesling</em></li><li><strong>Origin: </strong><em>Rheinhessen, Germany</em></li><li><strong>Profile:</strong> <em>Fruit intense, expressive, youthful with lots of fresh lemon skin, tart apricots and some guava</em></li><li><strong>Style: </strong><em>Dry, fruity and well balanced</em></li></ul>",
+        "name": "Zuribieter",
+        "subTitle": "Weingut Landolt, Züribieter Cuvée Weiss 2023",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> Blend Riesling-Silvaner (Müller-Thurgau), Pinot Gris, Sauvignon Blanc, Pinot Noir (Blanc de Noir)</em></p></li><li><p><strong>Origin: </strong><em>Zurich, Switzerland</em></p></li><li><p><strong>Profile: </strong><em>Fruit profile based on ripe yellow stone fruits like peaches and apricots,some tropical hints with just ripe pineapple and guava, Freshly squeezed lemon juice, </em>Apple blossom and lemon balm </p></li><li><p><strong>Style:</strong> Dry white, Fruit driven, delicate and tart to just ripe tropical aroma profile, Youthful and lightweighted</p></li></ul>",
         "price": 10,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "White wine",
-        "name": "Riesling Flasche",
-        "subTitle": "Wagner-Stempel, Riesling BIO 2023 - Bottle (0.75l)",
-        "description": "<ul><li><strong>Grape variety:</strong> <em>100% Riesling</em></li><li><strong>Origin: </strong><em>Rheinhessen, Germany</em></li><li><strong>Profile:</strong> <em>Fruit intense, expressive, youthful with lots of fresh lemon skin, tart apricots and some guava</em></li><li><strong>Style: </strong><em>Dry, fruity and well balanced</em></li></ul>",
-        "price": 60,
+        "name": "Zuribieter Bottle",
+        "subTitle": "",
+        "description": "",
+        "price": 65,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "White wine",
-        "name": "Chardonnay",
-        "subTitle": "Chardonnay 2022, Winery Hansruedi Adank - Glass (0.1l)",
-        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Chardonnay</em></li><li><strong>Origin: </strong><em>Bündner Herrschaft, Switzerland</em></li><li><strong>Profile: </strong><em>Dense and fresh lemon juice, ripe yellow apples, floral touches with some apple blossom</em></li><li><strong>Style:</strong> <em>Dry with some oak usage</em></li></ul>",
-        "price": 15,
+        "name": "Riesling Loersch",
+        "subTitle": "Weingut Alexander Loersch, Trittenheimer Altärchen 2023",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Riesling</em></p></li><li><p><strong>Origin: </strong><em>Mosel, Germany</em></p></li><li><p><strong>Profile: </strong><em>Intense and ripe stone fruit flavors with lots of apricot, yellow peaches, Some tropica aromas with ripe lychee and kiwi, Ripe yellow apples, honeysuckle and lemon balm, Touch of pencil shavings, Saline texture</em></p></li><li><p><strong>Style:</strong> <em>Dry white with a hint of sweetness, Ripe fruit profile but well balanced by a sharp and juicy acidity, Fresh but with some depth and texture to it</em></p></li></ul>",
+        "price": 13.5,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "White wine",
-        "name": "Chardonnay - Bottle",
-        "subTitle": "Chardonnay 2022, Winery Hansruedi Adank - Bottle (0.75l)",
-        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Chardonnay</em></li><li><strong>Origin: </strong><em>Bündner Herrschaft, Switzerland</em></li><li><strong>Profile: </strong><em>Dense and fresh lemon juice, ripe yellow apples, floral touches with some apple blossom</em></li><li><strong>Style:</strong> <em>Dry with some oak usage</em></li></ul>",
-        "price": 100,
+        "name": "Riesling Loersch Bottle",
+        "subTitle": "Weingut Alexander Loersch, Trittenheimer Altärchen 2023 Bottle",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Riesling</em></p></li><li><p><strong>Origin: </strong><em>Mosel, Germany</em></p></li><li><p><strong>Profile: </strong><em>Intense and ripe stone fruit flavors with lots of apricot, yellow peaches, Some tropica aromas with ripe lychee and kiwi, Ripe yellow apples, honeysuckle and lemon balm, Touch of pencil shavings, Saline texture</em></p></li><li><p><strong>Style:</strong> <em>Dry white with a hint of sweetness, Ripe fruit profile but well balanced by a sharp and juicy acidity, Fresh but with some depth and texture to it</em></p></li></ul>",
+        "price": 84,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "White wine",
+        "name": "Zeter Chardonnay",
+        "subTitle": "Weingut Oliver Zeter, Haardt Chardonnay 2023",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Chardonnay</em></p></li><li><p><strong>Origin: </strong><em>Pfalz, Germany</em></p></li><li><p><strong>Profile: </strong><em>Fruit aromas based on just ripe green apples, green pear and some banana peel, Minimal touches of spice with some vanilla and clove, Compact structure with broad texture on your palate, Acidity breaks creaminess given by soft oak uasage</em></p></li><li><p><strong>Style:</strong> <em> Dry and mineral driven whiteChardonnay characteristic creamy texture with good acidity</em></p></li></ul>",
+        "price": 12.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "White wine",
+        "name": "Zeter Chardonnay Bottle",
+        "subTitle": "Weingut Oliver Zeter, Haardt Chardonnay 2023 Bottle",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Chardonnay</em></p></li><li><p><strong>Origin: </strong><em>Pfalz, Germany</em></p></li><li><p><strong>Profile: </strong><em>Fruit aromas based on just ripe green apples, green pear and some banana peel, Minimal touches of spice with some vanilla and clove, Compact structure with broad texture on your palate, Acidity breaks creaminess given by soft oak uasage</em></p></li><li><p><strong>Style:</strong> <em> Dry and mineral driven whiteChardonnay characteristic creamy texture with good acidity</em></p></li></ul>",
+        "price": 75,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "Rosé",
-        "name": "Mas del Pérlé, A Table - Glass / Bottle",
-        "subTitle": "Mas del Péré, A Table! - Glass / Bottle",
-        "description": "<ul><li><strong>Grape variety:</strong> Malbec/ Tannat</li><li><strong>Origin: </strong><em>South-West, France</em></li><li><strong>Profile:</strong> Very ripe red fruit, red cherries, mulberry, grenadine, raspberry &amp; rose hip</li><li><strong>Style: </strong><em>Dry, Rosé with intense color, slightly cloudy</em></li></ul>",
-        "price": 60,
+        "name": "Les Vignerons du Roy René, Ma Terre Rosé 2023",
+        "subTitle": "Les Vignerons du Roy René, Ma Terre Rosé 2023",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> Cinsault, Grenache Noir, Syrah</em></p></li><li><p><strong>Origin: </strong><em>Provence, France</em></p></li><li><p><strong>Profile: </strong><em>Aroma profile led by red berries like just ripe raspberries andstrawberries, touch of citrus fruit flavors with bloodorange juiceand tangerine skin</em></p></li><li><p><strong>Style:</strong> <em>Fruit driven but delicate and humble rosé</em></p><p><em>Light and mineral driven</em></p><p><em>Low tannin level, soft texture</em></p></li></ul>",
+        "price": 9.5,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "Rosé",
-        "name": "Oeil-de-Perdrix - Glass (0.1l)",
-        "subTitle": "Ruedin by Jacques Tatasciore - Bottle",
-        "description": "<ul><li><strong>Grape variety:</strong><em> Pinot Noir</em></li><li><strong>Origin: </strong><em>Neuchâtel, Switzerland</em></li><li><strong>Profile: </strong><em>Red berries / wild strawberries / fresh apricot accompanied by spicy notes such as cardamom and pink pepper</em></li><li><strong>Style:</strong> <em>Dry / Rosé</em></li></ul><p><br></p>",
-        "price": 12,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Red wine",
-        "name": "Pinot Noir",
-        "subTitle": "Pinot Noir Terroir 2022, winery Schwarzenbach - Glass (0.1l)",
-        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
-        "price": 15,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Red wine",
-        "name": "Pinot Noir - Bottle",
-        "subTitle": "Pinot Noir Terroir 2022, winery Schwarzenbach - Bottle (0.75l)",
-        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
+        "name": "Les Vignerons du Roy René, Ma Terre Rosé 2023 Bottle",
+        "subTitle": "Les Vignerons du Roy René, Ma Terre Rosé 2023 Bottle",
+        "description": "<ul><li><p><strong>Grape variety:</strong><em> Cinsault, Grenache Noir, Syrah</em></p></li><li><p><strong>Origin: </strong><em>Provence, France</em></p></li><li><p><strong>Profile: </strong><em>Aroma profile led by red berries like just ripe raspberries andstrawberries, touch of citrus fruit flavors with bloodorange juiceand tangerine skin</em></p></li><li><p><strong>Style:</strong> <em>Fruit driven but delicate and humble rosé</em></p><p><em>Light and mineral driven</em></p><p><em>Low tannin level, soft texture</em></p></li></ul>",
         "price": 60,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "Red wine",
-        "name": "Weingut Zeter Petz",
-        "subTitle": "Weingut Zeter Petz ",
-        "description": "<ul><li><strong>Grape variety:</strong>&nbsp;Blend of Merlot, Cabernet Sauvignon</li><li><strong>Origin:&nbsp; </strong>Pfalz, Germany</li><li><strong>Profile:</strong>&nbsp;Lots of red and dark Berries like dark sour cherries, wild raspberries and black currant</li><li><strong>Style:&nbsp;</strong><em>Dry, but Fruit driven and soft in Tannins</em></li></ul><p><br></p>",
-        "price": 9,
+        "name": "Weinbau Schwarzenbach, Blauburgunder 2022",
+        "subTitle": "Weinbau Schwarzenbach, Blauburgunder 2022",
+        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
+        "price": 14.5,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "Red wine",
-        "name": "Weingut Zeter Petz Bottle",
-        "subTitle": "Weingut Zeter Petz Bottle",
+        "name": "Weinbau Schwarzenbach, Blauburgunder 2022 Bottle",
+        "subTitle": "Weinbau Schwarzenbach, Blauburgunder 2022",
+        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
+        "price": 98,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Red wine",
+        "name": "Weingut Oliver Zeter, Petz Cuvée Rot 2022 Bottle",
+        "subTitle": "Weingut Oliver Zeter, Petz Cuvée Rot 2022 Bottle",
         "description": "<ul><li><strong>Grape variety:</strong>&nbsp;Blend of Merlot, Cabernet Sauvignon</li><li><strong>Origin:&nbsp;</strong>Pfalz, Germany</li><li><strong>Profile:</strong>&nbsp;Lots of red and dark Berries like dark sour cherries, wild raspberries and black currant</li><li><strong>Style:&nbsp;</strong><em>Dry, but Fruit driven and soft in Tannins</em></li></ul><p><br></p>",
-        "price": 60,
+        "price": 65,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Red wine",
+        "name": "Weingut Oliver Zeter, Petz Cuvée Rot 2022",
+        "subTitle": "Weingut Oliver Zeter, Petz Cuvée Rot 2022 ",
+        "description": "<ul><li><strong>Grape variety:</strong>&nbsp;Blend of Merlot, Cabernet Sauvignon</li><li><strong>Origin:&nbsp; </strong>Pfalz, Germany</li><li><strong>Profile:</strong>&nbsp;Lots of red and dark Berries like dark sour cherries, wild raspberries and black currant</li><li><strong>Style:&nbsp;</strong><em>Dry, but Fruit driven and soft in Tannins</em></li></ul><p><br></p>",
+        "price": 10,
         "imageThumbnail": null,
         "image": null
       },
@@ -394,7 +428,7 @@
       {
         "name": "Burrata",
         "subTitle": "",
-        "description": "<p>Seasonal fruits &amp; cherry tomatoes marinated with Pesto - served with homemade bread</p>",
+        "description": "<p>Seasonal fruits &amp; cherry tomatoes, basil &amp; focaccia</p>",
         "price": 21.5,
         "imageThumbnail": null,
         "image": null
@@ -425,8 +459,8 @@
       },
       {
         "name": "Beef Tartare",
-        "subTitle": "",
-        "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
+        "subTitle": "Beef Tartare",
+        "description": "<p>Brioche bread, egg yolk cream, truffle oil, onion chips</p>",
         "price": 31,
         "imageThumbnail": null,
         "image": null
@@ -504,8 +538,8 @@
       },
       {
         "name": "Beef Tartare",
-        "subTitle": "",
-        "description": "<p>Beef Tartare with a brioche bread, egg yolk cream, truffle oil, onion chips - served with a small salad</p>",
+        "subTitle": "Beef Tartare",
+        "description": "<p>Brioche bread, egg yolk cream, truffle oil, onion chips</p>",
         "price": 31,
         "imageThumbnail": null,
         "image": null
@@ -609,15 +643,6 @@
       },
       {
         "category": "Hot beverage",
-        "name": "Bio Long Cui Lu",
-        "subTitle": "China Long Cui Lu Bio",
-        "description": "<p>This green tea has a balanced sweetness and a complex aroma.</p>",
-        "price": 8.5,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c6e0f416-5103-440b-94bf-2ee18bf0a026.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c6e0f416-5103-440b-94bf-2ee18bf0a026_raw.png"
-      },
-      {
-        "category": "Hot beverage",
         "name": "Black Tea",
         "subTitle": "Monk Tea (Black Tea)",
         "description": "<p>Flavored black tea with jasmine-bergamot flavor and vanilla notes</p>",
@@ -647,7 +672,7 @@
         "category": "Cold beverage",
         "name": "Still Water 5dl",
         "subTitle": "Water still 0.5l",
-        "description": "<p>We serve our water with a premium water dispenser from Brita with the latest technology and allow us to charge you for the water.</p><p><br></p><p>Technical precision from Germany for excellent hygiene with the optional HygienePlus system from BRITA, proven in the healthcare sector.</p><p><br></p><ul><li>A pre-filter removes coarse particles such as sand and protects our devices.</li><li>A hollow fiber membrane filters microplastics, hormones, pesticides and drug residues, as well as 99.999% of all bacteria and 99.95% of all cysts.</li><li>Activated carbon filtration removes substances that affect taste and odor.</li></ul><p><br></p><p><br></p><p>By switching from bottled mineral water to a piped water dispenser, you can avoid the use of single-use plastic.</p>",
+        "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
         "price": 5.5,
         "imageThumbnail": null,
         "image": null
@@ -656,7 +681,7 @@
         "category": "Cold beverage",
         "name": "Still Water 1l",
         "subTitle": "Water Still 1l",
-        "description": "<p>We serve our water with a premium water dispenser from Brita with the latest technology and allow us to charge you for the water.</p><p><br></p><p>Technical precision from Germany for excellent hygiene with the optional HygienePlus system from BRITA, proven in the healthcare sector.</p><p><br></p><p>A pre-filter removes coarse particles such as sand and protects our devices.</p><p>A hollow fiber membrane filters microplastics, hormones, pesticides and drug residues, as well as 99.999% of all bacteria and 99.95% of all cysts.</p><p>Activated carbon filtration removes substances that affect taste and odor.</p><p><br></p><p><br></p><p>By switching from bottled mineral water to a piped water dispenser, you can avoid the use of single-use plastic.</p>",
+        "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
         "price": 7,
         "imageThumbnail": null,
         "image": null
@@ -665,7 +690,7 @@
         "category": "Cold beverage",
         "name": "Sparkling Water 5dl",
         "subTitle": "Sparkling water 0.5l",
-        "description": "<p>We serve our water with a premium water dispenser from Brita with the latest technology and allow us to charge you for the water.</p><p><br></p><p>Technical precision from Germany for excellent hygiene with the optional HygienePlus system from BRITA, proven in the healthcare sector.</p><p><br></p><ul><li>A pre-filter removes coarse particles such as sand and protects our devices.</li><li>A hollow fiber membrane filters microplastics, hormones, pesticides and drug residues, as well as 99.999% of all bacteria and 99.95% of all cysts.</li><li>Activated carbon filtration removes substances that affect taste and odor.</li></ul><p><br></p><p><br></p><p>By switching from bottled mineral water to a piped water dispenser, you can avoid the use of single-use plastic.</p>",
+        "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
         "price": 5.5,
         "imageThumbnail": null,
         "image": null
@@ -674,7 +699,7 @@
         "category": "Cold beverage",
         "name": "Sparkling Water 1l",
         "subTitle": "Sparkling water 1l",
-        "description": "<p>We serve our water with a premium water dispenser from Brita with the latest technology and allow us to charge you for the water.</p><p><br></p><p>Technical precision from Germany for excellent hygiene with the optional HygienePlus system from BRITA, proven in the healthcare sector.</p><ul><li><br></li><li>A pre-filter removes coarse particles such as sand and protects our devices.</li><li>A hollow fiber membrane filters microplastics, hormones, pesticides and drug residues, as well as 99.999% of all bacteria and 99.95% of all cysts.</li><li>Activated carbon filtration removes substances that affect taste and odor.</li></ul><p><br></p><p><br></p><p>By switching from bottled mineral water to a piped water dispenser, you can avoid the use of single-use plastic.</p>",
+        "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
         "price": 7,
         "imageThumbnail": null,
         "image": null
@@ -690,8 +715,8 @@
       },
       {
         "category": "Cold beverage",
-        "name": "Ginger Turmeric Juice",
-        "subTitle": "",
+        "name": "Booster Juice (Orange, Ginger, Carrot)",
+        "subTitle": "Booster Juice (Orange, Ginger, Carrot)",
         "description": "",
         "price": 7.5,
         "imageThumbnail": null,
