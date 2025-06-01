@@ -1,6 +1,7 @@
 import { onSchedule } from "firebase-functions/v2/scheduler";
 
 import { sendReservationSummary } from "./reservationEmail";
+import { sendDailyReminders } from "./sendReminders";
 
 export const sendDailyReservationsSummary = onSchedule(
   {
@@ -14,5 +15,20 @@ export const sendDailyReservationsSummary = onSchedule(
     }
     const today = new Date();
     await sendReservationSummary(today);
+  },
+);
+
+export const sendReservationReminders = onSchedule(
+  {
+    schedule: "0 20 30 * *", // Run at 20:30 (8:30 PM) every day
+    timeZone: "Europe/Zurich",
+    retryCount: 3,
+  },
+  async () => {
+    if (process.env.ENVIRONMENT === "dev") {
+      return;
+    }
+    const today = new Date();
+    await sendDailyReminders(today);
   },
 );
