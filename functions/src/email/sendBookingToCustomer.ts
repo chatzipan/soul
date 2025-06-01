@@ -4,42 +4,42 @@ import * as handlebars from "handlebars";
 import * as mjml2html from "mjml";
 import * as path from "path";
 
+import { Reservation } from "../types/reservation";
 import { createEmailTransporter } from "../utils/email";
+import { getFormattedDate } from "./utils";
 
-type Data = {
-  date: string;
-  email: string;
-  persons: number;
-  firstName: string;
-  lastName: string;
-  notes: string;
-  time: string;
-  id: string;
-};
+export const sendBookingToCustomer = async (
+  reservation: Reservation,
+  id: string,
+) => {
+  const PREFIX = ["dev", "local"].includes(process.env.ENVIRONMENT || "")
+    ? "TEST!!! -  "
+    : "";
 
-export const sendBookingToCustomer = async (data: Data) => {
-  const PREFIX = process.env.ENVIRONMENT === "dev" ? "TEST!!! -  " : "";
   const host =
     process.env.ENVIRONMENT === "local"
       ? "http://localhost:8000"
       : process.env.ENVIRONMENT === "dev"
         ? "https://develop.soulzuerich.ch"
         : "https://soulzuerich.ch";
-  const cancelUrl = `${host}/reservations/cancel/${data.id}`;
+  const cancelUrl = `${host}/reservations/cancel/${id}`;
+  const editUrl = `${host}/reservations/edit/${id}`;
   const transporter = createEmailTransporter();
-  const { email, ...rest } = data;
   const template = fs.readFileSync(
     path.join(__dirname, "./templates/reservation_customer.mjml"),
     "utf8",
   );
 
+  const { date, ...rest } = reservation;
+  const formattedDate = getFormattedDate(reservation.date);
+
   const parsed = handlebars.compile(template);
-  const htmlBody = parsed({ ...rest, cancelUrl });
+  const htmlBody = parsed({ ...rest, cancelUrl, date: formattedDate, editUrl });
   const convertedMjml = mjml2html(htmlBody);
 
   transporter.sendMail({
     from: `${PREFIX}Soul Bookings <hallo@soulzuerich.ch>`,
-    to: [email],
+    to: [reservation.email],
     subject: `${PREFIX}Confirmation of your reservation`,
     html: convertedMjml.html,
   });

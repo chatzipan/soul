@@ -1,4 +1,12 @@
+export enum BookingType {
+  BRUNCH = "Brunch",
+  LUNCH = "Lunch",
+  APERO = "Apéro",
+  DINNER = "Dinner",
+}
+
 export type Reservation = {
+  bookingType?: BookingType;
   canceled: boolean;
   disableParallelBookings: boolean;
   date: number;

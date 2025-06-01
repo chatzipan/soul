@@ -1,6 +1,9 @@
 import moment from "moment-timezone";
 
-import { Reservation } from "../../functions/src/types/reservation";
+import {
+  BookingType,
+  Reservation,
+} from "../../functions/src/types/reservation";
 import { fetchWithAuth } from "../utils/fetchWithAuth";
 
 const API_URL = process.env.GATSBY_API_URL;
@@ -20,7 +23,7 @@ export const createReservation = async (
 };
 
 export const createReservationPublic = async (
-  reservation: Omit<Reservation, "id"> & { bookingType: string },
+  reservation: Omit<Reservation, "id"> & { bookingType: BookingType },
 ) => {
   try {
     return await fetchWithAuth(`${API_URL}/v1/public/reservations`, {
@@ -157,6 +160,7 @@ export const updateReservation = async (
   try {
     return await fetchWithAuth(`${API_URL}/v1/reservations/${reservation.id}`, {
       method: "PUT",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reservation),
     });
   } catch (error) {
@@ -165,14 +169,27 @@ export const updateReservation = async (
   }
 };
 
+export const updateReservationPublic = async (reservation: Reservation) => {
+  return await fetchWithAuth(
+    `${API_URL}/v1/public/reservations/${reservation.id}`,
+    {
+      method: "PUT",
+      body: JSON.stringify(reservation),
+    },
+  );
+};
+
 export const getReservationById = async (id: string) => {
   try {
     const response = await fetchWithAuth<Reservation>(
       `${API_URL}/v1/public/reservations/${id}`,
     );
+
     return {
       ...response,
-      time: getTimeFromDate(new Date(response.date)),
+      time: response.time
+        ? response.time
+        : getTimeFromDate(new Date(response.date)),
     };
   } catch (error) {
     console.error(error);

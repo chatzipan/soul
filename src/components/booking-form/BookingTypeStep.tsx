@@ -9,10 +9,10 @@ import {
 } from "@mui/material";
 import { format } from "date-fns";
 
+import { BookingType } from "../../../functions/src/types/reservation";
 import { getDateInOneYear } from "../../utils/date";
 import * as Common from "../home/Hero.styled";
 import * as S from "./BookingForm.styled";
-import { BookingType } from "./types";
 
 const BookingTypeIcons = {
   [BookingType.BRUNCH]: "🍳",

@@ -7,10 +7,12 @@ import { ContactData } from "./types";
 
 export const ContactStep = ({
   contact,
+  isEditMode,
   isPending,
   setContactData,
 }: {
   contact: ContactData;
+  isEditMode: boolean;
   isPending: boolean;
   setContactData: (contact: ContactData) => void;
 }) => {
@@ -46,6 +48,7 @@ export const ContactStep = ({
           sx={{ mb: 2, width: "100%" }}
           inputProps={{ maxLength: 24 }}
           fullWidth
+          disabled={isEditMode}
         />
         <S.TextField
           id="outlined-basic"
@@ -57,6 +60,7 @@ export const ContactStep = ({
           sx={{ mb: 2, width: "100%" }}
           fullWidth
           inputProps={{ maxLength: 24 }}
+          disabled={isEditMode}
         />
         <S.TextField
           id="outlined-basic"
@@ -68,6 +72,7 @@ export const ContactStep = ({
           onChange={handleContactChange}
           variant="outlined"
           fullWidth
+          disabled={isEditMode}
         />
         <S.TelInput
           id="outlined-basic"
@@ -80,6 +85,7 @@ export const ContactStep = ({
           defaultCountry="CH"
           fullWidth
           inputProps={{ maxLength: 24 }}
+          disabled={isEditMode}
         />
         <S.TextArea
           id="outlined-multiline-static"
@@ -92,7 +98,7 @@ export const ContactStep = ({
           name="notes"
           value={contact.notes}
           onChange={handleContactChange}
-          inputProps={{ maxLength: 24 }}
+          inputProps={{ maxLength: 120 }}
         />
       </Box>
     </Box>

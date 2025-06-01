@@ -12,18 +12,29 @@ import { format } from "date-fns";
 import moment from "moment-timezone";
 
 import {
+  BookingType,
+  Reservation,
+} from "../../../functions/src/types/reservation";
+import {
   DayOfWeek,
   RestaurantSettings,
 } from "../../../functions/src/types/settings";
 import { useOpeningHours } from "../../hooks/useOpeningHours";
-import { createReservationPublic } from "../../services/reservations";
-import { createTimeOptionsFromOpeningHours } from "../../utils/date";
+import {
+  createReservationPublic,
+  updateReservationPublic,
+} from "../../services/reservations";
 import { isValidEmail } from "../admin/reservations/utils";
-import * as S from "./BookingModal.styled";
+import * as S from "./BookingForm.styled";
 import { BookingTimeStep } from "./BookingTimeStep";
 import { BookingTypeStep } from "./BookingTypeStep";
 import { ContactStep } from "./ContactStep";
-import { BookingType, ContactData } from "./types";
+import { ContactData } from "./types";
+import {
+  createTimeOptionsFromOpeningHours,
+  getBookingTypeForTime,
+  getZurichTimeNow,
+} from "./utils";
 
 enum Step {
   TYPE = "bookingType",
@@ -50,43 +61,67 @@ const SORTED_DAYS = [
   DayOfWeek.Saturday,
 ];
 
-export const getZurichTimeNow = () =>
-  moment.tz("Europe/Zurich").format("YYYY-MM-DD HH:mm");
-
-export const BookingModal = ({
+export const BookingForm = ({
   isOpen,
+  initialReservation,
   onClose,
-  initialDate,
+  onSuccess,
+  selectedDate,
 }: {
   isOpen: boolean;
   onClose: () => void;
-  initialDate?: Date | null;
+  onSuccess?: (data: Reservation) => void;
+  initialReservation?: Reservation;
+  selectedDate?: Date | null;
 }) => {
   const dateInZurichNow = new Date(getZurichTimeNow().split(" ")[0]);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const [persons, setPersons] = useState<number>(2);
-  const [bookingType, setBookingType] = useState<BookingType | null>(null);
-  const [bookingTime, setBookingTime] = useState<string | null>(null);
-  const [bookingDate, setBookingDate] = useState<Date>(
-    initialDate || dateInZurichNow,
-  );
-
-  useEffect(() => {
-    const dateInZurichNow = new Date(getZurichTimeNow().split(" ")[0]);
-
-    if (initialDate) {
-      setBookingDate(
-        initialDate >= dateInZurichNow ? initialDate : dateInZurichNow,
-      );
-    }
-  }, [initialDate]);
-
+  const isEditMode = !!initialReservation;
   const [currentStep, setCurrentStep] = useState<Step>(Step.TYPE);
-  const [contact, setContactData] = useState(initialContactData);
   const response = useOpeningHours();
   const settings = response?.data as unknown as RestaurantSettings;
+  const [bookingDate, setBookingDate] = useState<Date>(
+    selectedDate || dateInZurichNow,
+  );
+
   const bookingDay = SORTED_DAYS[bookingDate.getDay()];
+
+  const [persons, setPersons] = useState<number>(
+    initialReservation?.persons || 2,
+  );
+
+  const [bookingTime, setBookingTime] = useState<string | null>(
+    initialReservation?.time || null,
+  );
+
+  const bookingTypeForTime = useMemo(() => {
+    if (!isEditMode) return null;
+
+    return getBookingTypeForTime(
+      initialReservation?.time,
+      settings?.openingDays?.[bookingDay]?.offersDinner || false,
+      bookingDay,
+      bookingDate,
+      settings as RestaurantSettings,
+    );
+  }, [bookingDay, bookingDate, settings, isEditMode, initialReservation]);
+
+  const [bookingType, setBookingType] = useState<BookingType | null>(
+    initialReservation ? bookingTypeForTime : null,
+  );
+
+  const [contact, setContactData] = useState(
+    isEditMode
+      ? {
+          firstName: initialReservation.firstName,
+          lastName: initialReservation.lastName,
+          email: initialReservation.email,
+          telephone: initialReservation.telephone,
+          notes: initialReservation.notes,
+        }
+      : initialContactData,
+  );
 
   const backLabel = [Step.TYPE, Step.CONFIRM].includes(currentStep)
     ? "Close"
@@ -179,24 +214,43 @@ export const BookingModal = ({
         "Europe/Zurich",
       );
 
-      return createReservationPublic({
-        date: zurichTime.toDate().getTime(),
-        disableParallelBookings: false,
-        durationHours: undefined,
-        email: contact.email.toLowerCase().trim(),
-        eventInfo: "",
-        eventTitle: "",
-        firstName: contact.firstName,
-        isEvent: false,
-        isOwnEvent: false,
-        lastName: contact.lastName,
-        notes: contact.notes,
-        persons: persons,
-        telephone: contact.telephone,
-        canceled: false,
-        time: bookingTime || "",
-        bookingType: bookingType || "",
-      });
+      if (isEditMode) {
+        const data = {
+          ...initialReservation,
+          date: zurichTime.toDate().getTime(),
+          email: contact.email.toLowerCase().trim(),
+          firstName: contact.firstName,
+          lastName: contact.lastName,
+          notes: contact.notes,
+          persons: persons,
+          telephone: contact.telephone,
+          time: bookingTime || "",
+          bookingType: bookingType as BookingType,
+        };
+        const response = await updateReservationPublic(data);
+        onSuccess?.(data);
+        return response;
+      } else {
+        const data = {
+          date: zurichTime.toDate().getTime(),
+          disableParallelBookings: false,
+          durationHours: undefined,
+          email: contact.email.toLowerCase().trim(),
+          eventInfo: "",
+          eventTitle: "",
+          firstName: contact.firstName,
+          isEvent: false,
+          isOwnEvent: false,
+          lastName: contact.lastName,
+          notes: contact.notes,
+          persons: persons,
+          telephone: contact.telephone,
+          canceled: false,
+          time: bookingTime || "",
+          bookingType: bookingType as BookingType,
+        };
+        return createReservationPublic(data);
+      }
     },
     onSuccess: () => {
       setCurrentStep(Step.CONFIRM);
@@ -204,35 +258,42 @@ export const BookingModal = ({
     },
   });
 
+  useEffect(() => {
+    const dateInZurichNow = new Date(getZurichTimeNow().split(" ")[0]);
+
+    if (selectedDate) {
+      setBookingDate(
+        selectedDate >= dateInZurichNow ? selectedDate : dateInZurichNow,
+      );
+    }
+  }, [selectedDate]);
+
+  useEffect(() => {
+    if (isEditMode) {
+      setBookingType(bookingTypeForTime);
+    }
+  }, [bookingTypeForTime, isEditMode]);
+
   if (response?.isError) {
     return (
-      <S.Modal
-        fullScreen={isMobile}
-        maxWidth="xl"
-        open={isOpen}
-        onClose={closeModal}
-      >
-        <DialogTitle>Our booking system is currently down.</DialogTitle>
-        <DialogContent sx={{ width: { xs: "auto", md: "500px" } }}>
-          <Typography>
-            Please try again later or contact us directly via phone or email.
-          </Typography>
-        </DialogContent>
-      </S.Modal>
+      <>
+        <Typography variant="h5" color="error">
+          Our booking system is currently down.
+        </Typography>
+        <Typography>
+          Please try again later or contact us directly via phone or email.
+        </Typography>
+      </>
     );
   }
 
-  return (
-    <S.Modal
-      fullScreen={isMobile}
-      maxWidth="xl"
-      open={isOpen}
-      onClose={closeModal}
-      aria-labelledby="responsive-dialog-title"
-    >
-      <DialogTitle sx={{ fontSize: "2rem" }} id="responsive-dialog-title">
-        Book a table
-      </DialogTitle>
+  const content = (
+    <>
+      {!isEditMode && (
+        <DialogTitle sx={{ fontSize: "2rem" }} id="responsive-dialog-title">
+          Book a table
+        </DialogTitle>
+      )}
       <DialogContent sx={{ pb: 0, width: { xs: "auto", md: "500px" } }}>
         {currentStep === Step.TYPE && (
           <BookingTypeStep
@@ -257,6 +318,7 @@ export const BookingModal = ({
         {currentStep === Step.CONTACT && (
           <ContactStep
             contact={contact}
+            isEditMode={isEditMode}
             isPending={isPending}
             setContactData={setContactData}
           />
@@ -267,20 +329,46 @@ export const BookingModal = ({
               ✅
             </Typography>
             <Typography variant="h5" sx={{ textAlign: "center" }}>
-              Your reservation has been confirmed. You will receive a
-              confirmation email shortly.
+              Your reservation has been {isEditMode ? "updated" : "confirmed"}.
+              You will receive a confirmation email shortly.
             </Typography>
           </Box>
         )}
       </DialogContent>
       <DialogActions sx={{ justifyContent: "space-between", p: 3 }}>
-        <Button onClick={handleBack}>{backLabel}</Button>
+        {!(isEditMode && [Step.TYPE, Step.CONFIRM].includes(currentStep)) && (
+          <Button onClick={handleBack}>{backLabel}</Button>
+        )}
         {currentStep !== Step.CONFIRM && (
-          <Button disabled={isNextDisabled || isPending} onClick={handleNext}>
-            {currentStep === Step.CONTACT ? "Book" : "Next"}
+          <Button
+            style={{ marginLeft: "auto" }}
+            disabled={isNextDisabled || isPending}
+            onClick={handleNext}
+          >
+            {currentStep === Step.CONTACT
+              ? initialReservation
+                ? "Update"
+                : "Book"
+              : "Next"}
           </Button>
         )}
       </DialogActions>
+    </>
+  );
+
+  if (isEditMode) {
+    return content;
+  }
+
+  return (
+    <S.Modal
+      fullScreen={isMobile}
+      maxWidth="xl"
+      open={isOpen}
+      onClose={closeModal}
+      aria-labelledby="responsive-dialog-title"
+    >
+      {content}
     </S.Modal>
   );
 };

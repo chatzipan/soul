@@ -31,6 +31,24 @@ publicRouter.get("/events", async (_, res) => {
   }
 });
 
+publicRouter.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  const currentReservation = await db
+    .collection(COLLECTION)
+    .doc(id)
+    .get()
+    .then((doc) => doc.data());
+  const { bookingType, ...rest } = req.body as Reservation & {
+    bookingType: string;
+  };
+  console.log("currentReservation", currentReservation);
+
+  await db.collection(COLLECTION).doc(id).update(rest);
+
+  console.log("updatedReservation", req.body);
+  return res.status(200).json("Updated");
+});
+
 // Get a single reservation by ID
 publicRouter.get("/:id", async (req, res) => {
   try {
@@ -96,55 +114,16 @@ publicRouter.post("/cancel", async (req, res) => {
   }
 });
 
+// Create a reservation via our Homepage
 publicRouter.post("/", async (req, res) => {
   try {
-    const { bookingType, ...rest } = req.body as Reservation & {
-      bookingType: string;
-    };
-    const writeResult = await db.collection(COLLECTION).add(rest);
+    const writeResult = await db
+      .collection(COLLECTION)
+      .add(req.body as Reservation);
 
-    const {
-      firstName,
-      lastName,
-      telephone,
-      email,
-      date,
-      time,
-      persons,
-      notes,
-    } = req.body as Reservation;
+    sendBookingToCustomer(req.body as Reservation, writeResult.id);
 
-    const isToday =
-      format(new Date(date), "yyyy-MM-dd") ===
-      moment.tz("Europe/Zurich").format("yyyy-MM-DD");
-
-    const formattedDate = isToday
-      ? "Today"
-      : moment(new Date(date)).tz("Europe/Zurich").format("MMMM D, YYYY");
-
-    sendBookingToCustomer({
-      date: formattedDate,
-      email,
-      firstName,
-      lastName,
-      notes,
-      persons,
-      time,
-      id: writeResult.id,
-    });
-
-    sendBookingToAdmin({
-      bookingType,
-      date: formattedDate,
-      email,
-      isToday,
-      firstName,
-      notes,
-      lastName,
-      persons,
-      telephone,
-      time,
-    });
+    sendBookingToAdmin(req.body as Reservation);
 
     return res.json({
       id: writeResult.id,
