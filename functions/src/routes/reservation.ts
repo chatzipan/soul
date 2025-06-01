@@ -5,6 +5,8 @@ import { db } from "..";
 import { sendBookingToAdmin } from "../email/sendBookingToAdmin";
 import { sendBookingToCustomer } from "../email/sendBookingToCustomer";
 import { sendCancelledBookingToAdmin } from "../email/sendCancelledBookingToAdmin";
+import { sendUpdatedBookingToAdmin } from "../email/sendUpdatedBookingToAdmin";
+import { sendUpdatedBookingToCustomer } from "../email/sendUpdatedBookingToCustomer";
 import { Reservation } from "../types/reservation";
 
 import express = require("express");
@@ -33,19 +35,21 @@ publicRouter.get("/events", async (_, res) => {
 
 publicRouter.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const currentReservation = await db
-    .collection(COLLECTION)
-    .doc(id)
-    .get()
-    .then((doc) => doc.data());
+  const docRef = db.collection(COLLECTION).doc(id);
+  const oldReservationSnap = await docRef.get();
+  const oldReservation = oldReservationSnap.data() as Reservation;
   const { bookingType, ...rest } = req.body as Reservation & {
     bookingType: string;
   };
-  console.log("currentReservation", currentReservation);
 
-  await db.collection(COLLECTION).doc(id).update(rest);
+  await docRef.update(rest);
+  const newReservationSnap = await docRef.get();
+  const newReservation = newReservationSnap.data() as Reservation;
 
-  console.log("updatedReservation", req.body);
+  // Send update emails
+  sendUpdatedBookingToCustomer(oldReservation, newReservation, id);
+  sendUpdatedBookingToAdmin(oldReservation, newReservation);
+
   return res.status(200).json("Updated");
 });
 

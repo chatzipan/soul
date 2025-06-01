@@ -5,6 +5,7 @@ import * as mjml2html from "mjml";
 import * as path from "path";
 
 import { createEmailTransporter } from "../utils/email";
+import { getEmailPrefix } from "./utils";
 
 type Data = {
   date: string;
@@ -19,7 +20,7 @@ type Data = {
 };
 
 export const sendCancelledBookingToAdmin = async (data: Data) => {
-  const PREFIX = process.env.ENVIRONMENT === "dev" ? "TEST!!! -  " : "";
+  const prefix = getEmailPrefix();
   const transporter = createEmailTransporter();
   const { email, ...rest } = data;
   const template = fs.readFileSync(
@@ -32,9 +33,9 @@ export const sendCancelledBookingToAdmin = async (data: Data) => {
   const convertedMjml = mjml2html(htmlBody);
 
   transporter.sendMail({
-    from: `${PREFIX}Soul Bookings <hallo@soulzuerich.ch>`,
+    from: `${prefix}Soul Bookings <hallo@soulzuerich.ch>`,
     to: ["Soul Team <hallo@soulzuerich.ch>"],
-    subject: `${PREFIX}Cancelled Reservation for ${data.date}`,
+    subject: `${prefix}Cancelled Reservation for ${data.date}`,
     html: convertedMjml.html,
   });
 };

@@ -9,3 +9,13 @@ export const getFormattedDate = (date: number) =>
   isToday(date)
     ? "Today"
     : moment(new Date(date)).tz("Europe/Zurich").format("MMMM D, YYYY");
+
+export const getEmailPrefix = () =>
+  ["dev", "local"].includes(process.env.ENVIRONMENT || "") ? "TEST!!! -  " : "";
+
+export const getHost = () =>
+  process.env.ENVIRONMENT === "local"
+    ? "http://localhost:8000"
+    : process.env.ENVIRONMENT === "dev"
+      ? "https://develop.soulzuerich.ch"
+      : "https://soulzuerich.ch";

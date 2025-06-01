@@ -6,13 +6,10 @@ import * as path from "path";
 
 import { Reservation } from "../types/reservation";
 import { createEmailTransporter } from "../utils/email";
-import { getFormattedDate } from "./utils";
+import { getEmailPrefix, getFormattedDate } from "./utils";
 
 export const sendBookingToAdmin = async (reservation: Reservation) => {
-  const PREFIX = ["dev", "local"].includes(process.env.ENVIRONMENT || "")
-    ? "TEST!!! -  "
-    : "";
-
+  const prefix = getEmailPrefix();
   const transporter = createEmailTransporter();
   const template = fs.readFileSync(
     path.join(__dirname, "./templates/reservation_admin.mjml"),
@@ -27,9 +24,9 @@ export const sendBookingToAdmin = async (reservation: Reservation) => {
   const convertedMjml = mjml2html(htmlBody);
 
   transporter.sendMail({
-    from: `${PREFIX}Soul Bookings <hallo@soulzuerich.ch>`,
+    from: `${prefix}Soul Bookings <hallo@soulzuerich.ch>`,
     to: ["Soul Team <hallo@soulzuerich.ch>"],
-    subject: `${PREFIX}New ${reservation.bookingType} Reservation for ${formattedDate}`,
+    subject: `${prefix}New ${reservation.bookingType} Reservation for ${formattedDate}`,
     html: convertedMjml.html,
   });
 };

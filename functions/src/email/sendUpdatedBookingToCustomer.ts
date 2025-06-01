@@ -8,8 +8,9 @@ import { Reservation } from "../types/reservation";
 import { createEmailTransporter } from "../utils/email";
 import { getEmailPrefix, getFormattedDate, getHost } from "./utils";
 
-export const sendBookingToCustomer = async (
-  reservation: Reservation,
+export const sendUpdatedBookingToCustomer = async (
+  oldReservation: Reservation,
+  newReservation: Reservation,
   id: string,
 ) => {
   const prefix = getEmailPrefix();
@@ -18,21 +19,32 @@ export const sendBookingToCustomer = async (
   const editUrl = `${host}/reservations/edit/${id}`;
   const transporter = createEmailTransporter();
   const template = fs.readFileSync(
-    path.join(__dirname, "./templates/reservation_customer.mjml"),
+    path.join(__dirname, "./templates/reservation_customer_updated.mjml"),
     "utf8",
   );
 
-  const { date, ...rest } = reservation;
-  const formattedDate = getFormattedDate(reservation.date);
-
   const parsed = handlebars.compile(template);
-  const htmlBody = parsed({ ...rest, cancelUrl, date: formattedDate, editUrl });
+  const htmlBody = parsed({
+    firstName: newReservation.firstName,
+    lastName: newReservation.lastName,
+    oldDate: getFormattedDate(oldReservation.date),
+    oldTime: oldReservation.time,
+    oldPersons: oldReservation.persons,
+    oldNotes: oldReservation.notes,
+    newDate: getFormattedDate(newReservation.date),
+    newTime: newReservation.time,
+    newPersons: newReservation.persons,
+    newNotes: newReservation.notes,
+    cancelUrl,
+    editUrl,
+  });
+
   const convertedMjml = mjml2html(htmlBody);
 
   transporter.sendMail({
     from: `${prefix}Soul Bookings <hallo@soulzuerich.ch>`,
-    to: [reservation.email],
-    subject: `${prefix}Confirmation of your reservation`,
+    to: [newReservation.email],
+    subject: `${prefix}Your reservation has been updated`,
     html: convertedMjml.html,
   });
 };

@@ -1,0 +1,116 @@
+<mjml>
+  <mj-body>
+    <mj-section background-color="#114f45">
+      <mj-column>
+        <mj-image
+          width="200px"
+          src="https://lh3.googleusercontent.com/d/1cihHaqt3D907bM0_Z7PWysUgFFn7oC-d"
+        ></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fafafa">
+      <mj-column width="400px">
+        <mj-text font-size="20px" font-family="Helvetica Neue"
+          >Reservation Updated!</mj-text
+        >
+        <mj-text font-size="16px" color="#525252"
+          >Dear {{firstName}} {{lastName}},</mj-text
+        >
+        <mj-text font-size="16px" color="#525252"
+          >Your reservation has been updated. Please find the details
+          below:</mj-text
+        >
+        <mj-text font-size="16px" color="#525252" font-weight="bold"
+          >Previous Reservation:</mj-text
+        >
+        <mj-text font-size="16px" color="#525252">
+          <b>Date:</b> {{oldDate}}<br />
+          <b>Time:</b> {{oldTime}}<br />
+          <b>Guests:</b> {{oldPersons}}<br />
+          <b>Notes:</b> {{oldNotes}}
+        </mj-text>
+        <mj-text font-size="16px" color="#525252" font-weight="bold"
+          >Updated Reservation:</mj-text
+        >
+        <mj-text font-size="16px" color="#525252">
+          <b>Date:</b> {{newDate}}<br />
+          <b>Time:</b> {{newTime}}<br />
+          <b>Guests:</b> {{newPersons}}<br />
+          <b>Notes:</b> {{newNotes}}
+        </mj-text>
+        <mj-text font-size="16px" color="#525252"
+          >If you did not request this change, please contact us
+          immediately.</mj-text
+        >
+        <mj-text font-size="16px" color="#525252">Best regards,</mj-text>
+        <mj-text font-size="16px" color="#525252">Soul Team</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#fafafa" padding="0 25px 25px 25px">
+      <mj-column>
+        <mj-button background-color="#114f45" href="{{editUrl}}" width="100%">
+          Edit reservation
+        </mj-button>
+      </mj-column>
+      <mj-column>
+        <mj-button background-color="red" href="{{cancelUrl}}" width="100%">
+          Cancel
+        </mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#114f45">
+      <mj-column>
+        <mj-text mj-class="footer-text" align="center" padding="10px 20px">
+          <p
+            style="
+              margin: 0;
+              font-size: 12px;
+              line-height: 15px;
+              margin-bottom: 10px;
+              color: #f5c469;
+              font-family: &quot;Open Sans&quot;, &quot;Raleway&quot;, Arial,
+                Helvetica, sans-serif;
+            "
+          >
+            <span style="color: #f5c469 !important; text-decoration: none">
+              <strong>Soul Zürich</strong><br /><br />Limmatquai 94, 8001
+              Zurich, Switzerland </span
+            ><br />
+            <a
+              style="color: #f5c469 !important; text-decoration: none"
+              href="tel:+41445991366"
+              >+41 445991366</a
+            >
+          </p>
+        </mj-text>
+        <mj-text mj-class="footer-text" align="center" padding="10px 0 20px">
+          <p
+            style="
+              margin: 0;
+              font-size: 10px;
+              line-height: 15px;
+              margin-bottom: 10px;
+              color: #f5c469;
+              font-family: &quot;Open Sans&quot;, &quot;Raleway&quot;, Arial,
+                Helvetica, sans-serif;
+            "
+          >
+            <a
+              style="color: #f5c469 !important; text-decoration: none"
+              href="https://soulzuerich.ch"
+              >WEB</a
+            >&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a
+              style="color: #f5c469 !important; text-decoration: none"
+              href="mailto:hallo@soulzuerich.ch"
+              >EMAIL</a
+            >&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;<a
+              style="color: #f5c469 !important; text-decoration: none"
+              href="https://www.instagram.com/soul_zurich/"
+              >INSTAGRAM</a
+            >
+          </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
