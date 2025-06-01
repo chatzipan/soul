@@ -20,7 +20,7 @@ export const sendDailyReservationsSummary = onSchedule(
 
 export const sendReservationReminders = onSchedule(
   {
-    schedule: "0 20 30 * *", // Run at 20:30 (8:30 PM) every day
+    schedule: "0 21 * * *", // Run at 21:00 (9:00 PM) every day
     timeZone: "Europe/Zurich",
     retryCount: 3,
   },
