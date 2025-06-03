@@ -12,6 +12,7 @@ export const sendDailyReminders = async (date: Date) => {
   const start = moment(date)
     .tz("Europe/Zurich")
     .startOf("day")
+    .add(1, "days")
     .toDate()
     .getTime();
 
