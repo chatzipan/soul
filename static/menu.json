@@ -442,7 +442,7 @@
         "image": null
       },
       {
-        "name": "Pastrami-Sando with a green salad",
+        "name": "Sando Pastrami",
         "subTitle": "Pastrami Sando",
         "description": "<p>Homemade milk bread with pickles, homemade Mayo, Pastrami and a small salad</p>",
         "price": 27,
@@ -497,10 +497,18 @@
     "name": "Brunch",
     "entries": [
       {
-        "name": "Greek yogurt with homemade granola, honey & fruits",
+        "name": "Homemade granola",
         "subTitle": "Granola & Greek Yogurt",
         "description": "<p>Homemade granola incl. 20 different type of nuts, dried fruits &amp; spices. served with greek yogurt and fresh fruits, honey and cinnamon</p>",
-        "price": 18,
+        "price": 16.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Benedict Rolls",
+        "subTitle": "",
+        "description": "",
+        "price": 24,
         "imageThumbnail": null,
         "image": null
       },
@@ -513,15 +521,13 @@
         "image": null
       },
       {
-        "name": "Egg Royale",
-        "subTitle": "Eggs Royale",
-        "description": "<p>Homemade brioche bread, Guacamole sauce, 2 eggs 64˚C, smoked salmon topped with Hollandaise sauce</p>",
-        "price": 27,
+        "name": "Gravlax Waffle",
+        "price": 24,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Pastrami-Sando with a green salad",
+        "name": "Sando Pastrami",
         "subTitle": "Pastrami Sando",
         "description": "<p>Homemade milk bread with pickles, homemade Mayo, Pastrami and a small salad</p>",
         "price": 27,
@@ -549,6 +555,18 @@
         "subTitle": "Homeade Pies or Tarts",
         "description": "<p>Homemade pies or tarts — daily creations from our kitchen team — served with salad.</p>",
         "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Crispy Fillo Cream",
+        "price": 12,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "French Toast Tiramisu",
+        "price": 15,
         "imageThumbnail": null,
         "image": null
       }
