@@ -11,6 +11,7 @@ import { getEmailPrefix, getFormattedDate, getHost } from "./utils";
 export const sendBookingToCustomer = async (
   reservation: Reservation,
   id: string,
+  isReminder: boolean = false,
 ) => {
   const prefix = getEmailPrefix();
   const host = getHost();
@@ -18,7 +19,11 @@ export const sendBookingToCustomer = async (
   const editUrl = `${host}/reservations/edit/${id}`;
   const transporter = createEmailTransporter();
   const template = fs.readFileSync(
-    path.join(__dirname, "./templates/reservation_customer.mjml"),
+    path.join(
+      __dirname,
+      "./templates",
+      isReminder ? "reservation_reminder.mjml" : "reservation_customer.mjml",
+    ),
     "utf8",
   );
 
@@ -32,7 +37,9 @@ export const sendBookingToCustomer = async (
   transporter.sendMail({
     from: `${prefix}Soul Bookings <hallo@soulzuerich.ch>`,
     to: [reservation.email],
-    subject: `${prefix}Confirmation of your reservation`,
+    subject: isReminder
+      ? `${prefix}Reminder: Your Reservation Tomorrow`
+      : `${prefix}Confirmation of your reservation`,
     html: convertedMjml.html,
   });
 };

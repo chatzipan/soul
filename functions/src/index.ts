@@ -6,6 +6,8 @@ import express = require("express");
 
 export { sendDailyReservationsSummary } from "./scheduledFunctions";
 export { testSendReservationSummary } from "./testFunctions";
+export { sendReservationReminders } from "./scheduledFunctions";
+export { testReminder } from "./testReminder";
 
 admin.initializeApp();
 
