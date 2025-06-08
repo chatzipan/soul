@@ -1,11 +1,14 @@
-import { Link } from "gatsby";
 import React, { useState } from "react";
+
+import { Link } from "gatsby";
 
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import Logout from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+import SettingsIcon from "@mui/icons-material/Settings";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -20,7 +23,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { RouteComponentProps } from "@reach/router";
-import SettingsIcon from "@mui/icons-material/Settings";
 
 import { useAuth } from "../../../hooks/useAuth";
 
@@ -42,19 +44,19 @@ const TopBar = (_: RouteComponentProps) => {
 
   return (
     <>
-      <AppBar position='static'>
+      <AppBar position="static">
         <Toolbar>
           <IconButton
-            size='large'
-            edge='start'
-            color='inherit'
-            aria-label='menu'
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
             onClick={toggleDrawer}
             sx={{ mr: 2, display: { xs: "block", md: "none" } }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' component='div'>
+          <Typography variant="h6" component="div">
             Soul Admin
           </Typography>
           <Box
@@ -68,8 +70,8 @@ const TopBar = (_: RouteComponentProps) => {
           >
             <Typography
               component={Link}
-              variant='body1'
-              to='/admin'
+              variant="body1"
+              to="/admin"
               fontSize={14}
               sx={{
                 color: "white",
@@ -81,9 +83,9 @@ const TopBar = (_: RouteComponentProps) => {
             </Typography>
             <Typography
               component={Link}
-              variant='body1'
+              variant="body1"
               fontSize={14}
-              to='/admin/reservations'
+              to="/admin/reservations"
               sx={{
                 color: "white",
                 textTransform: "uppercase",
@@ -94,9 +96,9 @@ const TopBar = (_: RouteComponentProps) => {
             </Typography>
             <Typography
               component={Link}
-              variant='body1'
+              variant="body1"
               fontSize={14}
-              to='/admin/events'
+              to="/admin/events"
               sx={{
                 color: "white",
                 textTransform: "uppercase",
@@ -107,9 +109,9 @@ const TopBar = (_: RouteComponentProps) => {
             </Typography>
             <Typography
               component={Link}
-              variant='body1'
+              variant="body1"
               fontSize={14}
-              to='/admin/settings'
+              to="/admin/settings"
               sx={{
                 color: "white",
                 textTransform: "uppercase",
@@ -118,21 +120,34 @@ const TopBar = (_: RouteComponentProps) => {
             >
               Settings
             </Typography>
+            <Typography
+              component={Link}
+              variant="body1"
+              fontSize={14}
+              to="/admin/menu"
+              sx={{
+                color: "white",
+                textTransform: "uppercase",
+                textDecoration: "none",
+              }}
+            >
+              Menu
+            </Typography>
           </Box>
           {user && (
             <Box sx={{ ml: "auto" }}>
               <IconButton
-                size='large'
-                aria-label='account of current user'
-                aria-controls='menu-appbar'
-                aria-haspopup='true'
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
                 onClick={handleMenu}
-                color='inherit'
+                color="inherit"
               >
                 <AccountCircle />
               </IconButton>
               <Menu
-                id='menu-appbar'
+                id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
                   vertical: "top",
@@ -148,7 +163,7 @@ const TopBar = (_: RouteComponentProps) => {
               >
                 <MenuItem onClick={logout}>
                   <ListItemIcon>
-                    <Logout fontSize='small' />
+                    <Logout fontSize="small" />
                   </ListItemIcon>
                   Logout
                 </MenuItem>
@@ -176,37 +191,37 @@ const TopBar = (_: RouteComponentProps) => {
           </IconButton>
         </Toolbar>
         <Divider />
-        <List component='nav'>
+        <List component="nav">
           <ListItemButton>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
             <Link
-              to='/admin'
+              to="/admin"
               style={{ textDecoration: "none", color: "inherit" }}
               onClick={toggleDrawer}
             >
-              <ListItemText primary='Dashboard' />
+              <ListItemText primary="Dashboard" />
             </Link>
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon sx={{ fontSize: 24 }}>🍲</ListItemIcon>
             <Link
-              to='/admin/reservations'
+              to="/admin/reservations"
               style={{ textDecoration: "none", color: "inherit" }}
               onClick={toggleDrawer}
             >
-              <ListItemText primary='Reservations' />
+              <ListItemText primary="Reservations" />
             </Link>
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon sx={{ fontSize: 24 }}>🍷</ListItemIcon>
             <Link
-              to='/admin/events'
+              to="/admin/events"
               style={{ textDecoration: "none", color: "inherit" }}
               onClick={toggleDrawer}
             >
-              <ListItemText primary='Events' />
+              <ListItemText primary="Events" />
             </Link>
           </ListItemButton>
           <ListItemButton>
@@ -214,11 +229,23 @@ const TopBar = (_: RouteComponentProps) => {
               <SettingsIcon />
             </ListItemIcon>
             <Link
-              to='/admin/settings'
+              to="/admin/settings"
               style={{ textDecoration: "none", color: "inherit" }}
               onClick={toggleDrawer}
             >
-              <ListItemText primary='Settings' />
+              <ListItemText primary="Settings" />
+            </Link>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon>
+              <RestaurantMenuIcon />
+            </ListItemIcon>
+            <Link
+              to="/admin/menu"
+              style={{ textDecoration: "none", color: "inherit" }}
+              onClick={toggleDrawer}
+            >
+              <ListItemText primary="Menu" />
             </Link>
           </ListItemButton>
         </List>

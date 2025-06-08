@@ -16,6 +16,7 @@ import de from "date-fns/locale/de";
 import Dashboard from "../../components/admin/Dashboard";
 import Login from "../../components/admin/Login";
 import Layout from "../../components/admin/layout/Layout";
+import Menu from "../../components/admin/menu/Menu";
 import Events from "../../components/admin/reservations/Events";
 import Reservations from "../../components/admin/reservations/Reservations";
 import Settings from "../../components/admin/settings/Settings";
@@ -102,6 +103,7 @@ const Inner = () => {
               <PrivateRoute path="/reservations" component={Reservations} />
               <PrivateRoute path="/events" component={Events} />
               <PrivateRoute path="/settings/*" component={Settings} />
+              <PrivateRoute path="/menu" component={Menu} />
               <PrivateRoute path="/" component={Dashboard} />
               <Login path="/login" />
               <Redirect from="*" to="/" />
