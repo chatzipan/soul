@@ -482,9 +482,9 @@
         "image": null
       },
       {
-        "name": "Veggie Rise Bowl",
-        "subTitle": "Veggie Rise Bowl",
-        "description": "<p>Sushi rice, pickled cabbage, mushrooms, plant based ginger-mayo, sesame - served with soup or salad</p>",
+        "name": "Veggie Rice Bowl",
+        "subTitle": "Veggie Rice Bowl",
+        "description": "<p>Sushi rice, pickled cabbage, mushrooms, plant based ginger-mayo, sesame - served with soup or salad.</p>",
         "price": 19.5,
         "imageThumbnail": null,
         "image": null
@@ -499,15 +499,15 @@
       {
         "name": "Homemade granola",
         "subTitle": "Granola & Greek Yogurt",
-        "description": "<p>Homemade granola incl. 20 different type of nuts, dried fruits &amp; spices. served with greek yogurt and fresh fruits, honey and cinnamon</p>",
+        "description": "<p>Homemade granola with different type of nuts, dried fruits &amp; spices. served with greek yogurt, fresh fruits, honey and cinnamon</p>",
         "price": 16.5,
         "imageThumbnail": null,
         "image": null
       },
       {
         "name": "Benedict Rolls",
-        "subTitle": "",
-        "description": "",
+        "subTitle": "Benedict Rolls",
+        "description": "<p>Homemade Salty Bun with chesse ,served with Slow cooked Egg at 63℃ for an hour and Crispy Bacon</p>",
         "price": 24,
         "imageThumbnail": null,
         "image": null
@@ -522,6 +522,8 @@
       },
       {
         "name": "Gravlax Waffle",
+        "subTitle": "Gravlax Waffle",
+        "description": "<p>Cured Salmon-Slow cooked Egg at 63℃ for an hour with Cream Cheese</p><p>flavored with fresh herbs and lemon, Baby Rocket Salat and fermented Fenel</p>",
         "price": 24,
         "imageThumbnail": null,
         "image": null
@@ -560,12 +562,16 @@
       },
       {
         "name": "Crispy Fillo Cream",
+        "subTitle": "Crispy Fillo Cream",
+        "description": "<p>Traditional greek Pastry with Vanilla Cream and Pistaccio Praline</p>",
         "price": 12,
         "imageThumbnail": null,
         "image": null
       },
       {
         "name": "French Toast Tiramisu",
+        "subTitle": "French Toast Tiramisu",
+        "description": "<p>Homemade Brioche Bread with Espresso and a generous Mascarpone cream &amp; Cacao Powder</p>",
         "price": 15,
         "imageThumbnail": null,
         "image": null
