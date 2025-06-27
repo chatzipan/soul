@@ -16,10 +16,6 @@ import * as S from "./Menu.styled";
 const Menu = (_: RouteComponentProps) => {
   const { mutate: updateMenu, isPending, error, data } = useUpdateMenu();
 
-  const handleUpdateMenu = () => {
-    updateMenu();
-  };
-
   return (
     <S.Wrapper>
       <Typography variant="h3" sx={{ mb: 4 }}>
@@ -35,7 +31,7 @@ const Menu = (_: RouteComponentProps) => {
 
         <Button
           variant="contained"
-          onClick={handleUpdateMenu}
+          onClick={() => updateMenu()}
           disabled={isPending}
           startIcon={isPending ? <CircularProgress size={20} /> : null}
         >

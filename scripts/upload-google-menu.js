@@ -38,18 +38,9 @@ async function saveGoogleMenu() {
 
   const menu_endpoint = `https://mybusiness.googleapis.com/v4/${accountId}/${locationId}/foodMenus?access_token=${client.credentials.access_token}`;
 
-  // const storedMenuResponse = await fetch(
-  //   "https://storage.googleapis.com/soulzuerich.ch/menu.json",
-  //   {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json",
-  //     },
-  //   }
-  // );
-
-  // const storedMenu = await storedMenuResponse.json();
-  const storedMenu = JSON.parse(fs.readFileSync("./static/menu.json", "utf8"));
+  const storedMenu = JSON.parse(
+    fs.readFileSync("./functions/src/assets/menu.json", "utf8"),
+  );
 
   const googleMenu = {
     menus: [

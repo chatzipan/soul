@@ -85,6 +85,14 @@ const config: GatsbyConfig = {
       },
       __key: "images",
     },
+    // Source menu from static directory
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "menu",
+        path: "./static/",
+      },
+    },
   ],
 };
 

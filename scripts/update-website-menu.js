@@ -1,3 +1,6 @@
+// Load environment variables from .env file
+require("dotenv").config();
+
 const dotenv = require("dotenv");
 dotenv.config({ path: __dirname + "/./../functions/.env" });
 
@@ -12,7 +15,7 @@ const { updateMenu } = require("../functions/src/utils/menu");
 
 async function main() {
   try {
-    const result = await updateMenu(false);
+    const result = await updateMenu();
     console.log(result.message);
     if (result.changes.length > 0) {
       console.log("Menu Diffs: ", result.changes.join("\n"));

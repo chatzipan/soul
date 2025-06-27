@@ -26,9 +26,8 @@ export const getMenuDiffs = (
   newMenu: MenuGroup[],
 ): string[] => {
   const diff: string[] = [];
-  Object.values(jsonDiff.diff(oldMenu, newMenu, { full: true }))
-    .slice(3, 4)
-    .forEach((val) => {
+  Object.values(jsonDiff.diff(oldMenu, newMenu, { full: true })).forEach(
+    (val) => {
       if (!Array.isArray(val)) {
         return;
       }
@@ -71,7 +70,8 @@ export const getMenuDiffs = (
 
         diff.push(diffText);
       });
-    });
+    },
+  );
 
   return diff;
 };

@@ -47,6 +47,12 @@ const supportedOrigins = [
 ];
 
 // Expose Express API as a single Cloud Function:
-const api = https.onRequest({ cors: supportedOrigins }, app);
+const api = https.onRequest(
+  {
+    cors: supportedOrigins,
+    memory: "1GiB",
+  },
+  app,
+);
 
 export { api };

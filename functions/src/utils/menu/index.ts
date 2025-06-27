@@ -1,29 +1,78 @@
-import { execSync } from "child_process";
-import * as fs from "fs";
-import * as path from "path";
 import { chromium } from "playwright";
+
+import { Storage } from "@google-cloud/storage";
 
 import { formatMenu } from "./formatMenu";
 import { getMenuDiffs } from "./getMenuDiffs";
 
+const bundledChromium = require("chrome-aws-lambda");
+
 export const MENU_URL = "https://mylightspeed.app/UYRRDNWF/C-ordering/menu";
 export const MENU_API_ENDPOINT = "https://mylightspeed.app/api/oa/pos/v1/menu";
 
-// Resolve the path to menu.json based on the execution context
-const getMenuPath = () => {
-  const cwd = process.cwd();
-  // If we're in the functions directory (Firebase Functions context)
-  if (cwd.endsWith("functions")) {
-    return path.join(cwd, "..", "static", "menu.json");
-  }
-  // If we're in the root directory (npm script context)
-  return path.join(cwd, "static", "menu.json");
+// Upload menu to Google Cloud Storage
+const uploadToGCS = async (menuData: any) => {
+  const storage = new Storage();
+  const bucketName = process.env.GCS_MENU_BUCKET_NAME || "soulzuerich.ch";
+
+  const fileName = "menu.json";
+
+  const bucket = storage.bucket(bucketName);
+  const file = bucket.file(fileName);
+
+  const contents = JSON.stringify(menuData, null, 2);
+
+  await file.save(contents, {
+    metadata: {
+      contentType: "application/json",
+      cacheControl: "no-cache",
+    },
+  });
+
+  await file.makePublic();
+
+  console.log(`Menu uploaded to gs://${bucketName}/${fileName}`);
 };
 
-export const localFileName = getMenuPath();
+// Trigger Gatsby rebuild via webhook
+const triggerGatsbyRebuild = async () => {
+  const webhookUrl = process.env.GATSBY_REBUILD_WEBHOOK;
 
-export const updateMenu = async (gitCommit: boolean = true) => {
-  const browser = await chromium.launch();
+  if (!webhookUrl) {
+    console.log(
+      "No Gatsby rebuild webhook configured, skipping rebuild trigger",
+    );
+    return;
+  }
+
+  try {
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: "Menu updated, triggering rebuild",
+        timestamp: new Date().toISOString(),
+      }),
+    });
+
+    if (response.ok) {
+      console.log("Gatsby rebuild triggered successfully");
+    } else {
+      console.error("Failed to trigger Gatsby rebuild:", response.statusText);
+    }
+  } catch (error) {
+    console.error("Error triggering Gatsby rebuild:", error);
+  }
+};
+
+export const updateMenu = async () => {
+  const executablePath = await bundledChromium.executablePath;
+  const browser = executablePath
+    ? await chromium.launch({ executablePath })
+    : await chromium.launch({});
+
   const context = await browser.newContext();
   const page = await context.newPage();
 
@@ -35,66 +84,38 @@ export const updateMenu = async (gitCommit: boolean = true) => {
     const menu = await response.json();
     const formattedMenu = formatMenu(menu.groups);
 
-    const menuDiffs = getMenuDiffs(
-      JSON.parse(fs.readFileSync(localFileName, "utf8")),
-      formattedMenu,
-    );
+    // Get current menu from GCS for comparison
+    let currentMenu = [];
+    try {
+      const storage = new Storage();
+      const bucket = storage.bucket(
+        process.env.GCS_MENU_BUCKET_NAME || "soulzuerich.ch",
+      );
+      const file = bucket.file("menu.json");
+      const [content] = await file.download();
+      currentMenu = JSON.parse(content.toString());
+    } catch (error) {
+      console.log("No existing menu found in GCS, treating as new menu");
+    }
 
-    if (menuDiffs.length === 0) {
+    const menuDiffs = getMenuDiffs(currentMenu, formattedMenu);
+
+    if (currentMenu.length && menuDiffs.length === 0) {
       await browser.close();
       return { message: "No menu changes detected", changes: [] };
     }
 
-    // Write the new menu to file
-    fs.writeFileSync(localFileName, JSON.stringify(formattedMenu, null, 2));
+    // Upload to Google Cloud Storage
+    await uploadToGCS(formattedMenu);
 
-    // Configure Git with environment variables
-    if (process.env.GIT_USER_NAME && process.env.GIT_USER_EMAIL) {
-      execSync(`git config --global user.name "${process.env.GIT_USER_NAME}"`);
-      execSync(
-        `git config --global user.email "${process.env.GIT_USER_EMAIL}"`,
-      );
-    }
-
-    // Use HTTPS with token for authentication
-    const repoUrl = process.env.GIT_REPO_URL;
-    const token = process.env.GIT_TOKEN;
-
-    if (!token) {
-      throw new Error(
-        "Git token not configured. Please set GIT_TOKEN environment variable.",
-      );
-    }
-
-    if (!repoUrl) {
-      throw new Error(
-        "Repository URL not configured. Please set GIT_REPO_URL environment variable.",
-      );
-    }
-
-    // Update remote URL to include token
-    execSync(
-      `git remote set-url origin https://${token}@${repoUrl.replace("https://", "")}`,
-    );
-
-    if (gitCommit) {
-      console.log("Committing changes");
-      // Commit and push changes
-      try {
-        execSync("git add ../static/menu.json");
-        // execSync('git commit -m "Update menu from admin interface"');
-        // execSync("git push origin main");
-      } catch (error) {
-        throw new Error(
-          `Error committing changes: ${error instanceof Error ? error.message : "Unknown error"}`,
-        );
-      }
-    }
+    // Trigger Gatsby rebuild
+    // await triggerGatsbyRebuild();
 
     await browser.close();
+
     return {
       message:
-        "Menu updated successfully. Changes will be visible in the website in a few minutes. If not, please contact the website administrator.",
+        "Menu updated successfully. Changes will be visible on the website shortly.",
       changes: menuDiffs,
     };
   } catch (error) {

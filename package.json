@@ -8,16 +8,17 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "tsc && gatsby develop",
-    "start": "tsc && gatsby develop",
-    "build": "tsc && gatsby build",
+    "dev": "npm run download-menu && tsc && gatsby develop",
+    "start": "npm run download-menu && tsc && gatsby develop",
+    "build": "npm run download-menu && tsc && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-    "update-menu:website": "export GOOGLE_APPLICATION_CREDENTIALS=\"./google_cloud_keys.json\" && node ./scripts/update-website-menu.js",
-    "update-menu:google": "node ./scripts/upload-google-menu.js"
+    "update-menu:website": "node ./scripts/update-website-menu.js",
+    "update-menu:google": "node ./scripts/upload-google-menu.js",
+    "download-menu": "node ./scripts/download-menu.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

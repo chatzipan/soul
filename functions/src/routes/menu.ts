@@ -1,4 +1,4 @@
-import menu = require("../utils/menu");
+import { updateMenu } from "../utils/menu";
 
 import express = require("express");
 
@@ -7,8 +7,8 @@ const protectedRouter = express.Router();
 // Protected routes
 protectedRouter.post("/", async (req, res) => {
   try {
-    console.log("Updating menu");
-    const result = await menu.updateMenu();
+    console.log("Updating menu!");
+    const result = await updateMenu();
     return res.status(200).json(result);
   } catch (error) {
     console.error("Error updating menu:", error);
