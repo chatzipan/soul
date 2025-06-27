@@ -109,7 +109,7 @@ export const updateMenu = async () => {
     await uploadToGCS(formattedMenu);
 
     // Trigger Gatsby rebuild
-    // await triggerGatsbyRebuild();
+    await triggerGatsbyRebuild();
 
     await browser.close();
 
