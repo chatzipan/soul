@@ -31,13 +31,13 @@ const uploadToGCS = async (menuData: any) => {
   console.log(`Menu uploaded to gs://${bucketName}/${fileName}`);
 };
 
-// Trigger Gatsby rebuild via webhook
-const triggerGatsbyRebuild = async () => {
+// Trigger Netlify rebuild via webhook
+const triggerNetlifyRebuild = async () => {
   const webhookUrl = process.env.NETLIFY_REBUILD_WEBHOOK;
 
   if (!webhookUrl) {
     console.log(
-      "No Gatsby rebuild webhook configured, skipping rebuild trigger",
+      "No Netlify rebuild webhook configured, skipping rebuild trigger",
     );
     return;
   }
@@ -55,12 +55,12 @@ const triggerGatsbyRebuild = async () => {
     });
 
     if (response.ok) {
-      console.log("Gatsby rebuild triggered successfully");
+      console.log("Netlify rebuild triggered successfully");
     } else {
-      console.error("Failed to trigger Gatsby rebuild:", response.statusText);
+      console.error("Failed to trigger Netlify rebuild:", response.statusText);
     }
   } catch (error) {
-    console.error("Error triggering Gatsby rebuild:", error);
+    console.error("Error triggering Netlify rebuild:", error);
   }
 };
 
@@ -105,8 +105,8 @@ export const updateMenu = async () => {
     // Upload to Google Cloud Storage
     await uploadToGCS(formattedMenu);
 
-    // Trigger Netlify Gatsby rebuild
-    await triggerGatsbyRebuild();
+    // Trigger Netlify rebuild
+    await triggerNetlifyRebuild();
 
     await browser.close();
 
