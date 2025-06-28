@@ -30,7 +30,7 @@ Add these environment variables in your Netlify dashboard:
 GCS_MENU_BUCKET_NAME=menu_bucket
 
 # Gatsby rebuild webhook (Netlify build hook)
-GATSBY_REBUILD_WEBHOOK=https://api.netlify.com/build_hooks/YOUR_BUILD_HOOK_ID
+NETLIFY_REBUILD_WEBHOOK=https://api.netlify.com/build_hooks/YOUR_BUILD_HOOK_ID
 ```
 
 ### 3. Create Netlify Build Hook
@@ -40,7 +40,7 @@ GATSBY_REBUILD_WEBHOOK=https://api.netlify.com/build_hooks/YOUR_BUILD_HOOK_ID
 3. Click **Add build hook**
 4. Give it a name like "Menu Update Hook"
 5. Copy the generated webhook URL
-6. Use this URL as your `GATSBY_REBUILD_WEBHOOK` environment variable
+6. Use this URL as your `NETLIFY_REBUILD_WEBHOOK` environment variable
 
 ### 4. Upload Google Cloud Credentials
 
@@ -61,7 +61,7 @@ Set these in your Firebase Functions:
 GCS_MENU_BUCKET_NAME=menu_bucket
 
 # Netlify build hook
-GATSBY_REBUILD_WEBHOOK=https://api.netlify.com/build_hooks/YOUR_BUILD_HOOK_ID
+NETLIFY_REBUILD_WEBHOOK=https://api.netlify.com/build_hooks/YOUR_BUILD_HOOK_ID
 GATSBY_WEBHOOK_SECRET=your-secret-key
 ```
 

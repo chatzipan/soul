@@ -14,7 +14,6 @@ export const MENU_API_ENDPOINT = "https://mylightspeed.app/api/oa/pos/v1/menu";
 const uploadToGCS = async (menuData: any) => {
   const storage = new Storage();
   const bucketName = process.env.GCS_MENU_BUCKET_NAME || "soulzuerich.ch";
-
   const fileName = "menu.json";
 
   const bucket = storage.bucket(bucketName);
@@ -29,14 +28,12 @@ const uploadToGCS = async (menuData: any) => {
     },
   });
 
-  await file.makePublic();
-
   console.log(`Menu uploaded to gs://${bucketName}/${fileName}`);
 };
 
 // Trigger Gatsby rebuild via webhook
 const triggerGatsbyRebuild = async () => {
-  const webhookUrl = process.env.GATSBY_REBUILD_WEBHOOK;
+  const webhookUrl = process.env.NETLIFY_REBUILD_WEBHOOK;
 
   if (!webhookUrl) {
     console.log(
@@ -108,7 +105,7 @@ export const updateMenu = async () => {
     // Upload to Google Cloud Storage
     await uploadToGCS(formattedMenu);
 
-    // Trigger Gatsby rebuild
+    // Trigger Netlify Gatsby rebuild
     await triggerGatsbyRebuild();
 
     await browser.close();

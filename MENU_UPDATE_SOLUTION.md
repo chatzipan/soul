@@ -45,7 +45,7 @@ Add these to your Firebase Functions environment:
 GCS_MENU_BUCKET_NAME=soulzuerich.ch
 
 # Gatsby Rebuild Webhook
-GATSBY_REBUILD_WEBHOOK=https://your-deployment-platform.com/webhook
+NETLIFY_REBUILD_WEBHOOK=https://your-deployment-platform.com/webhook
 GATSBY_WEBHOOK_SECRET=your-secret-key
 ```
 
