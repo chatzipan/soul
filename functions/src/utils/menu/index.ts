@@ -36,10 +36,9 @@ const triggerNetlifyRebuild = async () => {
   const webhookUrl = process.env.NETLIFY_REBUILD_WEBHOOK;
 
   if (!webhookUrl) {
-    console.log(
+    throw new Error(
       "No Netlify rebuild webhook configured, skipping rebuild trigger",
     );
-    return;
   }
 
   try {
@@ -57,10 +56,10 @@ const triggerNetlifyRebuild = async () => {
     if (response.ok) {
       console.log("Netlify rebuild triggered successfully");
     } else {
-      console.error("Failed to trigger Netlify rebuild:", response.statusText);
+      throw new Error("Failed to trigger Netlify rebuild");
     }
   } catch (error) {
-    console.error("Error triggering Netlify rebuild:", error);
+    throw new Error("Error triggering Netlify rebuild");
   }
 };
 
@@ -112,7 +111,7 @@ export const updateMenu = async () => {
 
     return {
       message:
-        "Menu updated successfully. Changes will be visible on the website shortly.",
+        "Menu updated successfully! Changes will be visible on the website shortly.",
       changes: menuDiffs,
     };
   } catch (error) {
