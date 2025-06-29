@@ -28,6 +28,43 @@ const Menu = (_: RouteComponentProps) => {
           Update the restaurant menu from Lightspeed. This will fetch the latest
           menu data and update the website.
         </Typography>
+        <Typography variant="body1">What you need to do:</Typography>
+        <ol>
+          <Typography variant="body1">
+            <li>Update the items you need in Lightspeed</li>
+          </Typography>
+          <Typography>
+            <li>
+              Wait first until your changes are visible in the&nbsp;
+              <a
+                href="https://mylightspeed.app/UYRRDNWF/C-ordering/menu"
+                target="_blank"
+                rel="noreferrer"
+              >
+                online menu page
+              </a>
+            </li>
+          </Typography>
+          <Typography>
+            <li>
+              When the changes are visible, click on the "UPDATE MENU" button
+              below.
+            </li>
+          </Typography>
+          <Typography>
+            <li>
+              In around 5 minutes, check if the changes are in&nbsp;
+              <a
+                href="https://soulzuerich.ch/menu/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                our website
+              </a>
+              . If the changes are not visible, contact Vasilis.
+            </li>
+          </Typography>
+        </ol>
 
         <Button
           variant="contained"
