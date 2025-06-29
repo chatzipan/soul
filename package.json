@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "npm run download-menu && tsc && gatsby develop",
+    "dev": "export GOOGLE_APPLICATION_CREDENTIALS=\"./google_cloud_keys_prod.json\" && npm run download-menu && tsc && gatsby develop",
     "start": "npm run download-menu && tsc && gatsby develop",
     "build": "npm run download-menu && tsc && gatsby build",
     "serve": "gatsby serve",

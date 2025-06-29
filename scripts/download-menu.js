@@ -1,3 +1,8 @@
+require("dotenv").config();
+
+const dotenv = require("dotenv");
+dotenv.config({ path: __dirname + "/./../.env" });
+
 const { Storage } = require("@google-cloud/storage");
 const fs = require("fs");
 const path = require("path");
@@ -7,7 +12,34 @@ const GCS_MENU_BUCKET_NAME =
 const DEST_FILE_NAME = "menu.json";
 
 async function downloadMenu() {
-  const storage = new Storage();
+  let storage;
+
+  // Use prod credentials from environment variable if available
+  if (process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON) {
+    try {
+      const credentials = JSON.parse(
+        process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON,
+      );
+      storage = new Storage({
+        credentials: credentials,
+        projectId: credentials.project_id,
+      });
+      console.log(
+        `Using prod credentials for project: ${credentials.project_id}`,
+      );
+    } catch (error) {
+      console.error(
+        "Error parsing GOOGLE_APPLICATION_CREDENTIALS_JSON:",
+        error,
+      );
+      throw new Error("Invalid GOOGLE_APPLICATION_CREDENTIALS_JSON format");
+    }
+  } else {
+    // Fallback to default credentials (dev environment)
+    storage = new Storage();
+    console.log("Using default credentials (dev environment)");
+  }
+
   const bucket = storage.bucket(GCS_MENU_BUCKET_NAME);
   const file = bucket.file(DEST_FILE_NAME);
 
@@ -31,6 +63,19 @@ async function downloadMenu() {
     console.log(`Menu downloaded to ${destPath}`);
   } catch (error) {
     console.error("Error downloading menu from GCS:", error);
+
+    if (
+      error.message.includes("Anonymous caller") ||
+      error.message.includes("Permission")
+    ) {
+      console.error(
+        "Authentication error. Please check your Google Cloud credentials.",
+      );
+      console.error(
+        "Make sure GOOGLE_APPLICATION_CREDENTIALS_JSON is set with prod project credentials.",
+      );
+    }
+
     throw new Error(`Failed to download menu from GCS: ${error.message}`);
   }
 }
