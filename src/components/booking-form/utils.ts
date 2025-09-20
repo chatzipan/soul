@@ -11,7 +11,7 @@ const BookingTypeHourLimits = {
   [BookingType.BRUNCH]: ["08:00", "11:30"],
   [BookingType.LUNCH]: ["11:30", "14:00"],
   [BookingType.APERO]: ["14:00", "20:00"],
-  [BookingType.DINNER]: ["17:00", "22:00"],
+  [BookingType.DINNER]: ["18:00", "22:00"],
 };
 
 export const getZurichTimeNow = () =>
@@ -23,7 +23,7 @@ const getBookingTypeHourLimits = (
 ) => {
   if (bookingType === BookingType.APERO && isDinnerDay) {
     // on dinner days, apero is only until 5pm, then dinner starts
-    return ["14:00", "17:00"];
+    return ["14:00", "18:00"];
   }
   return BookingTypeHourLimits[bookingType];
 };

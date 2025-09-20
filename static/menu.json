@@ -52,10 +52,10 @@
         "image": null
       },
       {
-        "name": "Octopus",
+        "name": "Pulpo",
         "subTitle": "Octopus",
         "description": "<p>Hummus, Fresh herbs, Lemon-oil dressing, Baba ganoush, Tomato marmelade</p>",
-        "price": 25.5,
+        "price": 24,
         "imageThumbnail": null,
         "image": null
       },
@@ -63,7 +63,7 @@
         "name": "Ceviche",
         "subTitle": "Ceviche",
         "description": "<p>Fish of the day marinated with Tiger milk</p>",
-        "price": 24.5,
+        "price": 26,
         "imageThumbnail": null,
         "image": null
       },
@@ -79,7 +79,7 @@
         "name": "Beef Tataki",
         "subTitle": "Beef Tataki",
         "description": "<p>Beef filet, chilli sauce, artichokes, dried tomatoes, leek chips</p>",
-        "price": 38.5,
+        "price": 38,
         "imageThumbnail": null,
         "image": null
       }
@@ -286,51 +286,6 @@
     "description": "Cocktails, mocktails and aperitifs",
     "entries": [
       {
-        "category": "Aperitivo",
-        "name": "Soul Spritz",
-        "subTitle": "",
-        "description": "<p>Eco Bitter, Eco Spritz, homemade Cranberry &amp; ginger soda</p>",
-        "price": 16,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Aperitivo",
-        "name": "Bitter Bianco",
-        "subTitle": "",
-        "description": "<p>Gin, White Vermouth, Luxardo Bianco,  Tonic</p>",
-        "price": 16,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Aperitivo",
-        "name": "Hugo Twist",
-        "subTitle": "",
-        "description": "<p>White wine, Elderflower Liquer, Cucumber, Soda</p>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Aperitivo",
-        "name": "Kir Royale",
-        "subTitle": "",
-        "description": "<p>Prosecco, Crème de Cassis </p>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Aperitivo",
-        "name": "Mimosa",
-        "subTitle": "Mimosa",
-        "description": "<p>Sparkling wine, fresh Orange Juice</p>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
         "category": "Cocktails",
         "name": "Coffee Negroni",
         "subTitle": "Coffee Negroni",
@@ -341,27 +296,9 @@
       },
       {
         "category": "Cocktails",
-        "name": "Bellini",
-        "subTitle": "",
-        "description": "<p>Peach essence, Verjus, lime water, Vodka</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktails",
-        "name": "Highball",
-        "subTitle": "Highball ",
-        "description": "<p>Rye Whisky, Cucumber Elderflower Cordial, Soda</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktails",
         "name": "Basil Smash",
-        "subTitle": "",
-        "description": "<p>Gin, Basil, Sweet &amp; Sour mix</p>",
+        "subTitle": "Basil Soul Twist ",
+        "description": "<p>Gin, Fake Basil, Sweet &amp; Sour mix</p>",
         "price": 18,
         "imageThumbnail": null,
         "image": null
@@ -369,9 +306,81 @@
       {
         "category": "Cocktails",
         "name": "Bloody Mary",
-        "subTitle": "",
-        "description": "<p>Vodka, Lemon, Saksuka Sauce, Chilli, Smoked salt</p>",
-        "price": 15,
+        "subTitle": "Bloody Mary",
+        "description": "<p>Vodka, Lemon, Bloody Soul Mix , Chilli, Smoked salt</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Espresso Frappe Martini",
+        "subTitle": "Espresso Frappe Martini",
+        "description": "<p>Vodka, Espresso Liqueur, Coffee Foam</p>",
+        "price": 20,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Cold brew Sherry Highball",
+        "subTitle": "Cold brew Sherry Highball",
+        "description": "<p>Amontillado Sherry, Coffee Vermouth, Cold Brew, Tonic Water</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Coffee Colada",
+        "subTitle": "Espresso Colada",
+        "description": "<p>Blend of Rums, coconut, pineapple, espresso, milk</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Cascara Americano",
+        "subTitle": "Cascara Americano",
+        "description": "<p>Cascara infused Vermouth, Bitter, Top with Cascara Soda</p>",
+        "price": 16,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Not your Nonnas Spritz",
+        "subTitle": "Not Your Nonnas Spritz",
+        "description": "<p>Aperol, Campari, Homeade Cranberry GInger Soda</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Tzatziki Cocktail",
+        "subTitle": "Tzatziki Cocktail",
+        "description": "<p>Vodka infused with Dill, Cucumber Cordial, Joghurt, acids</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Cocktails",
+        "name": "Paloma Signature",
+        "subTitle": "New Age Paloma",
+        "description": "<p>Mezcal, Tequila, Lime juice, Grapefruit Soda, Smoked Chilly rim</p>",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Mocktails",
+        "name": "Cascara Soda",
+        "subTitle": "Cascara Aperitif",
+        "description": "<p>Non Alcoholic Vermouth, Cascara Soda</p>",
+        "price": 14,
         "imageThumbnail": null,
         "image": null
       },
@@ -386,28 +395,28 @@
       },
       {
         "category": "Mocktails",
-        "name": "Dark & Spiced",
-        "subTitle": "",
-        "description": "<p>Rebels Dark Spiced, Citrus, Ginger beer</p>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Mocktails",
-        "name": "Highball Non Alcoholic",
-        "subTitle": "Highball Non Alcoholic",
-        "description": "<p>Rebels Malt, Cucumber Elderflower Cordial, Soda</p>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Mocktails",
         "name": "Virgin Mary",
         "subTitle": "",
         "description": "<p>Saksuka sauce, chilli, smoked salt</p>",
         "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Mocktails",
+        "name": "Kombucha",
+        "subTitle": "Kombucha",
+        "description": "<p>Homemade Kombucha –Flavours Vary by Batch</p><p>Ask us what’s bubbling today!</p>",
+        "price": 8.5,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "category": "Mocktails",
+        "name": "espresso Tonic",
+        "subTitle": "Espresso Tonic",
+        "description": "<p>Premium Coffee Beans, Dry Tonic-Water, Lemon zest</p>",
+        "price": 12,
         "imageThumbnail": null,
         "image": null
       }
@@ -499,7 +508,7 @@
       {
         "name": "Homemade granola",
         "subTitle": "Granola & Greek Yogurt",
-        "description": "<p>Homemade granola with different type of nuts, dried fruits &amp; spices. served with greek yogurt, fresh fruits, honey and cinnamon</p>",
+        "description": "<p>Homemade granola with different type of nuts, dried fruits &amp; spices. served with greek yogurt, fresh fruits, honey &amp; cinnamon</p>",
         "price": 16.5,
         "imageThumbnail": null,
         "image": null
