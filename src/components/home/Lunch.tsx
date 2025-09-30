@@ -9,10 +9,10 @@ const Lunch = () => {
     <S.FoodWrapper>
       <S.Heading>
         <S.Title style={{ float: "right", marginLeft: "2rem", width: "250px" }}>
-          Business Lunch
+          LUNCH MENU
         </S.Title>
         <S.Description full>
-          Enjoy our freshly made Poke Bowls (Veggie / Tuna / Beef) with an
+          Enjoy our freshly made Soul Bowls (Veggie / Tuna / Beef) with an
           accompanying daily soup or salad. We use high quality local
           ingredients from partners such as&nbsp;
           <a
@@ -32,7 +32,7 @@ const Lunch = () => {
           >
             doerigfisch
           </a>
-          . Mondays to Fridays from 12:00 to 16:00.
+          . Mondays to Fridays from 12:00 to 14:00.
         </S.Description>
       </S.Heading>
       <S.ImageOuterWrapper>

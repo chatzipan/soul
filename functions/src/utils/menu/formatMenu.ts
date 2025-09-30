@@ -2,7 +2,11 @@ import { MenuGroup } from "./getMenuDiffs";
 
 export const formatMenu = (groups: any[]): MenuGroup[] => {
   const dinnerGroup = groups.find((group) =>
-    group.name.toLowerCase().includes("evening"),
+    group.name.toLowerCase().includes("dinner"),
+  );
+
+  const snacksGroup = groups.find((group) =>
+    group.name.toLowerCase().includes("snack"),
   );
 
   const lunchGroup = groups.find((group) =>
@@ -60,8 +64,7 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
     .filter(
       (group) =>
         group.name.toLowerCase().includes("cocktail") ||
-        group.name.toLowerCase().includes("mocktail") ||
-        group.name.toLowerCase().includes("aperitivo"),
+        group.name.toLowerCase().includes("mocktail"),
     )
     .flatMap((group) =>
       group.entries.map((entry: any) => ({
@@ -83,6 +86,11 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
       entries: wineEntries,
     },
     {
+      ...snacksGroup,
+      name: "Snacks",
+      description: snacksGroup.name,
+    },
+    {
       name: "Cocktails",
       description: "Cocktails, mocktails and aperitifs",
       entries: cocktailEntries,
@@ -98,7 +106,7 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
       description: brunchGroup.name,
     },
     {
-      name: "Coffee & Co",
+      name: "Coffee & More",
       description: "Hot and cold beverages",
       entries: beverageEntries,
     },
@@ -116,7 +124,7 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
   return consolidatedGroups
     .map((group) => ({
       ...group,
-      name: group.name.replace("Menu", "").trim().replace("Evening", "Dinner"),
+      name: group.name.replace("Menu", "").trim(),
       entries: group.entries.map((entry: any) => {
         const text = entry.texts.find((t: any) => t.locale === "en");
         return {

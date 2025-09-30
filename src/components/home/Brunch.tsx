@@ -22,7 +22,7 @@ const Brunch = () => {
           >
             Bean Bank Roasters
           </a>
-          . Mondays to Fridays from 08:00 to 11:30. Weekends until 16:00.
+          . Mondays to Fridays from 08:00 to 14:00. Weekends until 16:00.
         </S.Description>
       </S.Heading>
       <S.ImageOuterWrapper>

@@ -111,9 +111,18 @@ const MenuCategoryComponent: React.FC<{ menu: Menu }> = ({ menu }) => {
                 <S.Item key={entry.name}>
                   <S.ItemName>{entry.name}</S.ItemName>
                   <S.Price>{entry.price.toString()}</S.Price>
+                  {entry.subTitle && (
+                    <S.ItemDescription
+                      dangerouslySetInnerHTML={{
+                        __html: entry.subTitle,
+                      }}
+                    />
+                  )}
                   {entry.description && (
                     <S.ItemDescription
-                      dangerouslySetInnerHTML={{ __html: entry.description }}
+                      dangerouslySetInnerHTML={{
+                        __html: entry.description,
+                      }}
                     />
                   )}
                 </S.Item>

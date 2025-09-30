@@ -4,87 +4,71 @@
     "name": "Dinner",
     "entries": [
       {
-        "name": "Dips & Bread",
-        "subTitle": "Dips & Bread ",
-        "description": "<p>Greek olives, Homeade Humus, Guacamole, Homeade focaccia and Pita bread</p>",
-        "price": 22.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Spicy Feta Cream",
-        "subTitle": "Spicy Feta cream ",
-        "description": "<p>Served with Pita bread</p>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Greek Kalamata Olives",
-        "subTitle": "Greek Kalamata Olives",
-        "description": "<p>Served with Ciabatta </p>",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Hummus",
-        "subTitle": "Hummus ",
-        "description": "<p>Served with Pita Bread</p>",
-        "price": 15.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Kimchi",
-        "subTitle": "Kimchi",
-        "description": "<p>Served with Ciabatta</p>",
-        "price": 12,
+        "name": "Bread & Spread",
+        "subTitle": "Bread & Spread",
+        "description": "",
+        "price": 7,
         "imageThumbnail": null,
         "image": null
       },
       {
         "name": "Burrata",
-        "subTitle": "",
-        "description": "<p>Seasonal fruits &amp; cherry tomatoes, basil &amp; focaccia</p>",
-        "price": 21.5,
+        "subTitle": "Burrata / Zucchini / Tomato / Chilli",
+        "description": "<p></p>",
+        "price": 22,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Pulpo",
-        "subTitle": "Octopus",
-        "description": "<p>Hummus, Fresh herbs, Lemon-oil dressing, Baba ganoush, Tomato marmelade</p>",
-        "price": 24,
+        "name": "Tuna Sashimi",
+        "subTitle": "Tuna Sashimi / Cucumber / Ponzu",
+        "description": "<p></p>",
+        "price": 28,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Ceviche",
-        "subTitle": "Ceviche",
-        "description": "<p>Fish of the day marinated with Tiger milk</p>",
-        "price": 26,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Beef Tartare",
-        "subTitle": "Beef Tartare",
-        "description": "<p>Brioche bread, egg yolk cream, truffle oil, onion chips</p>",
+        "name": "Beef Tartare 120GR",
+        "subTitle": "Beef Tatar / Egg Yolk / Tarama / Horseradish",
+        "description": "",
         "price": 31,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Beef Tataki",
-        "subTitle": "Beef Tataki",
-        "description": "<p>Beef filet, chilli sauce, artichokes, dried tomatoes, leek chips</p>",
+        "name": "Octopus",
+        "subTitle": "Octopus / Fennel / Quinoa",
+        "description": "<p></p>",
+        "price": 28,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pork Neck",
+        "subTitle": "Pork Neck / Thai Salat / Teriaki ",
+        "description": "<p></p><p></p>",
         "price": 38,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Yogurt Parfait",
+        "subTitle": "Yogurt Parfait / Plum",
+        "description": "",
+        "price": 14,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Galaktoboureko",
+        "subTitle": "Galaktoboureko",
+        "description": "",
+        "price": 14,
         "imageThumbnail": null,
         "image": null
       }
     ],
-    "description": "Dinner Menu [THU - SAT] - 18:00 - 21:00 "
+    "description": "Dinner (Thu - Sat) - 18:00 - 22:00 "
   },
   {
     "name": "Wine",
@@ -314,33 +298,6 @@
       },
       {
         "category": "Cocktails",
-        "name": "Espresso Frappe Martini",
-        "subTitle": "Espresso Frappe Martini",
-        "description": "<p>Vodka, Espresso Liqueur, Coffee Foam</p>",
-        "price": 20,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktails",
-        "name": "Cold brew Sherry Highball",
-        "subTitle": "Cold brew Sherry Highball",
-        "description": "<p>Amontillado Sherry, Coffee Vermouth, Cold Brew, Tonic Water</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktails",
-        "name": "Coffee Colada",
-        "subTitle": "Espresso Colada",
-        "description": "<p>Blend of Rums, coconut, pineapple, espresso, milk</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktails",
         "name": "Cascara Americano",
         "subTitle": "Cascara Americano",
         "description": "<p>Cascara infused Vermouth, Bitter, Top with Cascara Soda</p>",
@@ -353,15 +310,6 @@
         "name": "Not your Nonnas Spritz",
         "subTitle": "Not Your Nonnas Spritz",
         "description": "<p>Aperol, Campari, Homeade Cranberry GInger Soda</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktails",
-        "name": "Tzatziki Cocktail",
-        "subTitle": "Tzatziki Cocktail",
-        "description": "<p>Vodka infused with Dill, Cucumber Cordial, Joghurt, acids</p>",
         "price": 18,
         "imageThumbnail": null,
         "image": null
@@ -395,15 +343,6 @@
       },
       {
         "category": "Mocktails",
-        "name": "Virgin Mary",
-        "subTitle": "",
-        "description": "<p>Saksuka sauce, chilli, smoked salt</p>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Mocktails",
         "name": "Kombucha",
         "subTitle": "Kombucha",
         "description": "<p>Homemade Kombucha –Flavours Vary by Batch</p><p>Ask us what’s bubbling today!</p>",
@@ -427,169 +366,152 @@
     "name": "Lunch",
     "entries": [
       {
-        "name": "Chicken Salad Dakos",
-        "subTitle": "Chicken Salad",
-        "description": "<p>Mesclun salad with Dakos bread, goat cheese, tomato &amp; basil dressing</p>",
-        "price": 22.5,
+        "name": "Lunch Menu Fisch",
+        "subTitle": "Lunch  Set Menu (F)",
+        "description": "<p>starter + rice bowl (fish)+ dessert</p>",
+        "price": 34,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Burrata",
-        "subTitle": "",
-        "description": "<p>Seasonal fruits &amp; cherry tomatoes, basil &amp; focaccia</p>",
-        "price": 21.5,
+        "name": "Lunch Menu Meat",
+        "subTitle": "Lunch  Set Menu (M)",
+        "description": "<p>starter + rice bowl (Meat)+ dessert</p>",
+        "price": 34,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Homeade Pies Or Tarts",
-        "subTitle": "Homeade Pies or Tarts",
-        "description": "<p>Homemade pies or tarts — daily creations from our kitchen team — served with salad.</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Sando Pastrami",
-        "subTitle": "Pastrami Sando",
-        "description": "<p>Homemade milk bread with pickles, homemade Mayo, Pastrami and a small salad</p>",
-        "price": 27,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Hummus & Kimchi",
-        "subTitle": "Hummus & Kimchi ",
-        "description": "<p>Warm pita bread served with creamy hummus, spicy kimchi &amp; fresh herbs, finished with vibrant parsley oil.</p>",
-        "price": 22.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Beef Tartare",
-        "subTitle": "Beef Tartare",
-        "description": "<p>Brioche bread, egg yolk cream, truffle oil, onion chips</p>",
-        "price": 31,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Beef Teriyaki Bowl",
-        "subTitle": "Beef Teriyaki Bowl",
-        "description": "<p>Sushi rice, slow cooked beef, teriyaki sauce, soy egg, dry tomatoes, artichoke, truffle, sesame, green onion, Bell Pepper Coulis - served with soup or salad</p>",
-        "price": 28.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Tuna Tataki Bowl",
-        "subTitle": "Tuna Tataki Bowl",
-        "description": "<p>Sushi rice, tuna tataki, ponzu sauce, avocado, cucumber, leek chips, sesame, bell pepper coulis - served with a soup or salad.</p>",
-        "price": 24.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Veggie Rice Bowl",
-        "subTitle": "Veggie Rice Bowl",
-        "description": "<p>Sushi rice, pickled cabbage, mushrooms, plant based ginger-mayo, sesame - served with soup or salad.</p>",
-        "price": 19.5,
+        "name": "Lunch Menu Vegan",
+        "subTitle": "Lunch  Set Menu (V)",
+        "description": "<p>starter + rice bowl (Vegan)+ dessert</p>",
+        "price": 34,
         "imageThumbnail": null,
         "image": null
       }
     ],
-    "description": "Lunch Menu (Mo-Fr / 11:30-14:00)"
+    "description": "Lunch Menu (Mo-Fr) 11:30-14:00"
   },
   {
     "type": "menuGroup",
     "name": "Brunch",
     "entries": [
       {
-        "name": "Homemade granola",
-        "subTitle": "Granola & Greek Yogurt",
-        "description": "<p>Homemade granola with different type of nuts, dried fruits &amp; spices. served with greek yogurt, fresh fruits, honey &amp; cinnamon</p>",
-        "price": 16.5,
+        "name": "Granola",
+        "subTitle": "Granola / Greek Yogurt / Honey / Fruits ",
+        "description": "<p></p>",
+        "price": 17,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Benedict Rolls",
-        "subTitle": "Benedict Rolls",
-        "description": "<p>Homemade Salty Bun with chesse ,served with Slow cooked Egg at 63℃ for an hour and Crispy Bacon</p>",
-        "price": 24,
+        "name": "French Toast",
+        "subTitle": "French Toast / Cream / Coffee",
+        "description": "<p></p>",
+        "price": 16,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Saksuka",
-        "subTitle": "Saksuka",
-        "description": "<p>Poached eggs with tomato sauce and vegetables - served with homemade bread</p>",
-        "price": 22,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Gravlax Waffle",
-        "subTitle": "Gravlax Waffle",
-        "description": "<p>Cured Salmon-Slow cooked Egg at 63℃ for an hour with Cream Cheese</p><p>flavored with fresh herbs and lemon, Baby Rocket Salat and fermented Fenel</p>",
-        "price": 24,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Sando Pastrami",
-        "subTitle": "Pastrami Sando",
-        "description": "<p>Homemade milk bread with pickles, homemade Mayo, Pastrami and a small salad</p>",
-        "price": 27,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Hummus & Kimchi",
-        "subTitle": "Hummus & Kimchi ",
-        "description": "<p>Warm pita bread served with creamy hummus, spicy kimchi &amp; fresh herbs, finished with vibrant parsley oil.</p>",
-        "price": 22.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Beef Tartare",
-        "subTitle": "Beef Tartare",
-        "description": "<p>Brioche bread, egg yolk cream, truffle oil, onion chips</p>",
-        "price": 31,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Homeade Pies Or Tarts",
-        "subTitle": "Homeade Pies or Tarts",
-        "description": "<p>Homemade pies or tarts — daily creations from our kitchen team — served with salad.</p>",
+        "name": "Milkbread Bacon",
+        "subTitle": "Eggs / Bacon / Milkbread",
+        "description": "",
         "price": 18,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "Crispy Fillo Cream",
-        "subTitle": "Crispy Fillo Cream",
-        "description": "<p>Traditional greek Pastry with Vanilla Cream and Pistaccio Praline</p>",
-        "price": 12,
+        "name": "Hummus & Kimchi",
+        "subTitle": "Hummus / Kimchi / Pita ",
+        "description": "<p></p>",
+        "price": 17,
         "imageThumbnail": null,
         "image": null
       },
       {
-        "name": "French Toast Tiramisu",
-        "subTitle": "French Toast Tiramisu",
-        "description": "<p>Homemade Brioche Bread with Espresso and a generous Mascarpone cream &amp; Cacao Powder</p>",
-        "price": 15,
+        "name": "Saksuka",
+        "subTitle": "Shakshuka / Eggs / Focaccia",
+        "description": "<p></p>",
+        "price": 22,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Salmon waffel",
+        "subTitle": "Salmon / Waffel / Cream Cheese ",
+        "description": "<p></p>",
+        "price": 24,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Benedict Rolls",
+        "subTitle": "Eggs / Brioche / Bacon / Hollandaise ",
+        "description": "<p></p>",
+        "price": 24,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pastrami Sandwich",
+        "subTitle": "Pastrami Sandwich / Pickels / Gruyere",
+        "description": "<p></p>",
+        "price": 27,
         "imageThumbnail": null,
         "image": null
       }
     ],
-    "description": "Brunch Menu (Mo-Fr / 08:00-11:30 {Sa, So 08:00-16:00})"
+    "description": "Brunch Menu (Mo-Fr) 08:00-14:00 (Sa-Sun) 08:00-16:00"
   },
   {
-    "name": "Coffee & Co",
+    "type": "menuGroup",
+    "name": "Snacks",
+    "entries": [
+      {
+        "name": "Olives",
+        "subTitle": "Olives",
+        "description": "<p></p>",
+        "price": 8,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Homeade Foccacia",
+        "subTitle": "Homeade Foccacia",
+        "description": "",
+        "price": 6,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Hummus",
+        "subTitle": "Hummus / Homeade Pitta",
+        "description": "<p></p>",
+        "price": 15,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pate & Foccacia",
+        "subTitle": "Pate / Apple /  Foccacia",
+        "description": "",
+        "price": 18,
+        "imageThumbnail": null,
+        "image": null
+      },
+      {
+        "name": "Pastrami Sandwich",
+        "subTitle": "Pastrami Sandwich / Pickels / Gruyere",
+        "description": "<p></p>",
+        "price": 27,
+        "imageThumbnail": null,
+        "image": null
+      }
+    ],
+    "description": "Snack Menu "
+  },
+  {
+    "name": "Coffee & More",
     "description": "Hot and cold beverages",
     "entries": [
       {
@@ -604,7 +526,9 @@
       {
         "category": "Coffee",
         "name": "Espresso Machiato",
-        "price": 6,
+        "subTitle": "",
+        "description": "",
+        "price": 5.8,
         "imageThumbnail": null,
         "image": null
       },
@@ -613,7 +537,7 @@
         "name": "Double Espresso",
         "subTitle": "",
         "description": "",
-        "price": 6.9,
+        "price": 6.2,
         "imageThumbnail": null,
         "image": null
       },
@@ -622,7 +546,7 @@
         "name": "Double Espresso Machiato",
         "subTitle": "",
         "description": "",
-        "price": 7.3,
+        "price": 6.8,
         "imageThumbnail": null,
         "image": null
       },
@@ -631,7 +555,7 @@
         "name": "Americano",
         "subTitle": "Americano",
         "description": "<p><br></p>",
-        "price": 6.9,
+        "price": 6.5,
         "imageThumbnail": null,
         "image": null
       },
@@ -640,29 +564,24 @@
         "name": "Cappuccino",
         "subTitle": "Cappuccino",
         "description": "<p><br></p>",
-        "price": 6.9,
+        "price": 6.5,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "Coffee",
         "name": "Flat White",
-        "price": 7.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Coffee",
-        "name": "Latte",
         "subTitle": "",
         "description": "",
-        "price": 8,
+        "price": 7,
         "imageThumbnail": null,
         "image": null
       },
       {
         "category": "Coffee",
         "name": "Filter Coffee",
+        "subTitle": "Filter Coffee",
+        "description": "<p>Brewing filter coffee monthly rotating micro lots from our favorite single origins .</p>",
         "price": 8,
         "imageThumbnail": null,
         "image": null
@@ -670,6 +589,8 @@
       {
         "category": "Coffee",
         "name": "Special filter coffee",
+        "subTitle": "Special filter coffee",
+        "description": "<p>Brewing filter coffee monthly rotating micro lots from our favorite single origins .</p>",
         "price": 15,
         "imageThumbnail": null,
         "image": null
@@ -679,7 +600,7 @@
         "name": "Black Tea",
         "subTitle": "Monk Tea (Black Tea)",
         "description": "<p>Flavored black tea with jasmine-bergamot flavor and vanilla notes</p>",
-        "price": 8.5,
+        "price": 8,
         "imageThumbnail": null,
         "image": null
       },
@@ -688,7 +609,7 @@
         "name": "Milky Oolong",
         "subTitle": "Milky Oolong",
         "description": "<p>Creamy, sweet and soft.</p><p><br></p><p>Richly rolled, dark green leaves. Lovely creamy aroma</p>",
-        "price": 8.5,
+        "price": 8,
         "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b614095f-c625-4c4d-be93-08c02b720689.png",
         "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b614095f-c625-4c4d-be93-08c02b720689_raw.png"
       },
@@ -715,7 +636,7 @@
         "name": "Still Water 1l",
         "subTitle": "Water Still 1l",
         "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
-        "price": 7,
+        "price": 6.5,
         "imageThumbnail": null,
         "image": null
       },
@@ -733,7 +654,7 @@
         "name": "Sparkling Water 1l",
         "subTitle": "Sparkling water 1l",
         "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
-        "price": 7,
+        "price": 6.5,
         "imageThumbnail": null,
         "image": null
       },
@@ -751,7 +672,7 @@
         "name": "Booster Juice (Orange, Ginger, Carrot)",
         "subTitle": "Booster Juice (Orange, Ginger, Carrot)",
         "description": "",
-        "price": 7.5,
+        "price": 8,
         "imageThumbnail": null,
         "image": null
       },
@@ -797,7 +718,9 @@
       {
         "category": "Cold beverage",
         "name": "Ginger Beer",
-        "price": 7.5,
+        "subTitle": "",
+        "description": "",
+        "price": 7,
         "imageThumbnail": null,
         "image": null
       },

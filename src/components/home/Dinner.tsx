@@ -12,10 +12,14 @@ const Dinner = () => {
           Evenings at Soul
         </S.Title>
         <S.Description full>
-          We offer a variety of dinner options, from our signature dishes to our
-          daily specials. Pair your meal with one of our homemade cocktails, or
-          carefully selected wines from GaultMillau Switzerland Sommelier of the
-          Year 2021&nbsp;
+          We offer a variety of dinner options, from our signature dishes a lá
+          carte to our Soul Tasting Menu:
+          <br /> Let us surprise you with a 3-course shared menu, thoughtfully
+          prepared with our current favorites. Your experience begins with a
+          delightful snack, followed by a variety of starters, a flavorful main
+          course, and a sweet treat to finish. Pair your meal with one of our
+          homemade cocktails, or carefully selected wines from GaultMillau
+          Switzerland Sommelier of the Year 2021&nbsp;
           <a
             href="https://www.cultivatingtaste.com/"
             target="_blank"
@@ -24,7 +28,7 @@ const Dinner = () => {
           >
             Lisa Bader
           </a>
-          . Thursdays to Saturdays from 18:00.
+          . Thursdays to Saturdays from 18:00 to 22:00.
         </S.Description>
       </S.Heading>
       <S.ImageOuterWrapper>
