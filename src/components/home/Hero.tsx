@@ -84,9 +84,9 @@ const Hero = () => {
         <S.SubTitle>ALL DAY KITCHEN BAR</S.SubTitle>
         <br />
         <S.MenuButtons>
-          <Button reverse onClick={() => setOpenBookingForm(true)}>
+          {/* <Button reverse onClick={() => setOpenBookingForm(true)}>
             Book
-          </Button>
+          </Button> */}
           <Button to="/menu/dinner">Dinner</Button>
           <Button to="/menu/lunch">Lunch</Button>
           <Button to="/menu/brunch">Brunch</Button>

@@ -54,15 +54,16 @@ const Contact = () => {
           <S.Text>Reservations:</S.Text>
           <br />
           <S.TextSmall>
-            - BRUNCH on WEEKENDS: no reservation needed, just come on in and we
-            will find you a table as soon as possible.
+            - We don't take reservations for smaller groups (less than 6
+            people), just come on in and we will find you a table as soon as
+            possible.
             <br />
-            <br />- ALL other days and hours:&nbsp;
+            {/* <br />- ALL other days and hours:&nbsp;
             <S.TelLinkUnderlined onClick={() => setOpenBookingForm(true)}>
               <u>book here</u>
-            </S.TelLinkUnderlined>
-            <br />
-            <br />- Special Occasions: Birthdays or a Team Event?&nbsp;
+            </S.TelLinkUnderlined> */}
+            - For bigger groups or special occasions (birthdays or team events),
+            please&nbsp;
             <S.TelLinkUnderlined
               href="mailto:hallo@soulzuerich.ch"
               target="_blank"
