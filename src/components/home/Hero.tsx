@@ -49,24 +49,24 @@ const Hero = () => {
   const [selectedBookingDate, setSelectedBookingDate] =
     React.useState<Date | null>(null);
 
-  React.useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const bookingDate = params.get("booking");
+  // React.useEffect(() => {
+  //   const params = new URLSearchParams(window.location.search);
+  //   const bookingDate = params.get("booking");
 
-    if (bookingDate) {
-      const date = new Date(bookingDate);
-      // Check if date is valid
-      if (!isNaN(date.getTime())) {
-        setSelectedBookingDate(date);
-        setOpenBookingForm(true);
-      }
-      // Check if date is valid
-      if (bookingDate === "true") {
-        setSelectedBookingDate(new Date());
-        setOpenBookingForm(true);
-      }
-    }
-  }, []);
+  //   if (bookingDate) {
+  //     const date = new Date(bookingDate);
+  //     // Check if date is valid
+  //     if (!isNaN(date.getTime())) {
+  //       setSelectedBookingDate(date);
+  //       setOpenBookingForm(true);
+  //     }
+  //     // Check if date is valid
+  //     if (bookingDate === "true") {
+  //       setSelectedBookingDate(new Date());
+  //       setOpenBookingForm(true);
+  //     }
+  //   }
+  // }, []);
 
   const scrollToEventsSection = () => {
     const eventsSection = document.getElementById("events");
