@@ -46,8 +46,7 @@ const images = [
 
 const Hero = () => {
   const [openBookingForm, setOpenBookingForm] = React.useState(false);
-  const [selectedBookingDate, setSelectedBookingDate] =
-    React.useState<Date | null>(null);
+  const [selectedBookingDate] = React.useState<Date | null>(null);
 
   // React.useEffect(() => {
   //   const params = new URLSearchParams(window.location.search);
