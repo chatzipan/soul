@@ -18,17 +18,8 @@ const Dinner = () => {
           prepared with our current favorites. Your experience begins with a
           delightful snack, followed by a variety of starters, a flavorful main
           course, and a sweet treat to finish. Pair your meal with one of our
-          homemade cocktails, or carefully selected wines from GaultMillau
-          Switzerland Sommelier of the Year 2021&nbsp;
-          <a
-            href="https://www.cultivatingtaste.com/"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "inherit" }}
-          >
-            Lisa Bader
-          </a>
-          . Thursdays to Saturdays from 18:00 to 22:00.
+          homemade cocktails, or carefully selected wines. Thursdays to
+          Saturdays from 18:00 to 22:00.
         </S.Description>
       </S.Heading>
       <S.ImageOuterWrapper>
