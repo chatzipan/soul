@@ -86,10 +86,11 @@ const Hero = () => {
           {/* <Button reverse onClick={() => setOpenBookingForm(true)}>
             Book
           </Button> */}
-          <Button to="/menu/dinner">Dinner</Button>
-          <Button to="/menu/lunch">Lunch</Button>
           <Button to="/menu/brunch">Brunch</Button>
-          <Button to="/menu/wine">Wine</Button>
+          <Button to="/menu/sandwiches">Sandwiches</Button>
+          <Button to="/menu/pastries">Pastries</Button>
+          <Button to="/menu/coffee_&_tea">Coffee & Tea</Button>
+          <Button to="/menu/wine_&_beer">Wine & Beer</Button>
           <Button to="/menu/cocktails">Cocktails</Button>
           <Button to="/menu">All menu</Button>
           <Button onClick={scrollToEventsSection}>Events</Button>

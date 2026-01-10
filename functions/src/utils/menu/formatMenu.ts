@@ -1,20 +1,16 @@
 import { MenuGroup } from "./getMenuDiffs";
 
 export const formatMenu = (groups: any[]): MenuGroup[] => {
-  const dinnerGroup = groups.find((group) =>
-    group.name.toLowerCase().includes("dinner"),
-  );
-
-  const snacksGroup = groups.find((group) =>
-    group.name.toLowerCase().includes("snack"),
-  );
-
-  const lunchGroup = groups.find((group) =>
-    group.name.toLowerCase().includes("lunch"),
+  const sandwichesGroup = groups.find((group) =>
+    group.name.toLowerCase().includes("sandwiches"),
   );
 
   const brunchGroup = groups.find((group) =>
     group.name.toLowerCase().includes("brunch"),
+  );
+
+  const pastriesGroup = groups.find((group) =>
+    group.name.toLowerCase().includes("pastries"),
   );
 
   // Consolidate wine groups
@@ -45,13 +41,19 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
       return aOrder - bOrder;
     });
 
-  // Consolidate beverage and coffee groups
-  const beverageEntries = groups
-    .filter(
-      (group) =>
-        group.name.toLowerCase().includes("beverage") ||
-        group.name.toLowerCase().includes("coffee"),
-    )
+  // Consolidate coffee
+  const coffeeEntries = groups
+    .filter((group) => group.name.toLowerCase().includes("kaffee"))
+    .flatMap((group) =>
+      group.entries.map((entry: any) => ({
+        ...entry,
+        category: group.name,
+      })),
+    );
+
+  // Consolidate soft drinks
+  const softDrinksEntries = groups
+    .filter((group) => group.name.toLowerCase().includes("soft drinks"))
     .flatMap((group) =>
       group.entries.map((entry: any) => ({
         ...entry,
@@ -76,19 +78,9 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
   // Filter out all consolidated groups and add new consolidated groups
   const consolidatedGroups = [
     {
-      ...dinnerGroup,
-      name: "Dinner",
-      description: dinnerGroup.name.replace("Evening", "Dinner"),
-    },
-    {
-      name: "Wine",
+      name: "Wine & Beer",
       description: "Wine and beer",
       entries: wineEntries,
-    },
-    {
-      ...snacksGroup,
-      name: "Snacks",
-      description: snacksGroup.name,
     },
     {
       name: "Cocktails",
@@ -96,9 +88,9 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
       entries: cocktailEntries,
     },
     {
-      ...lunchGroup,
-      name: "Lunch",
-      description: lunchGroup.name,
+      ...sandwichesGroup,
+      name: "Sandwiches",
+      description: sandwichesGroup.name,
     },
     {
       ...brunchGroup,
@@ -106,19 +98,31 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
       description: brunchGroup.name,
     },
     {
-      name: "Coffee & More",
+      ...pastriesGroup,
+      name: "Pastries",
+      description: pastriesGroup.name,
+    },
+    {
+      name: "Coffee & Tea",
       description: "Hot and cold beverages",
-      entries: beverageEntries,
+      entries: coffeeEntries,
+    },
+    {
+      name: "Soft Drinks",
+      description: "Soft drinks",
+      entries: softDrinksEntries,
     },
   ];
 
   // Sort groups in the specified order
   const sortOrder: Record<string, number> = {
-    dinner: 1,
-    wine: 2,
-    cocktails: 3,
-    lunch: 4,
-    brunch: 5,
+    brunch: 1,
+    sandwiches: 2,
+    pastries: 3,
+    wine: 4,
+    cocktails: 5,
+    coffee: 6,
+    "soft drinks": 7,
   };
 
   return consolidatedGroups

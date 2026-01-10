@@ -6,7 +6,7 @@ import * as S from "./Common.styled";
 
 const Brunch = () => {
   return (
-    <S.FoodWrapper>
+    <S.FoodWrapper style={{ paddingTop: "0" }}>
       <S.Heading>
         <S.Title style={{ float: "left", marginRight: "2rem" }}>Brunch</S.Title>
         <S.Description full>

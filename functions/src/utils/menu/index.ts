@@ -1,17 +1,22 @@
+import * as fs from "fs";
+import * as path from "path";
 import { chromium } from "playwright";
 
-import { Storage } from "@google-cloud/storage";
+// import { Storage } from "@google-cloud/storage";
 
 import { formatMenu } from "./formatMenu";
-import { getMenuDiffs } from "./getMenuDiffs";
+
+// import { getMenuDiffs } from "./getMenuDiffs";
 
 const bundledChromium = require("chrome-aws-lambda");
 
-export const MENU_URL = "https://mylightspeed.app/UYRRDNWF/C-ordering/menu";
+export const MENU_URL =
+  "https://mylightspeed.app/MPRDZSWN/981511696285978/menu";
+// export const MENU_URL = "https://mylightspeed.app/UYRRDNWF/C-ordering/menu";
 export const MENU_API_ENDPOINT = "https://mylightspeed.app/api/oa/pos/v1/menu";
 
 // Upload menu to Google Cloud Storage
-const uploadToGCS = async (menuData: any) => {
+/* const uploadToGCS = async (menuData: any) => {
   const storage = new Storage();
   const bucketName = process.env.GCS_MENU_BUCKET_NAME || "soulzuerich.ch";
   const fileName = "menu.json";
@@ -61,7 +66,7 @@ const triggerNetlifyRebuild = async () => {
   } catch (error) {
     throw new Error("Error triggering Netlify rebuild");
   }
-};
+}; */
 
 export const updateMenu = async () => {
   const executablePath = await bundledChromium.executablePath;
@@ -78,41 +83,49 @@ export const updateMenu = async () => {
 
     const response = await promise;
     const menu = await response.json();
+    console.log("menu.groups!!!", menu.groups);
     const formattedMenu = formatMenu(menu.groups);
 
     // Get current menu from GCS for comparison
-    let currentMenu = [];
-    try {
-      const storage = new Storage();
-      const bucket = storage.bucket(
-        process.env.GCS_MENU_BUCKET_NAME || "soulzuerich.ch",
-      );
-      const file = bucket.file("menu.json");
-      const [content] = await file.download();
-      currentMenu = JSON.parse(content.toString());
-    } catch (error) {
-      console.log("No existing menu found in GCS, treating as new menu");
-    }
+    // let currentMenu = [];
+    // // try {
+    //   const storage = new Storage();
+    //   console.log("formattedMenu", formattedMenu);
+    //   const bucket = storage.bucket(
+    //     process.env.GCS_MENU_BUCKET_NAME || "soulzuerich.ch",
+    //   );
+    //   const file = bucket.file("menu.json");
+    //   const [content] = await file.download();
+    //   currentMenu = JSON.parse(content.toString());
+    // } catch (error) {
+    //   console.log("No existing menu found in GCS, treating as new menu");
+    // }
 
-    const menuDiffs = getMenuDiffs(currentMenu, formattedMenu);
+    // const menuDiffs = getMenuDiffs(currentMenu, formattedMenu);
 
-    if (currentMenu.length && menuDiffs.length === 0) {
-      await browser.close();
-      return { message: "No menu changes detected", changes: [] };
-    }
+    // if (currentMenu.length && menuDiffs.length === 0) {
+    //   await browser.close();
+    //   return { message: "No menu changes detected", changes: [] };
+    // }
+
+    // save to /static/menu.json
+    fs.writeFileSync(
+      path.join(__dirname, "../../../../static/menu.json"),
+      JSON.stringify(formattedMenu, null, 2),
+    );
 
     // Upload to Google Cloud Storage
-    await uploadToGCS(formattedMenu);
+    // await uploadToGCS(formattedMenu);
 
     // Trigger Netlify rebuild
-    await triggerNetlifyRebuild();
+    // await triggerNetlifyRebuild();
 
     await browser.close();
 
     return {
       message:
         "Menu updated successfully! Changes will be visible on the website shortly.",
-      changes: menuDiffs,
+      // changes: menuDiffs,
     };
   } catch (error) {
     await browser.close();

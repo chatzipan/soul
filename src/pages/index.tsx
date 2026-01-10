@@ -15,7 +15,6 @@ import de from "date-fns/locale/de";
 import Brunch from "../components/home/Brunch";
 import Contact from "../components/home/Contact";
 import Dinner from "../components/home/Dinner";
-import Events from "../components/home/Events";
 import Hero from "../components/home/Hero";
 import Lunch from "../components/home/Lunch";
 import SEO from "../components/shared/SEO";
@@ -35,10 +34,9 @@ const IndexPage: React.FC<PageProps> = () => {
       <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={de}>
         <S.Wrapper>
           <Hero />
-          <Dinner />
-          <Lunch />
           <Brunch />
-          <Events />
+          <Lunch />
+          <Dinner />
           <Contact />
         </S.Wrapper>
       </LocalizationProvider>

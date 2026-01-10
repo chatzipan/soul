@@ -147,3 +147,17 @@ export const TelLink = styled.a`
   text-decoration-thickness: from-font;
   font-family: "Josefin Sans", sans-serif;
 `;
+
+export const TelLinkUnderlined = styled.a`
+  color: inherit;
+  text-decoration-thickness: from-font;
+  line-height: 1.5;
+  font-family: "Josefin Sans", sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.sizes.tablet}) {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+`;

@@ -12,9 +12,16 @@ const Lunch = () => {
           LUNCH MENU
         </S.Title>
         <S.Description full>
-          Enjoy our freshly made Soul Bowls (Veggie / Tuna / Beef) with an
-          accompanying daily soup or salad. We use high quality local
-          ingredients from partners such as&nbsp;
+          <S.TelLinkUnderlined
+            href="mailto:hallo@soulzuerich.ch"
+            target="_blank"
+          >
+            Prebook
+          </S.TelLinkUnderlined>{" "}
+          your business lunch for groups of 6 or more. Enjoy our freshly made
+          Soul Bowls (Veggie / Tuna / Beef) with an accompanying daily soup or
+          salad. We use high quality local ingredients from partners such
+          as&nbsp;
           <a
             href="https://www.metzgerei-keller.ch/en"
             target="_blank"

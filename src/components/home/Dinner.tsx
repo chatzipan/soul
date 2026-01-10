@@ -6,20 +6,23 @@ import * as S from "./Common.styled";
 
 const Dinner = () => {
   return (
-    <S.DinnerWrapper>
+    <S.DinnerWrapper id="events">
       <S.Heading>
         <S.Title style={{ float: "left", marginRight: "2rem" }}>
-          Evenings at Soul
+          Evenings & Events
         </S.Title>
         <S.Description full>
-          We offer a variety of dinner options, from our signature dishes a lá
-          carte to our Soul Tasting Menu:
-          <br /> Let us surprise you with a 3-course shared menu, thoughtfully
-          prepared with our current favorites. Your experience begins with a
-          delightful snack, followed by a variety of starters, a flavorful main
-          course, and a sweet treat to finish. Pair your meal with one of our
-          homemade cocktails, or carefully selected wines. Thursdays to
-          Saturdays from 18:00 to 22:00.
+          We host a variety of events, from our own wine tastings or cocktail
+          pairings to company apéros.&nbsp; You can also book our whole place
+          for a special occasion like a birthday or a team event. We prepare a
+          tailored menu for you.&nbsp;
+          <S.TelLinkUnderlined
+            href="mailto:hallo@soulzuerich.ch"
+            target="_blank"
+            style={{ fontWeight: 700, fontSize: "1.5rem" }}
+          >
+            Email us for enquiries.
+          </S.TelLinkUnderlined>
         </S.Description>
       </S.Heading>
       <S.ImageOuterWrapper>
@@ -37,6 +40,15 @@ const Dinner = () => {
           />
         </S.ImageWrapper>
       </S.ImageOuterWrapper>
+      <br />
+      <br />
+      <S.FoodImageWrapper style={{ margin: "0 auto" }}>
+        <StaticImage
+          aspectRatio={1 / 1}
+          src="../../images/events.jpeg"
+          alt="A picture of our chef preparing food for an event"
+        />
+      </S.FoodImageWrapper>
     </S.DinnerWrapper>
   );
 };

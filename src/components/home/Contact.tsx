@@ -54,9 +54,8 @@ const Contact = () => {
           <S.Text>Reservations:</S.Text>
           <br />
           <S.TextSmall>
-            - We don't take reservations for smaller groups (less than 6
-            people), just come on in and we will find you a table as soon as
-            possible.
+            - We don't take reservations for small groups (less than 6 people),
+            just come on in and we will find you a table as soon as possible.
             <br />
             {/* <br />- ALL other days and hours:&nbsp;
             <S.TelLinkUnderlined onClick={() => setOpenBookingForm(true)}>
@@ -82,18 +81,9 @@ const Contact = () => {
               const openingHours =
                 openingDays?.[day as keyof typeof openingDays]?.openingHours;
 
-              const isDinnerDay = [
-                DayOfWeek.Thursday,
-                DayOfWeek.Friday,
-                DayOfWeek.Saturday,
-              ].includes(day);
-
               return (
                 <S.Hours key={day}>
-                  <span>
-                    {day}
-                    {isDinnerDay && <>&nbsp;*</>}
-                  </span>
+                  <span>{day}</span>
                   <span>
                     {openingHours?.start} - {openingHours?.end}
                   </span>
@@ -101,8 +91,7 @@ const Contact = () => {
               );
             })
           )}
-          <br />
-          <S.Hours>* Kitchen closes at 21:00</S.Hours>
+          {/* <S.Hours>* Kitchen closes at 21:00</S.Hours> */}
         </S.InnerWrapper>
         <S.ImageWrapper>
           <StaticImage
