@@ -10,10 +10,10 @@ const Brunch = () => {
       <S.Heading>
         <S.Title style={{ float: "left", marginRight: "2rem" }}>Brunch</S.Title>
         <S.Description full>
-          Weather you like pastries such as daily made buns or traditional greek
-          spinach pie, or something more special, like our egg royal or pastrami
-          sando, we have you covered. Accompany your meal with a freshly brewed
-          coffee carefully selected by our partner&nbsp;
+          Weather you like pastries such as daily made buns or something more
+          special, like our egg benedict or pastrami sando, we have you covered.
+          Accompany your meal with a freshly brewed coffee carefully selected by
+          our partner&nbsp;
           <a
             href="https://beanbank.coffee/en"
             target="_blank"
