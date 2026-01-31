@@ -67,12 +67,12 @@ const Hero = () => {
   //   }
   // }, []);
 
-  const scrollToEventsSection = () => {
-    const eventsSection = document.getElementById("events");
-    if (eventsSection) {
-      eventsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToEventsSection = () => {
+  //   const eventsSection = document.getElementById("events");
+  //   if (eventsSection) {
+  //     eventsSection.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   return (
     <S.Wrapper>
