@@ -7,7 +7,7 @@ import dinnerOptions from "../../images/dinner_options_2.jpg";
 import evening_outside from "../../images/evening_outside.jpg";
 import outside from "../../images/outside.jpeg";
 import { BookingForm } from "../booking-form/BookingForm";
-import Button from "../shared/Button";
+// import Button from "../shared/Button";
 import { Carousel, CarouselItem } from "./Carousel";
 import * as S from "./Hero.styled";
 
