@@ -87,7 +87,7 @@ const Hero = () => {
             Book
           </Button> */}
           <Button to="/menu/brunch">Brunch</Button>
-          <Button to="/menu/sandwiches">Sandwiches</Button>
+          <Button to="/menu/lunch">Lunch</Button>
           <Button to="/menu/pastries">Pastries</Button>
           <Button to="/menu/coffee_&_tea">Coffee & Tea</Button>
           <Button to="/menu/wine_&_beer">Wine & Beer</Button>
