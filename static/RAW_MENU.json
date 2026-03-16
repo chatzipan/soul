@@ -1,0 +1,2505 @@
+{
+  "identifier": "981511696288496",
+  "name": "Copy of Menu Drinks and Brunch Lunch(QR)",
+  "groups": [
+    {
+      "type": "menuGroup",
+      "name": "Kaffee / Tee",
+      "entries": [
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Espresso",
+          "unitPriceCents": 520,
+          "sku": "10",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8aa29b61-23f5-4f23-9ae8-e8d986cdd5e9.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8aa29b61-23f5-4f23-9ae8-e8d986cdd5e9_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8aa29b61-23f5-4f23-9ae8-e8d986cdd5e9_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Espresso",
+              "description": "\u003Cp\u003E\u003Cstrong\u003ESingle shot Espresso\u003C/strong\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EWe offer you two different coffee beans you can choose from.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EFor more detailed information about the coffee or the roasters, feel free to ask us\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Espresso",
+              "description": "\u003Cp\u003E\u003Cstrong\u003ESingle-Shot-Espresso\u003C/strong\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EWir bieten Ihnen zwei verschiedene Kaffeebohnen zur Auswahl;\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cul\u003E\u003Cli\u003E66 % Brasilien / 34 % Äthiopien – Noten: Schokolade, Haselnuss, Kirsche\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EODER\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cul\u003E\u003Cli\u003E100 % Äthiopien – Hinweise: Cremiges tropisches Eis, Erdbeerkuchen, Himbeeren\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EFür detailliertere Informationen zum Kaffee oder den Röstereien fragen Sie uns gerne\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Coffee type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Brazil-Ethiopia Natural (Choco-Almonds-Red Fruits)",
+                  "identifier": "981511696286233",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Ethiopia Natural (Toffee,Orange)",
+                  "identifier": "981511696286235",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Double Espresso",
+          "unitPriceCents": 620,
+          "sku": "11",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7b7b1e2b-9395-4352-a1c5-d55b5cc66ddf.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7b7b1e2b-9395-4352-a1c5-d55b5cc66ddf_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7b7b1e2b-9395-4352-a1c5-d55b5cc66ddf_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Coffee type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Brazil-Ethiopia Natural (Choco-Almonds-Red Fruits)",
+                  "identifier": "981511696286233",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Ethiopia Natural (Toffee,Orange)",
+                  "identifier": "981511696286235",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Cappuccino",
+          "unitPriceCents": 650,
+          "sku": "16",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a168aaa0-f2e0-49de-bb4a-1d4e9b827512.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a168aaa0-f2e0-49de-bb4a-1d4e9b827512_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a168aaa0-f2e0-49de-bb4a-1d4e9b827512_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Cappuccino",
+              "description": "\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Cappuccino",
+              "description": "\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Milk Type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Regular (Cow ) Milk",
+                  "identifier": "981511696286318",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Sproud (Pea) Protein  Milk",
+                  "identifier": "981511696286320",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "Coffee type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Brazil-Ethiopia Natural (Choco-Almonds-Red Fruits)",
+                  "identifier": "981511696286233",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 4,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Ethiopia Natural (Toffee,Orange)",
+                  "identifier": "981511696286235",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "ICED",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 5,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Iced",
+                  "identifier": "981511696288563",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Flat White",
+          "unitPriceCents": 700,
+          "sku": "17",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ec72041d-2170-4756-a39e-f02a763625e6.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ec72041d-2170-4756-a39e-f02a763625e6_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ec72041d-2170-4756-a39e-f02a763625e6_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Coffee type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Brazil-Ethiopia Natural (Choco-Almonds-Red Fruits)",
+                  "identifier": "981511696286233",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Ethiopia Natural (Toffee,Orange)",
+                  "identifier": "981511696286235",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "Milk Type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Regular (Cow ) Milk",
+                  "identifier": "981511696286318",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 4,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Sproud (Pea) Protein  Milk",
+                  "identifier": "981511696286320",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "ICED",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 5,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Iced",
+                  "identifier": "981511696288563",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Americano",
+          "unitPriceCents": 620,
+          "sku": "15",
+          "squareImageUrl": null,
+          "rawImageUrl": null,
+          "previewImageUrl": null,
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Americano",
+              "description": "\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Americano",
+              "description": "\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Coffee type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Brazil-Ethiopia Natural (Choco-Almonds-Red Fruits)",
+                  "identifier": "981511696286233",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Ethiopia Natural (Toffee,Orange)",
+                  "identifier": "981511696286235",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "ICED",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Iced",
+                  "identifier": "981511696288563",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Espresso Machiato",
+          "unitPriceCents": 580,
+          "sku": "14",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_450ca764-e702-4ac2-b56b-2b78eb70dfef.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_450ca764-e702-4ac2-b56b-2b78eb70dfef_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_450ca764-e702-4ac2-b56b-2b78eb70dfef_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Coffee type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Brazil-Ethiopia Natural (Choco-Almonds-Red Fruits)",
+                  "identifier": "981511696286233",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Ethiopia Natural (Toffee,Orange)",
+                  "identifier": "981511696286235",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "Milk Type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Regular (Cow ) Milk",
+                  "identifier": "981511696286318",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 4,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Sproud (Pea) Protein  Milk",
+                  "identifier": "981511696286320",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Double Espresso Machiato",
+          "unitPriceCents": 680,
+          "sku": "29",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e3eeaf3-cb01-4527-84f9-4ab83dd7aeb2.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e3eeaf3-cb01-4527-84f9-4ab83dd7aeb2_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e3eeaf3-cb01-4527-84f9-4ab83dd7aeb2_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Coffee type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Brazil-Ethiopia Natural (Choco-Almonds-Red Fruits)",
+                  "identifier": "981511696286233",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Ethiopia Natural (Toffee,Orange)",
+                  "identifier": "981511696286235",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "Milk Type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Regular (Cow ) Milk",
+                  "identifier": "981511696286318",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 4,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Sproud (Pea) Protein  Milk",
+                  "identifier": "981511696286320",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Filter Coffee",
+          "unitPriceCents": 800,
+          "sku": "21",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a8b370fd-126d-4f59-bb6a-9317068a46e2.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a8b370fd-126d-4f59-bb6a-9317068a46e2_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a8b370fd-126d-4f59-bb6a-9317068a46e2_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Filter Coffee (Ethiopia)",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Filter Coffee",
+              "description": "\u003Cp\u003EBrewing filter coffee monthly rotating micro lots from our favorite single origins .\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Special filter coffee (Kenya Maguta CM Natural)",
+          "unitPriceCents": 1500,
+          "sku": "22",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_323856d9-83bf-4e47-8573-68c3df7ca6dd.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_323856d9-83bf-4e47-8573-68c3df7ca6dd_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_323856d9-83bf-4e47-8573-68c3df7ca6dd_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Special filter coffee",
+              "description": "\u003Cp\u003EBrewing filter coffee monthly rotating micro lots from our favorite single origins .\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Babychino",
+          "unitPriceCents": 250,
+          "sku": "98",
+          "squareImageUrl": null,
+          "rawImageUrl": null,
+          "previewImageUrl": null,
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Hot Chocolate",
+          "unitPriceCents": 800,
+          "sku": "68",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3d7d49ca-c036-49f9-9527-6d90226b39bd.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3d7d49ca-c036-49f9-9527-6d90226b39bd_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3d7d49ca-c036-49f9-9527-6d90226b39bd_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": "\u003Cp\u003ECocoa-Dark Chocolate-Tonka-Coffee-Milk\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Latte",
+          "unitPriceCents": 800,
+          "sku": "82",
+          "squareImageUrl": null,
+          "rawImageUrl": null,
+          "previewImageUrl": null,
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Coffee type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Brazil-Ethiopia Natural (Choco-Almonds-Red Fruits)",
+                  "identifier": "981511696286233",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Ethiopia Natural (Toffee,Orange)",
+                  "identifier": "981511696286235",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "Milk Type",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Regular (Cow ) Milk",
+                  "identifier": "981511696286318",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 4,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Sproud (Pea) Protein  Milk",
+                  "identifier": "981511696286320",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "ICED",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 5,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Iced",
+                  "identifier": "981511696288563",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Cold Brew",
+          "unitPriceCents": 800,
+          "sku": "23",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3b3a04b2-8f76-4bd7-b81f-c5b0e4ed565b.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3b3a04b2-8f76-4bd7-b81f-c5b0e4ed565b_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3b3a04b2-8f76-4bd7-b81f-c5b0e4ed565b_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Cold Brew",
+              "description": ""
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Cold Brew",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Milky Oolong",
+          "unitPriceCents": 800,
+          "sku": "19",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b614095f-c625-4c4d-be93-08c02b720689.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b614095f-c625-4c4d-be93-08c02b720689_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b614095f-c625-4c4d-be93-08c02b720689_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Milky Oolong",
+              "description": "\u003Cp\u003ECrèmig, süss und weich.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cspan style=\"color: rgb(0, 0, 0);\"\u003ESatt gerolltes, dunkelgrünes Blatt. Lieblich cremiges Aroma.\u003Cspan class=\"ql-cursor\"\u003E﻿\u003C/span\u003E\u003C/span\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Milky Oolong",
+              "description": "\u003Cp\u003ECreamy, sweet and soft.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003ERichly rolled, dark green leaves. Lovely creamy aroma\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Black Tea",
+          "unitPriceCents": 800,
+          "sku": "18",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e4e2111-0a37-4697-bf26-24d7170f4f8b.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e4e2111-0a37-4697-bf26-24d7170f4f8b_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e4e2111-0a37-4697-bf26-24d7170f4f8b_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": "\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Monk Tea (Black Tea)",
+              "description": "\u003Cp\u003EFlavored black tea with jasmine-bergamot flavor and vanilla notes\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Roibos Ginger Lemon",
+          "unitPriceCents": 800,
+          "sku": "142",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e4faad91-5dd0-41ea-bf95-1952a4c6c86d.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e4faad91-5dd0-41ea-bf95-1952a4c6c86d_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e4faad91-5dd0-41ea-bf95-1952a4c6c86d_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": "\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Ginger-Lemon Roobois",
+              "description": "\u003Cp\u003ERefreshing roobois blend with ginger-lemon flavor (caffeine free)\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        }
+      ]
+    },
+    {
+      "type": "menuGroup",
+      "name": "Mineral & Soft Drinks ",
+      "entries": [
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Still Water 1l",
+          "unitPriceCents": 650,
+          "sku": "26",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9f22d100-42bc-46c1-838c-207eef7d4636.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9f22d100-42bc-46c1-838c-207eef7d4636_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9f22d100-42bc-46c1-838c-207eef7d4636_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Water Still 1l",
+              "description": "\u003Cp\u003EWe serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.\u003C/p\u003E\u003Cp\u003EBehind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Wasser Still 1l",
+              "description": "\u003Cp\u003EWir servieren unser Wasser mit einem Premium Wasserspender von Brita mit modernster Technologie und erlauben es uns Ihnen das Wasser zu verrechnen.\u003C/p\u003E\u003Cp\u003ETechnische Präzision aus Deutschland für hervorragende Hygiene mit dem optionalen HygienePlus-System von BRITA, bewährt im Gesundheitswesen.\u003C/p\u003E\u003Cul\u003E\u003Cli\u003EEin Vorfilter entfernt grobe Partikel wie Sand und schützt unsere Geräte.\u003C/li\u003E\u003Cli\u003EEine Hohlfasermembran filtert Mikroplastik, Hormone, Pestizide und Arzneimittelrückstände, sowie 99,999 % aller Bakterien und 99,95 % aller Zysten.\u003C/li\u003E\u003Cli\u003EAktivkohlefiltration entfernt geschmacks- und geruchsstörende Stoffe.\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cspan style=\"color: rgb(0, 0, 0);\"\u003EDurch den Umstieg von abgefülltem Mineralwasser in Flaschen zu einem leitungsgebundenen Wasserspender lässt sich die Verwendung von Einweg-Plastik vermeiden. \u003C/span\u003E\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Glasses",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "2 GL",
+                  "identifier": "981511696286844",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "3GL",
+                  "identifier": "981511696286846",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "4GL",
+                  "identifier": "981511696286848",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Still Water 5dl",
+          "unitPriceCents": 550,
+          "sku": "28",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f7c016a7-ebc3-4c7e-b835-bc6d61a44889.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f7c016a7-ebc3-4c7e-b835-bc6d61a44889_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f7c016a7-ebc3-4c7e-b835-bc6d61a44889_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Wasser still 5dl",
+              "description": "\u003Cp\u003EWir servieren unser Wasser mit einem Premium Wasserspender von Brita mit modernster Technologie und erlauben es uns Ihnen das Wasser zu verrechnen.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003ETechnische Präzision aus Deutschland für hervorragende Hygiene mit dem optionalen HygienePlus-System von BRITA, bewährt im Gesundheitswesen.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cul\u003E\u003Cli\u003EEin Vorfilter entfernt grobe Partikel wie Sand und schützt unsere Geräte.\u003C/li\u003E\u003Cli\u003EEine Hohlfasermembran filtert Mikroplastik, Hormone, Pestizide und Arzneimittelrückstände, sowie 99,999 % aller Bakterien und 99,95 % aller Zysten.\u003C/li\u003E\u003Cli\u003EAktivkohlefiltration entfernt geschmacks- und geruchsstörende Stoffe.\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EDurch den Umstieg von abgefülltem Mineralwasser in Flaschen zu einem leitungsgebundenen Wasserspender lässt sich die Verwendung von Einweg-Plastik vermeiden.\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Water still 0.5l",
+              "description": "\u003Cp\u003EWe serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.\u003C/p\u003E\u003Cp\u003EBehind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Glasses",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "2 GL",
+                  "identifier": "981511696286844",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "3GL",
+                  "identifier": "981511696286846",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "4GL",
+                  "identifier": "981511696286848",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Sparkling Water 1l",
+          "unitPriceCents": 650,
+          "sku": "25",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4df5ad96-412d-4b32-908b-dba3209d305c.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4df5ad96-412d-4b32-908b-dba3209d305c_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4df5ad96-412d-4b32-908b-dba3209d305c_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Sparkling water 1l",
+              "description": "\u003Cp\u003EWe serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.\u003C/p\u003E\u003Cp\u003EBehind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Wasser mit Kohlensäure 1l",
+              "description": "\u003Cp\u003EWir servieren unser Wasser mit einem Premium Wasserspender von Brita mit modernster Technologie und erlauben es uns Ihnen das Wasser zu verrechnen.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003ETechnische Präzision aus Deutschland für hervorragende Hygiene mit dem optionalen HygienePlus-System von BRITA, bewährt im Gesundheitswesen.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cul\u003E\u003Cli\u003EEin Vorfilter entfernt grobe Partikel wie Sand und schützt unsere Geräte.\u003C/li\u003E\u003Cli\u003EEine Hohlfasermembran filtert Mikroplastik, Hormone, Pestizide und Arzneimittelrückstände, sowie 99,999 % aller Bakterien und 99,95 % aller Zysten.\u003C/li\u003E\u003Cli\u003EAktivkohlefiltration entfernt geschmacks- und geruchsstörende Stoffe.\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EDurch den Umstieg von abgefülltem Mineralwasser in Flaschen zu einem leitungsgebundenen Wasserspender lässt sich die Verwendung von Einweg-Plastik vermeiden.&nbsp;\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Glasses",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "2 GL",
+                  "identifier": "981511696286844",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "3GL",
+                  "identifier": "981511696286846",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "4GL",
+                  "identifier": "981511696286848",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Sparkling Water 5dl",
+          "unitPriceCents": 550,
+          "sku": "27",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b379ae3e-139a-4cd6-86c4-4aeef43467d9.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b379ae3e-139a-4cd6-86c4-4aeef43467d9_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b379ae3e-139a-4cd6-86c4-4aeef43467d9_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Sparkling water 0.5l",
+              "description": "\u003Cp\u003EWe serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.\u003C/p\u003E\u003Cp\u003EBehind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Wasser mit Kohlensäure 5dl",
+              "description": "\u003Cp\u003EWir servieren unser Wasser mit einem Premium Wasserspender von Brita mit modernster Technologie und erlauben es uns Ihnen das Wasser zu verrechnen.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003ETechnische Präzision aus Deutschland für hervorragende Hygiene mit dem optionalen HygienePlus-System von BRITA, bewährt im Gesundheitswesen.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cul\u003E\u003Cli\u003EEin Vorfilter entfernt grobe Partikel wie Sand und schützt unsere Geräte.\u003C/li\u003E\u003Cli\u003EEine Hohlfasermembran filtert Mikroplastik, Hormone, Pestizide und Arzneimittelrückstände, sowie 99,999 % aller Bakterien und 99,95 % aller Zysten.\u003C/li\u003E\u003Cli\u003EAktivkohlefiltration entfernt geschmacks- und geruchsstörende Stoffe.\u003C/li\u003E\u003Cli\u003E\u003Cbr\u003E\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EDurch den Umstieg von abgefülltem Mineralwasser in Flaschen zu einem leitungsgebundenen Wasserspender lässt sich die Verwendung von Einweg-Plastik vermeiden.&nbsp;\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Glasses",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "2 GL",
+                  "identifier": "981511696286844",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "3GL",
+                  "identifier": "981511696286846",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "4GL",
+                  "identifier": "981511696286848",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Homemade Iced Tea 3dl",
+          "unitPriceCents": 750,
+          "sku": "32",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_95d0cf81-2c92-4a05-9f45-2326b28d90be.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_95d0cf81-2c92-4a05-9f45-2326b28d90be_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_95d0cf81-2c92-4a05-9f45-2326b28d90be_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Homemade Lemonade 3dl",
+          "unitPriceCents": 750,
+          "sku": "117",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33e9a5b9-6529-4a92-93f8-0f272b07129c.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33e9a5b9-6529-4a92-93f8-0f272b07129c_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33e9a5b9-6529-4a92-93f8-0f272b07129c_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Orange Juice",
+          "unitPriceCents": 750,
+          "sku": "122",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_92f07e5a-30b5-4aea-ade4-4708b59ba6a0.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_92f07e5a-30b5-4aea-ade4-4708b59ba6a0_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_92f07e5a-30b5-4aea-ade4-4708b59ba6a0_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Orange Juice 2dl",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Booster Juice (Orange, Ginger, Carrot)",
+          "unitPriceCents": 800,
+          "sku": "161",
+          "squareImageUrl": null,
+          "rawImageUrl": null,
+          "previewImageUrl": null,
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Booster Juice (Orange, Ginger, Carrot)",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Crodino",
+          "unitPriceCents": 700,
+          "sku": "215",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ba795aa-1c6b-4d4a-b95c-be7d7e952a63.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ba795aa-1c6b-4d4a-b95c-be7d7e952a63_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ba795aa-1c6b-4d4a-b95c-be7d7e952a63_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Kombucha",
+          "unitPriceCents": 850,
+          "sku": "30",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4d57ac63-c316-455a-b726-0afd300a1185.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4d57ac63-c316-455a-b726-0afd300a1185_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4d57ac63-c316-455a-b726-0afd300a1185_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Kombucha",
+              "description": "\u003Cp\u003EHomemade Kombucha –Flavours Vary by Batch\u003C/p\u003E\u003Cp\u003EAsk us what’s bubbling today!\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Grapefruit Soda",
+          "unitPriceCents": 700,
+          "sku": "213",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_893725d8-50b9-418b-8610-0db0a8a22b36.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_893725d8-50b9-418b-8610-0db0a8a22b36_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_893725d8-50b9-418b-8610-0db0a8a22b36_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Ginger Beer",
+          "unitPriceCents": 700,
+          "sku": "214",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_226d9cfe-d849-450a-b124-083d3d5d8a79.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_226d9cfe-d849-450a-b124-083d3d5d8a79_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_226d9cfe-d849-450a-b124-083d3d5d8a79_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Soda Water",
+          "unitPriceCents": 700,
+          "sku": "212",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5f1ed89b-98d9-4318-88d7-b55d4df6d41d.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5f1ed89b-98d9-4318-88d7-b55d4df6d41d_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5f1ed89b-98d9-4318-88d7-b55d4df6d41d_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Soda Water",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Tonic",
+          "unitPriceCents": 700,
+          "sku": "211",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ed65d4f-6acb-4608-b41b-fa2b77a9475b.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ed65d4f-6acb-4608-b41b-fa2b77a9475b_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ed65d4f-6acb-4608-b41b-fa2b77a9475b_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        }
+      ]
+    },
+    {
+      "type": "menuGroup",
+      "name": "Cocktail",
+      "entries": [
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "espresso Tonic",
+          "unitPriceCents": 1200,
+          "sku": "333",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a69a89db-4322-43c6-b8cc-4740021ddc4d.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a69a89db-4322-43c6-b8cc-4740021ddc4d_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a69a89db-4322-43c6-b8cc-4740021ddc4d_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Espresso Tonic",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Espresso Tonic",
+              "description": "\u003Cp\u003EPremium Coffee Beans, Dry Tonic-Water, Lemon zest\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Coffee Negroni",
+          "unitPriceCents": 1800,
+          "sku": "152",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33947d66-4cf8-4b76-bc1a-ea7842cab356.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33947d66-4cf8-4b76-bc1a-ea7842cab356_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33947d66-4cf8-4b76-bc1a-ea7842cab356_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Coffee Negroni",
+              "description": "\u003Cp\u003EA bold twist on the classic — infused with 100% Ethiopia coffee from Bean Bank Roastery.\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Coffee Negroni",
+              "description": "\u003Cp\u003EIhr klassischer Negroni mit feinstem Kaffee.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Not your Nonnas Spritz",
+          "unitPriceCents": 1800,
+          "sku": "158",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ac66e7cb-67fb-4623-b89c-20a855ac77c9.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ac66e7cb-67fb-4623-b89c-20a855ac77c9_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ac66e7cb-67fb-4623-b89c-20a855ac77c9_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Not Your Nonnas Spritz",
+              "description": "\u003Cp\u003EAperol, Campari, Homeade Cranberry GInger Soda\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Cascara Americano",
+          "unitPriceCents": 1600,
+          "sku": "328",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ee4f1d4c-4aa8-4a19-a17b-c9768e43ccf6.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ee4f1d4c-4aa8-4a19-a17b-c9768e43ccf6_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ee4f1d4c-4aa8-4a19-a17b-c9768e43ccf6_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Cascara Americano",
+              "description": "\u003Cp\u003ECascara infused Vermouth, Bitter, Top with Cascara Soda\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Espresso Martini",
+          "unitPriceCents": 1600,
+          "sku": "105",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a77a474-da00-40f5-8e5f-24ce3ee3f203.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a77a474-da00-40f5-8e5f-24ce3ee3f203_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a77a474-da00-40f5-8e5f-24ce3ee3f203_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Espresso Martini",
+              "description": "\u003Cp\u003EVodka/ Espresso/ Coffee Liqueur/ Sugar Sirup\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003E\u003Cem style=\"color: rgb(0, 0, 0);\"\u003EIt’s not hard for me to espresso my feelings about this martini!\u003C/em\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Aperol Spritz",
+          "unitPriceCents": 1400,
+          "sku": "182",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6e46eed6-ded0-48fe-b1e5-5cf23e348c68.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6e46eed6-ded0-48fe-b1e5-5cf23e348c68_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6e46eed6-ded0-48fe-b1e5-5cf23e348c68_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Mimosa",
+          "unitPriceCents": 1400,
+          "sku": "181",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2abb32ff-a208-4aa2-bdc9-47243d37fb76.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2abb32ff-a208-4aa2-bdc9-47243d37fb76_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2abb32ff-a208-4aa2-bdc9-47243d37fb76_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": "\u003Cp\u003ESparkling wine, fresh Orange Juice\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Mimosa",
+              "description": "\u003Cp\u003ESparkling wine, fresh Orange Juice\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Wine Spritz",
+          "unitPriceCents": 1300,
+          "sku": "106",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f963cf97-a313-45b6-953f-72268e00acb0.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f963cf97-a313-45b6-953f-72268e00acb0_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f963cf97-a313-45b6-953f-72268e00acb0_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Gespritzter Weisswein ",
+              "description": "\u003Cp\u003EWeisswein / Wasser mit Kohlensäure\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Wine Spritz ",
+              "description": "\u003Cp\u003EWhite wine / Sparkling water\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "sweet or sauer",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Sweet",
+                  "identifier": "981511696288596",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Sauer",
+                  "identifier": "981511696288598",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "HUGO Spritz",
+          "unitPriceCents": 1400,
+          "sku": "460",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2e47213f-88d2-4115-9106-7960c8c1bbe9.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2e47213f-88d2-4115-9106-7960c8c1bbe9_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2e47213f-88d2-4115-9106-7960c8c1bbe9_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        }
+      ]
+    },
+    {
+      "type": "menuGroup",
+      "name": "Wine & Beer",
+      "entries": [
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Rainbow IPA 6% - 44cl",
+          "unitPriceCents": 1000,
+          "sku": "13",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_cf943c3d-31a3-4198-a8c9-5f849d0af10c.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_cf943c3d-31a3-4198-a8c9-5f849d0af10c_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_cf943c3d-31a3-4198-a8c9-5f849d0af10c_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Rainbow IPA 6% - 44cl",
+              "description": "\u003Cp\u003EA bright IPA with a nice balance between the fruity and resinous notes of the hops\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Rainbow IPA 6% - 44cl",
+              "description": "\u003Cp\u003EEin helles IPA mit einer schönen Balance zwischen den fruchtigen und harzigen Noten des Hopfens\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Zeer nonalcoholic IPA 0.3% - 33cl",
+          "unitPriceCents": 1000,
+          "sku": "72",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0d95c44e-8e1c-4059-bd1d-cd21203cb0fe.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0d95c44e-8e1c-4059-bd1d-cd21203cb0fe_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0d95c44e-8e1c-4059-bd1d-cd21203cb0fe_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Zeer nonalcoholic IPA 0.3% - 0.33l",
+              "description": "\u003Cp\u003EZeer is a Zeer - not a non-alcoholic beer. Balanced &amp; refreshing\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Zeer alkoholfreies IPA 0.3% - 33cl",
+              "description": "\u003Cp\u003EZeer ist ein Zeer - nicht ein alkoholfreies Bier. Ausgewogen &amp; erfrischend\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Una más 5% - 44cl",
+          "unitPriceCents": 800,
+          "sku": "12",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_44953987-007d-4e68-ae83-92e49b750c5a.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_44953987-007d-4e68-ae83-92e49b750c5a_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_44953987-007d-4e68-ae83-92e49b750c5a_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Una más 5% - 44cl",
+              "description": "\u003Cp\u003EVery balanced light beer with restrained malt notes underlined by a mild bitterness. Uná mas! - One more!\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Una más 5% - 44cl",
+              "description": "\u003Cp\u003ESehr ausgewogenes helles Bier mit zurückhaltenden Malznoten, unterstrichen von einer milden Bitterkeit. Uná mas! - Eines noch!\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Les Vignerons du Roy René, Ma Terre Rosé 2023",
+          "unitPriceCents": 950,
+          "sku": "295",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fbab5464-34e1-4bb7-b824-624cbe2e8278.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fbab5464-34e1-4bb7-b824-624cbe2e8278_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fbab5464-34e1-4bb7-b824-624cbe2e8278_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Les Vignerons du Roy René, Ma Terre Rosé 2023",
+              "description": "\u003Cul\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EGrape variety:\u003C/strong\u003E\u003Cem\u003E Cinsault, Grenache Noir, Syrah\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EOrigin: \u003C/strong\u003E\u003Cem\u003EProvence, France\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EProfile: \u003C/strong\u003E\u003Cem\u003EAroma profile led by red berries like just ripe raspberries andstrawberries, touch of citrus fruit flavors with bloodorange juiceand tangerine skin\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EStyle:\u003C/strong\u003E \u003Cem\u003EFruit driven but delicate and humble rosé\u003C/em\u003E\u003C/p\u003E\u003Cp\u003E\u003Cem\u003ELight and mineral driven\u003C/em\u003E\u003C/p\u003E\u003Cp\u003E\u003Cem\u003ELow tannin level, soft texture\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003C/ul\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Les Vignerons du Roy René, Ma Terre Rosé 2023",
+              "description": "\u003Cul\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EGrape variety:\u003C/strong\u003E\u003Cem\u003E Cinsault, Grenache Noir, Syrah\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EOrigin: \u003C/strong\u003E\u003Cem\u003EProvence, France\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EProfile: \u003C/strong\u003E\u003Cem\u003EAroma profile led by red berries like just ripe raspberries andstrawberries, touch of citrus fruit flavors with bloodorange juiceand tangerine skin\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EStyle:\u003C/strong\u003E \u003Cem\u003EFruit driven but delicate and humble rosé\u003C/em\u003E\u003C/p\u003E\u003Cp\u003E\u003Cem\u003ELight and mineral driven\u003C/em\u003E\u003C/p\u003E\u003Cp\u003E\u003Cem\u003ELow tannin level, soft texture\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003C/ul\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Weingut Rebhalde Stäfa Räuschling 20232 1dl",
+          "unitPriceCents": 900,
+          "sku": "463",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fb24eeb4-b136-437a-8245-73508051ce6a.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fb24eeb4-b136-437a-8245-73508051ce6a_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fb24eeb4-b136-437a-8245-73508051ce6a_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Weingut Rebhalde Stäfa Räuschling 1dl",
+              "description": "\u003Cp\u003EOrigin: AOC Zürichsee\u003C/p\u003E\u003Cp\u003EVariety: 100% Räuschling\u003C/p\u003E\u003Cp\u003EProfile:Green Apple, White Flowers, Mineral Notes\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Weingut Rebhalde Stäfa Räuschling 1dl",
+              "description": "\u003Cp\u003EOrigin: AOC Zürichsee\u003C/p\u003E\u003Cp\u003EVariety: 100% Räuschling\u003C/p\u003E\u003Cp\u003EProfile:Green Apple, White Flowers, Mineral Notes\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Rebhalde Pinot Noir",
+          "unitPriceCents": 900,
+          "sku": "464",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6018cdf9-c18b-47de-8232-61e51b59a5c3.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6018cdf9-c18b-47de-8232-61e51b59a5c3_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6018cdf9-c18b-47de-8232-61e51b59a5c3_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Rebhalde Pinot Noir 2023",
+              "description": "\u003Cp\u003EOrigin: AOC Zürichsee\u003C/p\u003E\u003Cp\u003E100% Pinot Noir\u003C/p\u003E\u003Cp\u003EDark Fruits, Light Spices, Nice Freshness\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Rebhalde Pinot Noir 2023",
+              "description": "\u003Cp\u003EOrigin: AOC Zürichsee\u003C/p\u003E\u003Cp\u003E100% Pinot Noir\u003C/p\u003E\u003Cp\u003EDark Fruits, Light Spices, Nice Freshness\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Peplo Skouras Rose",
+          "unitPriceCents": 1000,
+          "sku": "465",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_473bc094-3284-46ff-919d-af7efb0b3fb0.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_473bc094-3284-46ff-919d-af7efb0b3fb0_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_473bc094-3284-46ff-919d-af7efb0b3fb0_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Peplo Skouras Rose 2024",
+              "description": "\u003Cp\u003EGrape Variety: Agiorgitiko , Mavrofilero , Syrah\u003C/p\u003E\u003Cp\u003EOrigin: Greece\u003C/p\u003E\u003Cp\u003EProfile:Strawberry , Grapefruit , Honey , Sour cherry , white flower\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Peplo Skouras Rose 2024",
+              "description": "\u003Cp\u003EGrape Variety: Agiorgitiko , Mavrofilero , Syrah\u003C/p\u003E\u003Cp\u003EOrigin: Greece\u003C/p\u003E\u003Cp\u003EProfile:Strawberry , Grapefruit , Honey , Sour cherry , white flower\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Col di Rocca Prosecco",
+          "unitPriceCents": 900,
+          "sku": "467",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a4f51fc-266e-4014-ac04-d6c998e80f3d.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a4f51fc-266e-4014-ac04-d6c998e80f3d_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a4f51fc-266e-4014-ac04-d6c998e80f3d_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Weingut Hees Riesling bottle",
+          "unitPriceCents": 8000,
+          "sku": "297",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6ffa8a1b-106c-49ac-9d0b-d5ff39aaaeb8.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6ffa8a1b-106c-49ac-9d0b-d5ff39aaaeb8_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6ffa8a1b-106c-49ac-9d0b-d5ff39aaaeb8_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Weingut Hees, Sekt Brut Bottle ",
+              "description": "\u003Cul\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EGrape variety:\u003C/strong\u003E\u003Cem\u003E 100% Riesling\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EOrigin: \u003C/strong\u003E\u003Cem\u003ENahe, Germany\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EProfile: \u003C/strong\u003E\u003Cem\u003EJust ripe stone fruit; citrus fruit / fresh lemon juice, Slight touch of freshly baked croissants (buttery, fresh dough) coming, Mineral driven / wet stone character\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EStyle:\u003C/strong\u003E Dry, Champagne Method 24months on the lees\u003C/p\u003E\u003C/li\u003E\u003C/ul\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Les Vignerons du Roy René, Ma Terre Rosé 2023 Bottle",
+          "unitPriceCents": 6000,
+          "sku": "300",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0bfd68de-d57e-4c58-b502-88d8d8356e41.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0bfd68de-d57e-4c58-b502-88d8d8356e41_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0bfd68de-d57e-4c58-b502-88d8d8356e41_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Les Vignerons du Roy René, Ma Terre Rosé 2023 Bottle",
+              "description": "\u003Cul\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EGrape variety:\u003C/strong\u003E\u003Cem\u003E Cinsault, Grenache Noir, Syrah\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EOrigin: \u003C/strong\u003E\u003Cem\u003EProvence, France\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EProfile: \u003C/strong\u003E\u003Cem\u003EAroma profile led by red berries like just ripe raspberries andstrawberries, touch of citrus fruit flavors with bloodorange juiceand tangerine skin\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003Cli\u003E\u003Cp\u003E\u003Cstrong\u003EStyle:\u003C/strong\u003E \u003Cem\u003EFruit driven but delicate and humble rosé\u003C/em\u003E\u003C/p\u003E\u003Cp\u003E\u003Cem\u003ELight and mineral driven\u003C/em\u003E\u003C/p\u003E\u003Cp\u003E\u003Cem\u003ELow tannin level, soft texture\u003C/em\u003E\u003C/p\u003E\u003C/li\u003E\u003C/ul\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Anne Claire Schott, Pét-Nat Rosé 2021 - Bottle (7,5dl)",
+          "unitPriceCents": 12000,
+          "sku": "38",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7c707675-c178-4c88-a654-3fe0f47bc2ff.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7c707675-c178-4c88-a654-3fe0f47bc2ff_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7c707675-c178-4c88-a654-3fe0f47bc2ff_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Anne Claire Schott, Pét-Nat - Bottle (7.5dl)",
+              "description": "\u003Cul\u003E\u003Cli\u003E\u003Cstrong\u003ERebsorte: \u003C/strong\u003E85 % Chasselas, 15 % Muskat\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EHerkunft: \u003C/strong\u003ENeuenburg, Schweiz\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EProfil:\u003C/strong\u003E Reife Zitrusfrüchte, gelbe Äpfel, Honig und Bienenwachs\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EStil: \u003C/strong\u003ENatürlich – trocken und spritzig\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EDiese Kunstschöpfung, wie Anne-Claire ihre Weine nennt, wurde in Neuchâtel hergestellt.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EAngesichts der Hitze und des kalten Winters in dieser Gegend spielen die drei Seen eine wichtige Rolle bei der Milderung des Klimas.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EAlle ihre Arbeiten im Weinberg und ihre Weinherstellungstechniken basieren auf biodynamischen Ansätzen, was stets zu sehr charaktervollen Weinen führt.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EDieser natürliche, prickelnde Wein beeindruckt mit reifen Zitrusfrüchten, begleitet von getrockneten Wildblumen und Honig.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EDieses kreative Handwerk – ist immer wieder überraschend!\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Anne Claire Schott, Pét-Nat - Bottle (0.75l)",
+              "description": "\u003Cul\u003E\u003Cli\u003E\u003Cstrong\u003EGrape variety:\u003C/strong\u003E \u003Cem\u003E85% Chasselas, 15% Muscat\u003C/em\u003E\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EOrigin: \u003C/strong\u003E\u003Cem\u003ENeuchâtel, Switzerland\u003C/em\u003E\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EProfile:\u003C/strong\u003E \u003Cem\u003ERipe citrus fruit, yellow apples, Honey &amp; Beewax\u003C/em\u003E\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EStyle: \u003C/strong\u003E\u003Cem\u003ENatural - dry &amp; fizzy\u003C/em\u003E\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EThis creation of art, as Anne-Claire refers to her wines, was produced in Neuchâtel.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EGiven the heat and the cold winter in this area, the three lakes play an important role in moderating the climate.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EAll her vineyard work and winemaking techniques are based on biodynamic approaches, which is always resulting in very character driven wines.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EThis natural fizzy wine impresses with ripe citrus fruit accompanied by dried wildflowers and honey.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E\u003Cp\u003EThis creative craft - is always surprising!\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Hirtzberger, Gründer Veltiner Federspiel Rotes Tor 2021 - Bottle (7,5dl)",
+          "unitPriceCents": 12000,
+          "sku": "42",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_d0b5d2c1-e2b6-4743-8fb3-31d33c192dea.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_d0b5d2c1-e2b6-4743-8fb3-31d33c192dea_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_d0b5d2c1-e2b6-4743-8fb3-31d33c192dea_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Laurent Perrier Champagne Bottle",
+          "unitPriceCents": 14000,
+          "sku": "40",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_21b2dac4-8262-46fb-802d-8d3c74c88741.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_21b2dac4-8262-46fb-802d-8d3c74c88741_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_21b2dac4-8262-46fb-802d-8d3c74c88741_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": "\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Laurent Perrier, Millesime 2015 - Bottle (0.75l)",
+              "description": "\u003Cul\u003E\u003Cli\u003E\u003Cstrong\u003EGrape variety:\u003C/strong\u003E \u003Cem\u003E50% Pinot Noir, 50% Chardonnay\u003C/em\u003E\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EOrigin: \u003C/strong\u003E\u003Cem\u003ECote de Blancs, Champagne France\u003C/em\u003E\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EProfile:\u003C/strong\u003E \u003Cem\u003EConcentrated citrus fruit, candied lemon &amp; orange, honeysucle, bee wax alongside with herbal notes\u003C/em\u003E\u003C/li\u003E\u003Cli\u003E\u003Cstrong\u003EStyle: \u003C/strong\u003E\u003Cem\u003EBrut - 7 years of aging on the lees\u003C/em\u003E\u003C/li\u003E\u003C/ul\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Paitin, Barbaresco Serraboella 2020 - Bottle (7,5dl)",
+          "unitPriceCents": 13000,
+          "sku": "46",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c915b0e5-fea8-4d28-9750-bead673837b6.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c915b0e5-fea8-4d28-9750-bead673837b6_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c915b0e5-fea8-4d28-9750-bead673837b6_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Weingut Rebhalde Stäfa Räuschling 2023",
+          "unitPriceCents": 5500,
+          "sku": "462",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5aafee65-3df0-42f3-98bf-e1835598b81c.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5aafee65-3df0-42f3-98bf-e1835598b81c_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5aafee65-3df0-42f3-98bf-e1835598b81c_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Räuschling 2023",
+              "description": "\u003Cp\u003EOrigin: AOC Zürichsee\u003C/p\u003E\u003Cp\u003EVariety: 100% Räuschling\u003C/p\u003E\u003Cp\u003EProfile:Green Apple, White Flowers, Mineral Notes\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Räuschling 2023",
+              "description": "\u003Cp\u003EOrigin: AOC Zürichsee\u003C/p\u003E\u003Cp\u003EVariety: 100% Räuschling\u003C/p\u003E\u003Cp\u003EProfile:Green Apple, White Flowers, Mineral Notes\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        }
+      ]
+    },
+    {
+      "type": "menuGroup",
+      "name": "Brunch Menu ",
+      "entries": [
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Granola",
+          "unitPriceCents": 1400,
+          "sku": "81",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bd32313a-9550-49ef-a086-4817728aedf4.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bd32313a-9550-49ef-a086-4817728aedf4_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bd32313a-9550-49ef-a086-4817728aedf4_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Granola / Greek Yogurt / Honey / Fruits ",
+              "description": "\u003Cp\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Granola  Griechische Yogurt Hönig Zimmt",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": ["pecans", "nuts", "hazelnuts", "milk"],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "French Toast Tiramisu",
+          "unitPriceCents": 1600,
+          "sku": "313",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_58cf6063-db36-40f5-b1fb-883a6cb6e0de.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_58cf6063-db36-40f5-b1fb-883a6cb6e0de_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_58cf6063-db36-40f5-b1fb-883a6cb6e0de_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "en",
+              "friendlyDisplayName": "French Toast Tiramisu",
+              "description": "\u003Cp\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "de",
+              "friendlyDisplayName": "French Toast Tiramisu",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": ["eggs", "milk", "cereals"],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Saksuka",
+          "unitPriceCents": 2200,
+          "sku": "87",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_06e1c5e0-cd4a-4c05-90a1-2b390a9b65c0.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_06e1c5e0-cd4a-4c05-90a1-2b390a9b65c0_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_06e1c5e0-cd4a-4c05-90a1-2b390a9b65c0_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Sakshuka Eier Focaccia",
+              "description": "\u003Cp\u003E\u003Cbr\u003E\u003C/p\u003E"
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Shakshuka / Eggs / Focaccia",
+              "description": "\u003Cp\u003E\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": ["eggs"],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Egg",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Egg Well done",
+                  "identifier": "981511696285846",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Eggs Benedict With Pastrami",
+          "unitPriceCents": 2400,
+          "sku": "316",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_13676358-0e38-4e5f-83bf-a085fcbf8809.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_13676358-0e38-4e5f-83bf-a085fcbf8809_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_13676358-0e38-4e5f-83bf-a085fcbf8809_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Eggs Benedict With Pastrami",
+              "description": "\u003Cp\u003E\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": ["eggs", "milk", "cereals"],
+          "productionInstructions": [
+            {
+              "id": null,
+              "name": "Hollandaise",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 1,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Separate Hollandaise",
+                  "identifier": "981511696285820",
+                  "unitPriceCents": 0
+                },
+                {
+                  "sid": 2,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Without Hollandaise",
+                  "identifier": "981511696285822",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "Egg",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 3,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Egg Well done",
+                  "identifier": "981511696285846",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "Pastrami",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 4,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "without pastrami",
+                  "identifier": "981511696288555",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            },
+            {
+              "id": null,
+              "name": "Gravlax",
+              "multiSelectionPermitted": true,
+              "instructions": [
+                {
+                  "sid": 5,
+                  "modifierId": null,
+                  "modifierGroupId": null,
+                  "name": "Extra Salmon",
+                  "identifier": "981511696288583",
+                  "unitPriceCents": 0
+                }
+              ],
+              "maxSelectedAmount": null,
+              "minSelectedAmount": null
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Eggsalad-Avocado-Bread",
+          "unitPriceCents": 2150,
+          "sku": "452",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e87164e6-90b4-44ba-86f1-5207e603c655.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e87164e6-90b4-44ba-86f1-5207e603c655_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e87164e6-90b4-44ba-86f1-5207e603c655_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Eggsalad - Avocado- Bread",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Eggsalad - Avocado- Bread",
+              "description": "\u003Cp\u003E\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Sando Pastrami",
+          "unitPriceCents": 2650,
+          "sku": "24",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_042d9a7c-3078-4bb7-ae5d-42ee00dc49f3.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_042d9a7c-3078-4bb7-ae5d-42ee00dc49f3_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_042d9a7c-3078-4bb7-ae5d-42ee00dc49f3_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Pastrami Sandwich ",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Sando Pastrami",
+              "description": "\u003Cp\u003E\u003C/p\u003E"
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Humus-Kimchi-Bread",
+          "unitPriceCents": 1800,
+          "sku": "459",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3fbc1a13-c84d-4a67-bc6e-6cc973ee98ca.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3fbc1a13-c84d-4a67-bc6e-6cc973ee98ca_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3fbc1a13-c84d-4a67-bc6e-6cc973ee98ca_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Eggs Benedict With Pastrami",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Humus-Kimchi-Bread",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        }
+      ]
+    },
+    {
+      "type": "menuGroup",
+      "name": "Pastries",
+      "entries": [
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Basque Cheesecake",
+          "unitPriceCents": 800,
+          "sku": "55",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_89ee2abd-417d-44a3-9183-934d0084c745.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_89ee2abd-417d-44a3-9183-934d0084c745_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_89ee2abd-417d-44a3-9183-934d0084c745_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Basque Cheesecake",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Basque Cheesecake",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": ["eggs", "milk"],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Cinnamon Cruffin",
+          "unitPriceCents": 600,
+          "sku": "446",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_86d5f77a-15c6-4ec3-bf7e-7afb7fa2fd91.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_86d5f77a-15c6-4ec3-bf7e-7afb7fa2fd91_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_86d5f77a-15c6-4ec3-bf7e-7afb7fa2fd91_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Cream Cheese Berries Cruffin",
+          "unitPriceCents": 1000,
+          "sku": "448",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5b168512-67fd-40a0-9772-cf874e7f9cbe.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5b168512-67fd-40a0-9772-cf874e7f9cbe_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5b168512-67fd-40a0-9772-cf874e7f9cbe_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Banoffe Tart",
+          "unitPriceCents": 1000,
+          "sku": "418",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_294753f3-dea9-40f9-b6f2-c59b4bf019ee.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_294753f3-dea9-40f9-b6f2-c59b4bf019ee_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_294753f3-dea9-40f9-b6f2-c59b4bf019ee_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Banoffe Tart",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Cruffin Plane",
+          "unitPriceCents": 450,
+          "sku": "454",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_18173114-f4b6-4dca-8c76-1a014e0ed94d.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_18173114-f4b6-4dca-8c76-1a014e0ed94d_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_18173114-f4b6-4dca-8c76-1a014e0ed94d_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Cruffin Plane ",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Cardamom Bun",
+          "unitPriceCents": 600,
+          "sku": "52",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e5e94169-8942-417b-affa-dbd34e906c46.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e5e94169-8942-417b-affa-dbd34e906c46_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e5e94169-8942-417b-affa-dbd34e906c46_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": null,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        }
+      ]
+    },
+    {
+      "type": "menuGroup",
+      "name": "Lunch",
+      "entries": [
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Beef Teriyaki-Sushi Rice-Kimchi",
+          "unitPriceCents": 2850,
+          "sku": "456",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b4dcb212-c27b-4bbb-8c3f-4d37fed4dca1.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b4dcb212-c27b-4bbb-8c3f-4d37fed4dca1_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b4dcb212-c27b-4bbb-8c3f-4d37fed4dca1_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "Beef Teriyaki-Sushi Rice-Kimchi",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "Beef Teriyaki-Sushi Rice-Kimchi",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        },
+        {
+          "type": "menuItem",
+          "sid": 0,
+          "name": "Gravlax-Sushi Rice-Kimchi",
+          "unitPriceCents": 2650,
+          "sku": "457",
+          "squareImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bea3371a-f694-4fd8-976f-3aa48938b11e.png",
+          "rawImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bea3371a-f694-4fd8-976f-3aa48938b11e_raw.png",
+          "previewImageUrl": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bea3371a-f694-4fd8-976f-3aa48938b11e_preview_300_300.png",
+          "texts": [
+            {
+              "locale": "de",
+              "friendlyDisplayName": "",
+              "description": ""
+            },
+            {
+              "locale": "en",
+              "friendlyDisplayName": "",
+              "description": ""
+            }
+          ],
+          "containsAlcohol": false,
+          "alcoholPercentage": null,
+          "allergenCodes": [],
+          "productionInstructions": []
+        }
+      ]
+    },
+    {
+      "type": "menuGroup",
+      "name": "notes",
+      "entries": []
+    }
+  ]
+}

@@ -7,7 +7,7 @@ import dinnerOptions from "../../images/dinner_options_2.jpg";
 import evening_outside from "../../images/evening_outside.jpg";
 import outside from "../../images/outside.jpeg";
 import { BookingForm } from "../booking-form/BookingForm";
-// import Button from "../shared/Button";
+import Button from "../shared/Button";
 import { Carousel, CarouselItem } from "./Carousel";
 import * as S from "./Hero.styled";
 
@@ -67,12 +67,12 @@ const Hero = () => {
   //   }
   // }, []);
 
-  // const scrollToEventsSection = () => {
-  //   const eventsSection = document.getElementById("events");
-  //   if (eventsSection) {
-  //     eventsSection.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
+  const scrollToEventsSection = () => {
+    const eventsSection = document.getElementById("events");
+    if (eventsSection) {
+      eventsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <S.Wrapper>
@@ -86,14 +86,14 @@ const Hero = () => {
           {/* <Button reverse onClick={() => setOpenBookingForm(true)}>
             Book
           </Button> */}
-          {/* <Button to="/menu/brunch">Brunch</Button>
+          <Button to="/menu/brunch">Brunch</Button>
           <Button to="/menu/sandwiches">Sandwiches</Button>
           <Button to="/menu/pastries">Pastries</Button>
           <Button to="/menu/coffee_&_tea">Coffee & Tea</Button>
           <Button to="/menu/wine_&_beer">Wine & Beer</Button>
           <Button to="/menu/cocktails">Cocktails</Button>
           <Button to="/menu">All menu</Button>
-          <Button onClick={scrollToEventsSection}>Events</Button> */}
+          <Button onClick={scrollToEventsSection}>Events</Button>
         </S.MenuButtons>
       </S.InnerWrapper>
       <S.ImageWrapper>

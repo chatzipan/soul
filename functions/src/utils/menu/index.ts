@@ -10,10 +10,10 @@ import { formatMenu } from "./formatMenu";
 
 const bundledChromium = require("chrome-aws-lambda");
 
-export const MENU_URL =
-  "https://mylightspeed.app/MPRDZSWN/981511696285978/menu";
+export const MENU_URL = "https://mylightspeed.app/MPRDZSWN/9815116962/menu";
 // export const MENU_URL = "https://mylightspeed.app/UYRRDNWF/C-ordering/menu";
-export const MENU_API_ENDPOINT = "https://mylightspeed.app/api/oa/pos/v1/menu";
+export const MENU_API_ENDPOINT_CATEGORIES =
+  "https://mylightspeed.app/api/oa/pos/v1/menu/categories";
 
 // Upload menu to Google Cloud Storage
 /* const uploadToGCS = async (menuData: any) => {
@@ -78,13 +78,21 @@ export const updateMenu = async () => {
   const page = await context.newPage();
 
   try {
-    await page.goto(MENU_URL);
-    const promise = page.waitForResponse(MENU_API_ENDPOINT);
+    // await page.goto(MENU_URL);
+    // const promise = page.waitForResponse(MENU_API_ENDPOINT_CATEGORIES);
 
-    const response = await promise;
-    const menu = await response.json();
-    console.log("menu.groups!!!", menu.groups);
-    const formattedMenu = formatMenu(menu.groups);
+    // const response = await promise;
+    // const menu = await response.json();
+    const rawMenu = fs.readFileSync(
+      path.join(__dirname, "../../../../static/RAW_MENU.json"),
+      "utf8",
+    );
+    const rawMenuData = JSON.parse(rawMenu);
+    console.log(
+      "rawMenu Groups!!!",
+      rawMenuData.groups.map((group: any) => group.name),
+    );
+    const formattedMenu = formatMenu(rawMenuData.groups);
 
     // Get current menu from GCS for comparison
     // let currentMenu = [];

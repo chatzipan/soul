@@ -1,8 +1,8 @@
 import { MenuGroup } from "./getMenuDiffs";
 
 export const formatMenu = (groups: any[]): MenuGroup[] => {
-  const sandwichesGroup = groups.find((group) =>
-    group.name.toLowerCase().includes("sandwiches"),
+  const lunchGroup = groups.find((group) =>
+    group.name.toLowerCase().includes("lunch"),
   );
 
   const brunchGroup = groups.find((group) =>
@@ -63,11 +63,7 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
 
   // Consolidate cocktails, mocktails and aperitivo groups
   const cocktailEntries = groups
-    .filter(
-      (group) =>
-        group.name.toLowerCase().includes("cocktail") ||
-        group.name.toLowerCase().includes("mocktail"),
-    )
+    .filter((group) => group.name.toLowerCase().includes("cocktail"))
     .flatMap((group) =>
       group.entries.map((entry: any) => ({
         ...entry,
@@ -88,9 +84,9 @@ export const formatMenu = (groups: any[]): MenuGroup[] => {
       entries: cocktailEntries,
     },
     {
-      ...sandwichesGroup,
-      name: "Sandwiches",
-      description: sandwichesGroup.name,
+      ...lunchGroup,
+      name: "Lunch",
+      description: lunchGroup.name,
     },
     {
       ...brunchGroup,

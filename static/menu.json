@@ -8,16 +8,16 @@
         "subTitle": "Granola / Greek Yogurt / Honey / Fruits ",
         "description": "<p></p>",
         "price": 14,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4061ee88-1956-4127-a099-73b24918aaed.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4061ee88-1956-4127-a099-73b24918aaed_raw.png"
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bd32313a-9550-49ef-a086-4817728aedf4.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bd32313a-9550-49ef-a086-4817728aedf4_raw.png"
       },
       {
         "name": "French Toast Tiramisu",
         "subTitle": "French Toast Tiramisu",
         "description": "<p></p>",
         "price": 16,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2d3999a7-0822-4780-8811-d6d36414fd61.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2d3999a7-0822-4780-8811-d6d36414fd61_raw.png"
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_58cf6063-db36-40f5-b1fb-883a6cb6e0de.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_58cf6063-db36-40f5-b1fb-883a6cb6e0de_raw.png"
       },
       {
         "name": "Saksuka",
@@ -34,40 +34,33 @@
         "price": 24,
         "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_13676358-0e38-4e5f-83bf-a085fcbf8809.png",
         "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_13676358-0e38-4e5f-83bf-a085fcbf8809_raw.png"
-      }
-    ],
-    "description": "Brunch Menu "
-  },
-  {
-    "type": "menuGroup",
-    "name": "Sandwiches",
-    "entries": [
+      },
+      {
+        "name": "Eggsalad-Avocado-Bread",
+        "subTitle": "Eggsalad - Avocado- Bread",
+        "description": "<p></p>",
+        "price": 21.5,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e87164e6-90b4-44ba-86f1-5207e603c655.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e87164e6-90b4-44ba-86f1-5207e603c655_raw.png"
+      },
       {
         "name": "Sando Pastrami",
         "subTitle": "Sando Pastrami",
         "description": "<p></p>",
-        "price": 24,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a60ba96d-dd03-4ba6-99c7-f5bc4d55b135.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a60ba96d-dd03-4ba6-99c7-f5bc4d55b135_raw.png"
+        "price": 26.5,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_042d9a7c-3078-4bb7-ae5d-42ee00dc49f3.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_042d9a7c-3078-4bb7-ae5d-42ee00dc49f3_raw.png"
       },
       {
-        "name": "Sando eggsalad",
-        "subTitle": "Sando eggsalad",
-        "description": "<p>Sando with eggsalad kimchi crispy onion truffle </p>",
-        "price": 21.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Tuna Sando",
-        "subTitle": "Tuna Sando",
-        "description": "<p>Sando with Tuna egg pickles iceberg herbs </p>",
-        "price": 23.5,
-        "imageThumbnail": null,
-        "image": null
+        "name": "Humus-Kimchi-Bread",
+        "subTitle": "Humus-Kimchi-Bread",
+        "description": "",
+        "price": 18,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3fbc1a13-c84d-4a67-bc6e-6cc973ee98ca.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3fbc1a13-c84d-4a67-bc6e-6cc973ee98ca_raw.png"
       }
     ],
-    "description": "Sandwiches "
+    "description": "Brunch Menu "
   },
   {
     "type": "menuGroup",
@@ -78,64 +71,48 @@
         "subTitle": "Basque Cheesecake",
         "description": "",
         "price": 8,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c9ce5c1e-e1c8-466a-9ab9-1281adadb76a.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c9ce5c1e-e1c8-466a-9ab9-1281adadb76a_raw.png"
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_89ee2abd-417d-44a3-9183-934d0084c745.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_89ee2abd-417d-44a3-9183-934d0084c745_raw.png"
       },
       {
         "name": "Cinnamon Cruffin",
         "subTitle": "",
         "description": "",
         "price": 6,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_86d5f77a-15c6-4ec3-bf7e-7afb7fa2fd91.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_86d5f77a-15c6-4ec3-bf7e-7afb7fa2fd91_raw.png"
       },
       {
         "name": "Cream Cheese Berries Cruffin",
         "subTitle": "",
         "description": "",
         "price": 10,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5b168512-67fd-40a0-9772-cf874e7f9cbe.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5b168512-67fd-40a0-9772-cf874e7f9cbe_raw.png"
       },
       {
         "name": "Banoffe Tart",
         "subTitle": "Banoffe Tart",
         "description": "",
         "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Salty Chocolate Tart",
-        "subTitle": "",
-        "description": "",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Black Forest Cake",
-        "subTitle": "",
-        "description": "",
-        "price": 8,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "name": "Cardamom Bun",
-        "subTitle": "",
-        "description": "",
-        "price": 6,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8abaf4e1-0abd-4d6a-a106-c5987b3c4fc5.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8abaf4e1-0abd-4d6a-a106-c5987b3c4fc5_raw.png"
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_294753f3-dea9-40f9-b6f2-c59b4bf019ee.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_294753f3-dea9-40f9-b6f2-c59b4bf019ee_raw.png"
       },
       {
         "name": "Cruffin Plane",
         "subTitle": "Cruffin Plane ",
         "description": "",
         "price": 4.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_18173114-f4b6-4dca-8c76-1a014e0ed94d.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_18173114-f4b6-4dca-8c76-1a014e0ed94d_raw.png"
+      },
+      {
+        "name": "Cardamom Bun",
+        "subTitle": "",
+        "description": "",
+        "price": 6,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e5e94169-8942-417b-affa-dbd34e906c46.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e5e94169-8942-417b-affa-dbd34e906c46_raw.png"
       }
     ],
     "description": "Pastries"
@@ -150,8 +127,8 @@
         "subTitle": "Rainbow IPA 6% - 44cl",
         "description": "<p>A bright IPA with a nice balance between the fruity and resinous notes of the hops</p>",
         "price": 10,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e6801d86-6ae3-48dc-b215-8caa2843034e.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e6801d86-6ae3-48dc-b215-8caa2843034e_raw.png"
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_cf943c3d-31a3-4198-a8c9-5f849d0af10c.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_cf943c3d-31a3-4198-a8c9-5f849d0af10c_raw.png"
       },
       {
         "category": "Wine & Beer",
@@ -159,62 +136,17 @@
         "subTitle": "Zeer nonalcoholic IPA 0.3% - 0.33l",
         "description": "<p>Zeer is a Zeer - not a non-alcoholic beer. Balanced &amp; refreshing</p>",
         "price": 10,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0d95c44e-8e1c-4059-bd1d-cd21203cb0fe.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0d95c44e-8e1c-4059-bd1d-cd21203cb0fe_raw.png"
       },
       {
         "category": "Wine & Beer",
-        "name": "Una más 5% (4.0cl)",
-        "subTitle": "",
-        "description": "",
+        "name": "Una más 5% - 44cl",
+        "subTitle": "Una más 5% - 44cl",
+        "description": "<p>Very balanced light beer with restrained malt notes underlined by a mild bitterness. Uná mas! - One more!</p>",
         "price": 8,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Prosecco Il colle",
-        "subTitle": "Azienda Vitivinicola Il Colle, Prosecco Valdobbiadene DOC",
-        "description": "<ul><li><p><strong>Grape variety:</strong><em> 90% Glera, 10% Chardonnay</em></p></li><li><p><strong>Origin: </strong><em>Conegliano-Valdobbiadene DOC, Veneto, Italy</em></p></li><li><p><strong>Profile: </strong><em>Lots of flowers and blossoms (acacia, orange blossom, daisies…),Dried grass / sweet in style, tart green apple and white peaches</em></p></li><li><p><strong>Style:</strong> <em>Dry (not bone dry, but dry; around 8g/l RS), Martinotti Method, 1month fining on lees</em></p></li></ul>",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Weingut Hees Sekt Brut",
-        "subTitle": "Weingut Hees, Sekt Brut",
-        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Riesling</em></p></li><li><p><strong>Origin: </strong><em>Nahe, Germany</em></p></li><li><p><strong>Profile: </strong><em>Just ripe stone fruit; citrus fruit / fresh lemon juice, Slight touch of freshly baked croissants (buttery, fresh dough) coming, Mineral driven / wet stone character</em></p></li><li><p><strong>Style:</strong> Dry, Champagne Method 24months on the lees</p></li></ul>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Zuribieter",
-        "subTitle": "Weingut Landolt, Züribieter Cuvée Weiss 2023",
-        "description": "<ul><li><p><strong>Grape variety:</strong><em> Blend Riesling-Silvaner (Müller-Thurgau), Pinot Gris, Sauvignon Blanc, Pinot Noir (Blanc de Noir)</em></p></li><li><p><strong>Origin: </strong><em>Zurich, Switzerland</em></p></li><li><p><strong>Profile: </strong><em>Fruit profile based on ripe yellow stone fruits like peaches and apricots,some tropical hints with just ripe pineapple and guava, Freshly squeezed lemon juice, </em>Apple blossom and lemon balm </p></li><li><p><strong>Style:</strong> Dry white, Fruit driven, delicate and tart to just ripe tropical aroma profile, Youthful and lightweighted</p></li></ul>",
-        "price": 10,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Riesling Loersch",
-        "subTitle": "Weingut Alexander Loersch, Trittenheimer Altärchen 2023",
-        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Riesling</em></p></li><li><p><strong>Origin: </strong><em>Mosel, Germany</em></p></li><li><p><strong>Profile: </strong><em>Intense and ripe stone fruit flavors with lots of apricot, yellow peaches, Some tropica aromas with ripe lychee and kiwi, Ripe yellow apples, honeysuckle and lemon balm, Touch of pencil shavings, Saline texture</em></p></li><li><p><strong>Style:</strong> <em>Dry white with a hint of sweetness, Ripe fruit profile but well balanced by a sharp and juicy acidity, Fresh but with some depth and texture to it</em></p></li></ul>",
-        "price": 13.5,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Zeter Chardonnay",
-        "subTitle": "Weingut Oliver Zeter, Haardt Chardonnay 2023",
-        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Chardonnay</em></p></li><li><p><strong>Origin: </strong><em>Pfalz, Germany</em></p></li><li><p><strong>Profile: </strong><em>Fruit aromas based on just ripe green apples, green pear and some banana peel, Minimal touches of spice with some vanilla and clove, Compact structure with broad texture on your palate, Acidity breaks creaminess given by soft oak uasage</em></p></li><li><p><strong>Style:</strong> <em> Dry and mineral driven whiteChardonnay characteristic creamy texture with good acidity</em></p></li></ul>",
-        "price": 12.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_44953987-007d-4e68-ae83-92e49b750c5a.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_44953987-007d-4e68-ae83-92e49b750c5a_raw.png"
       },
       {
         "category": "Wine & Beer",
@@ -222,35 +154,44 @@
         "subTitle": "Les Vignerons du Roy René, Ma Terre Rosé 2023",
         "description": "<ul><li><p><strong>Grape variety:</strong><em> Cinsault, Grenache Noir, Syrah</em></p></li><li><p><strong>Origin: </strong><em>Provence, France</em></p></li><li><p><strong>Profile: </strong><em>Aroma profile led by red berries like just ripe raspberries andstrawberries, touch of citrus fruit flavors with bloodorange juiceand tangerine skin</em></p></li><li><p><strong>Style:</strong> <em>Fruit driven but delicate and humble rosé</em></p><p><em>Light and mineral driven</em></p><p><em>Low tannin level, soft texture</em></p></li></ul>",
         "price": 9.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fbab5464-34e1-4bb7-b824-624cbe2e8278.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fbab5464-34e1-4bb7-b824-624cbe2e8278_raw.png"
       },
       {
         "category": "Wine & Beer",
-        "name": "Weinbau Schwarzenbach, Blauburgunder 2022",
-        "subTitle": "Weinbau Schwarzenbach, Blauburgunder 2022",
-        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
-        "price": 14.5,
-        "imageThumbnail": null,
-        "image": null
+        "name": "Weingut Rebhalde Stäfa Räuschling 20232 1dl",
+        "subTitle": "Weingut Rebhalde Stäfa Räuschling 1dl",
+        "description": "<p>Origin: AOC Zürichsee</p><p>Variety: 100% Räuschling</p><p>Profile:Green Apple, White Flowers, Mineral Notes</p>",
+        "price": 9,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fb24eeb4-b136-437a-8245-73508051ce6a.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_fb24eeb4-b136-437a-8245-73508051ce6a_raw.png"
       },
       {
         "category": "Wine & Beer",
-        "name": "Weingut Oliver Zeter, Petz Cuvée Rot 2022",
-        "subTitle": "Weingut Oliver Zeter, Petz Cuvée Rot 2022 ",
-        "description": "<ul><li><strong>Grape variety:</strong>&nbsp;Blend of Merlot, Cabernet Sauvignon</li><li><strong>Origin:&nbsp; </strong>Pfalz, Germany</li><li><strong>Profile:</strong>&nbsp;Lots of red and dark Berries like dark sour cherries, wild raspberries and black currant</li><li><strong>Style:&nbsp;</strong><em>Dry, but Fruit driven and soft in Tannins</em></li></ul><p><br></p>",
+        "name": "Rebhalde Pinot Noir",
+        "subTitle": "Rebhalde Pinot Noir 2023",
+        "description": "<p>Origin: AOC Zürichsee</p><p>100% Pinot Noir</p><p>Dark Fruits, Light Spices, Nice Freshness</p>",
+        "price": 9,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6018cdf9-c18b-47de-8232-61e51b59a5c3.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6018cdf9-c18b-47de-8232-61e51b59a5c3_raw.png"
+      },
+      {
+        "category": "Wine & Beer",
+        "name": "Peplo Skouras Rose",
+        "subTitle": "Peplo Skouras Rose 2024",
+        "description": "<p>Grape Variety: Agiorgitiko , Mavrofilero , Syrah</p><p>Origin: Greece</p><p>Profile:Strawberry , Grapefruit , Honey , Sour cherry , white flower</p>",
         "price": 10,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_473bc094-3284-46ff-919d-af7efb0b3fb0.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_473bc094-3284-46ff-919d-af7efb0b3fb0_raw.png"
       },
       {
         "category": "Wine & Beer",
-        "name": "Il Colle Bottle",
-        "subTitle": "Azienda Vitivinicola Il Colle, Prosecco Valdobbiadene DOC Bottle",
-        "description": "<ul><li><p><strong>Grape variety:</strong><em> 90% Glera, 10% Chardonnay</em></p></li><li><p><strong>Origin: </strong><em>Conegliano-Valdobbiadene DOC, Veneto, Italy</em></p></li><li><p><strong>Profile: </strong><em>Lots of flowers and blossoms (acacia, orange blossom, daisies…),Dried grass / sweet in style, tart green apple and white peaches</em></p></li><li><p><strong>Style:</strong> <em>Dry (not bone dry, but dry; around 8g/l RS), Martinotti Method, 1month fining on lees</em></p></li></ul>",
-        "price": 60,
-        "imageThumbnail": null,
-        "image": null
+        "name": "Col di Rocca Prosecco",
+        "subTitle": "",
+        "description": "",
+        "price": 9,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a4f51fc-266e-4014-ac04-d6c998e80f3d.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a4f51fc-266e-4014-ac04-d6c998e80f3d_raw.png"
       },
       {
         "category": "Wine & Beer",
@@ -258,35 +199,8 @@
         "subTitle": "Weingut Hees, Sekt Brut Bottle ",
         "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Riesling</em></p></li><li><p><strong>Origin: </strong><em>Nahe, Germany</em></p></li><li><p><strong>Profile: </strong><em>Just ripe stone fruit; citrus fruit / fresh lemon juice, Slight touch of freshly baked croissants (buttery, fresh dough) coming, Mineral driven / wet stone character</em></p></li><li><p><strong>Style:</strong> Dry, Champagne Method 24months on the lees</p></li></ul>",
         "price": 80,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Zuribieter Bottle",
-        "subTitle": "",
-        "description": "",
-        "price": 65,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Riesling Loersch Bottle",
-        "subTitle": "Weingut Alexander Loersch, Trittenheimer Altärchen 2023 Bottle",
-        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Riesling</em></p></li><li><p><strong>Origin: </strong><em>Mosel, Germany</em></p></li><li><p><strong>Profile: </strong><em>Intense and ripe stone fruit flavors with lots of apricot, yellow peaches, Some tropica aromas with ripe lychee and kiwi, Ripe yellow apples, honeysuckle and lemon balm, Touch of pencil shavings, Saline texture</em></p></li><li><p><strong>Style:</strong> <em>Dry white with a hint of sweetness, Ripe fruit profile but well balanced by a sharp and juicy acidity, Fresh but with some depth and texture to it</em></p></li></ul>",
-        "price": 84,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Zeter Chardonnay Bottle",
-        "subTitle": "Weingut Oliver Zeter, Haardt Chardonnay 2023 Bottle",
-        "description": "<ul><li><p><strong>Grape variety:</strong><em> 100% Chardonnay</em></p></li><li><p><strong>Origin: </strong><em>Pfalz, Germany</em></p></li><li><p><strong>Profile: </strong><em>Fruit aromas based on just ripe green apples, green pear and some banana peel, Minimal touches of spice with some vanilla and clove, Compact structure with broad texture on your palate, Acidity breaks creaminess given by soft oak uasage</em></p></li><li><p><strong>Style:</strong> <em> Dry and mineral driven whiteChardonnay characteristic creamy texture with good acidity</em></p></li></ul>",
-        "price": 75,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6ffa8a1b-106c-49ac-9d0b-d5ff39aaaeb8.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6ffa8a1b-106c-49ac-9d0b-d5ff39aaaeb8_raw.png"
       },
       {
         "category": "Wine & Beer",
@@ -294,26 +208,8 @@
         "subTitle": "Les Vignerons du Roy René, Ma Terre Rosé 2023 Bottle",
         "description": "<ul><li><p><strong>Grape variety:</strong><em> Cinsault, Grenache Noir, Syrah</em></p></li><li><p><strong>Origin: </strong><em>Provence, France</em></p></li><li><p><strong>Profile: </strong><em>Aroma profile led by red berries like just ripe raspberries andstrawberries, touch of citrus fruit flavors with bloodorange juiceand tangerine skin</em></p></li><li><p><strong>Style:</strong> <em>Fruit driven but delicate and humble rosé</em></p><p><em>Light and mineral driven</em></p><p><em>Low tannin level, soft texture</em></p></li></ul>",
         "price": 60,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Weinbau Schwarzenbach, Blauburgunder 2022 Bottle",
-        "subTitle": "Weinbau Schwarzenbach, Blauburgunder 2022",
-        "description": "<ul><li><strong>Grape variety:</strong><em> 100% Pinot Noir</em></li><li><strong>Origin: </strong><em>Zurich, Siwtzerland</em></li><li><strong>Profile: </strong><em>Classic intense flavors of ripe sour cherry, ripe raspberries and some hints of red plums</em></li><li><strong>Style:</strong> <em>Dry, medium bodied</em></li></ul>",
-        "price": 98,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Wine & Beer",
-        "name": "Weingut Oliver Zeter, Petz Cuvée Rot 2022 Bottle",
-        "subTitle": "Weingut Oliver Zeter, Petz Cuvée Rot 2022 Bottle",
-        "description": "<ul><li><strong>Grape variety:</strong>&nbsp;Blend of Merlot, Cabernet Sauvignon</li><li><strong>Origin:&nbsp;</strong>Pfalz, Germany</li><li><strong>Profile:</strong>&nbsp;Lots of red and dark Berries like dark sour cherries, wild raspberries and black currant</li><li><strong>Style:&nbsp;</strong><em>Dry, but Fruit driven and soft in Tannins</em></li></ul><p><br></p>",
-        "price": 65,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0bfd68de-d57e-4c58-b502-88d8d8356e41.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_0bfd68de-d57e-4c58-b502-88d8d8356e41_raw.png"
       },
       {
         "category": "Wine & Beer",
@@ -327,9 +223,11 @@
       {
         "category": "Wine & Beer",
         "name": "Hirtzberger, Gründer Veltiner Federspiel Rotes Tor 2021 - Bottle (7,5dl)",
+        "subTitle": "",
+        "description": "",
         "price": 120,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_d0b5d2c1-e2b6-4743-8fb3-31d33c192dea.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_d0b5d2c1-e2b6-4743-8fb3-31d33c192dea_raw.png"
       },
       {
         "category": "Wine & Beer",
@@ -337,15 +235,26 @@
         "subTitle": "Laurent Perrier, Millesime 2015 - Bottle (0.75l)",
         "description": "<ul><li><strong>Grape variety:</strong> <em>50% Pinot Noir, 50% Chardonnay</em></li><li><strong>Origin: </strong><em>Cote de Blancs, Champagne France</em></li><li><strong>Profile:</strong> <em>Concentrated citrus fruit, candied lemon &amp; orange, honeysucle, bee wax alongside with herbal notes</em></li><li><strong>Style: </strong><em>Brut - 7 years of aging on the lees</em></li></ul>",
         "price": 140,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_21b2dac4-8262-46fb-802d-8d3c74c88741.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_21b2dac4-8262-46fb-802d-8d3c74c88741_raw.png"
       },
       {
         "category": "Wine & Beer",
         "name": "Paitin, Barbaresco Serraboella 2020 - Bottle (7,5dl)",
+        "subTitle": "",
+        "description": "",
         "price": 130,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c915b0e5-fea8-4d28-9750-bead673837b6.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_c915b0e5-fea8-4d28-9750-bead673837b6_raw.png"
+      },
+      {
+        "category": "Wine & Beer",
+        "name": "Weingut Rebhalde Stäfa Räuschling 2023",
+        "subTitle": "Räuschling 2023",
+        "description": "<p>Origin: AOC Zürichsee</p><p>Variety: 100% Räuschling</p><p>Profile:Green Apple, White Flowers, Mineral Notes</p>",
+        "price": 55,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5aafee65-3df0-42f3-98bf-e1835598b81c.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5aafee65-3df0-42f3-98bf-e1835598b81c_raw.png"
       }
     ]
   },
@@ -355,30 +264,12 @@
     "entries": [
       {
         "category": "Cocktail",
-        "name": "Non Alcoholic Amaretto Sour",
-        "subTitle": "",
-        "description": "<p>Non-Alcoholic Amaretti, Orange juice, Citrus, Vegan Foam</p>",
-        "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktail",
         "name": "espresso Tonic",
         "subTitle": "Espresso Tonic",
         "description": "<p>Premium Coffee Beans, Dry Tonic-Water, Lemon zest</p>",
         "price": 12,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktail",
-        "name": "Basil Smash",
-        "subTitle": "Basil Soul Twist ",
-        "description": "<p>Gin, Fake Basil, Sweet &amp; Sour mix</p>",
-        "price": 18,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a69a89db-4322-43c6-b8cc-4740021ddc4d.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a69a89db-4322-43c6-b8cc-4740021ddc4d_raw.png"
       },
       {
         "category": "Cocktail",
@@ -386,8 +277,8 @@
         "subTitle": "Coffee Negroni",
         "description": "<p>A bold twist on the classic — infused with 100% Ethiopia coffee from Bean Bank Roastery.</p>",
         "price": 18,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33947d66-4cf8-4b76-bc1a-ea7842cab356.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33947d66-4cf8-4b76-bc1a-ea7842cab356_raw.png"
       },
       {
         "category": "Cocktail",
@@ -395,8 +286,8 @@
         "subTitle": "Not Your Nonnas Spritz",
         "description": "<p>Aperol, Campari, Homeade Cranberry GInger Soda</p>",
         "price": 18,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ac66e7cb-67fb-4623-b89c-20a855ac77c9.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ac66e7cb-67fb-4623-b89c-20a855ac77c9_raw.png"
       },
       {
         "category": "Cocktail",
@@ -404,17 +295,17 @@
         "subTitle": "Cascara Americano",
         "description": "<p>Cascara infused Vermouth, Bitter, Top with Cascara Soda</p>",
         "price": 16,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ee4f1d4c-4aa8-4a19-a17b-c9768e43ccf6.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ee4f1d4c-4aa8-4a19-a17b-c9768e43ccf6_raw.png"
       },
       {
         "category": "Cocktail",
-        "name": "Paloma Signature",
-        "subTitle": "New Age Paloma",
-        "description": "<p>Mezcal, Tequila, Lime juice, Grapefruit Soda, Smoked Chilly rim</p>",
+        "name": "Espresso Martini",
+        "subTitle": "",
+        "description": "",
         "price": 16,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a77a474-da00-40f5-8e5f-24ce3ee3f203.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8a77a474-da00-40f5-8e5f-24ce3ee3f203_raw.png"
       },
       {
         "category": "Cocktail",
@@ -422,17 +313,8 @@
         "subTitle": "",
         "description": "",
         "price": 14,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktail",
-        "name": "Hugo",
-        "subTitle": "",
-        "description": "",
-        "price": 13,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6e46eed6-ded0-48fe-b1e5-5cf23e348c68.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_6e46eed6-ded0-48fe-b1e5-5cf23e348c68_raw.png"
       },
       {
         "category": "Cocktail",
@@ -440,35 +322,26 @@
         "subTitle": "Mimosa",
         "description": "<p>Sparkling wine, fresh Orange Juice</p>",
         "price": 14,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2abb32ff-a208-4aa2-bdc9-47243d37fb76.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2abb32ff-a208-4aa2-bdc9-47243d37fb76_raw.png"
       },
       {
         "category": "Cocktail",
-        "name": "Wine Spritz Sour",
-        "subTitle": "Wine Spritz Sour",
+        "name": "Wine Spritz",
+        "subTitle": "Wine Spritz ",
         "description": "<p>White wine / Sparkling water</p>",
         "price": 13,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f963cf97-a313-45b6-953f-72268e00acb0.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f963cf97-a313-45b6-953f-72268e00acb0_raw.png"
       },
       {
         "category": "Cocktail",
-        "name": "Wine Spritz Sweet",
-        "subTitle": "Wine Spritzer Sweet",
-        "description": "<p>White wine / Lemonade</p>",
-        "price": 13,
-        "imageThumbnail": null,
-        "image": null
-      },
-      {
-        "category": "Cocktail",
-        "name": "Gluwein (Hot wine)",
+        "name": "HUGO Spritz",
         "subTitle": "",
         "description": "",
-        "price": 8,
-        "imageThumbnail": null,
-        "image": null
+        "price": 14,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2e47213f-88d2-4115-9106-7960c8c1bbe9.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_2e47213f-88d2-4115-9106-7960c8c1bbe9_raw.png"
       }
     ]
   },
@@ -482,8 +355,8 @@
         "subTitle": "Espresso",
         "description": "<p><strong>Single shot Espresso</strong></p><p><br></p><p>We offer you two different coffee beans you can choose from.</p><p><br></p><p><br></p><p>For more detailed information about the coffee or the roasters, feel free to ask us</p>",
         "price": 5.2,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8aa29b61-23f5-4f23-9ae8-e8d986cdd5e9.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_8aa29b61-23f5-4f23-9ae8-e8d986cdd5e9_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -491,8 +364,8 @@
         "subTitle": "",
         "description": "",
         "price": 6.2,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7b7b1e2b-9395-4352-a1c5-d55b5cc66ddf.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_7b7b1e2b-9395-4352-a1c5-d55b5cc66ddf_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -500,8 +373,8 @@
         "subTitle": "Cappuccino",
         "description": "<p><br></p>",
         "price": 6.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a168aaa0-f2e0-49de-bb4a-1d4e9b827512.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a168aaa0-f2e0-49de-bb4a-1d4e9b827512_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -509,8 +382,8 @@
         "subTitle": "",
         "description": "",
         "price": 7,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ec72041d-2170-4756-a39e-f02a763625e6.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ec72041d-2170-4756-a39e-f02a763625e6_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -527,8 +400,8 @@
         "subTitle": "",
         "description": "",
         "price": 5.8,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_450ca764-e702-4ac2-b56b-2b78eb70dfef.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_450ca764-e702-4ac2-b56b-2b78eb70dfef_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -536,8 +409,8 @@
         "subTitle": "",
         "description": "",
         "price": 6.8,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e3eeaf3-cb01-4527-84f9-4ab83dd7aeb2.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e3eeaf3-cb01-4527-84f9-4ab83dd7aeb2_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -545,8 +418,8 @@
         "subTitle": "Filter Coffee",
         "description": "<p>Brewing filter coffee monthly rotating micro lots from our favorite single origins .</p>",
         "price": 8,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a8b370fd-126d-4f59-bb6a-9317068a46e2.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_a8b370fd-126d-4f59-bb6a-9317068a46e2_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -554,8 +427,8 @@
         "subTitle": "Special filter coffee",
         "description": "<p>Brewing filter coffee monthly rotating micro lots from our favorite single origins .</p>",
         "price": 15,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_323856d9-83bf-4e47-8573-68c3df7ca6dd.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_323856d9-83bf-4e47-8573-68c3df7ca6dd_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -572,8 +445,26 @@
         "subTitle": "",
         "description": "",
         "price": 8,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3d7d49ca-c036-49f9-9527-6d90226b39bd.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3d7d49ca-c036-49f9-9527-6d90226b39bd_raw.png"
+      },
+      {
+        "category": "Kaffee / Tee",
+        "name": "Latte",
+        "subTitle": "",
+        "description": "",
+        "price": 8,
         "imageThumbnail": null,
         "image": null
+      },
+      {
+        "category": "Kaffee / Tee",
+        "name": "Cold Brew",
+        "subTitle": "Cold Brew",
+        "description": "",
+        "price": 8,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3b3a04b2-8f76-4bd7-b81f-c5b0e4ed565b.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_3b3a04b2-8f76-4bd7-b81f-c5b0e4ed565b_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -590,8 +481,8 @@
         "subTitle": "Monk Tea (Black Tea)",
         "description": "<p>Flavored black tea with jasmine-bergamot flavor and vanilla notes</p>",
         "price": 8,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e4e2111-0a37-4697-bf26-24d7170f4f8b.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9e4e2111-0a37-4697-bf26-24d7170f4f8b_raw.png"
       },
       {
         "category": "Kaffee / Tee",
@@ -599,8 +490,8 @@
         "subTitle": "Ginger-Lemon Roobois",
         "description": "<p>Refreshing roobois blend with ginger-lemon flavor (caffeine free)</p>",
         "price": 8,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e4faad91-5dd0-41ea-bf95-1952a4c6c86d.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_e4faad91-5dd0-41ea-bf95-1952a4c6c86d_raw.png"
       }
     ]
   },
@@ -614,8 +505,8 @@
         "subTitle": "Water Still 1l",
         "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
         "price": 6.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9f22d100-42bc-46c1-838c-207eef7d4636.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_9f22d100-42bc-46c1-838c-207eef7d4636_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
@@ -623,8 +514,8 @@
         "subTitle": "Water still 0.5l",
         "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
         "price": 5.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f7c016a7-ebc3-4c7e-b835-bc6d61a44889.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_f7c016a7-ebc3-4c7e-b835-bc6d61a44889_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
@@ -632,8 +523,8 @@
         "subTitle": "Sparkling water 1l",
         "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
         "price": 6.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4df5ad96-412d-4b32-908b-dba3209d305c.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4df5ad96-412d-4b32-908b-dba3209d305c_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
@@ -641,35 +532,35 @@
         "subTitle": "Sparkling water 0.5l",
         "description": "<p>We serve still and sparkling water using a high-end BRITA system, designed for exceptional purity and taste.</p><p>Behind the scenes, it filters out microplastics, unwanted residues, and bacteria — the same hygiene standard used in healthcare. It's our way of offering clean, great-tasting water without single-use plastic.</p>",
         "price": 5.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b379ae3e-139a-4cd6-86c4-4aeef43467d9.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b379ae3e-139a-4cd6-86c4-4aeef43467d9_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
-        "name": "Homemade Iced Tea",
+        "name": "Homemade Iced Tea 3dl",
         "subTitle": "",
         "description": "",
         "price": 7.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_95d0cf81-2c92-4a05-9f45-2326b28d90be.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_95d0cf81-2c92-4a05-9f45-2326b28d90be_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
-        "name": "Homemade Lemonade",
+        "name": "Homemade Lemonade 3dl",
         "subTitle": "",
         "description": "",
         "price": 7.5,
-        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ab7dd45a-2b67-41e4-8dd3-98a35016c0f6.png",
-        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_ab7dd45a-2b67-41e4-8dd3-98a35016c0f6_raw.png"
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33e9a5b9-6529-4a92-93f8-0f272b07129c.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_33e9a5b9-6529-4a92-93f8-0f272b07129c_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
         "name": "Orange Juice",
-        "subTitle": "",
+        "subTitle": "Orange Juice 2dl",
         "description": "",
         "price": 7.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_92f07e5a-30b5-4aea-ade4-4708b59ba6a0.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_92f07e5a-30b5-4aea-ade4-4708b59ba6a0_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
@@ -683,9 +574,11 @@
       {
         "category": "Mineral & Soft Drinks ",
         "name": "Crodino",
+        "subTitle": "",
+        "description": "",
         "price": 7,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ba795aa-1c6b-4d4a-b95c-be7d7e952a63.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ba795aa-1c6b-4d4a-b95c-be7d7e952a63_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
@@ -693,15 +586,17 @@
         "subTitle": "Kombucha",
         "description": "<p>Homemade Kombucha –Flavours Vary by Batch</p><p>Ask us what’s bubbling today!</p>",
         "price": 8.5,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4d57ac63-c316-455a-b726-0afd300a1185.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4d57ac63-c316-455a-b726-0afd300a1185_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
         "name": "Grapefruit Soda",
+        "subTitle": "",
+        "description": "",
         "price": 7,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_893725d8-50b9-418b-8610-0db0a8a22b36.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_893725d8-50b9-418b-8610-0db0a8a22b36_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
@@ -709,8 +604,8 @@
         "subTitle": "",
         "description": "",
         "price": 7,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_226d9cfe-d849-450a-b124-083d3d5d8a79.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_226d9cfe-d849-450a-b124-083d3d5d8a79_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
@@ -718,16 +613,41 @@
         "subTitle": "Soda Water",
         "description": "",
         "price": 7,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5f1ed89b-98d9-4318-88d7-b55d4df6d41d.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_5f1ed89b-98d9-4318-88d7-b55d4df6d41d_raw.png"
       },
       {
         "category": "Mineral & Soft Drinks ",
         "name": "Tonic",
+        "subTitle": "",
+        "description": "",
         "price": 7,
-        "imageThumbnail": null,
-        "image": null
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ed65d4f-6acb-4608-b41b-fa2b77a9475b.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_4ed65d4f-6acb-4608-b41b-fa2b77a9475b_raw.png"
       }
     ]
+  },
+  {
+    "type": "menuGroup",
+    "name": "Lunch",
+    "entries": [
+      {
+        "name": "Beef Teriyaki-Sushi Rice-Kimchi",
+        "subTitle": "Beef Teriyaki-Sushi Rice-Kimchi",
+        "description": "",
+        "price": 28.5,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b4dcb212-c27b-4bbb-8c3f-4d37fed4dca1.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_b4dcb212-c27b-4bbb-8c3f-4d37fed4dca1_raw.png"
+      },
+      {
+        "name": "Gravlax-Sushi Rice-Kimchi",
+        "subTitle": "",
+        "description": "",
+        "price": 26.5,
+        "imageThumbnail": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bea3371a-f694-4fd8-976f-3aa48938b11e.png",
+        "image": "https://s3.eu-west-1.amazonaws.com/com.ikentoo.prod.rich-content-store/57131_bea3371a-f694-4fd8-976f-3aa48938b11e_raw.png"
+      }
+    ],
+    "description": "Lunch"
   }
 ]
