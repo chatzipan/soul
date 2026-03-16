@@ -74,8 +74,8 @@ export const updateMenu = async () => {
     ? await chromium.launch({ executablePath })
     : await chromium.launch({});
 
-  const context = await browser.newContext();
-  const page = await context.newPage();
+  // const context = await browser.newContext();
+  // const page = await context.newPage();
 
   try {
     // await page.goto(MENU_URL);
