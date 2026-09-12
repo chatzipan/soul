@@ -473,7 +473,9 @@ The website never says 16:00 either. **"During the day"** is the public stand-in
 Steps 3 to 6 are all on the **Admin → Settings → Auto Reply** screen.
 
 1. Do the manual setup in section 2. **Test the send-as address first.**
-2. Build. Deploy. The job starts off: a missing `settings/autoReply` document reads as `enabled: false`.
+2. Deploy the job on its own: `firebase deploy --only functions:processIncomingEmails --project soul-web-prod`. It needs the secret to exist first. The job starts off: a missing `settings/autoReply` document reads as `enabled: false`.
+
+   **Never run a plain `firebase deploy --only functions` against prod.** See "How the two projects are really set up" below.
 3. Turn **Run the job** on, leave **Dry run** on. Watch the Firestore records on real mail for several days. Nothing is sent.
 4. Read every record. Check the classification against what a partner would have done.
 5. Press **Set to now** on the Go-live floor, and save.
@@ -487,6 +489,37 @@ The caps (3 per run, 5 per day) mean a bad classifier cannot send more than 5 wr
 1. `hallo@soulzuerich.ch` proven to work as a sending address on `bot@soulcoffee.info`.
 2. The partners told to stop answering weekend reservation enquiries.
 3. The classifier measured against real emails ([#14](https://github.com/chatzipan/soul/issues/14)).
+
+---
+
+## 11b. How the two projects are really set up
+
+Found on 2026-09-12, while deploying. It is not what the code suggests.
+
+| Function | dev `elite-bird-404121` | prod `soul-web-prod` |
+| --- | --- | --- |
+| `api` | yes | yes, and this is the one soulzuerich.ch calls |
+| `sendDailyReservationsSummary` | yes | **no** |
+| `sendReservationReminders` | yes | **no** |
+
+The two scheduled jobs exist only in the dev project. That is where the
+reminder emails to customers are sent from.
+
+Two consequences:
+
+1. **A full `firebase deploy --only functions` against prod would create
+   `sendReservationReminders` there.** Its dev guard is commented out, so it
+   runs in every environment. Customers would then get two reminder emails,
+   one from each project. Always deploy prod one function at a time.
+
+2. `sendDailyReservationsSummary` returns early when `ENVIRONMENT` is `dev`,
+   and it exists only in dev. So it runs nowhere. Nobody receives that daily
+   summary today.
+
+Also on that day: `testReminder` and `testSendReservationSummary` were deleted
+from both projects. They were unauthenticated HTTP endpoints that sent real
+mail to customers. `api` moved from nodejs18, decommissioned since
+2025-10-30, to nodejs22.
 
 ---
 
