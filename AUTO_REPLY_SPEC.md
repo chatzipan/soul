@@ -577,12 +577,28 @@ intended behaviour and it worked.
 So these are all proven end to end, in prod: domain-wide delegation, `signJwt`,
 the Gmail read, the classifier, the rule table, and the record write.
 
+### The reply path, 2026-09-13 01:00
+
+    Auto-reply run finished. Looked at 2 messages, sent 1 (dry run, nothing left).
+
+A weekend table request sent by hand to the group was read, classified,
+matched to a reply variant, and the full reply text was written into the
+record. The send was skipped because `dryRun` was true, and the record was
+closed with `disqualifier: "dry_run"`.
+
+Getting there took one detour worth remembering. The test mail first landed in
+the Bot Mailbox's spam folder and three runs in a row could not see it. Marking
+it "Not spam" put it in the inbox and the very next run picked it up. That is
+what section 2.1 step 6 is for.
+
 ### Not yet proven
 
-**Sending.** `dryRun` is still true. No reply has ever been sent by the job.
+**The Gmail send itself.** `dryRun` is still true. No reply has ever left the
+Bot Mailbox. Everything up to and including building the reply is proven.
 
-**The reply path on a real weekend request.** No weekend reservation email has
-arrived since the job was switched on.
+**A real weekend request.** The only weekend email so far was written by the
+owner as a test. Real ones arrive 1 to 2 times a week. Wait for at least one
+before turning `dryRun` off.
 
 ### The deploy commands that work
 
