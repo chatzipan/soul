@@ -273,10 +273,10 @@ Hello,
 
 Thank you for your message.
 
-On Saturdays and Sundays we don't take bookings. Those are our busiest days,
-and we keep the tables free for guests who come by spontaneously. We are open
-every day from 08:00 to 18:00, so you are very welcome to come by without a
-booking, and we will find you a table as soon as we can.
+We don't take bookings. Saturday and Sunday are our busiest days, and we keep
+the tables free for guests who come by spontaneously. We are open every day
+from 08:00 to 18:00, so you are very welcome to come by without a booking, and
+we will find you a table as soon as we can.
 
 If that doesn't work for you, just write back and we will take it from there.
 
@@ -295,10 +295,10 @@ Grüezi
 
 Vielen Dank für Ihre Nachricht.
 
-Samstags und sonntags nehmen wir keine Reservationen an. Das sind unsere
-strengsten Tage, und wir halten die Tische für spontane Gäste frei. Wir sind
-täglich von 08:00 bis 18:00 Uhr geöffnet. Kommen Sie gerne ohne Reservation
-vorbei, wir finden so schnell wie möglich einen Tisch für Sie.
+Wir nehmen keine Reservationen an. Samstag und Sonntag sind unsere strengsten
+Tage, und wir halten die Tische für spontane Gäste frei. Wir sind täglich von
+08:00 bis 18:00 Uhr geöffnet. Kommen Sie gerne ohne Reservation vorbei, wir
+finden so schnell wie möglich einen Tisch für Sie.
 
 Falls das für Sie nicht passt, schreiben Sie uns einfach zurück, dann schauen
 wir weiter.
@@ -449,9 +449,12 @@ Note: earlier tickets wrote `v.chatzipanagiotis@soulzuerich.ch`. That address do
 **Only `src/components/home/Contact.tsx` changes.** Replace the reservations block with:
 
 > **Reservations:**
-> - We don't take reservations for small groups (less than 6 people). Just come on in and we will find you a table as soon as possible.
-> - On Saturdays and Sundays we don't take reservations during the day. Those are our busiest days, and we keep the tables free for guests who come by spontaneously.
-> - For groups of 6 or more, for a special occasion like a birthday or a team event, or for a private event on a weekend evening, please email us, and we'll tailor an offer that fits perfectly with your needs.
+> - We don't take reservations. Just come in and we will find you a table.
+> - For a special occasion or a weekend evening, please email us. We will make you an offer.
+
+The old page split guests by party size ("less than 6 people"). That rule no
+longer exists. Nobody books a table, on any day. The owner confirmed this on
+2026-09-12.
 
 This also fixes a live typo. The page currently renders `please email us., and we'll tailor an offer` — a full stop inside the link, followed by a comma.
 
