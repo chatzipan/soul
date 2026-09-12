@@ -32,3 +32,5 @@ export const sendReservationReminders = onSchedule(
     await sendDailyReminders(today);
   },
 );
+
+export { processIncomingEmails } from "./processIncomingEmails";

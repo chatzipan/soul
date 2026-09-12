@@ -11,6 +11,7 @@ export { sendDailyReservationsSummary } from "./scheduledFunctions";
 export { testSendReservationSummary } from "./testFunctions";
 export { sendReservationReminders } from "./scheduledFunctions";
 export { testReminder } from "./testReminder";
+export { processIncomingEmails } from "./scheduledFunctions";
 
 const app = express();
 
