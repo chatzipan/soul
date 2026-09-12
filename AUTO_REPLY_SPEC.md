@@ -32,6 +32,9 @@ All of this is admin console and DNS work. None of it can be done from the repo.
 3. Set its subscription to **"Each email"**. Not digest, not "no email".
 4. Confirm the group's posting permission lets it post.
 5. Add `hallo@soulzuerich.ch` as a **"Send mail as"** address on that mailbox.
+6. Add a Gmail filter in the Bot Mailbox: To `hallo@soulzuerich.ch`, action **"Never send it to Spam"**.
+
+**Step 6 is not optional.** `GMAIL_QUERY` is `in:inbox newer_than:4d` (`constants.ts:38`). Spam is not `in:inbox`, so anything Gmail marks as spam is invisible to the job and that customer is never answered. Found on 2026-09-13, when a test email sent to the group landed in the Bot Mailbox's spam folder and no run ever saw it.
 
 **Step 5 works. Confirmed by the owner on 2026-09-12.** A test mail sent from the Bot Mailbox with `hallo@soulzuerich.ch` chosen as the From address arrived showing `hallo@soulzuerich.ch`. This was the one unproven step in the whole setup. The fallback below is no longer needed.
 
@@ -557,16 +560,29 @@ State on 2026-09-12, evening.
 | The kill switch | First run logged "settings/autoReply does not exist. Falling back to disabled." and stopped |
 | The classifier | 18 real emails in `functions/scripts/real-emails`, 18 of 18 matched what the owner expected |
 
+### The first real email, 2026-09-13 00:15
+
+The whole chain ran in production on a real customer email. Not a test.
+
+A German message from someone introducing himself, no booking in it. The job
+read it from the Bot Mailbox, sent it to Claude, and got back
+`category: not_our_case`, `reason: not_a_booking`, no dates, no party size.
+`decide()` returned `send: false`, `disqualifier: not_our_case`. The record
+landed in `autoReplyRecords`. Nothing was sent.
+
+The run before, at 00:00, had seen the same message and skipped it with no
+record because it was under `MIN_MESSAGE_AGE_MINUTES` old. That is the
+intended behaviour and it worked.
+
+So these are all proven end to end, in prod: domain-wide delegation, `signJwt`,
+the Gmail read, the classifier, the rule table, and the record write.
+
 ### Not yet proven
 
-**Domain-wide delegation.** `run.ts` checks `settings.enabled` first and returns
-before `getGmailClient()` is ever called. So every run so far has stopped
-before touching Gmail. Nothing has tested the service account, the `signJwt`
-call, or the Gmail scope.
+**Sending.** `dryRun` is still true. No reply has ever been sent by the job.
 
-The first dry run with `enabled: true` is what tests it. A failure there shows
-as `unauthorized_client`, which for the first 24 hours after adding the
-delegation entry usually just means "not ready yet, wait".
+**The reply path on a real weekend request.** No weekend reservation email has
+arrived since the job was switched on.
 
 ### The deploy commands that work
 
