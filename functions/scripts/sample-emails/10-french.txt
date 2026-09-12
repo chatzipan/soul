@@ -1,0 +1,12 @@
+From: Céline Dubois <celine.dubois@example.fr>
+Subject: Réservation samedi
+Date: 2026-09-15 10:00
+Expect: silent
+
+Bonjour,
+
+Nous souhaitons réserver une table pour quatre personnes le samedi
+19 septembre à midi. Est-ce possible ?
+
+Cordialement,
+Céline Dubois

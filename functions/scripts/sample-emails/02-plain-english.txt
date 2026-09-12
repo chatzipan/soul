@@ -1,0 +1,11 @@
+From: Tom Baker <tom@example.com>
+Subject: Table for Sunday
+Date: 2026-09-15 10:00
+Expect: reply
+
+Hi,
+
+Could we book a table for two on Sunday 20 September, around 11am?
+
+Thanks,
+Tom

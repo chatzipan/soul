@@ -1,0 +1,14 @@
+From: Marc Villiger <marc.v@example.ch>
+Subject: 14 Personen Samstagabend
+Date: 2026-09-15 10:00
+Expect: silent
+
+Hallo
+
+Wir sind 14 Personen und würden am Samstag, 19. September, gerne
+zusammen bei Ihnen essen, so ab 19:30.
+
+Geht das?
+
+Gruss
+Marc

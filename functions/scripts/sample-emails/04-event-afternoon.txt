@@ -1,0 +1,12 @@
+From: Nina Roth <nina.roth@example.com>
+Subject: Company apero
+Date: 2026-09-15 10:00
+Expect: reply
+
+Hello,
+
+We are a team of 15 and would like to hold a small company apero at your
+place on Saturday 19 September at 14:00. Would that be possible?
+
+Best,
+Nina

@@ -1,0 +1,12 @@
+From: Sales Team <sales@kitchensupplies.example.com>
+Subject: New autumn catalogue for your restaurant
+Date: 2026-09-15 10:00
+Expect: silent
+
+Dear restaurant owner,
+
+Our new autumn catalogue is out. Book a call with our team this Saturday
+and get 20% off your first order.
+
+Best regards,
+Sales Team

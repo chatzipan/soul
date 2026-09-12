@@ -1,0 +1,15 @@
+From: Sara Koch <sara.koch@example.ch>
+Subject: Geburtstagsfeier
+Date: 2026-09-15 10:00
+Expect: silent
+
+Guten Tag
+
+Ich möchte meinen 40. Geburtstag bei Ihnen feiern, am Samstag,
+19. September ab 19:00 Uhr. Wir wären etwa 25 Personen und hätten
+gerne ein Menü.
+
+Können Sie mir eine Offerte machen?
+
+Freundliche Grüsse
+Sara Koch

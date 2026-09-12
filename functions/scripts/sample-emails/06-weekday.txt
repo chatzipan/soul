@@ -1,0 +1,12 @@
+From: Lea Frei <lea@example.ch>
+Subject: Reservation Mittwoch
+Date: 2026-09-15 10:00
+Expect: silent
+
+Guten Tag
+
+Wir möchten am Mittwoch, 23. September, einen Tisch für 8 Personen
+reservieren, um 12:30.
+
+Danke und freundliche Grüsse
+Lea Frei

@@ -1,0 +1,12 @@
+From: Julia Bernasconi <julia.b@example.ch>
+Subject: Tisch Samstag und Frage
+Date: 2026-09-15 10:00
+Expect: silent
+
+Grüezi
+
+Wir möchten am Samstag, 19. September, um 10:00 zu dritt kommen.
+Haben Sie auch glutenfreie Optionen auf der Karte?
+
+Danke
+Julia

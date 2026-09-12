@@ -1,0 +1,8 @@
+From: Paul Stucki <paul@example.ch>
+Subject: Tisch am Wochenende
+Date: 2026-09-15 10:00
+Expect: silent
+
+Hallo, hätten Sie am Wochenende irgendwann einen Tisch für zwei frei?
+
+Gruss Paul
