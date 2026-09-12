@@ -20,3 +20,6 @@ ui-debug.log
 funcions/.env.*
 
 *debug.log
+# Real customer emails used as a classifier test set. Personal data.
+scripts/real-emails/*
+!scripts/real-emails/README.md
