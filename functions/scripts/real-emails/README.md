@@ -27,3 +27,27 @@ before you run anything. That is what makes this a test.
 
 Aim for 20 to 30 emails. Include the awkward ones: no date, a weekday, a
 question about parking, a supplier, French, a party of 30.
+
+## What the set holds today
+
+18 real emails, taken from the hallo@ inbox in August and September 2026.
+All names and addresses were changed to example.com before saving.
+
+    4 expect reply, 14 expect silent
+
+Last run: 18 of 18 matched. The four that get a reply are a Sunday table for
+two, a Saturday table for two, a Sunday birthday brunch for eight, and a
+Saturday table for sixteen.
+
+Emails worth keeping in the set, because they are the hard ones:
+
+- a student asking for a weekend side job. Full of "Wochenende" and
+  "Samstagmorgen". A keyword filter would answer it. The classifier does not.
+- a family asking for an outside table on a Wednesday, because their daughter
+  is autistic. A weekday and an extra request. Two rules stop it. A person
+  must answer that email.
+- a table for sixteen where the subject line has the wrong date and the body
+  has the right one.
+
+Still missing: an email with no date at all ("this weekend"), an email in
+French or Italian, and a weekend event enquiry after 16:00.
