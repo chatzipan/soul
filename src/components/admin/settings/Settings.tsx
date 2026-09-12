@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import BlockIcon from "@mui/icons-material/Block";
+import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
 import TableBarIcon from "@mui/icons-material/TableBar";
 import TuneIcon from "@mui/icons-material/Tune";
 import { Box, Typography } from "@mui/material";
@@ -12,6 +13,7 @@ import Tabs from "@mui/material/Tabs";
 import { RouteComponentProps } from "@reach/router";
 import { Redirect, Router } from "@reach/router";
 
+import AutoReply from "./AutoReply";
 import BlockedDates from "./BlockedDates";
 import OpeningHours from "./OpeningHours";
 import RestaurantData from "./RestaurantData";
@@ -54,7 +56,9 @@ const Settings = (_: RouteComponentProps) => {
       ? 1
       : location.includes("blocked-dates")
         ? 2
-        : 0,
+        : location.includes("auto-reply")
+          ? 3
+          : 0,
   );
 
   const handleChange = (_: React.SyntheticEvent, newValue: number) => {
@@ -88,6 +92,11 @@ const Settings = (_: RouteComponentProps) => {
           label="Blocked Dates"
           href="/admin/settings/blocked-dates"
         />
+        <LinkTab
+          icon={<MarkEmailReadIcon />}
+          label="Auto Reply"
+          href="/admin/settings/auto-reply"
+        />
       </Tabs>
 
       <Router>
@@ -95,6 +104,7 @@ const Settings = (_: RouteComponentProps) => {
         <OpeningHours path="opening-hours" />
         <RestaurantData path="restaurant-data" />
         <BlockedDates path="blocked-dates" />
+        <AutoReply path="auto-reply" />
       </Router>
     </Box>
   );

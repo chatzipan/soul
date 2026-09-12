@@ -1,6 +1,9 @@
 import moment from "moment-timezone";
 
 import { db } from "../db";
+import { SETTINGS_DOC_ID as AUTO_REPLY_DOC_ID } from "../autoReply/constants";
+import { getAutoReplySettings } from "../autoReply/settings";
+import { AutoReplySettings } from "../types/autoReply";
 import { Reservation } from "../types/reservation";
 import { DayOfWeek, RestaurantSettings } from "../types/settings";
 
@@ -224,6 +227,69 @@ protectedRouter.put("/", async (req, res) => {
   } catch (error) {
     console.error("Error updating settings:", error);
     return res.status(500).json("Error updating settings");
+  }
+});
+
+/**
+ * The weekend auto-reply job's own settings. A different document from the
+ * restaurant settings above, on purpose: these are safety switches, not
+ * opening hours. See AUTO_REPLY_SPEC.md section 9.
+ */
+protectedRouter.get("/auto-reply", async (_, res) => {
+  try {
+    // The same reader the job itself uses, so the screen shows exactly what
+    // the job sees, defaults included.
+    return res.status(200).json(await getAutoReplySettings());
+  } catch (error) {
+    console.error("Error fetching auto-reply settings:", error);
+    return res.status(500).json("Error fetching auto-reply settings");
+  }
+});
+
+protectedRouter.put("/auto-reply", async (req, res) => {
+  try {
+    const body = req.body || {};
+    const update: Partial<AutoReplySettings> = {};
+
+    // Only these four fields can be written. Anything else is ignored.
+    if (typeof body.enabled === "boolean") {
+      update.enabled = body.enabled;
+    }
+
+    if (typeof body.dryRun === "boolean") {
+      update.dryRun = body.dryRun;
+    }
+
+    if (body.goLiveDate === null || typeof body.goLiveDate === "number") {
+      update.goLiveDate = body.goLiveDate;
+    }
+
+    if (
+      typeof body.eventCutoffHour === "number" &&
+      Number.isInteger(body.eventCutoffHour) &&
+      body.eventCutoffHour >= 0 &&
+      body.eventCutoffHour <= 23
+    ) {
+      update.eventCutoffHour = body.eventCutoffHour;
+    }
+
+    if (Object.keys(update).length === 0) {
+      return res.status(400).json("Nothing valid to update");
+    }
+
+    const docRef = db.collection(COLLECTION).doc(AUTO_REPLY_DOC_ID);
+    const doc = await docRef.get();
+
+    if (!doc.exists) {
+      await docRef.set(update);
+    } else {
+      await docRef.update(update);
+    }
+
+    return res.status(200).json(await getAutoReplySettings());
+  } catch (error) {
+    console.error("Error updating auto-reply settings:", error);
+    return res.status(500).json("Error updating auto-reply settings");
   }
 });
 
