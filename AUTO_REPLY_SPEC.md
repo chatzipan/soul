@@ -1,6 +1,6 @@
 # Weekend reservation auto-reply — build specification
 
-**Status**: built. Not deployed. The manual setup in section 2 is still to do.
+**Status**: deployed to prod on 2026-09-12, switched on in dry run. The manual setup in section 2 is done. See section 11c for what is verified and what is not.
 Two of the three open items are now decided. See section 12.
 **Source**: [map #3](https://github.com/chatzipan/soul/issues/3) and its closed tickets. Every decision here was made and recorded there. Nothing needs re-asking.
 **Vocabulary**: `CONTEXT.md` at the repo root. Terms in **bold** on first use are defined there.
@@ -33,9 +33,9 @@ All of this is admin console and DNS work. None of it can be done from the repo.
 4. Confirm the group's posting permission lets it post.
 5. Add `hallo@soulzuerich.ch` as a **"Send mail as"** address on that mailbox.
 
-**Step 5 is unverified.** Google does not document whether a group address used as a sending address needs a confirmation email. If it does, the confirmation is delivered to the group and any of the four members can click it. **Test this first.** Everything downstream assumes the customer sees `hallo@soulzuerich.ch`.
+**Step 5 works. Confirmed by the owner on 2026-09-12.** A test mail sent from the Bot Mailbox with `hallo@soulzuerich.ch` chosen as the From address arrived showing `hallo@soulzuerich.ch`. This was the one unproven step in the whole setup. The fallback below is no longer needed.
 
-Fallback if it cannot be made to work: send from `bot@soulcoffee.info`. The customer then sees a domain they never wrote to. This is a visible drop in quality, so it is a fallback, not a plan.
+Fallback, kept only as a record of what the alternative was: send from `bot@soulcoffee.info`. The customer would then see a domain they never wrote to.
 
 ### 2.2 Domain-wide delegation — required
 
@@ -520,6 +520,47 @@ Also on that day: `testReminder` and `testSendReservationSummary` were deleted
 from both projects. They were unauthenticated HTTP endpoints that sent real
 mail to customers. `api` moved from nodejs18, decommissioned since
 2025-10-30, to nodejs22.
+
+---
+
+## 11c. What is verified, and what is not
+
+State on 2026-09-12, evening.
+
+### Done and proven
+
+| Thing | How it was proven |
+| --- | --- |
+| Bot Mailbox exists, in the group, "Each email" | Owner did it in the admin console |
+| Send-as `hallo@soulzuerich.ch` | Test mail arrived showing `hallo@soulzuerich.ch`. See section 2.1 |
+| Partners told to stop answering | Owner told them |
+| `ANTHROPIC_API_KEY` in Secret Manager | Version 2 in `soul-web-prod`. Version 1 was an empty write and is unused |
+| `processIncomingEmails` deployed | `state: ACTIVE`, revision `processincomingemails-00001-jam`, nodejs22, runs as `947435703401-compute@developer.gserviceaccount.com` |
+| The kill switch | First run logged "settings/autoReply does not exist. Falling back to disabled." and stopped |
+| The classifier | 18 real emails in `functions/scripts/real-emails`, 18 of 18 matched what the owner expected |
+
+### Not yet proven
+
+**Domain-wide delegation.** `run.ts` checks `settings.enabled` first and returns
+before `getGmailClient()` is ever called. So every run so far has stopped
+before touching Gmail. Nothing has tested the service account, the `signJwt`
+call, or the Gmail scope.
+
+The first dry run with `enabled: true` is what tests it. A failure there shows
+as `unauthorized_client`, which for the first 24 hours after adding the
+delegation entry usually just means "not ready yet, wait".
+
+### The deploy commands that work
+
+Always the alias `prod`, never `soul-web-prod`. Firebase loads
+`.env.<alias>` (`firebase-tools/lib/functions/env.js:166`), and
+`AUTO_REPLY_DELEGATED_SA` lives in `.env.prod`.
+
+    firebase deploy --only functions:processIncomingEmails --project prod
+
+Setting the secret needs `--data-file -`. The interactive prompt cannot be
+answered from a non-interactive shell, and answering it blind writes an empty
+value.
 
 ---
 
