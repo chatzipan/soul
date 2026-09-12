@@ -54,20 +54,24 @@ const Contact = () => {
           <S.Text>Reservations:</S.Text>
           <br />
           <S.TextSmall>
-            - We don't take reservations for small groups (less than 6 people),
-            just come on in and we will find you a table as soon as possible.
+            - We don't take reservations for small groups (less than 6 people).
+            Just come on in and we will find you a table as soon as possible.
             <br />
             {/* <br />- ALL other days and hours:&nbsp;
             <S.TelLinkUnderlined onClick={() => setOpenBookingForm(true)}>
               <u>book here</u>
             </S.TelLinkUnderlined> */}
-            - For bigger groups or special occasions (birthdays or team events),
-            please&nbsp;
+            - On Saturdays and Sundays we don't take reservations during the
+            day. Those are our busiest days, and we keep the tables free for
+            guests who come by spontaneously.
+            <br />- For groups of 6 or more, for a special occasion like a
+            birthday or a team event, or for a private event on a weekend
+            evening, please&nbsp;
             <S.TelLinkUnderlined
               href="mailto:hallo@soulzuerich.ch"
               target="_blank"
             >
-              email us.
+              email us
             </S.TelLinkUnderlined>
             , and we'll tailor an offer that fits perfectly with your needs.
           </S.TextSmall>
