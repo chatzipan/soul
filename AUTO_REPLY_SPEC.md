@@ -52,15 +52,23 @@ Allow up to 24 hours for a new delegation entry to take effect. Requires super a
 
 Prefer **no downloaded JSON key**. Grant the Cloud Function's own service account `roles/iam.serviceAccountTokenCreator` on the delegated service account and use `signJwt`. See `research/gmail-access.md` section 2.3.
 
-5. **Enable the IAM Service Account Credentials API** in `soul-web-prod`:
-   <https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com?project=soul-web-prod>
+5. **Enable two APIs** in `soul-web-prod`. Neither is on by default:
+   - IAM Service Account Credentials: <https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com?project=soul-web-prod>
+   - Gmail: <https://console.cloud.google.com/apis/library/gmail.googleapis.com?project=soul-web-prod>
 
-Step 5 is easy to miss and there is no warning until the job actually runs. `signJwt` lives in that API, so without it every run fails with:
+Step 5 is easy to miss and nothing warns you until the job actually runs. `signJwt` lives in the first API and the inbox read needs the second. Missing either one fails the whole run:
 
     IAM Service Account Credentials API has not been used in project
     947435703401 before or it is disabled.
 
-This happened on 2026-09-12 at the first dry run. Allow a few minutes after enabling for it to take effect.
+    Gmail API has not been used in project 947435703401 before or it is
+    disabled.
+
+Both happened on 2026-09-12, one after the other, at the first dry runs. Allow a few minutes after enabling for each to take effect.
+
+The other two APIs the job needs, Secret Manager and Cloud Scheduler, are switched on by the deploy itself.
+
+**Useful detail about the order of failures.** The Gmail API error can only appear after the JWT has been signed and exchanged for an access token. So seeing it is proof that domain-wide delegation is set up correctly. A broken delegation fails earlier, with `unauthorized_client`.
 
 ### 2.3 The partners — required
 
