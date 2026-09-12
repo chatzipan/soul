@@ -1,7 +1,7 @@
 import { format } from "date-fns";
-import * as moment from "moment-timezone";
+import moment from "moment-timezone";
 
-import { db } from "..";
+import { db } from "../db";
 import { sendBookingToAdmin } from "../email/sendBookingToAdmin";
 import { sendBookingToCustomer } from "../email/sendBookingToCustomer";
 import { sendCancelledBookingToAdmin } from "../email/sendCancelledBookingToAdmin";

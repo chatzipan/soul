@@ -1,20 +1,25 @@
 import { initRouter } from "./routes";
 
 import https = require("firebase-functions/v2/https");
-import admin = require("firebase-admin");
+import { getAuth } from "firebase-admin/auth";
 import express = require("express");
+
+// Side effect: starts the Firebase app before anything reads Firestore.
+import "./db";
 
 export { sendDailyReservationsSummary } from "./scheduledFunctions";
 export { testSendReservationSummary } from "./testFunctions";
 export { sendReservationReminders } from "./scheduledFunctions";
 export { testReminder } from "./testReminder";
 
-admin.initializeApp();
-
 const app = express();
-export const db = admin.firestore();
 
-export const requireAuth = async (
+/**
+ * Nothing but cloud functions may be exported from this file. firebase-functions
+ * walks every other export looking for nested function groups, and a rich object
+ * such as the Firestore client sends it into infinite recursion. See src/db.ts.
+ */
+const requireAuth = async (
   req: express.Request,
   res: express.Response,
   next: express.NextFunction,
@@ -26,7 +31,7 @@ export const requireAuth = async (
   const tokenId = req.get("Authorization")?.split("Bearer ")[1] || "";
 
   try {
-    await admin.auth().verifyIdToken(tokenId);
+    await getAuth().verifyIdToken(tokenId);
     next();
   } catch (e) {
     res.status(401).send(e);

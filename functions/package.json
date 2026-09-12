@@ -3,6 +3,8 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc && npm run copy-templates",
+    "test:rules": "node scripts/testRules.js",
+    "test:classifier": "node scripts/testClassifier.js",
     "copy-templates": "mkdir -p lib/email/templates && cp -r src/email/templates/* lib/email/templates/",
     "build:watch": "tsc --watch",
     "serve": "npm run build && firebase emulators:start --only functions",
@@ -11,36 +13,41 @@
     "deploy-dev": "firebase use default && firebase deploy --only functions",
     "deploy-prod": "firebase use prod && firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "emulators": "firebase use default && firebase emulators:start --import=../emulator-data --export-on-exit=../emulator-data"
+    "check-node": "node -e \"if(+process.versions.node.split('.')[0]<22){console.error('\\nThis needs Node 22. You are on '+process.version+'.\\nRun: nvm use 22\\n');process.exit(1)}\"",
+    "emulators": "npm run check-node && firebase use default && firebase emulators:start --import=../emulator-data --export-on-exit=../emulator-data"
   },
   "engines": {
-    "node": "18"
+    "node": "22"
   },
   "main": "lib/index.js",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.125.0",
     "@google-cloud/storage": "^7.16.0",
-    "chrome-aws-lambda": "^10.1.0",
+    "@googleapis/gmail": "^21.0.0",
     "date-fns": "^4.1.0",
     "express": "^4.18.3",
-    "firebase-admin": "^11.8.0",
-    "firebase-functions": "^5.0.1",
+    "firebase-admin": "^14.4.0",
+    "firebase-functions": "^7.3.2",
+    "google-auth-library": "^11.0.2",
     "handlebars": "^4.7.8",
     "json-diff": "^1.0.6",
     "mjml": "^4.15.3",
     "moment-timezone": "^0.5.45",
     "nodemailer": "^6.9.14",
-    "playwright": "^1.53.1",
     "typescript": "^5.7.3"
   },
   "devDependencies": {
     "@types/mjml": "^4.7.4",
+    "@types/node": "^22.20.2",
     "@types/nodemailer": "^6.4.15",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
     "eslint": "^8.9.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-import": "^2.25.4",
-    "firebase-functions-test": "^3.1.0"
+    "eslint-plugin-import": "^2.25.4"
   },
-  "private": true
+  "private": true,
+  "volta": {
+    "node": "22.23.2"
+  }
 }

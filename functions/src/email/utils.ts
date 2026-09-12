@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import * as moment from "moment-timezone";
+import moment from "moment-timezone";
 
 const isToday = (date: number) =>
   format(new Date(date), "yyyy-MM-dd") ===

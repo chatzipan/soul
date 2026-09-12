@@ -1,14 +1,11 @@
 import * as fs from "fs";
 import * as path from "path";
-import { chromium } from "playwright";
 
 // import { Storage } from "@google-cloud/storage";
 
 import { formatMenu } from "./formatMenu";
 
 // import { getMenuDiffs } from "./getMenuDiffs";
-
-const bundledChromium = require("chrome-aws-lambda");
 
 export const MENU_URL = "https://mylightspeed.app/MPRDZSWN/9815116962/menu";
 // export const MENU_URL = "https://mylightspeed.app/UYRRDNWF/C-ordering/menu";
@@ -69,11 +66,6 @@ const triggerNetlifyRebuild = async () => {
 }; */
 
 export const updateMenu = async () => {
-  const executablePath = await bundledChromium.executablePath;
-  const browser = executablePath
-    ? await chromium.launch({ executablePath })
-    : await chromium.launch({});
-
   // const context = await browser.newContext();
   // const page = await context.newPage();
 
@@ -128,15 +120,12 @@ export const updateMenu = async () => {
     // Trigger Netlify rebuild
     // await triggerNetlifyRebuild();
 
-    await browser.close();
-
     return {
       message:
         "Menu updated successfully! Changes will be visible on the website shortly.",
       // changes: menuDiffs,
     };
   } catch (error) {
-    await browser.close();
     throw error;
   }
 };

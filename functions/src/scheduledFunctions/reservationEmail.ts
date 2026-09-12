@@ -1,6 +1,6 @@
-import * as moment from "moment-timezone";
+import moment from "moment-timezone";
 
-import { db } from "..";
+import { db } from "../db";
 import { Reservation } from "../types/reservation";
 import { createEmailTransporter } from "../utils/email";
 
