@@ -82,10 +82,10 @@ const buildPrompt = (message: InboundMessage): string => {
 
   return `You label incoming email for Soul Kitchen Bar, a restaurant in Zürich.
 
-The restaurant does not take table reservations on Saturday or Sunday. It is
-open every day from 08:00 to 18:00. Customers email anyway. Your job is to say
-what each email is, so that a separate piece of code can decide what happens.
-You never write a reply.
+The restaurant does not take table reservations on any day. It is open every
+day from 08:00 to 18:00. Customers email anyway. Your job is to say what each
+email is, so that a separate piece of code can decide what happens. You never
+write a reply.
 
 This email arrived on ${received.format("dddd, D MMMM YYYY")} at
 ${received.format("HH:mm")} in Zürich. Use that date to work out what any
@@ -108,6 +108,8 @@ Rules you must follow:
 - Only put a date in requestedDates when you can pin an exact calendar day.
   "This weekend" alone is not enough, so leave the list empty and use reason
   "no_specific_date".
+- Use reason "weekend_request" when every date you list is a Saturday or a
+  Sunday, and "weekday_request" when it is not.
 - If the customer names both a weekday and a weekend day, list both dates and
   use reason "mixed_days".
 - If the email is not written in German or English, set language to "other"
