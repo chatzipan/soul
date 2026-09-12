@@ -52,6 +52,16 @@ Allow up to 24 hours for a new delegation entry to take effect. Requires super a
 
 Prefer **no downloaded JSON key**. Grant the Cloud Function's own service account `roles/iam.serviceAccountTokenCreator` on the delegated service account and use `signJwt`. See `research/gmail-access.md` section 2.3.
 
+5. **Enable the IAM Service Account Credentials API** in `soul-web-prod`:
+   <https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com?project=soul-web-prod>
+
+Step 5 is easy to miss and there is no warning until the job actually runs. `signJwt` lives in that API, so without it every run fails with:
+
+    IAM Service Account Credentials API has not been used in project
+    947435703401 before or it is disabled.
+
+This happened on 2026-09-12 at the first dry run. Allow a few minutes after enabling for it to take effect.
+
 ### 2.3 The partners — required
 
 The partners must **stop answering weekend reservation enquiries**.
