@@ -1,7 +1,7 @@
 import { AutoReplyRecord, AutoReplySettings } from "../types/autoReply";
 import { getReplyText } from "../email/autoReplyTexts";
 import { sendAlert } from "./alerts";
-import { buildRawReply } from "./buildRawReply";
+import { buildRawGroupCopy, buildRawReply } from "./buildRawReply";
 import { classifyEmail } from "./classify";
 import {
   MAX_MESSAGE_AGE_DAYS,
@@ -99,7 +99,7 @@ export const runAutoReply = async (): Promise<void> => {
   for (const messageId of messageIds) {
     const message = await getMessage(client, messageId);
 
-    // Step 2, R6. Checked before R7 on purpose: our own Cc'd reply makes a
+    // Step 2, R6. Checked before R7 on purpose: our own group copy makes a
     // handled thread two messages long, so R7 alone would be right by accident.
     if (await threadHasRecord(message.threadId)) continue;
 
@@ -231,6 +231,25 @@ export const runAutoReply = async (): Promise<void> => {
         await applyHandledLabel(client, message.id);
       } catch (error) {
         console.warn(`Could not label message ${message.id}.`, error);
+      }
+
+      // R12: the partners' copy. A failure here must not turn a sent reply
+      // into a failure either, but the owner hears about it.
+      try {
+        await sendReply(client, {
+          raw: buildRawGroupCopy(message, replyText),
+          threadId: message.threadId,
+        });
+      } catch (error) {
+        console.error(`Could not send the group copy for ${message.id}.`, error);
+        await sendAlert(
+          "copy_failed",
+          "The partners' copy of a reply was not sent",
+          `The customer got the automatic reply, but the copy to the group ` +
+            `failed. The partners do not know this email is answered.\n\n` +
+            `Subject: ${message.subject}\nFrom: ${message.from}\n\n` +
+            `${error instanceof Error ? error.message : String(error)}`,
+        );
       }
     } catch (error) {
       // R14: a record left at "failed" blocks this thread for good.

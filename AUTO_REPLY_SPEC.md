@@ -1,6 +1,6 @@
 # Weekend reservation auto-reply — build specification
 
-**Status**: deployed to prod on 2026-09-12, switched on in dry run. The manual setup in section 2 is done. See section 11c for what is verified and what is not.
+**Status**: deployed to prod on 2026-09-12, live since 2026-09-16 (dry run off). The manual setup in section 2 is done. See section 11c for what is verified and what is not.
 Two of the three open items are now decided. See section 12.
 **Source**: [map #3](https://github.com/chatzipan/soul/issues/3) and its closed tickets. Every decision here was made and recorded there. Nothing needs re-asking.
 **Vocabulary**: `CONTEXT.md` at the repo root. Terms in **bold** on first use are defined there.
@@ -203,7 +203,7 @@ The mailbox holds group mail and nothing else, so no `to:` filter is needed.
 
 **Step 4 is the one skip that writes no record.** A record there would match R6 on the next run and block that message forever. This is the easiest thing in the whole spec to get wrong.
 
-**Step 2 before step 7** matters: our own Cc'd reply makes a handled thread two messages long, so R7 alone would give the right answer for the wrong reason.
+**Step 2 before step 7** matters: our own group copy makes a handled thread two messages long, so R7 alone would give the right answer for the wrong reason.
 
 The customer waits **15 to 30 minutes**, day and night.
 
@@ -282,7 +282,7 @@ Plain text. **No HTML, no MJML, no logo banner.** The existing templates in `fun
 
 - `From: Soul Zürich <hallo@soulzuerich.ch>`
 - `Subject:` `Re: ` plus the customer's subject, unchanged. R11 requires a matching subject to stay in the thread.
-- `Cc: hallo@soulzuerich.ch` (R12)
+- No Cc. The partners get a separate copy (R12). Google Groups drops a Cc on a message marked `Auto-Submitted`.
 - Signed `Soul Team`
 
 Four texts. The only difference between the size variants is the walk-in line — telling a company of 30 to walk in is silly.
@@ -368,7 +368,7 @@ All twenty are testable. **R3 is corrected** from its original wording.
 
 | # | Rule |
 | --- | --- |
-| R3 | Skip any message sent from an **Own Address**. That is `hallo@soulzuerich.ch` **and** `bot@soulcoffee.info`, both, always. Every reply is Cc'd to the group and the bot mailbox is a group member, so our own reply lands back in the mailbox we read. A rule matching only one of the two lets the agent answer itself. |
+| R3 | Skip any message sent from an **Own Address**. That is `hallo@soulzuerich.ch` **and** `bot@soulcoffee.info`, both, always. Every reply is followed by a copy to the group and the bot mailbox is a group member, so our own mail can land back in the mailbox we read. A rule matching only one of the two lets the agent answer itself. |
 | R4 | Skip any message that arrived more than **3 days** ago. |
 | R5 | Skip any message that arrived before `autoReply.goLiveDate`. |
 | R6 | Skip any thread that already has a Firestore record, whatever its status. |
@@ -376,7 +376,7 @@ All twenty are testable. **R3 is corrected** from its original wording.
 
 R6 is checked before R7.
 
-R7 no longer defends against a double answer — a partner's reply never reaches the thread the agent reads. It still stops a second reply to the same customer and stops the agent answering its own Cc'd copy.
+R7 no longer defends against a double answer — a partner's reply never reaches the thread the agent reads. It still stops a second reply to the same customer and stops the agent answering its own group copy.
 
 ### Caps
 
@@ -391,7 +391,7 @@ R7 no longer defends against a double answer — a partner's reply never reaches
 | --- | --- |
 | R10 | Write the Firestore record with status `sending` **before** calling Gmail send. |
 | R11 | Send with `threadId`, `In-Reply-To`, `References` **and** a matching `Subject`. All four are required to stay in the thread. |
-| R12 | Cc `hallo@soulzuerich.ch` on every reply. This is also how the partners find out. |
+| R12 | After every reply, send a separate copy to `hallo@soulzuerich.ch`, from the Bot Mailbox, in the customer's thread, **without** `Auto-Submitted`. This is how the partners find out. Never Cc the group on the reply itself: Google Groups drops it. If the copy fails, the reply still counts as sent, and the owner gets a `copy_failed` alert. |
 | R13 | On success set `sent`. On failure set `failed` and alert. |
 | R14 | A record at `sending` or `failed` blocks that thread for good. **Never retry a send.** |
 | R15 | Add the Gmail label after a successful send. If the label fails, ignore it. |
@@ -407,11 +407,11 @@ R7 no longer defends against a double answer — a partner's reply never reaches
 | # | Rule |
 | --- | --- |
 | R17 | Alerts go to the owner only. **Never to the partners.** |
-| R18 | Alert on: a failed send, R8 hit, R9 hit. |
+| R18 | Alert on: a failed send, a failed group copy, R8 hit, R9 hit. |
 | R19 | While `enabled` is `false`, at most **one** reminder per day. |
 | R20 | At most one alert of each kind per day. |
 
-**No summary emails, ever.** The Cc is how the partners see what happened.
+**No summary emails, ever.** The group copy is how the partners see what happened.
 
 ### Deliberately not alerted
 
@@ -501,7 +501,7 @@ Steps 3 to 6 are all on the **Admin → Settings → Auto Reply** screen.
 4. Read every record. Check the classification against what a partner would have done.
 5. Press **Set to now** on the Go-live floor, and save.
 6. Turn **Dry run** off.
-7. Watch the Cc'd replies arriving in the group.
+7. Watch the group copies arriving in the group.
 
 The caps (3 per run, 5 per day) mean a bad classifier cannot send more than 5 wrong replies before it stops and alerts.
 
@@ -591,10 +591,30 @@ the Bot Mailbox's spam folder and three runs in a row could not see it. Marking
 it "Not spam" put it in the inbox and the very next run picked it up. That is
 what section 2.1 step 6 is for.
 
-### Not yet proven
+### The first real reply, 2026-09-16 17:45
 
-**The Gmail send itself.** `dryRun` is still true. No reply has ever left the
-Bot Mailbox. Everything up to and including building the reply is proven.
+A real customer asked for brunch for two on Sunday 4 October, 12:00, in
+German. The job sent `de_small` at 17:45. The customer got it, in the same
+thread. So the Gmail send is proven.
+
+**The Cc to the group never arrived.** No partner saw the reply. The admin
+email log (Admin console → Reporting → Email log search) showed:
+
+    Delivered to group for distribution to members
+    Sent to group members
+    Message looks like an auto-response and has been dropped
+
+Google Groups drops any message that looks like an auto-response. The reply
+carries `Auto-Submitted: auto-replied` on purpose (RFC 3834), and headers
+belong to the whole message, so the Cc could never work. Nothing was in the
+group's Pending or Spam lists. SPF and DKIM were not the cause.
+
+Fix: the reply no longer has a Cc. After the reply the job sends a separate
+copy to the group, without the auto headers. See R12. **Not yet proven:** the
+first real reply after this change must show up in a partner's inbox. If it
+does not, check the email log again.
+
+### Not yet proven
 
 **A real weekend request.** The only weekend email so far was written by the
 owner as a test. Real ones arrive 1 to 2 times a week. Wait for at least one

@@ -10,6 +10,7 @@ import { db } from "../db";
  */
 export type AlertKind =
   | "send_failed"
+  | "copy_failed"
   | "run_cap_hit"
   | "day_cap_hit"
   | "disabled_reminder"
@@ -22,8 +23,8 @@ export type AlertKind =
  * document per kind and day, created with create(), which fails if the document
  * already exists. That makes "only once" safe even if two runs overlap.
  *
- * There are no summary emails, ever. The Cc on each reply is how the partners
- * see what happened.
+ * There are no summary emails, ever. The group copy after each reply is how
+ * the partners see what happened.
  */
 export const sendAlert = async (
   kind: AlertKind,

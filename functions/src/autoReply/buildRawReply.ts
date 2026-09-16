@@ -1,4 +1,4 @@
-import { SENDER_NAME, SHARED_ADDRESS } from "./constants";
+import { BOT_MAILBOX, SENDER_NAME, SHARED_ADDRESS } from "./constants";
 import { InboundMessage } from "./gmail";
 
 /**
@@ -37,31 +37,14 @@ export const replySubject = (subject: string): string => {
   return /^re\s*:/i.test(trimmed) ? trimmed : `Re: ${trimmed}`;
 };
 
-/**
- * Builds the base64url MIME message Gmail's send endpoint wants.
- *
- * R11: threadId, In-Reply-To, References and a matching Subject are all
- * required to stay inside the thread. threadId is passed separately in the
- * request body; the other three are set here.
- *
- * R12: every reply is Cc'd to the Shared Address. That is how the partners
- * find out the mail was answered.
- */
-export const buildRawReply = (
-  message: InboundMessage,
-  bodyText: string,
-): string => {
+/** R11: the headers that keep a message inside the customer's thread. */
+const threadHeaders = (message: InboundMessage): string[] => {
   const references = [message.references, message.rfcMessageId]
     .filter(Boolean)
     .join(" ")
     .trim();
 
-  const headers = [
-    `From: ${encodeAddress(`${SENDER_NAME} <${SHARED_ADDRESS}>`)}`,
-    `To: ${encodeAddress(message.from)}`,
-    `Cc: ${SHARED_ADDRESS}`,
-    `Subject: ${encodeHeader(replySubject(message.subject))}`,
-  ];
+  const headers = [`Subject: ${encodeHeader(replySubject(message.subject))}`];
 
   if (message.rfcMessageId) {
     headers.push(`In-Reply-To: ${message.rfcMessageId}`);
@@ -70,18 +53,82 @@ export const buildRawReply = (
     headers.push(`References: ${references}`);
   }
 
-  headers.push(
-    // RFC 3834. Tells another auto-responder not to answer this, which is
-    // what stops two robots writing to each other forever.
-    "Auto-Submitted: auto-replied",
-    "X-Auto-Response-Suppress: All",
-    "MIME-Version: 1.0",
-    'Content-Type: text/plain; charset="UTF-8"',
-    "Content-Transfer-Encoding: base64",
-  );
+  return headers;
+};
 
+const PLAIN_TEXT_HEADERS = [
+  "MIME-Version: 1.0",
+  'Content-Type: text/plain; charset="UTF-8"',
+  "Content-Transfer-Encoding: base64",
+];
+
+const toRaw = (headers: string[], bodyText: string): string => {
   const body = foldBase64(Buffer.from(bodyText, "utf8").toString("base64"));
   const mime = `${headers.join("\r\n")}\r\n\r\n${body}`;
 
   return Buffer.from(mime, "utf8").toString("base64url");
 };
+
+/**
+ * Builds the base64url MIME message Gmail's send endpoint wants.
+ *
+ * R11: threadId, In-Reply-To, References and a matching Subject are all
+ * required to stay inside the thread. threadId is passed separately in the
+ * request body; the other three are set here.
+ *
+ * No Cc. Google Groups drops any message marked Auto-Submitted, so a Cc to the
+ * group never reached the partners. Seen on 2026-09-16 in the admin email log:
+ * "Message looks like an auto-response and has been dropped". The partners get
+ * their copy from buildRawGroupCopy instead (R12).
+ */
+export const buildRawReply = (
+  message: InboundMessage,
+  bodyText: string,
+): string =>
+  toRaw(
+    [
+      `From: ${encodeAddress(`${SENDER_NAME} <${SHARED_ADDRESS}>`)}`,
+      `To: ${encodeAddress(message.from)}`,
+      ...threadHeaders(message),
+      // RFC 3834. Tells another auto-responder not to answer this, which is
+      // what stops two robots writing to each other forever.
+      "Auto-Submitted: auto-replied",
+      "X-Auto-Response-Suppress: All",
+      ...PLAIN_TEXT_HEADERS,
+    ],
+    bodyText,
+  );
+
+/**
+ * R12: the copy for the partners, sent to the group after the reply.
+ *
+ * It carries the customer's thread headers, so Gmail shows it inside the
+ * customer's conversation. It must NOT carry Auto-Submitted or the group drops
+ * it. It is internal mail, so no auto-responder outside ever sees it.
+ *
+ * From is the Bot Mailbox, a group member, not the group itself. A message
+ * from the group to itself looks like a loop.
+ */
+export const buildRawGroupCopy = (
+  message: InboundMessage,
+  replyText: string,
+): string =>
+  toRaw(
+    [
+      `From: ${encodeAddress(`Soul auto-reply <${BOT_MAILBOX}>`)}`,
+      `To: ${SHARED_ADDRESS}`,
+      ...threadHeaders(message),
+      ...PLAIN_TEXT_HEADERS,
+    ],
+    [
+      `This email was answered automatically. Nobody needs to reply.`,
+      ``,
+      `Sent to: ${message.from}`,
+      ``,
+      `To write to the customer, reply to their email, not to this one.`,
+      ``,
+      `--- The reply they got ---`,
+      ``,
+      replyText,
+    ].join("\n"),
+  );

@@ -11,8 +11,9 @@ export const BOT_MAILBOX =
   process.env.AUTO_REPLY_BOT_MAILBOX || "bot@soulcoffee.info";
 
 /**
- * Own Address (R3). Both, always. Every reply is Cc'd to the group and the Bot
- * Mailbox is a group member, so our own reply lands back in the mailbox we read.
+ * Own Address (R3). Both, always. Every reply is followed by a copy to the
+ * group, and the Bot Mailbox is a group member, so our own mail can land back
+ * in the mailbox we read.
  * A rule matching only one of the two lets the agent answer itself.
  */
 export const OWN_ADDRESSES = [SHARED_ADDRESS, BOT_MAILBOX];
